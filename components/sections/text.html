@@ -1,0 +1,139 @@
+<h3 id="2.12">2.12 Text</h3>
+<p>Well-structured and thoughtfully formatted text significantly enhances the readability of web content. By adhering to best practices that consider neurological diversity, you ensure that your website is accessible and user-friendly for all visitors, including those with cognitive disabilities such as dyslexia, ADHD, or other neurological conditions.</p>
+
+<h4 id="2.12.1">2.12.1 Clear and Concise Language</h4>
+<p>Use simple and straightforward language to convey your message. Avoid jargon, complex sentences, and ambiguous terms that can confuse readers, especially those with cognitive impairments.</p>
+<pre>
+<code class="language-html">&lt;!-- Clear and Concise Paragraph --&gt;
+&lt;p&gt;Our mission is to provide high-quality products that meet your needs and exceed your expectations.&lt;/p&gt;
+
+&lt;!-- Complex and Confusing Paragraph (Avoid) --&gt;
+&lt;p&gt;Our organisational objectives are centered around the strategic delivery of superior quality commodities that not only align with but also transcend customer requisites and anticipations.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.12.2">2.12.2 Appropriate Font Size and Type</h4>
+<p>Select font sizes and types that enhance readability. Use sans-serif fonts like Arial, Helvetica, or Verdana, which are easier to read on screens. Ensure that font sizes are large enough to be comfortably read without straining.</p>
+<pre>
+<code class="language-css">/* Example CSS for Readable Fonts */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+</code>
+</pre>
+
+<h4 id="2.12.3">2.12.3 Sufficient Line Spacing and Text Length</h4>
+<p>Maintain adequate line spacing (leading) and limit the length of text blocks to improve readability. Shorter paragraphs prevent cognitive overload and make it easier for users to process information.</p>
+<pre>
+<code class="language-css">/* Example CSS for Line Spacing */
+p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+</code>
+</pre>
+
+<h4 id="2.12.4">2.12.4 High Contrast Between Text and Background</h4>
+<p>Ensure a high contrast ratio between text and background colors to make content easily readable. Adhere to the Web Content Accessibility Guidelines (WCAG) for color contrast.</p>
+<pre>
+<code class="language-css">/* Example CSS for High Contrast */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+a {
+    color: #005fcc;
+}
+
+a:hover, a:focus {
+    color: #003399;
+    text-decoration: underline;
+}
+</code>
+</pre>
+
+<h4 id="2.12.5">2.12.5 Use of Headings and Subheadings</h4>
+<p>Organise content using headings and subheadings to create a clear structure. This not only aids in navigation but also helps users with cognitive impairments to understand and locate information more efficiently.</p>
+<pre>
+<code class="language-html">&lt;!-- Structured Content with Headings --&gt;
+&lt;h2&gt;Our Services&lt;/h2&gt;
+&lt;p&gt;We offer a range of services designed to meet your needs.&lt;/p&gt;
+
+&lt;h3&gt;Consulting&lt;/h3&gt;
+&lt;p&gt;Expert advice to help your business grow.&lt;/p&gt;
+
+&lt;h3&gt;Development&lt;/h3&gt;
+&lt;p&gt;Custom software solutions tailored to your requirements.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.12.6">2.12.6 Avoiding Cognitive Overload</h4>
+<p>Limit the amount of information presented at once. Break down complex information into manageable chunks and use bullet points or numbered lists to enhance clarity.</p>
+<pre>
+<code class="language-html">&lt;!-- Avoiding Cognitive Overload --&gt;
+&lt;p&gt;To improve our services, we focus on the following areas:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Customer Support&lt;/li&gt;
+    &lt;li&gt;Product Development&lt;/li&gt;
+    &lt;li&gt;Quality Assurance&lt;/li&gt;
+    &lt;li&gt;Marketing Strategies&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</pre>
+
+<h4 id="2.12.7">2.12.7 Consistent Layout and Formatting</h4>
+<p>Maintain a consistent layout and formatting throughout your website. Consistency helps users predict where to find information, reducing cognitive strain and enhancing usability.</p>
+<pre>
+<code class="language-css">/* Example CSS for Consistent Formatting */
+h2 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+p, ul, ol {
+    margin-bottom: 1em;
+}
+</code>
+</pre>
+
+<h4 id="2.12.8">2.12.8 Use of Visual Aids</h4>
+<p>Incorporate images, icons, and other visual aids to support and enhance textual content. Visuals can help convey information more effectively and aid comprehension for users with neurological differences.</p>
+<pre>
+<code class="language-html">&lt;!-- Using Visual Aids --&gt;
+&lt;p&gt;Our process includes the following steps:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;&lt;img src=&quot;research-icon.png&quot; alt=&quot;Research Icon&quot;&gt; Research&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;design-icon.png&quot; alt=&quot;Design Icon&quot;&gt; Design&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;development-icon.png&quot; alt=&quot;Development Icon&quot;&gt; Development&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;testing-icon.png&quot; alt=&quot;Testing Icon&quot;&gt; Testing&lt;/li&gt;
+&lt;/ol&gt;
+</code>
+</pre>
+
+<h4 id="2.12.9">2.12.9 ARIA Attributes for Enhanced Accessibility</h4>
+<p>Use ARIA (Accessible Rich Internet Applications) attributes to provide additional context and improve the accessibility of textual content. ARIA can help assistive technologies better interpret the structure and purpose of content.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of ARIA Attributes --&gt;
+&lt;p aria-label=&quot;Company Overview&quot;&gt;Our company specialises in providing top-notch services to our clients.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.12.11">2.12.11 Avoiding Text-Only Content</h4>
+<p>While text is essential, relying solely on it can be challenging for some users. Combine text with other media formats like audio, video, and interactive elements to cater to diverse learning and processing styles.</p>
+<pre>
+<code class="language-html">&lt;!-- Combining Text with Media --&gt;
+&lt;p&gt;Learn more about our services by watching the video below:&lt;/p&gt;
+&lt;video controls&gt;
+    &lt;source src=&quot;services-overview.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+</code>
+</pre>

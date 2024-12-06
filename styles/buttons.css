@@ -1,0 +1,37 @@
+/* Back to Top Button Styles */
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border-bottom: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 1000; /* Ensure it stays on top */
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#back-to-top.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    filter: brightness(0.95);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

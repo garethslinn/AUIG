@@ -1,0 +1,146 @@
+<h3 id="3.4">3.4 Sliders/Carousels</h3>
+<p>Sliders and carousels are interactive components used to display content dynamically within limited space. Ensuring that sliders are accessible is critical for providing an inclusive experience, especially for users with disabilities or those relying on assistive technologies.</p>
+
+<h4 id="3.4.1">3.4.1 Semantic Markup</h4>
+<p>Use semantic HTML elements to structure sliders. Wrap the carousel items in a container and use appropriate ARIA roles and attributes to enhance accessibility.</p>
+<pre>
+<code class="language-html">&lt;!-- Accessible Slider --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Image Slider&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Description of image 1&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 2 of 3&quot;&gt;
+        &lt;img src=&quot;image2.jpg&quot; alt=&quot;Description of image 2&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 3 of 3&quot;&gt;
+        &lt;img src=&quot;image3.jpg&quot; alt=&quot;Description of image 3&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="3.4.2">3.4.2 Keyboard Accessibility</h4>
+<p>Ensure that sliders can be operated using the keyboard. Use <kbd>Tab</kbd> to navigate to the slider controls and <kbd>Arrow</kbd> keys to move between slides.</p>
+<pre>
+<code class="language-html">&lt;!-- Slider with Navigation Controls --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Image Slider&quot;&gt;
+    &lt;button aria-label=&quot;Previous Slide&quot; id=&quot;prevSlide&quot;&gt;Previous&lt;/button&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Description of image 1&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 2 of 3&quot;&gt;
+        &lt;img src=&quot;image2.jpg&quot; alt=&quot;Description of image 2&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 3 of 3&quot;&gt;
+        &lt;img src=&quot;image3.jpg&quot; alt=&quot;Description of image 3&quot;&gt;
+    &lt;/div&gt;
+    &lt;button aria-label=&quot;Next Slide&quot; id=&quot;nextSlide&quot;&gt;Next&lt;/button&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Keyboard Navigation for Sliders
+const prevButton = document.getElementById(&#39;prevSlide&#39;);
+const nextButton = document.getElementById(&#39;nextSlide&#39;);
+const slides = document.querySelectorAll(&#39;[role=&quot;group&quot;]&#39;);
+let currentSlide = 0;
+
+prevButton.addEventListener(&#39;click&#39;, () =&gt; {
+    slides[currentSlide].setAttribute(&#39;hidden&#39;, true);
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].removeAttribute(&#39;hidden&#39;);
+});
+
+nextButton.addEventListener(&#39;click&#39;, () =&gt; {
+    slides[currentSlide].setAttribute(&#39;hidden&#39;, true);
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].removeAttribute(&#39;hidden&#39;);
+});
+</code>
+</pre>
+
+<h4 id="3.4.3">3.4.3 ARIA Attributes</h4>
+<p>Use ARIA attributes to provide additional context for sliders, such as <code>aria-roledescription</code>, <code>aria-live</code>, and <code>aria-label</code>.</p>
+<pre>
+<code class="language-html">&lt;!-- Slider with ARIA Attributes --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Promotional Images&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Image 1 Description&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 2 of 3&quot;&gt;
+        &lt;img src=&quot;image2.jpg&quot; alt=&quot;Image 2 Description&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 3 of 3&quot;&gt;
+        &lt;img src=&quot;image3.jpg&quot; alt=&quot;Image 3 Description&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="3.4.4">3.4.4 Pause, Stop, and Play Controls</h4>
+<p>Provide controls to pause, stop, or play the carousel, allowing users to control the playback speed of slides.</p>
+<pre>
+<code class="language-html">&lt;!-- Slider with Playback Controls --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Image Slider&quot;&gt;
+    &lt;button id=&quot;pauseCarousel&quot; aria-label=&quot;Pause Slider&quot;&gt;Pause&lt;/button&gt;
+    &lt;button id=&quot;playCarousel&quot; aria-label=&quot;Play Slider&quot; hidden&gt;Play&lt;/button&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Description of image 1&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Pause and Play Controls for Carousel
+const pauseButton = document.getElementById(&#39;pauseCarousel&#39;);
+const playButton = document.getElementById(&#39;playCarousel&#39;);
+let isPaused = false;
+
+pauseButton.addEventListener(&#39;click&#39;, () =&gt; {
+    isPaused = true;
+    pauseButton.hidden = true;
+    playButton.hidden = false;
+    // Stop automatic playback logic here
+});
+
+playButton.addEventListener(&#39;click&#39;, () =&gt; {
+    isPaused = false;
+    playButton.hidden = true;
+    pauseButton.hidden = false;
+    // CV automatic playback logic here
+});
+</code>
+</pre>
+
+<h4 id="3.4.5">3.4.5 Visible Focus Indicators</h4>
+<p>Provide clear focus indicators for navigation and control buttons to help users identify the currently focused element.</p>
+<pre>
+<code class="language-css">/* Focus Styles for Slider Controls */
+button:focus {
+    outline: 2px solid #005fcc;
+    background-color: #e0f0ff;
+}
+</code>
+</pre>
+
+<h4 id="3.4.6">3.4.6 Testing Sliders for Accessibility</h4>
+<p>Test sliders with assistive technologies to ensure they are accessible. Verify that ARIA roles, keyboard navigation, and visible focus indicators are implemented correctly.</p>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify that slides are announced correctly by screen readers.
+// - Ensure all controls are operable using a keyboard.
+// - Check visible focus indicators for navigation and controls.
+// - Test pause, stop, and play functionality for automatic sliders.
+</code>
+</pre>
+
+<h4>Best Practices for Sliders/Carousels</h4>
+<ul>
+    <li><strong>Use Semantic HTML:</strong> Structure sliders with appropriate elements and ARIA attributes.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make sliders fully operable using keyboard controls.</li>
+    <li><strong>Provide ARIA Attributes:</strong> Enhance accessibility with descriptive ARIA roles and labels.</li>
+    <li><strong>Include Playback Controls:</strong> Allow users to pause, stop, or play the slider to maintain control over content playback.</li>
+    <li><strong>Design for Responsiveness:</strong> Ensure sliders adapt to various screen sizes and orientations.</li>
+    <li><strong>Provide Visible Focus Indicators:</strong> Highlight currently focused elements for better usability.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test sliders with assistive technologies and automated tools.</li>
+</ul>

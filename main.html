@@ -1,0 +1,301 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme (Enabled by default) -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme (Disabled by default) -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link for accessibility -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls" itemscope itemtype="https://schema.org/WebPageElement">
+    <img class="logo" width="auto" height="40" src="/images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" itemprop="image" />
+    <span>
+          <button id="decrease-font" aria-label="Decrease text size" itemprop="action" itemscope itemtype="https://schema.org/Action">
+              <span itemprop="name">A-</span>
+          </button>
+          <button id="increase-font" aria-label="Increase text size" itemprop="action" itemscope itemtype="https://schema.org/Action">
+              <span itemprop="name">A+</span>
+          </button>
+          <button id="toggle-theme" aria-label="Toggle dark and light mode" itemprop="action" itemscope itemtype="https://schema.org/Action">
+              <span itemprop="name">🌙</span>
+          </button>
+        </span>
+</aside>
+
+<!-- Main Container with Two Columns -->
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation" aria-expanded="false" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <button
+                    aria-label="Open menu"
+                    aria-controls="navlist"
+                    aria-expanded="false"
+                    id="toggleButton"
+                    class="toggle-button">
+                <!-- Hamburger Icon -->
+                <div class="icon-humburger">
+                    <svg
+                            id="hamburgerIcon"
+                            aria-hidden="true"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                        <line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="3" y1="12" x2="21" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="3" y1="18" x2="21" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Menu</span>
+                </div>
+                <!-- Close "X" Icon, hidden by default -->
+                <div class="icon-close">
+                    <svg
+                            id="closeIcon"
+                            aria-hidden="true"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="display: none;">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Close</span>
+                </div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            <header id="header" itemscope itemtype="https://schema.org/WPHeader">
+                <!-- Header content dynamically inserted -->
+            </header>
+
+            <!-- Abstract Section -->
+            <article id="abstract" class="section" itemscope itemtype="https://schema.org/Article">
+                <h2 itemprop="headline">Abstract</h2>
+                <h3>Overview</h3>
+                <p itemprop="description">
+                    Welcome to the Accessible User Interface Guidelines (AUIG), a set of intuitive and structured accessibility guidelines crafted to simplify the implementation, design, planning, and testing of accessible user interfaces. While the AUIG shares similar objectives with standards like the W3C, EAA, Section 508, and ADA, aiming to make digital interfaces accessible to all it offers a unique approach that enhances ease of use for stakeholders. This guide is essential for today’s digital-first world, ensuring inclusivity for individuals of all abilities.
+                </p>
+                <p itemprop="description">
+                    By integrating these guidelines, teams can build interfaces that are not only functional and aesthetically appealing but also comprehensively accessible. The AUIG facilitates enhanced usability and inclusivity, while providing clear compliance pathways with current and evolving accessibility regulations.
+                </p>
+                <h3>Tailored for:</h3>
+                <ul>
+                    <li>Developers: To build user interfaces that prioritise accessibility from the ground up.</li>
+                    <li>Designers: To create inclusive visual experiences.</li>
+                    <li>UX Professionals: To integrate accessibility into the core of user experience strategies.</li>
+                    <li>Testers: To rigorously validate and ensure compliance with accessibility standards.</li>
+                    <li>Product Owners and Managers: To embed accessibility into project management and operations effectively.</li>
+                </ul>
+                <p itemprop="description">
+                    The AUIG stands as a pivotal resource throughout the user interface development lifecycle, presenting a modern approach that is both easy to understand and apply. By following these guidelines, organisations ensure their digital offerings are accessible, enhancing user engagement and satisfaction for everyone.
+                </p>
+                <icon-detail type="information" heading-level="h3">
+                    <span slot="title">Code Examples throughout this guide</span>
+                    <span slot="description">All code examples are correct, but they might not apply exactly to every scenario. Consider them as templates and adjust them according to your specific context.
+                        </span>
+                </icon-detail>
+            </article>
+
+            <article id="introduction" itemscope itemtype="https://schema.org/Article"></article>
+
+            <!-- Icons Used Section -->
+            <section id="iconsUsed" class="section" itemscope itemtype="https://schema.org/DefinedTermSet">
+                <h2 itemprop="name">Guideline Icons</h2>
+                <p itemprop="description">These icons are used to emphasise specific guidelines, highlighting their importance through both color and visual symbols.</p>
+
+                <dl>
+                    <!-- Defined Term: Caution -->
+                    <dt class="guideline-term caution_icon" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <img class="icon" alt="Caution icon" src="../../images/caution.svg" aria-hidden="true" itemprop="image" />
+                        <strong itemprop="name">Caution</strong>
+                    </dt>
+                    <dd class="guideline-description" itemprop="description">A visible warning that caution should be taken.</dd>
+
+                    <!-- Defined Term: Avoid -->
+                    <dt class="guideline-term avoid_icon" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <img class="icon" alt="Avoid icon" src="../../images/avoid.svg" aria-hidden="true" itemprop="image" />
+                        <strong itemprop="name">Avoid</strong>
+                    </dt>
+                    <dd class="guideline-description" itemprop="description">Marks practices or elements that should be excluded or minimised.</dd>
+
+                    <!-- Defined Term: Priority -->
+                    <dt class="guideline-term priority_icon" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <img class="icon" alt="Priority icon" src="../../images/priority.svg" aria-hidden="true" itemprop="image" />
+                        <strong itemprop="name">Priority</strong>
+                    </dt>
+                    <dd class="guideline-description" itemprop="description">Indicates high-priority information that requires immediate attention.</dd>
+
+                    <!-- Defined Term: Information -->
+                    <dt class="guideline-term information_icon" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <img class="icon" alt="Information icon" src="../../images/information.svg" aria-hidden="true" itemprop="image" />
+                        <strong itemprop="name">Information</strong>
+                    </dt>
+                    <dd class="guideline-description" itemprop="description">Provides additional details or context related to the content.</dd>
+
+                    <!-- Defined Term: Consideration -->
+                    <dt class="guideline-term consideration_icon" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <img class="icon" alt="Consideration icon" src="../../images/consideration.svg" aria-hidden="true" itemprop="image" />
+                        <strong itemprop="name">Consideration</strong>
+                    </dt>
+                    <dd class="guideline-description" itemprop="description">Highlights points that need careful thought or evaluation.</dd>
+                </dl>
+            </section>
+
+            <!-- Global Settings -->
+            <section id="global-settings" class="section" itemscope itemtype="https://schema.org/CreativeWork">
+                <h2 class="section-head" itemprop="headline">1. Global Settings</h2>
+                <p class="title-block" itemprop="description">Use this section for managing essential elements that apply across the entire web platform.
+                    It includes key aspects such as color, contrast, language, keyboard access, meta data, skip
+                    links, responsive design, and flashing images. When developing a new application or website
+                    or upgrading an existing legacy system, prioritise global settings to ensure a consistent and
+                    effective user experience.</p>
+                <!-- Detailed content can be nested here if needed -->
+            </section>
+
+            <!-- Elements -->
+            <section id="html-elements" class="section" itemscope itemtype="https://schema.org/CreativeWork">
+                <h2 class="section-head" itemprop="headline">2. Elements</h2>
+                <p class="title-block" itemprop="description">
+                    The Elements section examines specific user interface (UI) components, providing comprehensive best practices to ensure each element is fully accessible. Accessibility should be seamlessly integrated into every phase of the project lifecycle, including design, user experience (UX), development, and quality assurance (QA).
+                    This includes but not exclusively elements such as Multimedia (images, audio, video etc), Forms, Tables, Headings etc.
+                </p>
+                <!-- Subsections -->
+                <section id="imagesMultimedia" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="forms" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="tables" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="headings" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="links" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="buttons" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="lists" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="semantic" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="graphics" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="inline" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="text" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+            </section>
+
+            <!-- Components -->
+            <section id="ui-components" class="section" itemscope itemtype="https://schema.org/CreativeWork">
+                <h2 class="section-head" itemprop="headline">3. Components</h2>
+                <p class="title-block" itemprop="description">
+                    The Components section concentrates on the accessibility considerations of complex user interface (UI) elements. It covers components such as modals, tooltips, tabs, and accordions. This section provides essential guidelines and illustrative examples to assist in implementing accessible components effectively. Users are encouraged to develop their own methods for achieving accessibility rather than strictly adhering to the provided examples. The primary focus is to ensure that each component is accessible and meets all relevant accessibility requirements.
+                </p>
+                <!-- Subsections -->
+                <section id="modals" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="search" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="navigationMenus" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="sliders" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="tooltips" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="tabs" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="accordions" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="notifications" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="pagination" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="breadcrumbs" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="cards" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+                <section id="alerts" class="section" itemscope itemtype="https://schema.org/CreativeWork"></section>
+            </section>
+
+            <!-- What to Avoid Section -->
+            <section id="avoid" class="section" itemscope itemtype="https://schema.org/CreativeWork">
+                <h2 class="section-head" itemprop="headline">4. What to Avoid</h2>
+                <p class="title-block" itemprop="description">
+                    The What to Avoid section highlights common mistakes and deprecated practices that can hinder accessibility. As the documentation improves, this and other sections may grow.
+                </p>
+            </section>
+
+            <!-- Glossary Section -->
+            <section id="glossary" class="section" itemscope itemtype="https://schema.org/DefinedTermSet">
+                <h2 class="section-head" itemprop="name">Glossary</h2>
+                <!-- Glossary content dynamically inserted -->
+            </section>
+
+            <!-- Appendices Section -->
+            <section id="appendix" class="section" itemscope itemtype="https://schema.org/CreativeWork">
+                <h2 class="section-head" itemprop="headline">Appendices</h2>
+                <!-- Appendices content dynamically inserted -->
+            </section>
+            <section id="appendix-a" class="section" itemscope itemtype="https://schema.org/DefinedTermSet"></section>
+            <section id="appendix-b" class="section" itemscope itemtype="https://schema.org/DefinedTermSet"></section>
+            <section id="appendix-c" class="section" itemscope itemtype="https://schema.org/DefinedTermSet"></section>
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer" itemscope itemtype="https://schema.org/WPFooter">
+    <!-- Footer content dynamically inserted -->
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files with Versioning -->
+<script src="scripts/loader.js?v=1.2"></script>
+<script src="scripts/components/iconDetail.js?v=1.2"></script>
+
+<script src="scripts/main.js?v=1.2" defer></script>
+
+<!-- Do not version this as not required in rendered index.html -->
+<script src="scripts/auig.js" defer></script>
+
+</body>
+</html>

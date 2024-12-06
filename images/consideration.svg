@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 17 17">
+  <path fill="#fff" d="M8.564 4.125c-1.623 0-3.004 1.133-3.513 2.713-.256.815-.248 1.555.032 2.29.452 1.169 1.39 2.315 1.576 3.134l.016.738 1.889.047 1.807-.013.1-.774c.095-.747.978-1.799 1.488-3.032.4-.84.352-1.738.065-2.542-.547-1.5-1.89-2.561-3.46-2.561Zm-.001.688c1.328 0 2.464.897 2.927 2.166.242.68.283 1.44-.056 2.15-.43 1.043-1.346 1.932-1.427 2.564l-.084.655-1.36.01-1.283.027-.118-.69c-.237-.67-1.076-1.958-1.458-2.947-.238-.62-.329-.951-.112-1.64.43-1.337 1.598-2.295 2.97-2.295Z"/>
+    <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width=".569" d="M6.402 7.921c.062-1.67 1.293-2.37 2.383-2.215" paint-order="stroke fill markers"/>
+    <path fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width=".556" d="m6.962 14.276 3.224-.561m-3.223 1.658 3.224-.562" paint-order="stroke fill markers"/>
+    <path fill="#fff" d="M7.658 16.073a.869.717 0 0 0 .866.658.869.717 0 0 0 .866-.658z" paint-order="stroke fill markers"/>
+    <path fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width=".569" d="m8.58 2.79.027-2.2m4.624 7.246 2.201.024M1.545 7.81l2.201.023m8.307-3.511 1.57-1.542m-10.15-.015 1.542 1.571m7.079 7.049 1.541 1.571m-10.202-.014 1.57-1.542" paint-order="stroke fill markers"/>
+</svg>

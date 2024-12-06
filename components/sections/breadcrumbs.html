@@ -1,0 +1,114 @@
+<h3 id="3.10">3.10 Breadcrumbs</h3>
+<p>Breadcrumbs are a navigational aid that allows users to understand their location within a website&#39;s hierarchy. They improve usability and accessibility by providing contextual information about the user&#39;s path.</p>
+
+<h4 id="3.10.1">3.10.1 Semantic Markup</h4>
+<p>Use semantic HTML and ARIA attributes to create accessible breadcrumbs. Wrap the breadcrumbs in a <code>&lt;nav&gt;</code> element with <code>aria-label=&quot;Breadcrumb&quot;</code>, and structure the items with an ordered list (<code>&lt;ol&gt;</code>).</p>
+<pre>
+<code class="language-html">&lt;!-- Accessible Breadcrumb --&gt;
+&lt;nav aria-label=&quot;Breadcrumb&quot;&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/category&quot;&gt;Category&lt;/a&gt;&lt;/li&gt;
+        &lt;li aria-current=&quot;page&quot;&gt;Current Page&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.10.2">3.10.2 ARIA Attributes</h4>
+<p>Use ARIA attributes to enhance accessibility. The <code>aria-current=&quot;page&quot;</code> attribute should be applied to the current page&#39;s breadcrumb item.</p>
+<pre>
+<code class="language-html">&lt;!-- Breadcrumb with ARIA Attributes --&gt;
+&lt;nav aria-label=&quot;Breadcrumb&quot;&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;/dashboard&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/settings&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+        &lt;li aria-current=&quot;page&quot;&gt;Profile&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.10.3">3.10.3 Keyboard Navigation</h4>
+<p>Ensure breadcrumb links are keyboard accessible. Users should be able to navigate through breadcrumb links using the <kbd>Tab</kbd> key.</p>
+<pre>
+<code class="language-html">&lt;!-- Keyboard Accessible Breadcrumb --&gt;
+&lt;nav aria-label=&quot;Breadcrumb&quot;&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href=&quot;/home&quot; tabindex=&quot;0&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/blog&quot; tabindex=&quot;0&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;li aria-current=&quot;page&quot; tabindex=&quot;0&quot;&gt;Article&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.10.4">3.10.4 Styling Breadcrumbs</h4>
+<p>Style breadcrumbs for clarity and usability. Use visual separators (e.g., <code>/</code> or <code>&gt;</code>) to differentiate breadcrumb items.</p>
+<pre>
+<code class="language-css">/* Breadcrumb Styling */
+nav[aria-label=&quot;Breadcrumb&quot;] ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav[aria-label=&quot;Breadcrumb&quot;] li + li::before {
+    content: &quot;/&quot;;
+    margin: 0 0.5rem;
+    color: #888;
+}
+
+nav[aria-label=&quot;Breadcrumb&quot;] a {
+    text-decoration: none;
+    color: #005fcc;
+}
+
+nav[aria-label=&quot;Breadcrumb&quot;] a:hover {
+    text-decoration: underline;
+}
+
+nav[aria-label=&quot;Breadcrumb&quot;] [aria-current=&quot;page&quot;] {
+    font-weight: bold;
+    color: #333;
+}
+</code>
+</pre>
+
+<h4 id="3.10.5">3.10.5 Responsive Design</h4>
+<p>Ensure breadcrumbs are responsive and adapt to smaller screens. Use a horizontal scroll or collapse breadcrumbs into a dropdown menu if space is limited.</p>
+<pre>
+<code class="language-css">/* Responsive Breadcrumb Styling */
+@media (max-width: 768px) {
+    nav[aria-label=&quot;Breadcrumb&quot;] ol {
+        flex-wrap: wrap;
+    }
+
+    nav[aria-label=&quot;Breadcrumb&quot;] li {
+        margin-bottom: 0.5rem;
+    }
+}
+</code>
+</pre>
+
+<h4 id="3.10.6">3.10.6 Testing Breadcrumbs for Accessibility</h4>
+<p>Test breadcrumbs with assistive technologies to ensure they are accessible. Verify correct use of ARIA attributes, keyboard navigation, and focus management.</p>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify breadcrumb links are keyboard accessible.
+// - Ensure the current page is marked with aria-current=&quot;page&quot;.
+// - Check screen reader announcements for breadcrumb navigation.
+// - Validate responsive behavior for smaller screens.
+</code>
+</pre>
+
+<h4>Best Practices for Breadcrumbs</h4>
+<ul>
+    <li><strong>Use Semantic HTML:</strong> Wrap breadcrumbs in a <code>&lt;nav&gt;</code> element with <code>aria-label=&quot;Breadcrumb&quot;</code>.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make all breadcrumb links navigable using the keyboard.</li>
+    <li><strong>Apply ARIA Attributes:</strong> Use <code>aria-current=&quot;page&quot;</code> to identify the current page in the breadcrumbs.</li>
+    <li><strong>Style for Clarity:</strong> Use visual separators and highlight the current page for easy identification.</li>
+    <li><strong>Design Responsively:</strong> Adapt breadcrumbs to smaller screens with wrapping or collapsing techniques.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test breadcrumbs with assistive technologies to ensure accessibility.</li>
+</ul>

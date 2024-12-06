@@ -1,0 +1,100 @@
+<h3 id="2.4">2.4 Headings</h3>
+<p>Proper use of headings is essential for creating a clear content structure, enhancing navigability, and improving accessibility for all users, including those utilising assistive technologies.</p>
+
+<h4 id="2.4.1">2.4.1 Hierarchical Structure</h4>
+<p>Use headings in a hierarchical manner to reflect the document structure. Start with a single <code class="language-html">&lt;h1&gt;</code> for the main title, followed by <code class="language-html">&lt;h2&gt;</code> for primary sections, <code class="language-html">&lt;h3&gt;</code> for subsections, and so on. This hierarchy helps users understand the organisation of content and navigate efficiently.</p>
+<pre>
+<code class="language-html">
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section 1&lt;/h2&gt;
+&lt;h3&gt;Subsection 1.1&lt;/h3&gt;
+&lt;h2&gt;Section 2&lt;/h2&gt;
+&lt;h3&gt;Subsection 2.1&lt;/h3&gt;
+</code>
+</pre>
+
+<h4 id="2.4.2">2.4.2 Descriptive Headings</h4>
+<p>Ensure that each heading clearly and concisely describes the content that follows. Descriptive headings provide users with a quick understanding of the section's purpose, aiding in content scanning and comprehension.</p>
+<pre>
+<code class="language-html">
+&lt;h2&gt;Benefits of Responsive Design&lt;/h2&gt;
+&lt;p&gt;Responsive design ensures that your website looks great on all devices...&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.4.3">2.4.3 Avoid Skipping Heading Levels</h4>
+<p>Do not skip heading levels (e.g., jumping from <code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h3&gt;</code>). Maintaining a logical flow of heading levels ensures that assistive technologies can accurately interpret the document structure.</p>
+<pre>
+<code class="language-html">
+<!-- Correct -->
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+
+<!-- Incorrect -->
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+</code>
+</pre>
+
+<h4 id="2.4.4">2.4.4 Semantic Use of Headings</h4>
+<p>Utilise headings to convey semantic meaning rather than for visual styling purposes. Avoid using headings solely to change text size or appearance. Instead, use CSS for styling and maintain proper heading semantics for accessibility.</p>
+<pre>
+<code class="language-html">
+<!-- Semantic Heading -->
+&lt;h2&gt;About Us&lt;/h2&gt;
+
+<!-- Non-Semantic, Avoid This -->
+&lt;div class="heading"&gt;About Us&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="2.4.5">2.4.5 Accessible Navigation</h4>
+<p>Headings play a crucial role in enabling keyboard and screen reader users to navigate content efficiently. Implement skip links and ensure that heading levels are used consistently to facilitate quick navigation between sections.</p>
+<pre>
+<code class="language-html">
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+&lt;h1 id="main-content"&gt;Welcome to Our Website&lt;/h1&gt;
+</code>
+</pre>
+
+<icon-detail id="2.4.6" type="priority" heading-level="h4">
+    <span slot="title">2.4.6 Consistent Styling</span>
+    <span slot="description">
+        Apply consistent styling to headings to maintain visual coherence across the website. Use CSS classes or styles to ensure that headings of the same level have uniform appearance, enhancing the user experience without compromising accessibility.
+    </span>
+</icon-detail>
+
+<h4 id="2.4.7">2.4.7 ARIA Roles and Landmarks</h4>
+<p>While headings themselves are inherently semantic, combining them with ARIA roles and landmarks can further enhance accessibility. Use ARIA attributes judiciously to define regions of the page, aiding assistive technologies in understanding the layout.</p>
+<pre>
+<code class="language-html">
+&lt;header role="banner"&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav role="navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#section1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="2.4.8">2.4.8 Testing and Validation</h4>
+<p>Regularly test your headings with various assistive technologies and validation tools to ensure they meet accessibility standards. Tools like screen readers can help verify that headings are announced correctly and that the document structure is logical.</p>
+<pre>
+<code class="language-html">
+// Example: Using a screen reader to navigate headings
+// Ensure that headings are announced in the correct order and hierarchy
+</code>
+</pre>
+
+<h4>Best Practices for Headings</h4>
+<ul>
+    <li><strong>Use Only One <code class="language-html">&lt;h1&gt;</code>:</strong> Ensure that each page has a single <code class="language-html">&lt;h1&gt;</code> tag representing the main title. This helps search engines and assistive technologies understand the primary topic of the page.</li>
+    <li><strong>Maintain Logical Order:</strong> Follow a sequential order of headings without skipping levels to maintain a clear content hierarchy.</li>
+    <li><strong>Avoid Overuse:</strong> Do not use headings excessively. Use them to denote major sections and subsections only.</li>
+    <li><strong>Accessible Naming:</strong> Choose meaningful and descriptive names for headings to provide context to all users.</li>
+</ul>

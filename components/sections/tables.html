@@ -1,0 +1,117 @@
+<h3 id="2.3">2.3 Tables</h3>
+<p>Design and implement tables in a way that ensures they are accessible to all users, including those using assistive technologies. Properly structured tables enhance data comprehension and navigation.</p>
+
+<h4 id="2.3.1">2.3.1 Table Structure</h4>
+<p>Use semantic HTML elements to define table structures. Utilise &lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; to create clear and meaningful table layouts.</p>
+<pre>
+<code class="language-html">
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Name&lt;/th&gt;
+            &lt;th scope="col"&gt;Age&lt;/th&gt;
+            &lt;th scope="col"&gt;Occupation&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Engineer&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;Designer&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<h4 id="2.3.2">2.3.2 Table Headers</h4>
+<p>Ensure that header cells are properly associated with their corresponding data cells. Use the <code class="language-html">scope</code> attribute to define whether a header applies to a row or column.</p>
+<pre>
+<code class="language-html">
+&lt;th scope="col"&gt;Product&lt;/th&gt;
+&lt;th scope="row"&gt;Laptop&lt;/th&gt;
+</code>
+</pre>
+
+<h4 id="2.3.3">2.3.3 Captions and Summaries</h4>
+<p>Provide a descriptive caption for each table using the &lt;caption&gt; element. If the table is complex, include a summary to explain its purpose and structure.</p>
+<pre>
+<code class="language-html">
+&lt;table&gt;
+    &lt;caption&gt;Sales Data for Q1 2024&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Region&lt;/th&gt;
+            &lt;th scope="col"&gt;Sales&lt;/th&gt;
+            &lt;th scope="col"&gt;Growth&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;North America&lt;/td&gt;
+            &lt;td&gt;$1,000,000&lt;/td&gt;
+            &lt;td&gt;5%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<h4 id="2.3.4">2.3.4 Avoiding Complex Structures</h4>
+<p>Keep tables as simple as possible. Avoid nested tables, merged cells, and other complex structures that can confuse assistive technologies and make navigation difficult for users.</p>
+
+<h4 id="2.3.5">2.3.5 Responsive Tables</h4>
+<p>Ensure that tables are responsive and readable on all devices. Use CSS techniques to allow tables to adapt to different screen sizes without losing their accessibility features.</p>
+<pre>
+<code class="language-css">
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+    }
+}
+</code>
+</pre>
+
+<icon-detail id="2.3.6" type="priority" heading-level="h4">
+    <span slot="title">2.3.6 Keyboard Navigation</span>
+    <span slot="description">
+        Ensure that users can navigate through tables using keyboard controls. Implement logical tab orders and focus indicators to facilitate seamless interaction for users who rely on keyboards.
+    </span>
+</icon-detail>
+
+<h4 id="2.3.7">2.3.7 Accessible Data Presentation</h4>
+<p>Present data in a clear and concise manner. Use appropriate data formatting and avoid unnecessary embellishments that can distract or confuse users.</p>
+<pre>
+<code class="language-html">
+&lt;td&gt;$1,000,000&lt;/td&gt;
+&lt;td&gt;5%&lt;/td&gt;
+</code>
+</pre>

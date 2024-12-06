@@ -1,0 +1,138 @@
+<h3 id="3.3">3.3 Navigation Menus</h3>
+<p>Navigation menus are essential components of a website, providing users with a way to explore and interact with the site’s content. Ensuring that navigation menus are accessible is critical to creating an inclusive experience for all users, including those with disabilities or relying on assistive technologies.</p>
+
+<h4 id="3.3.1">3.3.1 Semantic Markup</h4>
+<p>Use semantic HTML elements to structure navigation menus. The <code>&lt;nav&gt;</code> element should wrap the menu, and <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> should be used for the list structure.</p>
+<pre>
+<code class="language-html">&lt;!-- Accessible Navigation Menu --&gt;
+&lt;nav aria-label=&quot;Main Navigation&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.3.2">3.3.2 Keyboard Accessibility</h4>
+<p>Ensure that navigation menus are fully navigable using the keyboard. Users should be able to tab through menu items and activate them using the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of a Keyboard Accessible Menu --&gt;
+&lt;nav aria-label=&quot;Main Navigation&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.3.3">3.3.3 ARIA Roles and Attributes</h4>
+<p>Use ARIA roles and attributes to enhance the accessibility of menus, especially for complex or custom implementations. For example, use <code>role="menu"</code> and <code>role="menuitem"</code> for custom dropdown menus.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of ARIA Roles in a Dropdown Menu --&gt;
+&lt;nav aria-label=&quot;Main Navigation&quot;&gt;
+    &lt;ul role=&quot;menu&quot;&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;/services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.3.4">3.3.4 Responsive Design</h4>
+<p>Ensure that navigation menus are responsive and adapt to different screen sizes. For mobile devices, consider using hamburger menus or collapsible menus with accessible controls.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of a Responsive Menu --&gt;
+&lt;nav aria-label=&quot;Main Navigation&quot;&gt;
+    &lt;button id=&quot;menuToggle&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;menu&quot;&gt;Menu&lt;/button&gt;
+    &lt;ul id=&quot;menu&quot; hidden&gt;
+        &lt;li&gt;&lt;a href=&quot;/home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/services&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Toggle the menu visibility on button click
+const menuToggle = document.getElementById(&#39;menuToggle&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+
+menuToggle.addEventListener(&#39;click&#39;, () =&gt; {
+    const expanded = menuToggle.getAttribute(&#39;aria-expanded&#39;) === &#39;true&#39;;
+    menuToggle.setAttribute(&#39;aria-expanded&#39;, !expanded);
+    menu.hidden = expanded;
+});
+</code>
+</pre>
+
+<h4 id="3.3.5">3.3.5 Dropdown Menus</h4>
+<p>Implement dropdown menus with proper ARIA roles and keyboard navigation support. Ensure that dropdowns are accessible to screen readers and can be operated using the keyboard.</p>
+<pre>
+<code class="language-html">&lt;!-- Dropdown Menu Example --&gt;
+&lt;nav aria-label=&quot;Main Navigation&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;button aria-expanded=&quot;false&quot; aria-controls=&quot;servicesMenu&quot;&gt;Services&lt;/button&gt;
+            &lt;ul id=&quot;servicesMenu&quot; hidden&gt;
+                &lt;li&gt;&lt;a href=&quot;/web-design&quot;&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;/seo&quot;&gt;SEO&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;/marketing&quot;&gt;Marketing&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Toggle dropdown visibility
+const dropdownButton = document.querySelector(&#39;button[aria-controls=&quot;servicesMenu&quot;]&#39;);
+const dropdownMenu = document.getElementById(&#39;servicesMenu&#39;);
+
+dropdownButton.addEventListener(&#39;click&#39;, () =&gt; {
+    const expanded = dropdownButton.getAttribute(&#39;aria-expanded&#39;) === &#39;true&#39;;
+    dropdownButton.setAttribute(&#39;aria-expanded&#39;, !expanded);
+    dropdownMenu.hidden = expanded;
+});
+</code>
+</pre>
+
+<h4 id="3.3.6">3.3.6 Visible Focus Indicators</h4>
+<p>Provide visible focus indicators for menu items to help keyboard users identify their current position within the menu.</p>
+<pre>
+<code class="language-css">/* Focus Styles for Menu Items */
+nav a:focus {
+    outline: 2px solid #005fcc;
+    background-color: #e0f0ff;
+}
+</code>
+</pre>
+
+<h4 id="3.3.7">3.3.7 Testing Navigation Menus for Accessibility</h4>
+<p>Test navigation menus with assistive technologies and automated tools to ensure they are accessible. Verify that focus management, keyboard navigation, and ARIA attributes work as intended.</p>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify all menu items are keyboard accessible.
+// - Check screen reader announcements for menu items and dropdowns.
+// - Ensure visible focus indicators are clear and consistent.
+// - Validate responsive behavior for mobile menus.
+</code>
+</pre>
+
+<h4>Best Practices for Navigation Menus</h4>
+<ul>
+    <li><strong>Use Semantic HTML:</strong> Implement navigation menus with <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;li&gt;</code> for clear structure.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make all menu items and dropdowns operable using only a keyboard.</li>
+    <li><strong>Provide ARIA Attributes When Necessary:</strong> Use ARIA roles and attributes to enhance the accessibility of custom navigation menus.</li>
+    <li><strong>Design for Responsiveness:</strong> Ensure menus adapt to different screen sizes and provide accessible controls for mobile navigation.</li>
+    <li><strong>Include Visible Focus Indicators:</strong> Highlight the currently focused menu item for better usability.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test navigation menus with assistive technologies and automated tools to identify and fix any issues.</li>
+</ul>

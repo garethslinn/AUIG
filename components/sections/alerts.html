@@ -1,0 +1,104 @@
+<h3 id="3.13">3.13 Alerts</h3>
+<p>Alerts are used to notify users about important information, such as errors, warnings, or successful actions. Ensuring alerts are accessible helps deliver critical messages effectively to all users, including those using assistive technologies.</p>
+
+<h4 id="3.13.1">3.13.1 Semantic Markup</h4>
+<p>Use semantic HTML and ARIA attributes to make alerts accessible. Include <code>role="alert"</code> for critical messages that need immediate attention or <code>role="status"</code> for less urgent updates.</p>
+<pre>
+<code class="language-html">&lt;!-- Accessible Alert --&gt;
+&lt;div role=&quot;alert&quot;&gt;
+    Error: Unable to save your changes. Please try again.
+&lt;/div&gt;
+
+&lt;!-- Accessible Status --&gt;
+&lt;div role=&quot;status&quot;&gt;
+    Your changes have been saved successfully.
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="3.13.2">3.13.2 Live Regions</h4>
+<p>Use ARIA live regions (<code>aria-live</code>) to ensure alerts are announced automatically by screen readers. Choose <code>aria-live="assertive"</code> for critical messages and <code>aria-live="polite"</code> for non-critical updates.</p>
+<pre>
+<code class="language-html">&lt;!-- Alert with ARIA Live Region --&gt;
+&lt;div aria-live=&quot;assertive&quot; role=&quot;alert&quot;&gt;
+    The server is currently down. Please try again later.
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="3.13.3">3.13.3 Dismissible Alerts</h4>
+<p>Provide a way for users to dismiss alerts, such as a close button. Ensure dismiss buttons are keyboard accessible and labeled appropriately.</p>
+<pre>
+<code class="language-html">&lt;!-- Dismissible Alert --&gt;
+&lt;div role=&quot;alert&quot;&gt;
+    &lt;p&gt;Warning: Your session will expire soon.&lt;/p&gt;
+    &lt;button aria-label=&quot;Dismiss alert&quot;&gt;Dismiss&lt;/button&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Close Alert on Button Click
+document.querySelector('[aria-label=&quot;Dismiss alert&quot;]').addEventListener('click', (e) =&gt; {
+    e.target.closest('[role=&quot;alert&quot;]').remove();
+});
+</code>
+</pre>
+
+<h4 id="3.13.4">3.13.4 Styling Alerts</h4>
+<p>Style alerts to visually differentiate between different types (e.g., error, warning, success). Use color and icons, but do not rely solely on color to convey meaning.</p>
+<pre>
+<code class="language-css">/* Alert Styling */
+[role=&quot;alert&quot;] {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Dismiss Button */
+[aria-label=&quot;Dismiss alert&quot;] {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+</code>
+</pre>
+
+<h4 id="3.13.5">3.13.5 Testing Alerts for Accessibility</h4>
+<p>Test alerts with assistive technologies to ensure they are announced correctly and function as intended.</p>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify alerts with role=&quot;alert&quot; are announced by screen readers immediately.
+// - Check that dismiss buttons are accessible via keyboard and screen readers.
+// - Validate the visual styling for clear differentiation of alert types.
+</code>
+</pre>
+
+<h4>Best Practices for Alerts</h4>
+<ul>
+    <li><strong>Use Semantic Roles:</strong> Apply <code>role="alert"</code> for urgent messages and <code>role="status"</code> for non-urgent updates.</li>
+    <li><strong>Implement Live Regions:</strong> Use <code>aria-live</code> to ensure alerts are announced automatically to screen readers.</li>
+    <li><strong>Provide Dismiss Options:</strong> Include accessible dismiss buttons for user-controlled alerts.</li>
+    <li><strong>Style Alerts Clearly:</strong> Visually distinguish between alert types using colors, icons, and text.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test alerts with assistive technologies to identify and resolve accessibility issues.</li>
+</ul>

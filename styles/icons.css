@@ -1,0 +1,61 @@
+.icon {
+    width: 2rem;
+    height: 2rem;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.icon-space {
+    margin-right: 0.8rem;
+}
+
+.icon-consideration { background-image: url('../images/consideration.svg'); }
+.icon-video { background-image: url('../images/video.svg'); }
+.icon-nux { background-image: url('../images/nux.svg'); }
+.icon-cm { background-image: url('../images/cm.svg'); }
+.icon-ca11y { background-image: url('../images/ca11y.svg'); }
+
+.guideline-term {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    font-weight: bold;
+
+    &.information_icon { background: #1082bc; color: #fff; };
+    &.consideration_icon { background: #10bc93; color: #fff; };
+    &.priority_icon { background: #9a10bc; color: #fff; };
+    &.avoid_icon { background: #bc2210; color: #fff; };
+    &.caution_icon { background: #bcb410; color: #000; };
+}
+
+.guideline-term .icon {
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0.5rem 1rem;
+}
+
+.guideline-description {
+    margin-left: 0rem;
+    margin-bottom: 0.9375rem;
+}
+
+@media (max-width: 600px) {
+    .guideline-term {
+        flex-direction: row;
+    }
+
+
+    .guideline-description {
+        margin-left: 0;
+        margin-top: 0.625rem;
+    }
+}

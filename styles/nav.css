@@ -1,0 +1,42 @@
+
+.nav {
+    width: 250px;
+    padding: 1rem;
+    overflow-y: auto;
+    border-right: 1px solid var(--color-primary);
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    margin-bottom: 1rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a:focus {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+
+@media (max-width: 800px) {
+    .nav {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
+    }
+}

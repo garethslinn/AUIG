@@ -1,0 +1,15 @@
+.section-container {
+    max-width: 1000px;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.numbered li {
+    list-style-type: none;
+}
+
+.numbered li > ul li{
+    list-style-type: disc;
+}

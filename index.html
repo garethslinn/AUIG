@@ -1,86 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AUIG - Accessible User Interface Guidelines</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      background: url('https://via.placeholder.com/1500x1000') no-repeat center center/cover;
-      color: #fff;
-      background-blend-mode: darken;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-    .logo {
-      margin-bottom: 20px;
-    }
-    .logo img {
-      width: 150px;
-      height: auto;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin-bottom: 20px;
-    }
-    footer a {
-      color: #28a745;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-      p {
-        font-size: 1em;
-      }
-      .subscribe input[type="email"] {
-        width: 80%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Cognitive Accessibility Web Standard (CAWS)</title>
+    <meta name="description" content="Ca11y offers inclusive recruitment strategies and accessible hiring practices designed to support individuals with cognitive challenges. Discover how to create an equitable workplace and attract a diverse talent pool.">
+    <meta name="keywords" content="accessible recruitment, inclusive hiring, cognitive challenges, diversity in hiring, accessible workplace, recruitment for disabilities, equitable hiring practices">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="images/favi.ico" type="image/x-icon">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Ca11y",
+            "url": "https://www.ca11y.net",
+            "logo": "https://www.ca11y.net/images/ca11y.svg",
+            "description": "Ca11y offers inclusive recruitment strategies and accessible hiring practices designed to support individuals with cognitive challenges. Discover how to create an equitable workplace and attract a diverse talent pool."
+        }
+    </script>
 </head>
-<body>
+<body data-theme="light">
 
+<!-- Skip to main content link for accessibility -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+      <button id="decrease-font" aria-label="Decrease text size">A-</button>
+      <button id="increase-font" aria-label="Increase text size">A+</button>
+      <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<!-- Main Container with Two Columns -->
 <div class="container">
-  <div class="logo">
-    <!-- Replace with your logo image -->
-    <img src="https://via.placeholder.com/150x50?text=AUIG+Logo" alt="AUIG Logo">
-  </div>
-  <h1>Welcome to AUIG.org</h1>
-  <p>
-    AUIG (Accessible User Interface Guidelines) is dedicated to establishing comprehensive standards and specifications to ensure that user interfaces are accessible, inclusive, and user-friendly for everyone. We are currently developing our resources to support designers, developers, and organizations in creating interfaces that cater to all users, regardless of their abilities.
-  </p>
+    <!-- Sidebar -->
+    <aside class="nav" aria-label="Table of Contents">
+        <h3>Table of Contents</h3>
+        <div id="nav"></div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            <header id="header"></header>
+
+            <!-- Sections -->
+            <section id="abstract" class="section"></section>
+            <section id="placeholder" class="section"></section>
+
+            <section id="glossary" class="section"></section>
+            <section id="appendix" class="section"></section>
+
+
+        </div>
+    </main>
 </div>
 
-<footer>
-  <p>&copy; 2024 AUIG. All rights reserved.</p>
-</footer>
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to Top">Back to top</button>
+
+<!-- Main JavaScript File -->
+<script src="scripts/main.js"></script>
+<script src="scripts/auig.js"></script>
 
 </body>
 </html>

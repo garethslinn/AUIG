@@ -1,0 +1,133 @@
+:root {
+    /* Base Font Size */
+    --font-size-base: 1rem;
+
+    /* Light Mode Colors */
+    --color-bg-light: #f9f9f9; /* Subtle light gray for background */
+    --color-text-light: #222222; /* Slightly softer black for text */
+    --color-primary-light: #ffffff; /* Main white background */
+    --color-link-light: #e76f51; /* Primary link color */
+    --color-accent-light: #f0f9f8; /* Light accent for regions */
+
+    /* Dark Mode Colors */
+    --color-bg-dark: #121212; /* Dark background */
+    --color-text-dark: #e0e0e0; /* Light gray text for better contrast */
+    --color-primary-dark: #1f3a40; /* Main dark background */
+    --color-link-dark: #ff8a65; /* Slightly brighter link color for visibility */
+    --color-accent-dark: #1e2d2b; /* Dark accent for regions */
+
+    /* Common Colors */
+    --color-link: #e76f51;
+    --color-accent: #f0f9f8;
+
+    /* Transition for Theme Switching */
+    --transition-speed: 0.05s;
+
+    /* Typography */
+    --title-h1: 2rem;
+    --title-h2: 1.5rem;
+
+    /* Control Colors */
+    --control-bg-light: #ffffff; /* Light mode control background */
+    --control-text-light: #222222; /* Light mode control text */
+    --control-border-light: #cccccc; /* Light mode control border */
+
+    --control-bg-dark: #2c2c2c; /* Dark mode control background */
+    --control-text-dark: #e0e0e0; /* Dark mode control text */
+    --control-border-dark: #444444; /* Dark mode control border */
+
+    /* Button Colors */
+    --button-bg-light: #e76f51; /* Light mode button background */
+    --button-text-light: #ffffff; /* Light mode button text */
+    --button-border-light: #d65a3c; /* Light mode button border */
+
+    --button-bg-dark: #ff8a65; /* Dark mode button background */
+    --button-text-dark: #121212; /* Dark mode button text */
+    --button-border-dark: #ff7043; /* Dark mode button border */
+}
+
+[data-theme="light"] {
+    /* Background and Text Colors */
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+
+    /* Header Styles */
+    --header-bg: var(--color-primary-light);
+    --header-text-color: var(--color-text-light);
+
+    /* Footer Styles */
+    --footer-bg: var(--color-primary-light);
+    --footer-text-color: var(--color-text-light);
+
+    /* Navigation Styles */
+    --nav-bg: var(--color-accent-light);
+    --nav-text: var(--color-text-light);
+
+    /* Links */
+    --link-color: var(--color-link-light);
+
+    /* Accents */
+    --accent-bg: var(--color-accent-light);
+
+    /* Main Content */
+    --main-bg: var(--color-primary-light);
+
+    /* Control Styles */
+    --control-bg: var(--control-bg-light);
+    --control-text: var(--control-text-light);
+    --control-border: var(--control-border-light);
+
+    /* Button Styles */
+    --button-bg: var(--button-bg-light);
+    --button-text: var(--button-text-light);
+    --button-border: var(--button-border-light);
+}
+
+[data-theme="dark"] {
+    /* Background and Text Colors */
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+
+    /* Header Styles */
+    --header-bg: var(--color-primary-dark);
+    --header-text-color: var(--color-text-dark);
+
+    /* Footer Styles */
+    --footer-bg: var(--color-primary-dark);
+    --footer-text-color: var(--color-text-dark);
+
+    /* Navigation Styles */
+    --nav-bg: var(--color-accent-dark);
+    --nav-text: var(--color-text-dark);
+
+    /* Links */
+    --link-color: var(--color-link-dark);
+
+    /* Accents */
+    --accent-bg: var(--color-accent-dark);
+
+    /* Main Content */
+    --main-bg: var(--color-primary-dark);
+
+    /* Control Styles */
+    --control-bg: var(--control-bg-dark);
+    --control-text: var(--control-text-dark);
+    --control-border: var(--control-border-dark);
+
+    /* Button Styles */
+    --button-bg: var(--button-bg-dark);
+    --button-text: var(--button-text-dark);
+    --button-border: var(--button-border-dark);
+}
+
+/* Example of High Contrast for Dark Mode */
+[data-theme="dark"] body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+}
+
+/* Smooth Transition for Theme Change */
+* {
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+

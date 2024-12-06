@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUIG - Accessible User Interface Guidelines</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background: url('https://via.placeholder.com/1500x1000') no-repeat center center/cover;
+      color: #fff;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 150px;
+      height: auto;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+    footer a {
+      color: #28a745;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1em;
+      }
+      .subscribe input[type="email"] {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo">
+    <!-- Replace with your logo image -->
+    <img src="https://via.placeholder.com/150x50?text=AUIG+Logo" alt="AUIG Logo">
+  </div>
+  <h1>Welcome to AUIG.org</h1>
+  <p>
+    AUIG (Accessible User Interface Guidelines) is dedicated to establishing comprehensive standards and specifications to ensure that user interfaces are accessible, inclusive, and user-friendly for everyone. We are currently developing our resources to support designers, developers, and organizations in creating interfaces that cater to all users, regardless of their abilities.
+  </p>
+</div>
+
+<footer>
+  <p>&copy; 2024 AUIG. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

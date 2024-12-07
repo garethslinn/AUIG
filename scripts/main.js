@@ -10,6 +10,8 @@ function loadComponent(url, placeholderId) {
             const placeholder = document.getElementById(placeholderId);
             if (placeholder) {
                 placeholder.innerHTML = data;
+                // Trigger Prism highlighting on the newly added content
+                Prism.highlightAll();
             } else {
                 console.warn(`Placeholder element with id "${placeholderId}" not found.`);
             }
@@ -18,6 +20,7 @@ function loadComponent(url, placeholderId) {
             console.error('Error loading component:', error);
         });
 }
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -3,7 +3,8 @@ const components = [
     { url: '../../../components/footer.html', id: 'footer' },
     { url: '../../../components/nav.html', id: 'nav' },
     { url: '../../../components/sections/abstract.html', id: 'abstract' },
-    { url: '../../../components/sections/placeholder.html', id: 'placeholder' },
+    // { url: '../../../components/sections/placeholder.html', id: 'placeholder' },
+    { url: '../../../components/sections/imagesMultimedia.html', id: 'imagesMultimedia' },
 
     { url: '../../../components/sections/appendix.html', id: 'appendix' },
     { url: '../../../components/sections/glossary.html', id: 'glossary' }

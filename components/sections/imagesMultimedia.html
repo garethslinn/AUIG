@@ -1,0 +1,116 @@
+<h2>1. Multimedia</h2>
+<h3>1.1 Alternative Representation</h3>
+<span class="type type-multimedia">MultiMedia</span>
+<p>All multimedia elements, including images, audio, and graphs,
+    must provide alternative representations to ensure web content is fully inclusive
+    and accessible to all users.</p>
+<h4>Examples:</h4>
+<ul>
+    <li>
+        <strong>Descriptive ALT Attributes for Images:</strong>
+        <p>Provide meaningful alternative text for non-decorative images to aid users who rely on screen readers.</p>
+<pre>
+<code class="language-html">&lt;img src="profile.jpg" alt="Portrait of the Queen smiling"&gt;</code>
+</pre>
+    </li>
+    <li>
+        <strong>ARIA Hidden for Decorative Images:</strong>
+        <p>Use <code>aria-hidden="true"</code> for decorative images to prevent screen readers from announcing them.</p>
+<pre>
+<code class="language-html">&lt;img src="decorative-border.png" alt="" aria-hidden="true"&gt;</code>
+</pre>
+    </li>
+    <li>
+        <strong>Captions and Context with FIGCAPTION:</strong>
+        <p>Use <code>figcaption</code> within <code>figure</code> tags to provide context to images and other media.</p>
+<pre>
+<code class="language-html">
+&lt;figure&gt;
+    &lt;img src="diagram.png" alt="Flowchart of the user registration process"&gt;
+    &lt;figcaption&gt;Figure 1: User Registration Flowchart&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Responsive and Optimised Images:</strong>
+        <p>Ensure images are responsive and optimised for faster loading across different devices.</p>
+<pre>
+<code class="language-html">
+&lt;img src="responsive-image.jpg" alt="Responsive design example" style="max-width: 100%; height: auto;"&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Accessible Audio Elements:</strong>
+        <p>Provide transcripts and captions for audio content to support users with hearing impairments.</p>
+<pre>
+<code class="language-html">
+&lt;audio controls&gt;
+    &lt;source src="podcast.mp3" type="audio/mpeg"&gt;
+    &lt;track kind="captions" src="captions_en.vtt" srclang="en" label="English"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+</code>
+</pre>
+        <p>Basic example: You could include a transcript below the audio player.</p>
+<pre>
+<code class="language-html">
+&lt;div&gt;
+    &lt;h3&gt;Podcast Transcript&lt;/h3&gt;
+    &lt;p&gt;[Transcript text goes here...]&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Accessible SVG Graphs and Charts:</strong>
+        <p>Use <code>svg</code> elements with appropriate <code>aria</code> attributes and titles to describe the content for screen readers.</p>
+<pre>
+<code class="language-html">
+&lt;svg role="img" aria-labelledby="svgTitle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"&gt;
+    &lt;title id="svgTitle"&gt;Sales Growth Chart for 2023&lt;/title&gt;
+    &lt;!-- SVG content goes here --&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+        <p>Provide a detailed description of the SVG content below the graphic for additional context.</p>
+<pre>
+<code class="language-html">
+&lt;div&gt;
+    &lt;h3&gt;Sales Growth Chart for 2023&lt;/h3&gt;
+    &lt;p&gt;This chart illustrates a steady increase in sales from January to December, with a peak in November.&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Responsive and Optimised Multimedia:</strong>
+        <p>Ensure all multimedia content is responsive and optimised for faster loading to improve accessibility and user experience on various devices.</p>
+<pre>
+<code class="language-html">
+&lt;video controls style="max-width: 100%; height: auto;"&gt;
+    &lt;source src="responsive-video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Accessible Canvas Elements:</strong>
+        <p>Provide alternative descriptions and fallback content for <code>&lt;canvas&gt;</code> elements to support users who rely on screen readers.</p>
+<pre>
+<code class="language-html">
+&lt;canvas id="chart" aria-label="Sales Growth Chart for 2023" role="img"&gt;
+    Your browser does not support the canvas element. Please see the
+    &lt;a href="#chart-description"&gt;description&lt;/a&gt;
+    of this chart.
+&lt;/canvas&gt;
+</code>
+</pre>
+
+
+        <p>Explanation: By adding an <code>aria-label</code> and providing a detailed textual description, screen readers can convey the information represented in the canvas to users with visual impairments.</p>
+    </li>
+</ul>
+<hr>

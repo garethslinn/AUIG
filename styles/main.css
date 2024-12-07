@@ -18,19 +18,28 @@ body {
     flex-direction: column;
 }
 
-h1 {
-    font-size: 2.5rem;
+pre {
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+    white-space: pre-wrap; /* Allow wrapping of long lines */
+    word-wrap: break-word; /* Break long words to prevent overflow */
+    background-color: #f5f5f5;
+    padding: 1em;
+    border-radius: 5px;
+    max-width: 100%; /* Ensure pre does not exceed container width */
+    box-sizing: border-box; /* Include padding in width calculations */
+    font-size: 0.9rem; /* Adjust font size for better readability */
+    line-height: 1.4; /* Improve line spacing */
 }
 
-h2 {
-    font-size: 2rem;
-}
-
+/* Responsive font sizes for headings */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
 
 h1, h2, h3 {
     color: var(--title-h1);
-    margin: 0;
-    padding: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 a {
@@ -38,16 +47,18 @@ a {
     text-decoration: underline;
 }
 
-a:hover,
-a:focus {
-    text-decoration: none;
-}
+a:hover, a:focus { text-decoration: none; }
 
 .container {
     flex: 1;
     display: flex;
     flex-direction: row;
     overflow: hidden;
+}
+
+.container pre, .container pre code {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
 }
 
 main {
@@ -58,8 +69,7 @@ main {
     background-color: var(--main-bg);
 }
 
-a:focus,
-button:focus {
+a:focus, button:focus {
     outline: 3px dashed var(--color-link);
     outline-offset: 2px;
 }
@@ -75,45 +85,16 @@ button:focus {
     border: 0;
 }
 
-.accessibility {
-    position: absolute;
-    top: -99999999px;
-}
-
 footer {
     text-align: center;
     padding: 1rem;
     background-color: var(--footer-bg);
     color: var(--footer-text-color);
-    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .cover {
-        width: 80%;
-        margin: 1rem auto;
-    }
-}
-
-@media (max-width: 400px) {
-    .cover {
-        width: 100%;
-        margin: 1rem auto;
-    }
-}
-
+/* Responsive adjustments */
 @media (max-width: 800px) {
-    .container {
-        flex-direction: column;
-    }
+    .container { flex-direction: column; }
+    header h1, h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
 }

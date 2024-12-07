@@ -108,11 +108,30 @@
 &lt;/canvas&gt;
 </code>
 </pre>
+</li>
+    <li>
 
-
-        <p>Explanation: By adding an <code>aria-label</code> and providing a detailed textual description, screen readers can convey the information represented in the canvas to users with visual impairments.</p>
-    </li>
+        <strong>Map</strong>
+        <p>Consider adding <code>aria-label</code> to a <code>map</code> element and providing a detailed textual description with a link, screen readers can convey the information represented in the map to users with visual impairments.</p>
+        <pre>
+        <code class="language-html">
+            &lt;img src="world-map.jpg" alt="Interactive world map showing major cities" usemap="#worldmap"&gt;
+            &lt;map name="worldmap" aria-label="Interactive World Map" role="img"&gt;
+                &lt;area shape="rect" coords="34,44,270,350" alt="New York City" href="https://www.nyc.gov"&gt;
+                &lt;area shape="circle" coords="337,300,44" alt="Los Angeles" href="https://www.lacity.org"&gt;
+                Your browser does not support the map element. Please see the
+                &lt;a href="#map-description"&gt;description&lt;/a&gt;
+                of this map.
+            &lt;/map&gt;
+            &lt;div id="map-description" hidden&gt;
+                This interactive map highlights major cities such as New York City and Los Angeles. Click on each city to visit its official website.
+            &lt;/div&gt;
+        </code>
+    </pre>
+</li>
 </ul>
+
+
 <h3>1.2 Keyboard Access</h3>
 <p>Ensure all multimedia controls are accessible via keyboard.</p>
 <h3>1.3 Colour contrast</h3>

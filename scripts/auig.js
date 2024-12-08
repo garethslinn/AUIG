@@ -4,6 +4,7 @@ const components = [
     { url: '../../../components/nav.html', id: 'nav' },
     { url: '../../../components/sections/abstract.html', id: 'abstract' },
     // { url: '../../../components/sections/placeholder.html', id: 'placeholder' },
+    { url: '../../../components/sections/global.html', id: 'global-settings' },
     { url: '../../../components/sections/imagesMultimedia.html', id: 'imagesMultimedia' },
 
     { url: '../../../components/sections/appendix.html', id: 'appendix' },

@@ -13,3 +13,9 @@
 .numbered li > ul li{
     list-style-type: disc;
 }
+
+.no-list-style {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}

@@ -6,6 +6,12 @@
     margin-bottom: 4rem;
 }
 
+.section-head {
+    padding-left: 1rem;
+    background-color: cornflowerblue;
+    color: #fff!important;
+}
+
 .numbered li {
     list-style-type: none;
 }

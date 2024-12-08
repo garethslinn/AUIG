@@ -5,6 +5,10 @@
 @import "nav.css";
 @import "section.css";
 
+html {
+    box-sizing: border-box;
+}
+
 body {
     font-size: var(--font-size-base);
     width: 100%;

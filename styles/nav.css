@@ -3,10 +3,15 @@
     width: 20rem;
     padding: 1rem;
     overflow-y: auto;
-    border-right: 1px solid var(--color-primary);
     background-color: var(--nav-bg);
     color: var(--nav-text);
     transition: background-color var(--transition-speed), color var(--transition-speed);
+
+    .toggle-button {
+        display: none;
+        /*transition: transform 0.1s ease-in-out;*/
+        transform: rotate(0deg);
+    }
 }
 
 .nav ul {
@@ -34,9 +39,45 @@
 
 
 @media (max-width: 800px) {
+
     .nav {
         width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--color-primary);
+        position: relative;
+        height: 2rem;
+        padding-left: 4rem;
+
+        .toggle-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            padding: 0;
+
+            border-radius: 0.2rem;
+            cursor: pointer;
+            position: absolute;
+            left: 0.5rem;
+            top: 0.5rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: #6495ec;
+            color: #fff;
+            font-size: 1.4rem;
+
+        }
+        .toggle-button svg {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        &.show {
+            height: auto;
+             overflow-y: scroll;
+            .toggle-button {
+                transform: rotate(180deg);
+            }
+        }
     }
+
 }

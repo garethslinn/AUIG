@@ -25,6 +25,46 @@ function loadComponent(url, placeholderId) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
+    function setupToggleButton() {
+        const toggleButton = document.getElementById("toggleButton");
+        const toc = document.getElementById("toc");
+        const nav = document.getElementById("nav");
+
+        if (toggleButton && toc && nav) {
+            toggleButton.addEventListener("click", () => {
+                // Toggle the 'show' class on the toc
+                toc.classList.toggle("show");
+
+                // Check if the 'show' class is present
+                const isShown = toc.classList.contains("show");
+
+                // Update the aria-label based on the visibility
+                nav.setAttribute("aria-label", isShown ? "Main Navigation open" : "Main Navigation closed");
+
+                // Optionally, update aria-expanded on the toggle button for better accessibility
+                toggleButton.setAttribute("aria-expanded", isShown);
+            });
+        } else {
+            console.warn("toggleButton, toc, or nav element not found.");
+        }
+    }
+
+    // Use MutationObserver to detect when elements are added to the DOM
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'childList') {
+                setupToggleButton(); // Check and set up the toggle button when DOM changes
+            }
+        });
+    });
+
+    // Start observing the body for changes
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Initial setup if elements are already in the DOM
+    setupToggleButton();
+
     // // Back to Top Button Functionality
     // const backToTopBtn = document.getElementById('back-to-top');
     //

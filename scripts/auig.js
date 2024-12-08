@@ -6,6 +6,10 @@ const components = [
     // { url: '../../../components/sections/placeholder.html', id: 'placeholder' },
     { url: '../../../components/sections/global.html', id: 'global-settings' },
     { url: '../../../components/sections/imagesMultimedia.html', id: 'imagesMultimedia' },
+    { url: '../../../components/sections/forms.html', id: 'forms' },
+
+
+    { url: '../../../components/sections/modals.html', id: 'modals' },
 
     { url: '../../../components/sections/appendix.html', id: 'appendix' },
     { url: '../../../components/sections/glossary.html', id: 'glossary' }

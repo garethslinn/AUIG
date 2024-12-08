@@ -42,6 +42,12 @@ h1, h2, h3 {
     color: cornflowerblue!important;
 }
 
+h2 {
+    padding-left: 1rem;
+    background-color: cornflowerblue;
+    color: #fff!important;
+}
+
 h1, h2, h3 {
     color: var(--title-h1);
     margin-top: 0.5em;

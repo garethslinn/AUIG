@@ -112,6 +112,10 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 800px) {
+    main {
+        padding: 0.5rem;
+        margin: 0;
+    }
     .container { flex-direction: column; }
     header h1, h2 { font-size: 1.5rem; }
     h3 { font-size: 1.25rem; }

@@ -3,7 +3,7 @@
 }
 
 .section {
-    margin-bottom: 4rem;
+    /*margin-bottom: 4rem;*/
 }
 
 .numbered li {
@@ -19,3 +19,12 @@
     padding-left: 0;
     margin-left: 0;
 }
+
+.consideration {
+    background-color: #ffc008;
+    display: block;
+    padding: 1rem;
+}
+
+
+

@@ -1,0 +1,16 @@
+.icon {
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../images/consideration.svg');
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+}
+
+.icon-space {
+    margin-right: 0.8rem;
+}
+
+.icon-consideration {
+    background-image: url('../images/consideration.svg');
+}

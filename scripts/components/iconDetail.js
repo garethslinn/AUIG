@@ -2,17 +2,22 @@ class IconDetailComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+        this.headingElement = null; // Reference to the heading element
         this.render();
     }
 
     static get observedAttributes() {
-        return ['type'];
+        return ['type', 'heading-level'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'type' && oldValue !== newValue) {
             this.updateIcon(newValue);
             this.updateColors(newValue);
+        }
+
+        if (name === 'heading-level' && oldValue !== newValue) {
+            this.updateHeadingTag(newValue);
         }
     }
 
@@ -57,6 +62,32 @@ class IconDetailComponent extends HTMLElement {
     }
 
     /**
+     * Updates the heading tag based on the heading-level attribute.
+     * @param {string} level - The desired heading level (e.g., 'h2', 'h3').
+     */
+    updateHeadingTag(level) {
+        const validLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+        const headingLevel = validLevels.includes(level) ? level : 'h4';
+
+        if (this.headingElement) {
+            // Create a new heading element
+            const newHeading = document.createElement(headingLevel);
+
+            // Transfer the slot content to the new heading
+            const slot = this.headingElement.querySelector('slot[name="title"]');
+            const assignedNodes = slot.assignedNodes({ flatten: true });
+
+            assignedNodes.forEach(node => {
+                newHeading.appendChild(node.cloneNode(true));
+            });
+
+            // Replace the old heading with the new one
+            this.shadowRoot.querySelector('.content').replaceChild(newHeading, this.headingElement);
+            this.headingElement = newHeading;
+        }
+    }
+
+    /**
      * Renders the component's HTML and applies initial styles.
      */
     render() {
@@ -71,6 +102,8 @@ class IconDetailComponent extends HTMLElement {
                     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                     transition: background-color 0.3s ease, color 0.3s ease;
                     font-family: Arial, sans-serif;
+                    position: relative;
+                    margin: 0.5rem 0;
                 }
                 .icon {
                     width: 2rem;
@@ -79,29 +112,53 @@ class IconDetailComponent extends HTMLElement {
                     background-position: center;
                     display: inline-block;
                     vertical-align: middle;
+                    position: absolute;
+                    right: 1rem;
+                    top: 1rem;
                 }
                 .icon-space {
                     margin-right: 0.8rem;
                 }
-                h4 {
+                .content {
+                    padding-right: 3rem; /* To prevent overlap with the icon */
+                }
+                h4, h2, h3, h1, h5, h6 {
                     display: inline;
-                    font-size: 1.5rem;
+                    font-size: 1rem;
                     margin: 0;
                     vertical-align: middle;
                     color: var(--foreground-color, #000000);
                 }
+                h1 { font-size: 2.5rem; }
+                h2 { font-size: 2rem; }
+                h3 { font-size: 1.75rem; }
+                h4 { font-size: 1.50rem; }
+                h5 { font-size: 1.25rem; }
+
                 p {
                     margin-top: 0.5rem;
                     color: var(--foreground-color, #000000);
                     font-size: 1rem;
                 }
+                
+                @media (max-width: 800px) {
+                    h3 {
+                        font-size: 1.25rem;
+                    }
+                     h4 {
+                        font-size: 1.25rem;
+                    }
+                }
             </style>
-            <i class="icon icon-space" role="img"></i>
+            <div class="icon" role="img"></div>
             <div class="content">
                 <h4><slot name="title">Default Title</slot></h4>
                 <p><slot name="description">Default description</slot></p>
             </div>
         `;
+
+        // Reference to the heading element
+        this.headingElement = this.shadowRoot.querySelector('h4');
 
         // Set initial icon and colors based on type attribute
         const type = this.getAttribute('type');
@@ -112,6 +169,10 @@ class IconDetailComponent extends HTMLElement {
             // Apply default colors if type is not specified
             this.updateColors('default');
         }
+
+        // Set initial heading level
+        const headingLevel = this.getAttribute('heading-level') || 'h4';
+        this.updateHeadingTag(headingLevel);
     }
 }
 

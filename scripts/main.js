@@ -183,9 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (theme === 'light') {
                 toggleThemeBtn.innerHTML = moonIcon;
                 toggleThemeBtn.setAttribute('aria-label', 'Switch to Dark Mode');
+                setupToggleButton();
             } else {
                 toggleThemeBtn.innerHTML = sunIcon;
                 toggleThemeBtn.setAttribute('aria-label', 'Switch to Light Mode');
+                setupToggleButton();
             }
         }
     }

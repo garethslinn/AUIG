@@ -30,20 +30,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggleButton = document.getElementById("toggleButton");
         const toc = document.getElementById("toc");
         const nav = document.getElementById("nav");
+        const anchors = nav.querySelectorAll('a');
+
+
+        const handleToggle = () => {
+            // Toggle the 'show' class on the toc
+            toc.classList.toggle("show");
+
+            // Check if the 'show' class is present
+            const isShown = toc.classList.contains("show");
+
+            // Update the aria-label based on the visibility
+            nav.setAttribute("aria-label", isShown ? "Main Navigation open" : "Main Navigation closed");
+
+            // Optionally, update aria-expanded on the toggle button for better accessibility
+            toggleButton.setAttribute("aria-expanded", isShown);
+        }
+
+        anchors.forEach(anchor => {
+            anchor.addEventListener("click", () => {
+                handleToggle();
+                // Optionally, scroll the nav into view when a link is clicked
+                nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
 
         if (toggleButton && toc && nav) {
             toggleButton.addEventListener("click", () => {
-                // Toggle the 'show' class on the toc
-                toc.classList.toggle("show");
-
-                // Check if the 'show' class is present
-                const isShown = toc.classList.contains("show");
-
-                // Update the aria-label based on the visibility
-                nav.setAttribute("aria-label", isShown ? "Main Navigation open" : "Main Navigation closed");
-
-                // Optionally, update aria-expanded on the toggle button for better accessibility
-                toggleButton.setAttribute("aria-expanded", isShown);
+                handleToggle();
             });
         } else {
             console.warn("toggleButton, toc, or nav element not found.");

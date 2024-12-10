@@ -50,8 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         anchors.forEach(anchor => {
             anchor.addEventListener("click", () => {
                 handleToggle();
-                // Optionally, scroll the nav into view when a link is clicked
-                nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                nav.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
 

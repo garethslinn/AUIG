@@ -58,7 +58,6 @@ h2 {
 h3, h4, h5, p {
     padding: 0;
     margin: 0;
-    margin-left: 1.2rem;
 }
 
 a {
@@ -104,6 +103,10 @@ a:focus, button:focus {
     border: 0;
 }
 
+pre, p {
+    margin-left: 0rem;
+}
+
 footer {
     text-align: center;
     padding: 1rem;
@@ -120,4 +123,7 @@ footer {
     .container { flex-direction: column; }
     header h1, h2 { font-size: 1.5rem; }
     h3, h4 { font-size: 1.25rem; }
+    pre, p {
+        margin-left: 0;
+    }
 }

@@ -20,6 +20,8 @@ const components = [
 
     { url: '../../../components/sections/modals.html', id: 'modals' },
 
+    { url: '../../../components/sections/avoid.html', id: 'avoid' },
+
     { url: '../../../components/sections/appendix.html', id: 'appendix' },
     { url: '../../../components/sections/glossary.html', id: 'glossary' }
 ];

@@ -2,22 +2,22 @@
 <p>Lists are essential for organizing information in a clear and structured manner. Ensuring that lists are accessible enhances content comprehension and navigation for all users, including those using assistive technologies.</p>
 
 <h4 id="2.7.1">2.7.1 Proper Use of List Elements</h4>
-<p>Use semantic HTML list elements to structure content appropriately. Utilize unordered lists (<code>&lt;ul&gt;</code>) for items without a specific order and ordered lists (<code>&lt;ol&gt;</code>) for items that follow a sequence.</p>
+<p>Use semantic HTML list elements to structure content appropriately. Utilize unordered lists (<code class="language-html">&lt;ul&gt;</code>) for items without a specific order and ordered lists (<code class="language-html">&lt;ol&gt;</code>) for items that follow a sequence.</p>
 <pre>
 <code class="language-html">
-<!-- Unordered List Example -->
-<ul>
-    <li>Feature A</li>
-    <li>Feature B</li>
-    <li>Feature C</li>
-</ul>
+&lt;!-- Unordered List Example --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Feature A&lt;/li&gt;
+    &lt;li&gt;Feature B&lt;/li&gt;
+    &lt;li&gt;Feature C&lt;/li&gt;
+&lt;/ul&gt;
 
-<!-- Ordered List Example -->
-<ol>
-    <li>Step 1: Gather materials</li>
-    <li>Step 2: Prepare workspace</li>
-    <li>Step 3: Assemble components</li>
-</ol>
+&lt;!-- Ordered List Example --&gt;
+&lt;ol&gt;
+    &lt;li&gt;Step 1: Gather materials&lt;/li&gt;
+    &lt;li&gt;Step 2: Prepare workspace&lt;/li&gt;
+    &lt;li&gt;Step 3: Assemble components&lt;/li&gt;
+&lt;/ol&gt;
 </code>
 </pre>
 
@@ -25,22 +25,22 @@
 <p>When presenting hierarchical information, nest lists to reflect the structure logically. Ensure that nested lists maintain proper indentation and semantic structure for clarity and accessibility.</p>
 <pre>
 <code class="language-html">
-<ul>
-    <li>Fruits
-        <ul>
-            <li>Apple</li>
-            <li>Banana</li>
-            <li>Cherry</li>
-        </ul>
-    </li>
-    <li>Vegetables
-        <ul>
-            <li>Carrot</li>
-            <li>Broccoli</li>
-            <li>Spinach</li>
-        </ul>
-    </li>
-</ul>
+&lt;ul&gt;
+    &lt;li&gt;Fruits
+        &lt;ul&gt;
+            &lt;li&gt;Apple&lt;/li&gt;
+            &lt;li&gt;Banana&lt;/li&gt;
+            &lt;li&gt;Cherry&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Vegetables
+        &lt;ul&gt;
+            &lt;li&gt;Carrot&lt;/li&gt;
+            &lt;li&gt;Broccoli&lt;/li&gt;
+            &lt;li&gt;Spinach&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
 </code>
 </pre>
 
@@ -48,19 +48,19 @@
 <p>Ensure that each list item is descriptive and provides meaningful information. Avoid using empty list items or those that do not add value to the content.</p>
 <pre>
 <code class="language-html">
-<!-- Descriptive List Items -->
-<ul>
-    <li>Improves accessibility for screen reader users</li>
-    <li>Enhances content organization and readability</li>
-    <li>Facilitates better user navigation</li>
-</ul>
+&lt;!-- Descriptive List Items --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Improves accessibility for screen reader users&lt;/li&gt;
+    &lt;li&gt;Enhances content organization and readability&lt;/li&gt;
+    &lt;li&gt;Facilitates better user navigation&lt;/li&gt;
+&lt;/ul&gt;
 
-    <!-- Non-Descriptive List Items -->
-<ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-</ul>
+&lt;!-- Non-Descriptive List Items --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
 </code>
 </pre>
 
@@ -95,17 +95,17 @@ li {
 <p>For complex list structures, use ARIA (Accessible Rich Internet Applications) roles and properties to enhance accessibility. This is particularly useful for interactive or dynamically generated lists.</p>
 <pre>
 <code class="language-html">
-<!-- ARIA Roles for a Collapsible List -->
-<ul role="tree">
-    <li role="treeitem" aria-expanded="false">
-        <span>Parent Item 1</span>
-        <ul role="group">
-            <li role="treeitem">Child Item 1</li>
-            <li role="treeitem">Child Item 2</li>
-        </ul>
-    </li>
-    <li role="treeitem">Parent Item 2</li>
-</ul>
+// ARIA Roles for a Collapsible List
+&lt;ul role="tree"&gt;
+    &lt;li role="treeitem" aria-expanded="false"&gt;
+        &lt;span&gt;Parent Item 1&lt;/span&gt;
+        &lt;ul role="group"&gt;
+            &lt;li role="treeitem"&gt;Child Item 1&lt;/li&gt;
+            &lt;li role="treeitem"&gt;Child Item 2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li role="treeitem"&gt;Parent Item 2&lt;/li&gt;
+&lt;/ul&gt;
 </code>
 </pre>
 
@@ -120,12 +120,12 @@ li {
 <p>Maintain a consistent structure for lists throughout the website. Consistency aids recognition and predictability, enhancing the user experience and accessibility.</p>
 <pre>
 <code class="language-html">
-<!-- Consistent List Structure -->
-<ul>
-    <li>Consistent Item 1</li>
-    <li>Consistent Item 2</li>
-    <li>Consistent Item 3</li>
-</ul>
+&lt;!-- Consistent List Structure --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Consistent Item 1&lt;/li&gt;
+    &lt;li&gt;Consistent Item 2&lt;/li&gt;
+    &lt;li&gt;Consistent Item 3&lt;/li&gt;
+&lt;/ul&gt;
 </code>
 </pre>
 
@@ -142,27 +142,27 @@ li {
 <p>Keep lists as simple as possible. Avoid unnecessary nesting or the inclusion of too many items, which can overwhelm users and make navigation difficult.</p>
 <pre>
 <code class="language-html">
-<!-- Simple and Clear List -->
-<ul>
-    <li>Item A</li>
-    <li>Item B</li>
-    <li>Item C</li>
-</ul>
+&lt;!-- Simple and Clear List --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item A&lt;/li&gt;
+    &lt;li&gt;Item B&lt;/li&gt;
+    &lt;li&gt;Item C&lt;/li&gt;
+&lt;/ul&gt;
 
-<!-- Overly Complex List -->
-<ul>
-    <li>Item 1
-        <ul>
-            <li>Subitem 1.1
-                <ul>
-                    <li>Subsubitem 1.1.1</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-</ul>
+&lt;!-- Overly Complex List --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1
+        &lt;ul&gt;
+            &lt;li&gt;Subitem 1.1
+                &lt;ul&gt;
+                    &lt;li&gt;Subsubitem 1.1.1&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
 </code>
 </pre>
 
@@ -170,25 +170,25 @@ li {
 <p>Use lists only for their intended purpose: to group related items. Avoid using lists for layout or styling purposes, as this can confuse assistive technologies and hinder accessibility.</p>
 <pre>
 <code class="language-html">
-<!-- Correct: Using List for Grouping Related Items -->
-<ul>
-    <li>First Feature</li>
-    <li>Second Feature</li>
-    <li>Third Feature</li>
-</ul>
+&lt;!-- Correct: Using List for Grouping Related Items --&gt;
+&lt;ul&gt;
+    &lt;li&gt;First Feature&lt;/li&gt;
+    &lt;li&gt;Second Feature&lt;/li&gt;
+    &lt;li&gt;Third Feature&lt;/li&gt;
+&lt;/ul&gt;
 
-<!-- Incorrect: Using List for Layout -->
-<ul>
-    <li><div class="box">Box 1</div></li>
-    <li><div class="box">Box 2</div></li>
-    <li><div class="box">Box 3</div></li>
-</ul>
+&lt;!-- Incorrect: Using List for Layout --&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;div class="box"&gt;Box 1&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="box"&gt;Box 2&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="box"&gt;Box 3&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </code>
 </pre>
 
 <h4>Best Practices for Lists</h4>
 <ul>
-    <li><strong>Use Semantic Elements:</strong> Utilize <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> for unordered and ordered lists respectively to convey the correct structure.</li>
+    <li><strong>Use Semantic Elements:</strong> Utilize <code class="language-html">&lt;ul&gt;</code> and <code class="language-html">&lt;ol&gt;</code> for unordered and ordered lists respectively to convey the correct structure.</li>
     <li><strong>Maintain Logical Nesting:</strong> Ensure that nested lists accurately represent the hierarchy and relationship between items.</li>
     <li><strong>Provide Descriptive Content:</strong> Each list item should be meaningful and provide clear information to the user.</li>
     <li><strong>Ensure Visual Clarity:</strong> Style lists in a way that maintains their readability and does not remove essential list indicators unless alternative cues are provided.</li>

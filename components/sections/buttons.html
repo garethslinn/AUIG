@@ -1,15 +1,15 @@
 <h3 id="2.6">2.6 Buttons</h3>
 <p>Buttons are interactive elements that trigger actions or submit forms on a webpage. Ensuring that buttons are accessible is crucial for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
-<h4 id="2.6.1">2.6.1 Descriptive Button Labels</h4>
+<h4 id="2.6.1">2.6.1 <code>&lt;button&gt;</code> Element</h4>
 <p>Use clear and descriptive labels for buttons that convey their purpose without requiring additional context. Avoid vague labels like "Click" or "Submit" when more specific information can be provided.</p>
 <pre>
 <code class="language-html">
-<!-- Descriptive Button Label -->
-<button type="button">Download Report</button>
+&lt;!-- Descriptive Button Label --&gt;
+&lt;button type="button"&gt;Download Report&lt;/button&gt;
 
-<!-- Non-Descriptive Button Label -->
-<button type="button">Click</button>
+&lt;!-- Non-Descriptive Button Label --&gt;
+&lt;button type="button"&gt;Click&lt;/button&gt;
 </code>
 </pre>
 
@@ -19,8 +19,8 @@
 <code class="language-css">
 /* Example CSS for Accessible Button Size */
 button {
-    padding: 12px 24px;
-    font-size: 16px;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.6rem;
 }
 </code>
 </pre>
@@ -30,7 +30,7 @@ button {
 <pre>
 <code class="language-html">
 // Example of a button accessible via keyboard
-<button type="submit">Submit Form</button>
+&lt;button type="submit"&gt;Submit Form&lt;/button&gt;
 </code>
 </pre>
 
@@ -40,7 +40,7 @@ button {
 <code class="language-css">
 /* Custom Focus Style for Buttons */
 button:focus {
-    outline: 3px solid #005fcc;
+    outline: 0.3rem solid #005fcc;
     background-color: #e0f0ff;
 }
 </code>
@@ -51,9 +51,9 @@ button:focus {
 <pre>
 <code class="language-html">
 // Button with ARIA Label for Additional Context
-<button type="button" aria-label="Close Modal Window">
-    <i class="icon-close" aria-hidden="true"></i>
-</button>
+&lt;button type="button" aria-label="Close Modal Window"&gt;
+    &lt;i class="icon-close" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;
 </code>
 </pre>
 
@@ -73,7 +73,7 @@ button {
     background-color: #007bff;
     color: #ffffff;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
@@ -89,14 +89,14 @@ button:disabled {
 </pre>
 
 <h4 id="2.6.8">2.6.8 Button Types and Roles</h4>
-<p>Use appropriate button types and roles to ensure correct semantics and functionality. For example, use `<button>` elements for actions and `<input type="button">` only when necessary.</p>
+<p>Use appropriate button types and roles to ensure correct semantics and functionality. For example, use <code>&lt;button&gt;</code> elements for actions and <code>&lt;input type="button"&gt;</code> only when necessary.</p>
 <pre>
 <code class="language-html">
-<!-- Preferred: Using <button> for actions -->
-<button type="button">Add to Cart</button>
+&lt;!-- Preferred: Using &lt;button&gt; for actions --&gt;
+&lt;button type="button"&gt;Add to Cart&lt;/button&gt;
 
-    <!-- Alternative: Using <input> when needed -->
-<input type="button" value="Add to Cart">
+    &lt;!-- Alternative: Using &lt;input&gt; when needed --&gt;
+&lt;input type="button" value="Add to Cart"&gt;
 </code>
 </pre>
 
@@ -118,6 +118,6 @@ button:disabled {
     <li><strong>Implement Keyboard Accessibility:</strong> All buttons should be operable using keyboard controls, ensuring inclusivity for users who rely on keyboards.</li>
     <li><strong>Use ARIA Attributes When Necessary:</strong> Enhance button accessibility with ARIA attributes to provide additional context or indicate states.</li>
     <li><strong>Indicate Button States Clearly:</strong> Visually and programmatically indicate states such as active, disabled, or loading to inform users of the button's status.</li>
-    <li><strong>Choose Appropriate Button Elements:</strong> Use `<button>` elements for actions and `<a>` elements for navigation to maintain semantic correctness.</li>
+    <li><strong>Choose Appropriate Button Elements:</strong> Use <code>&lt;button&gt;</code> elements for actions and <code>&lt;a&gt;</code> elements for navigation to maintain semantic correctness.</li>
     <li><strong>Regularly Test for Accessibility:</strong> Continuously evaluate buttons with assistive technologies and automated tools to identify and resolve accessibility issues.</li>
 </ul>

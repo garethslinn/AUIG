@@ -15,14 +15,14 @@
     </li>
     <li>
         <strong>ARIA Hidden for Decorative Images:</strong>
-        <p>Use <code>aria-hidden="true"</code> for decorative images to prevent screen readers from announcing them.</p>
+        <p>Use <code class="language-html">aria-hidden="true"</code> for decorative images to prevent screen readers from announcing them.</p>
 <pre>
 <code class="language-html">&lt;img src="decorative-border.png" alt="" aria-hidden="true"&gt;</code>
 </pre>
     </li>
     <li>
         <strong>Captions and Context with FIGCAPTION:</strong>
-        <p>Use <code>figcaption</code> within <code>figure</code> tags to provide context to images and other media.</p>
+        <p>Use <code class="language-html">figcaption</code> within <code class="language-html">figure</code> tags to provide context to images and other media.</p>
 <pre>
 <code class="language-html">
 &lt;figure&gt;
@@ -65,7 +65,7 @@
     </li>
     <li>
         <strong>Accessible SVG Graphs and Charts:</strong>
-        <p>Use <code>svg</code> elements with appropriate <code>aria</code> attributes and titles to describe the content for screen readers.</p>
+        <p>Use <code class="language-html">svg</code> elements with appropriate <code class="language-html">aria</code> attributes and titles to describe the content for screen readers.</p>
 <pre>
 <code class="language-html">
 &lt;svg role="img" aria-labelledby="svgTitle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"&gt;
@@ -98,7 +98,7 @@
     </li>
     <li>
         <strong>Accessible Canvas Elements:</strong>
-        <p>Provide alternative descriptions and fallback content for <code>&lt;canvas&gt;</code> elements to support users who rely on screen readers.</p>
+        <p>Provide alternative descriptions and fallback content for <code class="language-html">&lt;canvas&gt;</code> elements to support users who rely on screen readers.</p>
 <pre>
 <code class="language-html">
 &lt;canvas id="chart" aria-label="Sales Growth Chart for 2023" role="img"&gt;
@@ -112,7 +112,7 @@
     <li>
 
         <strong>Map</strong>
-        <p>Consider adding <code>aria-label</code> to a <code>map</code> element and providing a detailed textual description with a link, screen readers can convey the information represented in the map to users with visual impairments.</p>
+        <p>Consider adding <code class="language-html">aria-label</code> to a <code class="language-html">map</code> element and providing a detailed textual description with a link, screen readers can convey the information represented in the map to users with visual impairments.</p>
         <pre>
         <code class="language-html">
             &lt;img src="world-map.jpg" alt="Interactive world map showing major cities" usemap="#worldmap"&gt;

@@ -1,15 +1,15 @@
 <h3 id="2.5">2.5 Links</h3>
 <p>Links are fundamental elements for navigation and interaction on the web. Ensuring that links are accessible is crucial for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
-<h4 id="2.5.1">2.5.1 Descriptive Link Text</h4>
+<h4 id="2.5.1">2.5.1 <code>&lt;a&gt;</code> Element</h4>
 <p>Use clear and descriptive text for links that convey their purpose without requiring additional context. Avoid vague phrases like "click here" or "read more."</p>
 <pre>
 <code class="language-html">
-<!-- Descriptive Link Text -->
-<a href="/about">Learn more about our mission</a>
+&lt;!-- Descriptive Link Text --&gt;
+&lt;a href="/about"&gt;Learn more about our mission&lt;/a&gt;
 
-<!-- Non-Descriptive Link Text -->
-<a href="/about">Click here</a>
+&lt;!-- Non-Descriptive Link Text --&gt;
+&lt;a href="/about"&gt;Click here&lt;/a&gt;
 </code>
 </pre>
 
@@ -17,13 +17,13 @@
 <p>Ensure that each link on a page has a unique purpose. Avoid placing multiple links with the same text leading to different destinations, as this can confuse users relying on screen readers.</p>
 <pre>
 <code class="language-html">
-<!-- Unique Link Purposes -->
-<a href="/services">View our Services</a>
-<a href="/contact">Contact Us</a>
+&lt;!-- Unique Link Purposes --&gt;
+&lt;a href="/services"&gt;View our Services&lt;/a&gt;
+&lt;a href="/contact"&gt;Contact Us&lt;/a&gt;
 
-    <!-- Redundant Links -->
-<a href="/services">Learn More</a>
-<a href="/about">Learn More</a>
+&lt;!-- Redundant Links --&gt;
+&lt;a href="/services"&gt;Learn More&lt;/a&gt;
+&lt;a href="/about"&gt;Learn More&lt;/a&gt;
 </code>
 </pre>
 
@@ -43,8 +43,8 @@ a:focus {
 <p>Provide context about the link’s destination or purpose within the link text itself. This helps users understand where the link will take them without additional information.</p>
 <pre>
 <code class="language-html">
-<!-- Contextual Link Text -->
-<a href="/download/report.pdf">Download the Christmas Menu (PDF)</a>
+&lt;!-- Contextual Link Text --&gt;
+&lt;a href="/download/report.pdf"&gt;Download the Christmas Menu (PDF)&lt;/a&gt;
 </code>
 </pre>
 
@@ -72,34 +72,23 @@ a:hover, a:focus {
     </span>
 </icon-detail>
 
-<h4 id="2.5.7">2.5.7 ARIA Labels for Links</h4>
-<p>Use ARIA (Accessible Rich Internet Applications) labels to provide additional context for links when necessary. This is especially useful for links that contain only icons or non-descriptive text.</p>
-<pre>
-<code class="language-html">
-<!-- Link with Icon and ARIA Label -->
-<a href="/settings" aria-label="Settings">
-    <i class="icon-settings" aria-hidden="true"></i>
-</a>
-</code>
-</pre>
-
-<h4 id="2.5.8">2.5.8 Opening Links in New Tabs</h4>
+<h4 id="2.5.7">2.5.7 Opening Links in New Tabs</h4>
 <p>If a link opens in a new tab or window, inform users of this behavior to prevent confusion. This can be done through link text or by using ARIA attributes.</p>
 <pre>
 <code class="language-html">
-<!-- Informative Link Text -->
-<a href="https://externalwebsite.com" target="_blank" rel="noopener noreferrer">
+&lt;!-- Informative Link Text --&gt;
+&lt;a href="https://externalwebsite.com" target="_blank" rel="noopener noreferrer"&gt;
     Visit our Partner (opens in a new tab)
-</a>
+&lt;/a&gt;
 
-<!-- Using ARIA to Indicate New Tab -->
-<a href="https://externalwebsite.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Partner, opens in a new tab">
+&lt;!-- Using ARIA to Indicate New Tab --&gt;
+&lt;a href="https://externalwebsite.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Partner, opens in a new tab"&gt;
     Visit our Partner
-</a>
+&lt;/a&gt;
 </code>
 </pre>
 
-<h4 id="2.5.9">2.5.9 Testing Links for Accessibility</h4>
+<h4 id="2.5.8">2.5.8 Testing Links for Accessibility</h4>
 <p>Regularly test links using various assistive technologies, such as screen readers, to ensure they are announced correctly and function as intended. Tools like automated accessibility checkers can also help identify potential issues.</p>
 <pre>
 <code class="language-html">

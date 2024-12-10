@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+    <meta name="description" content="Ca11y offers inclusive recruitment strategies and accessible hiring practices designed to support individuals with cognitive challenges. Discover how to create an equitable workplace and attract a diverse talent pool.">
+    <meta name="keywords" content="accessible recruitment, inclusive hiring, cognitive challenges, diversity in hiring, accessible workplace, recruitment for disabilities, equitable hiring practices">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="images/favi_1.ico" type="image/x-icon">
+    <base href="/">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "AUIG",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "Accessibility Guidelines for designing User Interfaces that are accessible and inclusive for everyone."
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link for accessibility -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+      <button id="decrease-font" aria-label="Decrease text size">A-</button>
+      <button id="increase-font" aria-label="Increase text size">A+</button>
+      <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<!-- Main Container with Two Columns -->
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <div id="nav"></div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            <header id="header"></header>
+
+            <!-- Sections -->
+            <section id="abstract" class="section"></section>
+
+            <section id="introduction" class="section">
+                <h2>Introduction</h2>
+                <p>
+                    Welcome to the Accessible User Interface Guidelines (AUIG). This guide is organised into three distinct categories:
+                    <strong>Global Settings</strong>, <strong>Elements</strong>, and <strong>Components</strong>. Each category addresses different aspects of accessibility to help you create inclusive and user-friendly interfaces. All categories are equally important and work together to ensure a comprehensive approach to accessibility.
+                </p>
+            </section>
+
+            <!-- Global Settings -->
+            <section id="" class="section">
+                <h2 class="section-head">1. Global Settings</h2>
+                <p>
+                    The <strong>Global Settings</strong> section covers foundational configurations that affect the entire HTML document. This includes linking stylesheets, setting global ARIA attributes, and defining overall layout and theming options to ensure consistency and accessibility across all pages.
+                </p>
+                <section id="global-settings" class="section"></section>
+            </section>
+
+            <!-- HTML Elements -->
+            <section id="html-elements" class="section">
+                <h2 class="section-head">2. Elements</h2>
+                <p>
+                    The <strong>Elements</strong> section focuses on making individual HTML elements accessible. This includes best practices for using semantic HTML, providing appropriate ARIA roles and labels, and ensuring that each element is usable by all users, including those relying on assistive technologies.
+                </p>
+                <section id="imagesMultimedia" class="section"></section>
+                <section id="forms" class="section"></section>
+                <section id="tables" class="section"></section>
+                <section id="headings" class="section"></section>
+                <section id="links" class="section"></section>
+                <section id="buttons" class="section"></section>
+                <section id="lists" class="section"></section>
+                <section id="semantic" class="section"></section>
+                <section id="graphics" class="section"></section>
+                <section id="inline" class="section"></section>
+                <section id="text" class="section"></section>
+                <section id="avoid" class="section"></section>
+            </section>
+
+            <!-- UI Components -->
+            <section id="ui-components" class="section">
+                <h2 class="section-head">3. Components</h2>
+                <p>
+                    The <strong>Components</strong> section addresses the accessibility of more complex interface elements such as modals, navigation menus, sliders, and other interactive components. Guidelines in this section ensure that these components are navigable, operable, and understandable for all users.
+                </p>
+                <section id="modals" class="section"></section>
+            </section>
+
+            <section id="glossary" class="section"></section>
+            <section id="appendix" class="section"></section>
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer"></footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to Top">Back to top</button>
+
+<!-- Main JavaScript Files -->
+<script src="scripts/main.js"></script>
+<script src="scripts/auig.js"></script>
+<script src="scripts/components/iconDetail.js"></script>
+
+<!-- External JavaScript Files -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+
+</body>
+</html>

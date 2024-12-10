@@ -1,0 +1,285 @@
+<h3 id="2.9">2.9 Semantic HTML Elements</h3>
+<p>Semantic HTML elements provide meaningful structure to web content, enhancing both accessibility and search engine optimisation (SEO). Utilising these elements correctly ensures that assistive technologies can accurately interpret and navigate your website.</p>
+
+<h4 id="2.9.1">2.9.1 <code>&lt;header&gt;</code> Element</h4>
+<p>The <code>&lt;header&gt;</code> element represents introductory content, typically containing navigational links, logos, or headings. It should be used to define the header of a page or a section.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Page Header --&gt;
+&lt;header&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+</code>
+</pre>
+
+<h4 id="2.9.2">2.9.2 <code>&lt;nav&gt;</code> Element</h4>
+<p>The <code>&lt;nav&gt;</code> element defines a set of navigation links. It is intended for major navigational blocks and should not be used for all groups of links.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Primary Navigation --&gt;
+&lt;nav aria-label="Main Navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#portfolio"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="2.9.3">2.9.3 <code>&lt;main&gt;</code> Element</h4>
+<p>The <code>&lt;main&gt;</code> element specifies the main content of the document. There should only be one <code>&lt;main&gt;</code> element per page, and it should not be nested within other sectioning elements.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Main Content --&gt;
+&lt;main&gt;
+    &lt;h2&gt;Welcome to Our Website&lt;/h2&gt;
+    &lt;p&gt;Here is where the primary content of the page resides.&lt;/p&gt;
+&lt;/main&gt;
+</code>
+</pre>
+
+<h4 id="2.9.4">2.9.4 <code>&lt;section&gt;</code> Element</h4>
+<p>The <code>&lt;section&gt;</code> element represents a standalone section of content, typically with a heading. It is used to group related content together.</p>
+<pre>
+<code class="language-html">
+&lt;!-- About Section --&gt;
+&lt;section id="about"&gt;
+    &lt;h2&gt;About Us&lt;/h2&gt;
+    &lt;p&gt;Information about the company's mission and values.&lt;/p&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4 id="2.9.5">2.9.5 <code>&lt;article&gt;</code> Element</h4>
+<p>The <code>&lt;article&gt;</code> element encapsulates a self-contained composition that can be independently distributed or reused, such as blog posts, news articles, or forum posts.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Blog Article --&gt;
+&lt;article&gt;
+    &lt;h2&gt;Understanding Semantic HTML&lt;/h2&gt;
+    &lt;p&gt;Semantic HTML enhances accessibility and SEO by providing meaningful structure to web content.&lt;/p&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+<h4 id="2.9.6">2.9.6 <code>&lt;aside&gt;</code> Element</h4>
+<p>The <code>&lt;aside&gt;</code> element contains content indirectly related to the main content, such as sidebars, call-out boxes, or advertisements.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Sidebar --&gt;
+&lt;aside&gt;
+    &lt;h3&gt;Latest News&lt;/h3&gt;
+    &lt;p&gt;Stay updated with the latest developments in our industry.&lt;/p&gt;
+&lt;/aside&gt;
+</code>
+</pre>
+
+<h4 id="2.9.7">2.9.7 <code>&lt;footer&gt;</code> Element</h4>
+<p>The <code>&lt;footer&gt;</code> element defines the footer for a document or section, typically containing information like copyright, contact details, or navigational links.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Page Footer --&gt;
+&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2024 Company Name. All rights reserved.&lt;/p&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#privacy"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#terms"&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/footer&gt;
+</code>
+</pre>
+
+<icon-detail id="2.9.8" type="priority" heading-level="h4">
+    <span slot="title">2.9.8 ARIA Landmarks</span>
+    <span slot="description">
+        Use ARIA (Accessible Rich Internet Applications) landmarks to enhance navigation for assistive technologies. Assign appropriate roles to semantic elements to provide clear navigation points.
+    </span>
+</icon-detail>
+
+<h4 id="2.9.9">2.9.9 <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> Elements</h4>
+<p>The <code>&lt;figure&gt;</code> element is used to encapsulate media content, such as images, diagrams, or code snippets, along with their captions provided by the <code>&lt;figcaption&gt;</code> element.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Figure with Caption --&gt;
+&lt;figure&gt;
+    &lt;img src="diagram.png" alt="Diagram illustrating semantic HTML structure"&gt;
+    &lt;figcaption&gt;Figure 1: Semantic HTML Structure&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code>
+</pre>
+
+<h4 id="2.9.10">2.9.10 <code>&lt;time&gt;</code> Element</h4>
+<p>The <code>&lt;time&gt;</code> element represents a specific time (or date) and can include machine-readable formats to improve accessibility and SEO.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Time Element --&gt;
+&lt;time datetime="2024-12-10"&gt;December 10, 2024&lt;/time&gt;
+</code>
+</pre>
+
+<h4 id="2.9.11">2.9.11 <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> Elements</h4>
+<p>The <code>&lt;details&gt;</code> element creates a disclosure widget that users can open and close to view additional information, with the <code>&lt;summary&gt;</code> element providing a visible heading.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Disclosure Widget --&gt;
+&lt;details&gt;
+    &lt;summary&gt;More Information&lt;/summary&gt;
+    &lt;p&gt;Here is some additional information that can be toggled by the user.&lt;/p&gt;
+&lt;/details&gt;
+</code>
+</pre>
+
+<h4 id="2.9.12">2.9.12 <code>&lt;mark&gt;</code> Element</h4>
+<p>The <code>&lt;mark&gt;</code> element highlights text for reference purposes, such as search results or important points.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Highlighted Text --&gt;
+&lt;p&gt;To improve accessibility, use the &lt;mark&gt;semantic HTML elements&lt;/mark&gt; appropriately.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.9.13">2.9.13 <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> Elements</h4>
+<p>The <code>&lt;strong&gt;</code> element indicates that text is of strong importance, while the <code>&lt;em&gt;</code> element emphasises text. Both elements carry semantic meaning and are recognised by assistive technologies.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Strong Importance --&gt;
+&lt;p&gt;This is a &lt;strong&gt;critical&lt;/strong&gt; update that must be addressed immediately.&lt;/p&gt;
+
+&lt;!-- Emphasised Text --&gt;
+&lt;p&gt;Please &lt;em&gt;read&lt;/em&gt; the instructions carefully before proceeding.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.9.14">2.9.14 <code>&lt;abbr&gt;</code> and <code>&lt;acronym&gt;</code> Elements</h4>
+<p>The <code>&lt;abbr&gt;</code> element represents an abbreviation or acronym, providing an expansion via the <code>title</code> attribute. Note that the <code>&lt;acronym&gt;</code> element is obsolete and should be avoided.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Abbreviation with Expansion --&gt;
+&lt;p&gt;The &lt;abbr title="World Health Organisation"&gt;WHO&lt;/abbr&gt; provides global health guidelines.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.9.15">2.9.15 <code>&lt;cite&gt;</code> Element</h4>
+<p>The <code>&lt;cite&gt;</code> element is used to reference the title of a creative work, such as a book, article, or website.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Citing a Work --&gt;
+&lt;p&gt;In &lt;cite&gt;JavaScript: The Good Parts&lt;/cite&gt;, Douglas Crockford explores the strengths of the language.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.9.16">2.9.16 <code>&lt;address&gt;</code> Element</h4>
+<p>The <code>&lt;address&gt;</code> element provides contact information for the author or owner of a document or section.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Contact Information --&gt;
+&lt;address&gt;
+    Company Name&lt;br&gt;
+    1234 Street Rd.&lt;br&gt;
+    City, State, ZIP&lt;br&gt;
+    &lt;a href="mailto:contact@company.com"&gt;contact@company.com&lt;/a&gt;
+&lt;/address&gt;
+</code>
+</pre>
+
+<h4 id="2.9.17">2.9.17 <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> Elements</h4>
+<p>The <code>&lt;figure&gt;</code> element is used to encapsulate media content along with its caption provided by the <code>&lt;figcaption&gt;</code> element, enhancing accessibility and context.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Figure with Caption --&gt;
+&lt;figure&gt;
+    &lt;img src="chart.png" alt="Sales Growth Chart"&gt;
+    &lt;figcaption&gt;Figure 2: Sales Growth Over the Last Year&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code>
+</pre>
+
+<h4 id="2.9.18">2.9.18 <code>&lt;summary&gt;</code> Element</h4>
+<p>The <code>&lt;summary&gt;</code> element provides a visible heading for the <code>&lt;details&gt;</code> element, enabling users to understand the content that can be toggled.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Summary within Details --&gt;
+&lt;details&gt;
+    &lt;summary&gt;Project Overview&lt;/summary&gt;
+    &lt;p&gt;Details about the project scope, objectives, and timeline.&lt;/p&gt;
+&lt;/details&gt;
+</code>
+</pre>
+
+<h4 id="2.9.19">2.9.19 <code>&lt;time&gt;</code> Element</h4>
+<p>The <code>&lt;time&gt;</code> element represents specific times or dates, providing machine-readable formats to enhance accessibility and SEO.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Time Element with datetime Attribute --&gt;
+&lt;p&gt;Event Date: &lt;time datetime="2024-12-10"&gt;December 10, 2024&lt;/time&gt;&lt;/p&gt;
+</code>
+</pre>
+
+<icon-detail id="2.9.20" type="priority" heading-level="h4">
+    <span slot="title">2.9.20 ARIA Roles with Semantic Elements</span>
+    <span slot="description">
+        While semantic elements inherently provide meaningful structure, combining them with ARIA roles can further enhance accessibility. Assign appropriate ARIA roles to semantic elements to ensure assistive technologies interpret them correctly.
+    </span>
+</icon-detail>
+
+<h4 id="2.9.21">2.9.21 Avoiding Non-Semantic Elements for Structure</h4>
+<p>Avoid using non-semantic elements like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> for structuring content when semantic elements are available. Using semantic elements improves accessibility and SEO.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Correct: Using Semantic Elements --&gt;
+&lt;header&gt;
+    &lt;h1&gt;Welcome to Our Site&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;!-- Incorrect: Using Non-Semantic Elements --&gt;
+&lt;div class="header"&gt;
+    &lt;h1&gt;Welcome to Our Site&lt;/h1&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="2.9.22">2.9.22 Best Practices for Using Semantic HTML Elements</h4>
+<p>Adhere to the following best practices to maximise the benefits of semantic HTML elements:</p>
+<pre>
+<code class="language-html">
+// Ensure only one &lt;main&gt; element per page
+&lt;main&gt;
+    &lt;!-- Main content goes here --&gt;
+&lt;/main&gt;
+
+// Use &lt;section&gt; to group related content with headings
+&lt;section&gt;
+    &lt;h2&gt;Our Services&lt;/h2&gt;
+    &lt;p&gt;Details about services offered.&lt;/p&gt;
+&lt;/section&gt;
+
+// Use &lt;article&gt; for self-contained content pieces
+&lt;article&gt;
+    &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+    &lt;p&gt;Content of the blog post.&lt;/p&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+<h4>Best Practices for Semantic HTML Elements</h4>
+<ul>
+    <li><strong>Use Appropriate Elements:</strong> Select the most semantically correct HTML element for the content you are marking up to convey its meaning effectively.</li>
+    <li><strong>Maintain a Logical Structure:</strong> Organise your HTML document using a clear and logical hierarchy of semantic elements to enhance accessibility and SEO.</li>
+    <li><strong>Combine with ARIA Roles When Necessary:</strong> Enhance semantic elements with ARIA roles to provide additional context for assistive technologies when needed.</li>
+    <li><strong>Avoid Overusing Generic Elements:</strong> Refrain from using non-semantic elements like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> for structural purposes when semantic alternatives are available.</li>
+    <li><strong>Provide Descriptive Content:</strong> Ensure that semantic elements contain meaningful and descriptive content to improve user comprehension and assistive technology interpretation.</li>
+    <li><strong>Test with Assistive Technologies:</strong> Regularly verify that semantic elements are correctly interpreted by screen readers and other assistive tools to ensure accessibility.</li>
+    <li><strong>Consistent Use Across Pages:</strong> Apply semantic HTML consistently throughout your website to maintain a uniform structure and improve overall accessibility.</li>
+    <li><strong>Enhance with CSS for Styling:</strong> Use CSS to style semantic elements without altering their inherent meaning, preserving both accessibility and design integrity.</li>
+    <li><strong>Educate Your Team:</strong> Ensure that all team members understand the importance of semantic HTML and adhere to best practices during development.</li>
+</ul>

@@ -7,6 +7,15 @@ const components = [
     { url: '../../../components/sections/global.html', id: 'global-settings' },
     { url: '../../../components/sections/imagesMultimedia.html', id: 'imagesMultimedia' },
     { url: '../../../components/sections/forms.html', id: 'forms' },
+    { url: '../../../components/sections/tables.html', id: 'tables' },
+    { url: '../../../components/sections/headings.html', id: 'headings' },
+    { url: '../../../components/sections/links.html', id: 'links' },
+    { url: '../../../components/sections/buttons.html', id: 'buttons' },
+    { url: '../../../components/sections/lists.html', id: 'lists' },
+    { url: '../../../components/sections/semantic.html', id: 'semantic' },
+    { url: '../../../components/sections/graphics.html', id: 'graphics' },
+    { url: '../../../components/sections/inline.html', id: 'inline' },
+    { url: '../../../components/sections/text.html', id: 'text' },
 
 
     { url: '../../../components/sections/modals.html', id: 'modals' },

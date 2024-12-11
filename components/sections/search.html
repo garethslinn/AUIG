@@ -1,0 +1,156 @@
+<h3 id="3.2">3.2 Search</h3>
+<p>Search functionality is a critical component of web applications, enabling users to find information quickly and efficiently. Ensuring that search features are accessible is vital for creating an inclusive experience for all users, including those with disabilities or using assistive technologies.</p>
+
+<h4 id="3.2.1">3.2.1 Accessible Search Field</h4>
+<p>Search fields should be implemented using semantic HTML and include appropriate labels for screen readers. This ensures that the purpose of the field is clear to all users.</p>
+<pre>
+<code class="language-html">
+<!-- Accessible Search Field -->
+<form action="/search" method="get" role="search">
+    <label for="searchField" class="sr-only">Search the site</label>
+    <input type="text" id="searchField" name="q" placeholder="Search the site" aria-label="Search the site">
+    <button type="submit" aria-label="Submit search">Search</button>
+</form>
+</code>
+</pre>
+
+<h4 id="3.2.2">3.2.2 Keyboard Accessibility</h4>
+<p>Ensure that users can interact with the search field and submit the search using only the keyboard. The <kbd>Tab</kbd> key should navigate to the search field, and the <kbd>Enter</kbd> key should submit the form.</p>
+<pre>
+<code class="language-html">
+<!-- Example Search Form -->
+<form action="/search" method="get">
+    <input type="text" id="searchField" name="q" placeholder="Search the site">
+    <button type="submit">Search</button>
+</form>
+</code>
+</pre>
+<pre>
+<code class="language-javascript">
+// Handle keyboard events for custom search interactions (if applicable)
+document.getElementById('searchField').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        // Custom logic if necessary
+    }
+});
+</code>
+</pre>
+
+<h4 id="3.2.3">3.2.3 Placeholder Text and Labels</h4>
+<p>Do not rely solely on placeholder text as a label for the search field, as it may not be accessible to all users. Always provide a visible or screen reader-friendly label.</p>
+<pre>
+<code class="language-html">
+<!-- Correct: Accessible Label with Placeholder -->
+<form action="/search" method="get">
+    <label for="searchField">Search</label>
+    <input type="text" id="searchField" name="q" placeholder="Enter keywords">
+    <button type="submit">Search</button>
+</form>
+
+    <!-- Incorrect: Placeholder Used as Label -->
+<form action="/search" method="get">
+    <input type="text" id="searchField" name="q" placeholder="Search the site">
+    <button type="submit">Search</button>
+</form>
+</code>
+</pre>
+
+<h4 id="3.2.4">3.2.4 ARIA Roles and Attributes</h4>
+<p>Use ARIA roles and attributes to enhance the accessibility of custom search components. For example, you can use <code>role="search"</code> to define the search region.</p>
+<pre>
+<code class="language-html">
+<!-- Example with ARIA Attributes -->
+<form action="/search" method="get" role="search" aria-label="Site search">
+    <input type="text" id="searchField" name="q" placeholder="Search the site">
+    <button type="submit">Search</button>
+</form>
+</code>
+</pre>
+
+<h4 id="3.2.5">3.2.5 Clear Search Button</h4>
+<p>Include a clear search button that allows users to reset the search field easily. This is particularly useful for users with motor impairments or those relying on screen readers.</p>
+<pre>
+<code class="language-html">
+<!-- Search Form with Clear Button -->
+<form action="/search" method="get">
+    <input type="text" id="searchField" name="q" placeholder="Search the site">
+    <button type="submit">Search</button>
+    <button type="button" aria-label="Clear search" onclick="document.getElementById('searchField').value = '';">Clear</button>
+</form>
+</code>
+</pre>
+
+<h4 id="3.2.6">3.2.6 Responsive Design</h4>
+<p>Ensure that the search field and buttons are responsive and work well on devices of all sizes, including mobile and touch screens.</p>
+<pre>
+<code class="language-css">
+/* Responsive Search Field */
+form[role="search"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form[role="search"] input[type="text"] {
+    flex: 1 1 auto;
+    min-width: 200px;
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+form[role="search"] button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+</code>
+</pre>
+
+<h4 id="3.2.7">3.2.7 Search Suggestions</h4>
+<p>Provide accessible search suggestions to help users refine their queries. Ensure that suggestions are keyboard navigable and properly announced by screen readers.</p>
+<pre>
+<code class="language-html">
+<!-- Search Field with Suggestions -->
+<form action="/search" method="get" role="search">
+    <input type="text" id="searchField" name="q" placeholder="Search the site" aria-autocomplete="list" aria-controls="suggestions">
+    <ul id="suggestions" role="listbox" aria-label="Search suggestions">
+        <li role="option">Suggestion 1</li>
+        <li role="option">Suggestion 2</li>
+        <li role="option">Suggestion 3</li>
+    </ul>
+    <button type="submit">Search</button>
+</form>
+</code>
+</pre>
+<pre>
+<code class="language-javascript">
+// Handle search suggestion interactions
+document.getElementById('searchField').addEventListener('input', (e) => {
+    // Show or update suggestions based on input
+});
+</code>
+</pre>
+
+<h4 id="3.2.8">3.2.8 Testing Search for Accessibility</h4>
+<p>Test the search functionality using assistive technologies to ensure it is accessible and works as intended. Verify that labels, focus states, and ARIA attributes are implemented correctly.</p>
+<pre>
+<code class="language-html">
+// Test Checklist
+// - Verify that the search field is labeled correctly.
+// - Ensure placeholder text does not replace the need for a label.
+// - Test keyboard navigation, including tabbing and submitting.
+// - Validate ARIA roles and attributes with accessibility tools.
+</code>
+</pre>
+
+<h4>Best Practices for Search</h4>
+<ul>
+    <li><strong>Use Semantic HTML:</strong> Implement search fields using semantic elements like <code>&lt;form&gt;</code> and <code>&lt;input&gt;</code> with appropriate labels.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make sure the search field and buttons are fully operable using a keyboard.</li>
+    <li><strong>Provide Clear Labels:</strong> Always provide clear and descriptive labels for search fields, avoiding reliance on placeholder text alone.</li>
+    <li><strong>Use ARIA When Necessary:</strong> Add ARIA roles and attributes to enhance the accessibility of custom or advanced search features.</li>
+    <li><strong>Include a Clear Button:</strong> Provide a button to clear the search field for ease of use.</li>
+    <li><strong>Design for Responsiveness:</strong> Ensure the search functionality adapts to various screen sizes and devices.</li>
+    <li><strong>Support Search Suggestions:</strong> Implement accessible search suggestions to improve the user experience.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test the search feature using accessibility tools and assistive technologies to identify and fix any issues.</li>
+</ul>

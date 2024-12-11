@@ -1,1 +1,223 @@
 <h3 id="3.1">3.1 Modals</h3>
+<p>Modals are overlay elements that present content or require user interaction without navigating away from the current page. They are commonly used for dialogs, forms, alerts, and additional information. Ensuring that modals are accessible is vital for providing an inclusive experience for all users, including those using assistive technologies.</p>
+
+<h4 id="3.1.1">3.1.1 <code>&lt;dialog&gt;</code> Element</h4>
+<p>The HTML <code>&lt;dialog&gt;</code> element provides a native way to create modal dialogs. It offers built-in accessibility features and simplifies the implementation process.</p>
+<pre>
+<code class="language-html">
+<!-- Modal Trigger -->
+<button id="openModal">Open Modal</button>
+
+  <!-- Modal Structure -->
+<dialog id="myModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+    <h2 id="modalTitle">Modal Title</h2>
+    <p id="modalDescription">This is an accessible modal dialog.</p>
+    <button id="closeModal">Close</button>
+</dialog>
+</code>
+</pre>
+
+<h4 id="3.1.2">3.1.2 Focus Management</h4>
+<p>Proper focus management ensures that keyboard users can interact with modals seamlessly.</p>
+<pre>
+<code class="language-javascript">
+// JavaScript to Manage Focus Within Modal
+const openModalButton = document.getElementById('openModal');
+const closeModalButton = document.getElementById('closeModal');
+const modal = document.getElementById('myModal');
+let lastFocusedElement;
+
+openModalButton.addEventListener('click', () => {
+    lastFocusedElement = document.activeElement;
+    if (typeof modal.showModal === "function") {
+        modal.showModal();
+    } else {
+        // Fallback for browsers that do not support <dialog>
+        modal.style.display = 'block';
+    }
+    modal.setAttribute('aria-hidden', 'false');
+    closeModalButton.focus();
+    trapFocus(modal);
+});
+
+closeModalButton.addEventListener('click', () => {
+    if (typeof modal.close === "function") {
+        modal.close();
+    } else {
+        // Fallback for browsers that do not support <dialog>
+        modal.style.display = 'none';
+    }
+    modal.setAttribute('aria-hidden', 'true');
+    lastFocusedElement.focus();
+});
+
+function trapFocus(element) {
+    const focusableElements = element.querySelectorAll('a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])');
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    element.addEventListener('keydown', (e) => {
+        const isTabPressed = (e.key === 'Tab' || e.keyCode === 9);
+        if (!isTabPressed) return;
+
+        if (e.shiftKey) { // Shift + Tab
+            if (document.activeElement === firstFocusable) {
+                e.preventDefault();
+                lastFocusable.focus();
+            }
+        } else { // Tab
+            if (document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
+            }
+        }
+    });
+}
+</code>
+</pre>
+
+<h4 id="3.1.3">3.1.3 Keyboard Accessibility</h4>
+<p>Modals should be fully operable using the keyboard to accommodate users who rely on keyboard navigation.</p>
+<pre>
+<code class="language-html">
+// Modal Structure with Close Button
+&lt;dialog id="myModal" aria-labelledby="modalTitle" aria-describedby="modalDescription"&gt;
+    &lt;h2 id="modalTitle"&gt;Modal Title&lt;/h2&gt;
+    &lt;p id="modalDescription"&gt;This is an accessible modal dialog.&lt;/p&gt;
+    &lt;button id="closeModal"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">
+// Listen for keydown events to handle Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.open) {
+        modal.close();
+        lastFocusedElement.focus();
+    }
+});
+</code>
+</pre>
+
+<h4 id="3.1.4">3.1.4 Visible Focus Indicators</h4>
+<p>Visible focus indicators help users identify which element is currently focused, especially during keyboard navigation.</p>
+<pre>
+<code class="language-css">
+/* Custom Focus Style for Modal Elements */
+#myModal button:focus,
+#myModal a:focus,
+#myModal input:focus {
+    outline: 2px solid #005fcc;
+    background-color: #e0f0ff;
+}
+</code>
+</pre>
+
+<h4 id="3.1.5">3.1.5 ARIA Attributes for Modals</h4>
+<p>Appropriate ARIA attributes enhance the accessibility of modals by providing additional context to assistive technologies.</p>
+<pre>
+<code class="language-html">
+&lt;dialog id="myModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription"&gt;
+    &lt;h2 id="modalTitle"&gt;Modal Title&lt;/h2&gt;
+    &lt;p id="modalDescription"&gt;This is an accessible modal dialog.&lt;/p&gt;
+    &lt;button id="closeModal"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+</code>
+</pre>
+
+<icon-detail id="3.1.6" type="priority" heading-level="h4">
+  <span slot="title">3.1.6 Accessible Focus Trap</span>
+  <span slot="description">
+        Implement a focus trap within the modal to prevent users from navigating to elements outside the modal while it is open. This ensures that keyboard navigation remains within the modal, enhancing usability for keyboard and assistive technology users.
+    </span>
+</icon-detail>
+
+<h4 id="3.1.7">3.1.7 Consistent Styling</h4>
+<p>Consistent styling of modals enhances usability and maintains a cohesive design language across the website.</p>
+<pre>
+<code class="language-css">
+/* Modal Overlay */
+dialog {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Modal Header */
+dialog h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #333333;
+}
+
+/* Close Button */
+#closeModal {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+#closeModal:hover {
+    background-color: #0056b3;
+}
+</code>
+</pre>
+
+<h4 id="3.1.8">3.1.8 Responsiveness</h4>
+<p>Modals should adapt to different screen sizes to provide an optimal user experience across devices.</p>
+<pre>
+<code class="language-css">
+/* Responsive Modal Sizing */
+@media (max-width: 768px) {
+    dialog {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    dialog h2 {
+        font-size: 1.8rem;
+    }
+
+    #closeModal {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.4rem;
+    }
+}
+</code>
+</pre>
+
+<h4 id="3.1.9">3.1.9 Testing Modals for Accessibility</h4>
+<p>Regular testing ensures that modals function correctly and are accessible to all users.</p>
+<pre>
+<code class="language-html">
+// Example: Using a screen reader to verify modal accessibility
+// Ensure that the modal is announced with its title and description
+// Verify that focus is trapped within the modal and restored upon closing
+</code>
+</pre>
+
+<h4>Best Practices for Modals</h4>
+<ul>
+  <li><strong>Use Semantic HTML Elements:</strong> Prefer the <code>&lt;dialog&gt;</code> element for creating modals to leverage built-in accessibility features.</li>
+  <li><strong>Manage Focus Appropriately:</strong> Set focus to the modal when it opens, trap focus within the modal, and restore focus to the triggering element when it closes.</li>
+  <li><strong>Provide Clear and Descriptive Titles:</strong> Use headings within the modal to convey its purpose and reference them with <code>aria-labelledby</code> for screen readers.</li>
+  <li><strong>Ensure Keyboard Accessibility:</strong> Allow users to open and close modals using keyboard controls, and enable navigation through modal content using <code>Tab</code> and <code>Shift + Tab</code>.</li>
+  <li><strong>Use ARIA Attributes Correctly:</strong> Implement <code>role="dialog"</code>, <code>aria-modal="true"</code>, <code>aria-labelledby</code>, and <code>aria-describedby</code> to enhance accessibility.</li>
+  <li><strong>Design for Responsiveness:</strong> Ensure modals adapt to various screen sizes and orientations, and optimize touch targets for mobile devices.</li>
+  <li><strong>Provide Visible Focus Indicators:</strong> Clearly indicate which element is focused within the modal, maintaining high contrast for visibility.</li>
+  <li><strong>Implement Accessible Color Schemes:</strong> Use color combinations that meet or exceed WCAG contrast requirements, and avoid relying solely on color to convey information.</li>
+  <li><strong>Avoid Using Modals for Critical Alerts:</strong> For essential alerts, consider alternative methods like inline messages to ensure visibility and accessibility.</li>
+  <li><strong>Limit Modal Usage:</strong> Use modals sparingly to prevent overwhelming users, ensuring that they are necessary and enhance the user experience.</li>
+  <li><strong>Provide Clear Close Options:</strong> Include multiple methods to close the modal, such as a close button and the <code>Escape</code> key, making them easily identifiable and accessible.</li>
+  <li><strong>Optimize Performance:</strong> Ensure that modals load quickly and do not hinder the performance of the main page. Lazy-load modal content if necessary to improve initial load times.</li>
+  <li><strong>Test Across Devices and Browsers:</strong> Verify that modals function correctly on various devices, browsers, and assistive technologies, addressing any compatibility issues to ensure a consistent experience.</li>
+  <li><strong>Provide Contextual Information:</strong> Clearly explain the purpose of the modal and the actions users can perform within it, avoiding ambiguous or misleading titles and content.</li>
+  <li><strong>Ensure Content is Accessible:</strong> Structure modal content with proper headings, lists, and other semantic HTML elements. Ensure that all media within the modal is accessible, including providing captions for videos and alt text for images.</li>
+</ul>

@@ -1,123 +1,123 @@
-<h3 id="2.6">2.6 Buttons</h3>
-<p>Buttons are interactive elements that trigger actions or submit forms on a webpage. Ensuring that buttons are accessible is crucial for providing an inclusive experience for all users, including those using assistive technologies.</p>
+<h3 id="3.6">3.6 Tooltips</h3>
+<p>Tooltips are small, interactive overlays that provide additional information about an element when a user hovers over it, focuses on it, or performs a related action. Ensuring that tooltips are accessible is critical for improving the usability of your application, especially for users who rely on assistive technologies.</p>
 
-<h4 id="2.6.1">2.6.1 <code>&lt;button&gt;</code> Element</h4>
-<p>Use clear and descriptive labels for buttons that convey their purpose without requiring additional context. Avoid vague labels like "Click" or "Submit" when more specific information can be provided.</p>
+<h4 id="3.6.1">3.6.1 Semantic Markup</h4>
+<p>Use semantic HTML and ARIA attributes to associate tooltips with their corresponding elements. Avoid relying solely on visual cues for tooltips.</p>
 <pre>
 <code class="language-html">
-&lt;!-- Descriptive Button Label --&gt;
-&lt;button type="button"&gt;Download Report&lt;/button&gt;
-
-&lt;!-- Non-Descriptive Button Label --&gt;
-&lt;button type="button"&gt;Click&lt;/button&gt;
+<!-- Tooltip with ARIA Attributes -->
+<button id="tooltipButton" aria-describedby="tooltip1">More Info</button>
+<div id="tooltip1" role="tooltip" hidden>
+    This button provides additional information.
+</div>
 </code>
 </pre>
 
-<h4 id="2.6.2">2.6.2 Button Size and Click Area</h4>
-<p>Ensure that buttons are large enough and have sufficient spacing to be easily clickable, especially for users with motor impairments or those using touch devices.</p>
+<h4 id="3.6.2">3.6.2 Keyboard Accessibility</h4>
+<p>Tooltips should be accessible to keyboard users. Ensure that they appear when the related element is focused and can be dismissed or hidden using the keyboard.</p>
+<pre>
+<code class="language-javascript">
+// Show tooltip on focus and hide on blur
+const tooltipButton = document.getElementById('tooltipButton');
+const tooltip = document.getElementById('tooltip1');
+
+tooltipButton.addEventListener('focus', () => {
+    tooltip.hidden = false;
+});
+
+tooltipButton.addEventListener('blur', () => {
+    tooltip.hidden = true;
+});
+</code>
+</pre>
+
+<h4 id="3.6.3">3.6.3 Visible on Hover and Focus</h4>
+<p>Ensure that tooltips appear on both hover (for mouse users) and focus (for keyboard users) and remain visible for an appropriate duration.</p>
+<pre>
+<code class="language-html">
+<!-- Tooltip with Hover and Focus Behavior -->
+<button id="tooltipButton2" aria-describedby="tooltip2">Help</button>
+<div id="tooltip2" role="tooltip" hidden>
+    This is a helpful tooltip.
+</div>
+</code>
+</pre>
+<pre>
+<code class="language-javascript">
+// Show and hide tooltip on hover and focus
+const tooltipButton2 = document.getElementById('tooltipButton2');
+const tooltip2 = document.getElementById('tooltip2');
+
+tooltipButton2.addEventListener('mouseover', () => {
+    tooltip2.hidden = false;
+});
+
+tooltipButton2.addEventListener('mouseout', () => {
+    tooltip2.hidden = true;
+});
+
+tooltipButton2.addEventListener('focus', () => {
+    tooltip2.hidden = false;
+});
+
+tooltipButton2.addEventListener('blur', () => {
+    tooltip2.hidden = true;
+});
+</code>
+</pre>
+
+<h4 id="3.6.4">3.6.4 ARIA Attributes</h4>
+<p>Use ARIA attributes like <code>aria-describedby</code> to associate the tooltip with its trigger element. The tooltip should have a <code>role="tooltip"</code> attribute to indicate its purpose.</p>
+<pre>
+<code class="language-html">
+<!-- Tooltip with ARIA Attributes -->
+<button aria-describedby="tooltip3">More Details</button>
+<div id="tooltip3" role="tooltip" hidden>
+    Additional information about this feature.
+</div>
+</code>
+</pre>
+
+<h4 id="3.6.5">3.6.5 Responsive Design</h4>
+<p>Ensure that tooltips are responsive and do not obstruct other content, especially on smaller screens. Consider positioning tooltips dynamically to avoid overlap.</p>
 <pre>
 <code class="language-css">
-/* Example CSS for Accessible Button Size */
-button {
-    padding: 1.2rem 2.4rem;
-    font-size: 1.6rem;
+/* Tooltip Styling */
+[role="tooltip"] {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    max-width: 200px;
+    z-index: 1000;
+}
+
+/* Tooltip Positioning */
+button[aria-describedby]:hover + [role="tooltip"],
+button[aria-describedby]:focus + [role="tooltip"] {
+    display: block;
 }
 </code>
 </pre>
 
-<h4 id="2.6.3">2.6.3 Keyboard Accessibility</h4>
-<p>All buttons should be operable using keyboard controls. Users should be able to navigate to buttons using the <kbd>Tab</kbd> key and activate them with the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.</p>
+<h4 id="3.6.6">3.6.6 Testing Tooltips for Accessibility</h4>
+<p>Test tooltips with assistive technologies to ensure they are announced correctly and function as intended. Verify that ARIA attributes, keyboard navigation, and focus behaviors are implemented correctly.</p>
 <pre>
 <code class="language-html">
-// Example of a button accessible via keyboard
-&lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+// Test Checklist
+// - Verify that the tooltip is announced by screen readers when the trigger element is focused.
+// - Ensure tooltips are keyboard accessible and visible on hover and focus.
+// - Validate that the tooltip does not overlap important content.
 </code>
 </pre>
 
-<h4 id="2.6.4">2.6.4 Visible Focus Indicators</h4>
-<p>Ensure that buttons have visible focus indicators when navigated using a keyboard. This helps users understand which button is currently focused.</p>
-<pre>
-<code class="language-css">
-/* Custom Focus Style for Buttons */
-button:focus {
-    outline: 0.3rem solid #005fcc;
-    background-color: #e0f0ff;
-}
-</code>
-</pre>
-
-<h4 id="2.6.5">2.6.5 ARIA Attributes for Buttons</h4>
-<p>Use ARIA (Accessible Rich Internet Applications) attributes to provide additional context for buttons when necessary. This is especially useful for buttons that perform complex actions or have non-standard behaviours.</p>
-<pre>
-<code class="language-html">
-// Button with ARIA Label for Additional Context
-&lt;button type="button" aria-label="Close Modal Window"&gt;
-    &lt;i class="icon-close" aria-hidden="true"&gt;&lt;/i&gt;
-&lt;/button&gt;
-</code>
-</pre>
-
-<icon-detail id="2.6.6" type="priority" heading-level="h4">
-    <span slot="title">2.6.6 Accessible Button States</span>
-    <span slot="description">
-        Ensure that buttons clearly indicate their states (e.g., disabled, active) through both visual cues and ARIA attributes. This helps users understand the current status of a button and its interactivity.
-    </span>
-</icon-detail>
-
-<h4 id="2.6.7">2.6.7 Consistent Styling</h4>
-<p>Maintain consistent styling for buttons across the website to aid recognition and usability. Consistent design helps users identify buttons quickly and understand their functionality.</p>
-<pre>
-<code class="language-css">
-/* Consistent Button Styling */
-button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-</code>
-</pre>
-
-<h4 id="2.6.8">2.6.8 Button Types and Roles</h4>
-<p>Use appropriate button types and roles to ensure correct semantics and functionality. For example, use <code>&lt;button&gt;</code> elements for actions and <code>&lt;input type="button"&gt;</code> only when necessary.</p>
-<pre>
-<code class="language-html">
-&lt;!-- Preferred: Using &lt;button&gt; for actions --&gt;
-&lt;button type="button"&gt;Add to Cart&lt;/button&gt;
-
-    &lt;!-- Alternative: Using &lt;input&gt; when needed --&gt;
-&lt;input type="button" value="Add to Cart"&gt;
-</code>
-</pre>
-
-<h4 id="2.6.9">2.6.9 Testing Buttons for Accessibility</h4>
-<p>Regularly test buttons using various assistive technologies and accessibility testing tools to ensure they are announced correctly and function as intended. This includes verifying that ARIA attributes are correctly implemented and that button states are properly conveyed.</p>
-<pre>
-<code class="language-html">
-// Example: Using a screen reader to verify button accessibility
-// Ensure that buttons are announced with their labels and states
-</code>
-</pre>
-
-<h4>Best Practices for Buttons</h4>
+<h4>Best Practices for Tooltips</h4>
 <ul>
-    <li><strong>Use Clear and Descriptive Labels:</strong> Button text should clearly indicate the action it performs, providing immediate understanding to all users.</li>
-    <li><strong>Ensure Sufficient Size and Click Area:</strong> Buttons should be large enough to be easily clickable, with adequate spacing to prevent accidental clicks.</li>
-    <li><strong>Maintain Consistent Styling:</strong> Use uniform styles for buttons across the website to aid recognition and usability.</li>
-    <li><strong>Provide Visible Focus Indicators:</strong> Ensure that buttons have clear focus states to indicate when they are selected during keyboard navigation.</li>
-    <li><strong>Implement Keyboard Accessibility:</strong> All buttons should be operable using keyboard controls, ensuring inclusivity for users who rely on keyboards.</li>
-    <li><strong>Use ARIA Attributes When Necessary:</strong> Enhance button accessibility with ARIA attributes to provide additional context or indicate states.</li>
-    <li><strong>Indicate Button States Clearly:</strong> Visually and programmatically indicate states such as active, disabled, or loading to inform users of the button's status.</li>
-    <li><strong>Choose Appropriate Button Elements:</strong> Use <code>&lt;button&gt;</code> elements for actions and <code>&lt;a&gt;</code> elements for navigation to maintain semantic correctness.</li>
-    <li><strong>Regularly Test for Accessibility:</strong> Continuously evaluate buttons with assistive technologies and automated tools to identify and resolve accessibility issues.</li>
+    <li><strong>Use ARIA Attributes:</strong> Associate tooltips with their trigger elements using <code>aria-describedby</code> and <code>role="tooltip"</code>.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make tooltips accessible via focus and dismissible using the keyboard.</li>
+    <li><strong>Provide Visible Cues:</strong> Ensure tooltips are visible on hover and focus for both mouse and keyboard users.</li>
+    <li><strong>Design for Responsiveness:</strong> Avoid obstructing content by dynamically positioning tooltips.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test tooltips with assistive technologies to identify and resolve accessibility issues.</li>
 </ul>

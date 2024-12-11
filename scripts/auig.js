@@ -19,6 +19,17 @@ const components = [
 
 
     { url: '../../../components/sections/modals.html', id: 'modals' },
+    { url: '../../../components/sections/search.html', id: 'search' },
+    { url: '../../../components/sections/navigationMenus.html', id: 'navigationMenus' },
+    { url: '../../../components/sections/sliders.html', id: 'sliders' },
+    { url: '../../../components/sections/tooltips.html', id: 'tooltips' },
+    { url: '../../../components/sections/tabs.html', id: 'tabs' },
+    { url: '../../../components/sections/accordions.html', id: 'accordions' },
+    { url: '../../../components/sections/notifications.html', id: 'notifications' },
+    { url: '../../../components/sections/breadcrumbs.html', id: 'breadcrumbs' },
+    { url: '../../../components/sections/pagination.html', id: 'pagination' },
+    { url: '../../../components/sections/cards.html', id: 'cards' },
+    { url: '../../../components/sections/alerts.html', id: 'alerts' },
 
     { url: '../../../components/sections/avoid.html', id: 'avoid' },
 

@@ -145,7 +145,7 @@
 2. **Run Prerender Script**
 
    ```bash
-   npm run prerender
+   npm run prerender-all
    ```
 
 3. **Verify `index.html`**

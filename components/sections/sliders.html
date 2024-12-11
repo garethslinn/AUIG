@@ -4,60 +4,57 @@
 <h4 id="3.4.1">3.4.1 Semantic Markup</h4>
 <p>Use semantic HTML elements to structure sliders. Wrap the carousel items in a container and use appropriate ARIA roles and attributes to enhance accessibility.</p>
 <pre>
-<code class="language-html">
-<!-- Accessible Slider -->
-<div id="carousel" aria-roledescription="carousel" aria-label="Image Slider" aria-live="polite">
-    <div role="group" aria-roledescription="slide" aria-label="Slide 1 of 3">
-        <img src="image1.jpg" alt="Description of image 1">
-    </div>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 2 of 3">
-        <img src="image2.jpg" alt="Description of image 2">
-    </div>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 3 of 3">
-        <img src="image3.jpg" alt="Description of image 3">
-    </div>
-</div>
+<code class="language-html">&lt;!-- Accessible Slider --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Image Slider&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Description of image 1&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 2 of 3&quot;&gt;
+        &lt;img src=&quot;image2.jpg&quot; alt=&quot;Description of image 2&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 3 of 3&quot;&gt;
+        &lt;img src=&quot;image3.jpg&quot; alt=&quot;Description of image 3&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.4.2">3.4.2 Keyboard Accessibility</h4>
 <p>Ensure that sliders can be operated using the keyboard. Use <kbd>Tab</kbd> to navigate to the slider controls and <kbd>Arrow</kbd> keys to move between slides.</p>
 <pre>
-<code class="language-html">
-<!-- Slider with Navigation Controls -->
-<div id="carousel" aria-roledescription="carousel" aria-label="Image Slider">
-    <button aria-label="Previous Slide" id="prevSlide">Previous</button>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 1 of 3">
-        <img src="image1.jpg" alt="Description of image 1">
-    </div>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 2 of 3">
-        <img src="image2.jpg" alt="Description of image 2">
-    </div>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 3 of 3">
-        <img src="image3.jpg" alt="Description of image 3">
-    </div>
-    <button aria-label="Next Slide" id="nextSlide">Next</button>
-</div>
+<code class="language-html">&lt;!-- Slider with Navigation Controls --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Image Slider&quot;&gt;
+    &lt;button aria-label=&quot;Previous Slide&quot; id=&quot;prevSlide&quot;&gt;Previous&lt;/button&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Description of image 1&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 2 of 3&quot;&gt;
+        &lt;img src=&quot;image2.jpg&quot; alt=&quot;Description of image 2&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 3 of 3&quot;&gt;
+        &lt;img src=&quot;image3.jpg&quot; alt=&quot;Description of image 3&quot;&gt;
+    &lt;/div&gt;
+    &lt;button aria-label=&quot;Next Slide&quot; id=&quot;nextSlide&quot;&gt;Next&lt;/button&gt;
+&lt;/div&gt;
 </code>
 </pre>
 <pre>
-<code class="language-javascript">
-// Keyboard Navigation for Sliders
-const prevButton = document.getElementById('prevSlide');
-const nextButton = document.getElementById('nextSlide');
-const slides = document.querySelectorAll('[role="group"]');
+<code class="language-javascript">// Keyboard Navigation for Sliders
+const prevButton = document.getElementById(&#39;prevSlide&#39;);
+const nextButton = document.getElementById(&#39;nextSlide&#39;);
+const slides = document.querySelectorAll(&#39;[role=&quot;group&quot;]&#39;);
 let currentSlide = 0;
 
-prevButton.addEventListener('click', () => {
-    slides[currentSlide].setAttribute('hidden', true);
+prevButton.addEventListener(&#39;click&#39;, () =&gt; {
+    slides[currentSlide].setAttribute(&#39;hidden&#39;, true);
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    slides[currentSlide].removeAttribute('hidden');
+    slides[currentSlide].removeAttribute(&#39;hidden&#39;);
 });
 
-nextButton.addEventListener('click', () => {
-    slides[currentSlide].setAttribute('hidden', true);
+nextButton.addEventListener(&#39;click&#39;, () =&gt; {
+    slides[currentSlide].setAttribute(&#39;hidden&#39;, true);
     currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].removeAttribute('hidden');
+    slides[currentSlide].removeAttribute(&#39;hidden&#39;);
 });
 </code>
 </pre>
@@ -65,51 +62,48 @@ nextButton.addEventListener('click', () => {
 <h4 id="3.4.3">3.4.3 ARIA Attributes</h4>
 <p>Use ARIA attributes to provide additional context for sliders, such as <code>aria-roledescription</code>, <code>aria-live</code>, and <code>aria-label</code>.</p>
 <pre>
-<code class="language-html">
-<!-- Slider with ARIA Attributes -->
-<div id="carousel" aria-roledescription="carousel" aria-label="Promotional Images" aria-live="polite">
-    <div role="group" aria-roledescription="slide" aria-label="Slide 1 of 3">
-        <img src="image1.jpg" alt="Image 1 Description">
-    </div>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 2 of 3">
-        <img src="image2.jpg" alt="Image 2 Description">
-    </div>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 3 of 3">
-        <img src="image3.jpg" alt="Image 3 Description">
-    </div>
-</div>
+<code class="language-html">&lt;!-- Slider with ARIA Attributes --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Promotional Images&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Image 1 Description&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 2 of 3&quot;&gt;
+        &lt;img src=&quot;image2.jpg&quot; alt=&quot;Image 2 Description&quot;&gt;
+    &lt;/div&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 3 of 3&quot;&gt;
+        &lt;img src=&quot;image3.jpg&quot; alt=&quot;Image 3 Description&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.4.4">3.4.4 Pause, Stop, and Play Controls</h4>
 <p>Provide controls to pause, stop, or play the carousel, allowing users to control the playback speed of slides.</p>
 <pre>
-<code class="language-html">
-<!-- Slider with Playback Controls -->
-<div id="carousel" aria-roledescription="carousel" aria-label="Image Slider">
-    <button id="pauseCarousel" aria-label="Pause Slider">Pause</button>
-    <button id="playCarousel" aria-label="Play Slider" hidden>Play</button>
-    <div role="group" aria-roledescription="slide" aria-label="Slide 1 of 3">
-        <img src="image1.jpg" alt="Description of image 1">
-    </div>
-</div>
+<code class="language-html">&lt;!-- Slider with Playback Controls --&gt;
+&lt;div id=&quot;carousel&quot; aria-roledescription=&quot;carousel&quot; aria-label=&quot;Image Slider&quot;&gt;
+    &lt;button id=&quot;pauseCarousel&quot; aria-label=&quot;Pause Slider&quot;&gt;Pause&lt;/button&gt;
+    &lt;button id=&quot;playCarousel&quot; aria-label=&quot;Play Slider&quot; hidden&gt;Play&lt;/button&gt;
+    &lt;div role=&quot;group&quot; aria-roledescription=&quot;slide&quot; aria-label=&quot;Slide 1 of 3&quot;&gt;
+        &lt;img src=&quot;image1.jpg&quot; alt=&quot;Description of image 1&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code>
 </pre>
 <pre>
-<code class="language-javascript">
-// Pause and Play Controls for Carousel
-const pauseButton = document.getElementById('pauseCarousel');
-const playButton = document.getElementById('playCarousel');
+<code class="language-javascript">// Pause and Play Controls for Carousel
+const pauseButton = document.getElementById(&#39;pauseCarousel&#39;);
+const playButton = document.getElementById(&#39;playCarousel&#39;);
 let isPaused = false;
 
-pauseButton.addEventListener('click', () => {
+pauseButton.addEventListener(&#39;click&#39;, () =&gt; {
     isPaused = true;
     pauseButton.hidden = true;
     playButton.hidden = false;
     // Stop automatic playback logic here
 });
 
-playButton.addEventListener('click', () => {
+playButton.addEventListener(&#39;click&#39;, () =&gt; {
     isPaused = false;
     playButton.hidden = true;
     pauseButton.hidden = false;
@@ -121,8 +115,7 @@ playButton.addEventListener('click', () => {
 <h4 id="3.4.5">3.4.5 Visible Focus Indicators</h4>
 <p>Provide clear focus indicators for navigation and control buttons to help users identify the currently focused element.</p>
 <pre>
-<code class="language-css">
-/* Focus Styles for Slider Controls */
+<code class="language-css">/* Focus Styles for Slider Controls */
 button:focus {
     outline: 2px solid #005fcc;
     background-color: #e0f0ff;
@@ -133,8 +126,7 @@ button:focus {
 <h4 id="3.4.6">3.4.6 Testing Sliders for Accessibility</h4>
 <p>Test sliders with assistive technologies to ensure they are accessible. Verify that ARIA roles, keyboard navigation, and visible focus indicators are implemented correctly.</p>
 <pre>
-<code class="language-html">
-// Test Checklist
+<code class="language-html">// Test Checklist
 // - Verify that slides are announced correctly by screen readers.
 // - Ensure all controls are operable using a keyboard.
 // - Check visible focus indicators for navigation and controls.

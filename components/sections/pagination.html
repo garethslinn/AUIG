@@ -2,59 +2,55 @@
 <p>Pagination is used to divide content into discrete pages, allowing users to navigate through them efficiently. Ensuring that pagination is accessible is crucial for providing an inclusive experience, particularly for users with disabilities.</p>
 
 <h4 id="3.11.1">3.11.1 Semantic Markup</h4>
-<p>Use semantic HTML to create pagination components. Wrap pagination links in a <code>&lt;nav&gt;</code> element with <code>aria-label="Pagination"</code> to provide context for assistive technologies.</p>
+<p>Use semantic HTML to create pagination components. Wrap pagination links in a <code>&lt;nav&gt;</code> element with <code>aria-label=&quot;Pagination&quot;</code> to provide context for assistive technologies.</p>
 <pre>
-<code class="language-html">
-<!-- Accessible Pagination -->
-<nav aria-label="Pagination">
-    <ul>
-        <li><a href="?page=1" aria-label="Page 1">1</a></li>
-        <li><a href="?page=2" aria-label="Page 2">2</a></li>
-        <li><a href="?page=3" aria-label="Page 3">3</a></li>
-        <li><a href="?page=4" aria-label="Next Page">Next</a></li>
-    </ul>
-</nav>
+<code class="language-html">&lt;!-- Accessible Pagination --&gt;
+&lt;nav aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=1&quot; aria-label=&quot;Page 1&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=2&quot; aria-label=&quot;Page 2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=3&quot; aria-label=&quot;Page 3&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=4&quot; aria-label=&quot;Next Page&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
 </code>
 </pre>
 
 <h4 id="3.11.2">3.11.2 Keyboard Accessibility</h4>
 <p>Ensure that all pagination links are accessible via keyboard navigation. Users should be able to focus on each link using the <kbd>Tab</kbd> key and activate it using the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.</p>
 <pre>
-<code class="language-html">
-<!-- Keyboard Accessible Pagination -->
-<nav aria-label="Pagination">
-    <ul>
-        <li><a href="?page=1" tabindex="0">1</a></li>
-        <li><a href="?page=2" tabindex="0">2</a></li>
-        <li><a href="?page=3" tabindex="0">3</a></li>
-        <li><a href="?page=4" tabindex="0">Next</a></li>
-    </ul>
-</nav>
+<code class="language-html">&lt;!-- Keyboard Accessible Pagination --&gt;
+&lt;nav aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=1&quot; tabindex=&quot;0&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=2&quot; tabindex=&quot;0&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=3&quot; tabindex=&quot;0&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=4&quot; tabindex=&quot;0&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
 </code>
 </pre>
 
 <h4 id="3.11.3">3.11.3 ARIA Attributes</h4>
-<p>Use ARIA attributes to enhance pagination accessibility. Apply <code>aria-current="page"</code> to the currently active page and provide meaningful labels using <code>aria-label</code> for navigation links.</p>
+<p>Use ARIA attributes to enhance pagination accessibility. Apply <code>aria-current=&quot;page&quot;</code> to the currently active page and provide meaningful labels using <code>aria-label</code> for navigation links.</p>
 <pre>
-<code class="language-html">
-<!-- Pagination with ARIA Attributes -->
-<nav aria-label="Pagination">
-    <ul>
-        <li><a href="?page=1" aria-label="Page 1">1</a></li>
-        <li><a href="?page=2" aria-label="Page 2">2</a></li>
-        <li><a href="?page=3" aria-current="page" aria-label="Current Page">3</a></li>
-        <li><a href="?page=4" aria-label="Next Page">Next</a></li>
-    </ul>
-</nav>
+<code class="language-html">&lt;!-- Pagination with ARIA Attributes --&gt;
+&lt;nav aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=1&quot; aria-label=&quot;Page 1&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=2&quot; aria-label=&quot;Page 2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=3&quot; aria-current=&quot;page&quot; aria-label=&quot;Current Page&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=4&quot; aria-label=&quot;Next Page&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
 </code>
 </pre>
 
 <h4 id="3.11.4">3.11.4 Responsive Design</h4>
 <p>Ensure pagination adapts to smaller screens by using flexible layouts or collapsing pagination links into a dropdown menu.</p>
 <pre>
-<code class="language-css">
-/* Responsive Pagination Styling */
-nav[aria-label="Pagination"] ul {
+<code class="language-css">/* Responsive Pagination Styling */
+nav[aria-label=&quot;Pagination&quot;] ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -63,7 +59,7 @@ nav[aria-label="Pagination"] ul {
     gap: 0.5rem;
 }
 
-nav[aria-label="Pagination"] a {
+nav[aria-label=&quot;Pagination&quot;] a {
     display: inline-block;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -72,11 +68,11 @@ nav[aria-label="Pagination"] a {
     border-radius: 0.3rem;
 }
 
-nav[aria-label="Pagination"] a:hover {
+nav[aria-label=&quot;Pagination&quot;] a:hover {
     background-color: #f0f0f0;
 }
 
-nav[aria-label="Pagination"] a[aria-current="page"] {
+nav[aria-label=&quot;Pagination&quot;] a[aria-current=&quot;page&quot;] {
     background-color: #005fcc;
     color: white;
     font-weight: bold;
@@ -87,9 +83,8 @@ nav[aria-label="Pagination"] a[aria-current="page"] {
 <h4 id="3.11.5">3.11.5 Visible Focus Indicators</h4>
 <p>Provide clear focus indicators for pagination links to assist keyboard users in identifying their current position.</p>
 <pre>
-<code class="language-css">
-/* Focus Styles for Pagination Links */
-nav[aria-label="Pagination"] a:focus {
+<code class="language-css">/* Focus Styles for Pagination Links */
+nav[aria-label=&quot;Pagination&quot;] a:focus {
     outline: 2px solid #005fcc;
     background-color: #e0f0ff;
 }
@@ -99,10 +94,9 @@ nav[aria-label="Pagination"] a:focus {
 <h4 id="3.11.6">3.11.6 Testing Pagination for Accessibility</h4>
 <p>Test pagination components with assistive technologies to ensure they are accessible. Verify correct use of ARIA attributes, keyboard navigation, and focus management.</p>
 <pre>
-<code class="language-html">
-// Test Checklist
+<code class="language-html">// Test Checklist
 // - Verify pagination links are keyboard accessible.
-// - Ensure the current page is marked with aria-current="page".
+// - Ensure the current page is marked with aria-current=&quot;page&quot;.
 // - Check screen reader announcements for navigation links.
 // - Validate responsive behavior for smaller screens.
 </code>
@@ -110,9 +104,9 @@ nav[aria-label="Pagination"] a:focus {
 
 <h4>Best Practices for Pagination</h4>
 <ul>
-    <li><strong>Use Semantic HTML:</strong> Wrap pagination in a <code>&lt;nav&gt;</code> element with <code>aria-label="Pagination"</code>.</li>
+    <li><strong>Use Semantic HTML:</strong> Wrap pagination in a <code>&lt;nav&gt;</code> element with <code>aria-label=&quot;Pagination&quot;</code>.</li>
     <li><strong>Ensure Keyboard Accessibility:</strong> Make all pagination links navigable and operable via keyboard.</li>
-    <li><strong>Apply ARIA Attributes:</strong> Use <code>aria-current="page"</code> for the active page and <code>aria-label</code> for navigation links.</li>
+    <li><strong>Apply ARIA Attributes:</strong> Use <code>aria-current=&quot;page&quot;</code> for the active page and <code>aria-label</code> for navigation links.</li>
     <li><strong>Design for Responsiveness:</strong> Ensure pagination works well on all screen sizes, adapting layout as needed.</li>
     <li><strong>Provide Visible Focus Indicators:</strong> Highlight the currently focused link for better usability.</li>
     <li><strong>Test Thoroughly:</strong> Regularly test pagination with assistive technologies and automated tools to ensure accessibility.</li>

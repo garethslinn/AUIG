@@ -2,43 +2,39 @@
 <p>Notifications or toasts are temporary messages used to inform users about updates, errors, or actions performed. Ensuring notifications are accessible helps provide an inclusive experience for all users, including those using assistive technologies.</p>
 
 <h4 id="3.9.1">3.9.1 Semantic Markup</h4>
-<p>Use semantic HTML and ARIA attributes to structure notifications. Include <code>role="alert"</code> or <code>role="status"</code> for automatic announcements to screen readers.</p>
+<p>Use semantic HTML and ARIA attributes to structure notifications. Include <code>role=&quot;alert&quot;</code> or <code>role=&quot;status&quot;</code> for automatic announcements to screen readers.</p>
 <pre>
-<code class="language-html">
-<!-- Accessible Notification -->
-<div role="alert" aria-live="assertive">
+<code class="language-html">&lt;!-- Accessible Notification --&gt;
+&lt;div role=&quot;alert&quot; aria-live=&quot;assertive&quot;&gt;
     Your changes have been saved successfully.
-</div>
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.9.2">3.9.2 ARIA Live Regions</h4>
-<p>Use ARIA live regions to ensure notifications are announced to screen readers. Set <code>aria-live="polite"</code> for non-critical updates and <code>aria-live="assertive"</code> for urgent messages.</p>
+<p>Use ARIA live regions to ensure notifications are announced to screen readers. Set <code>aria-live=&quot;polite&quot;</code> for non-critical updates and <code>aria-live=&quot;assertive&quot;</code> for urgent messages.</p>
 <pre>
-<code class="language-html">
-<!-- Notification with ARIA Live Region -->
-<div aria-live="polite" role="status">
+<code class="language-html">&lt;!-- Notification with ARIA Live Region --&gt;
+&lt;div aria-live=&quot;polite&quot; role=&quot;status&quot;&gt;
     A new update is available.
-</div>
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.9.3">3.9.3 Dismissible Notifications</h4>
 <p>Provide a way for users to dismiss notifications, such as a close button. Ensure the dismiss action is accessible via keyboard and screen readers.</p>
 <pre>
-<code class="language-html">
-<!-- Dismissible Notification -->
-<div role="alert" aria-live="assertive">
-    <p>There was an error processing your request.</p>
-    <button aria-label="Close Notification">Dismiss</button>
-</div>
+<code class="language-html">&lt;!-- Dismissible Notification --&gt;
+&lt;div role=&quot;alert&quot; aria-live=&quot;assertive&quot;&gt;
+    &lt;p&gt;There was an error processing your request.&lt;/p&gt;
+    &lt;button aria-label=&quot;Close Notification&quot;&gt;Dismiss&lt;/button&gt;
+&lt;/div&gt;
 </code>
 </pre>
 <pre>
-<code class="language-javascript">
-// Close Notification on Button Click
-document.querySelector('[aria-label="Close Notification"]').addEventListener('click', (e) => {
-    e.target.closest('[role="alert"]').remove();
+<code class="language-javascript">// Close Notification on Button Click
+document.querySelector(&#39;[aria-label=&quot;Close Notification&quot;]&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+    e.target.closest(&#39;[role=&quot;alert&quot;]&#39;).remove();
 });
 </code>
 </pre>
@@ -46,18 +42,16 @@ document.querySelector('[aria-label="Close Notification"]').addEventListener('cl
 <h4 id="3.9.4">3.9.4 Timed Notifications</h4>
 <p>For timed notifications, ensure users have enough time to read them. Allow users to pause or extend the display time if necessary.</p>
 <pre>
-<code class="language-html">
-<!-- Timed Notification -->
-<div role="alert" id="notification" aria-live="assertive">
+<code class="language-html">&lt;!-- Timed Notification --&gt;
+&lt;div role=&quot;alert&quot; id=&quot;notification&quot; aria-live=&quot;assertive&quot;&gt;
     Your session will expire in 5 minutes.
-</div>
+&lt;/div&gt;
 </code>
 </pre>
 <pre>
-<code class="language-javascript">
-// Auto-hide Notification After 5 Seconds
-setTimeout(() => {
-    const notification = document.getElementById('notification');
+<code class="language-javascript">// Auto-hide Notification After 5 Seconds
+setTimeout(() =&gt; {
+    const notification = document.getElementById(&#39;notification&#39;);
     if (notification) {
         notification.remove();
     }
@@ -68,10 +62,9 @@ setTimeout(() => {
 <h4 id="3.9.5">3.9.5 Styling and Visibility</h4>
 <p>Ensure notifications are styled for visibility with sufficient contrast and do not obstruct other important content.</p>
 <pre>
-<code class="language-css">
-/* Notification Styles */
-[role="alert"],
-[role="status"] {
+<code class="language-css">/* Notification Styles */
+[role=&quot;alert&quot;],
+[role=&quot;status&quot;] {
     background-color: #005fcc;
     color: white;
     padding: 1rem;
@@ -82,14 +75,14 @@ setTimeout(() => {
 }
 
 /* Close Button Styling */
-button[aria-label="Close Notification"] {
+button[aria-label=&quot;Close Notification&quot;] {
     background: none;
     border: none;
     color: white;
     font-size: 1rem;
     cursor: pointer;
 }
-button[aria-label="Close Notification"]:hover {
+button[aria-label=&quot;Close Notification&quot;]:hover {
     text-decoration: underline;
 }
 </code>
@@ -98,8 +91,7 @@ button[aria-label="Close Notification"]:hover {
 <h4 id="3.9.6">3.9.6 Testing Notifications for Accessibility</h4>
 <p>Test notifications with assistive technologies to ensure they are announced correctly and function as intended.</p>
 <pre>
-<code class="language-html">
-// Test Checklist
+<code class="language-html">// Test Checklist
 // - Verify that notifications with live regions are announced by screen readers.
 // - Ensure dismiss buttons are keyboard accessible and screen reader friendly.
 // - Validate timing for auto-hide notifications, ensuring users have enough time to read them.
@@ -108,7 +100,7 @@ button[aria-label="Close Notification"]:hover {
 
 <h4>Best Practices for Notifications/Toasts</h4>
 <ul>
-    <li><strong>Use Semantic Roles:</strong> Apply <code>role="alert"</code> or <code>role="status"</code> for notifications based on urgency.</li>
+    <li><strong>Use Semantic Roles:</strong> Apply <code>role=&quot;alert&quot;</code> or <code>role=&quot;status&quot;</code> for notifications based on urgency.</li>
     <li><strong>Provide Dismiss Options:</strong> Allow users to dismiss notifications with a clear and accessible control.</li>
     <li><strong>Use ARIA Live Regions:</strong> Ensure notifications are announced to screen readers using <code>aria-live</code>.</li>
     <li><strong>Design for Visibility:</strong> Style notifications with sufficient contrast and clear typography to ensure readability.</li>

@@ -4,36 +4,34 @@
 <h4 id="3.8.1">3.8.1 Semantic Markup</h4>
 <p>Use semantic HTML with proper ARIA roles and attributes to create accessible accordions. Each accordion header should be a button with <code>aria-expanded</code>, and its content section should be associated using <code>aria-controls</code>.</p>
 <pre>
-<code class="language-html">
-<!-- Accessible Accordion -->
-<div id="accordion">
-    <h3>
-        <button aria-expanded="false" aria-controls="section1" id="header1">Section 1</button>
-    </h3>
-    <div id="section1" role="region" aria-labelledby="header1" hidden>
-        <p>Content for Section 1.</p>
-    </div>
-    <h3>
-        <button aria-expanded="false" aria-controls="section2" id="header2">Section 2</button>
-    </h3>
-    <div id="section2" role="region" aria-labelledby="header2" hidden>
-        <p>Content for Section 2.</p>
-    </div>
-</div>
+<code class="language-html">&lt;!-- Accessible Accordion --&gt;
+&lt;div id=&quot;accordion&quot;&gt;
+    &lt;h3&gt;
+        &lt;button aria-expanded=&quot;false&quot; aria-controls=&quot;section1&quot; id=&quot;header1&quot;&gt;Section 1&lt;/button&gt;
+    &lt;/h3&gt;
+    &lt;div id=&quot;section1&quot; role=&quot;region&quot; aria-labelledby=&quot;header1&quot; hidden&gt;
+        &lt;p&gt;Content for Section 1.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;
+        &lt;button aria-expanded=&quot;false&quot; aria-controls=&quot;section2&quot; id=&quot;header2&quot;&gt;Section 2&lt;/button&gt;
+    &lt;/h3&gt;
+    &lt;div id=&quot;section2&quot; role=&quot;region&quot; aria-labelledby=&quot;header2&quot; hidden&gt;
+        &lt;p&gt;Content for Section 2.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.8.2">3.8.2 Keyboard Accessibility</h4>
 <p>Ensure accordions are fully operable using the keyboard. Users should be able to navigate between headers using the <kbd>Tab</kbd> key and expand or collapse sections using the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.</p>
 <pre>
-<code class="language-javascript">
-// Keyboard Navigation for Accordions
-const accordionHeaders = document.querySelectorAll('#accordion button');
+<code class="language-javascript">// Keyboard Navigation for Accordions
+const accordionHeaders = document.querySelectorAll(&#39;#accordion button&#39;);
 
-accordionHeaders.forEach((header) => {
-    header.addEventListener('click', () => toggleAccordion(header));
-    header.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+accordionHeaders.forEach((header) =&gt; {
+    header.addEventListener(&#39;click&#39;, () =&gt; toggleAccordion(header));
+    header.addEventListener(&#39;keydown&#39;, (e) =&gt; {
+        if (e.key === &#39;Enter&#39; || e.key === &#39; &#39;) {
             e.preventDefault();
             toggleAccordion(header);
         }
@@ -41,9 +39,9 @@ accordionHeaders.forEach((header) => {
 });
 
 function toggleAccordion(header) {
-    const isExpanded = header.getAttribute('aria-expanded') === 'true';
-    header.setAttribute('aria-expanded', !isExpanded);
-    const section = document.getElementById(header.getAttribute('aria-controls'));
+    const isExpanded = header.getAttribute(&#39;aria-expanded&#39;) === &#39;true&#39;;
+    header.setAttribute(&#39;aria-expanded&#39;, !isExpanded);
+    const section = document.getElementById(header.getAttribute(&#39;aria-controls&#39;));
     section.hidden = isExpanded;
 }
 </code>
@@ -52,28 +50,26 @@ function toggleAccordion(header) {
 <h4 id="3.8.3">3.8.3 ARIA Attributes</h4>
 <p>Use ARIA attributes to enhance the accessibility of accordions. Apply <code>aria-expanded</code> on headers to indicate their state, and use <code>role="region"</code> for content sections to define them as accessible regions.</p>
 <pre>
-<code class="language-html">
-<!-- Accordion with ARIA Attributes -->
-<h3>
-    <button aria-expanded="true" aria-controls="content1" id="header1">Item 1</button>
-</h3>
-<div id="content1" role="region" aria-labelledby="header1">
-    <p>Details for Item 1.</p>
-</div>
-<h3>
-    <button aria-expanded="false" aria-controls="content2" id="header2">Item 2</button>
-</h3>
-<div id="content2" role="region" aria-labelledby="header2" hidden>
-    <p>Details for Item 2.</p>
-</div>
+<code class="language-html">&lt;!-- Accordion with ARIA Attributes --&gt;
+&lt;h3&gt;
+    &lt;button aria-expanded=&quot;true&quot; aria-controls=&quot;content1&quot; id=&quot;header1&quot;&gt;Item 1&lt;/button&gt;
+&lt;/h3&gt;
+&lt;div id=&quot;content1&quot; role=&quot;region&quot; aria-labelledby=&quot;header1&quot;&gt;
+    &lt;p&gt;Details for Item 1.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3&gt;
+    &lt;button aria-expanded=&quot;false&quot; aria-controls=&quot;content2&quot; id=&quot;header2&quot;&gt;Item 2&lt;/button&gt;
+&lt;/h3&gt;
+&lt;div id=&quot;content2&quot; role=&quot;region&quot; aria-labelledby=&quot;header2&quot; hidden&gt;
+    &lt;p&gt;Details for Item 2.&lt;/p&gt;
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.8.4">3.8.4 Responsive Design</h4>
 <p>Ensure accordions are responsive and adapt to different screen sizes. Consider styling them for both desktop and mobile layouts.</p>
 <pre>
-<code class="language-css">
-/* Basic Accordion Styles */
+<code class="language-css">/* Basic Accordion Styles */
 #accordion h3 {
     margin: 0;
 }
@@ -88,7 +84,7 @@ function toggleAccordion(header) {
     cursor: pointer;
 }
 
-#accordion button[aria-expanded="true"] {
+#accordion button[aria-expanded=&quot;true&quot;] {
     background-color: #005fcc;
     color: white;
 }
@@ -104,8 +100,7 @@ function toggleAccordion(header) {
 <h4 id="3.8.5">3.8.5 Visible Focus Indicators</h4>
 <p>Provide clear focus indicators for accordion headers to help keyboard users identify the currently focused element.</p>
 <pre>
-<code class="language-css">
-/* Focus Styles for Accordion Buttons */
+<code class="language-css">/* Focus Styles for Accordion Buttons */
 #accordion button:focus {
     outline: 2px solid #005fcc;
     background-color: #e0f0ff;
@@ -116,8 +111,7 @@ function toggleAccordion(header) {
 <h4 id="3.8.6">3.8.6 Testing Accordions for Accessibility</h4>
 <p>Test accordions with assistive technologies to ensure they are accessible. Verify proper use of ARIA attributes, keyboard navigation, and focus management.</p>
 <pre>
-<code class="language-html">
-// Test Checklist
+<code class="language-html">// Test Checklist
 // - Verify that accordion headers are keyboard operable.
 // - Ensure ARIA roles and attributes are correctly implemented.
 // - Check screen reader announcements for headers and content sections.

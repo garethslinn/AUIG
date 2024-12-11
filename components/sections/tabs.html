@@ -4,46 +4,44 @@
 <h4 id="3.7.1">3.7.1 Semantic Markup</h4>
 <p>Use semantic HTML and ARIA roles to create accessible tabs. Each tab should be associated with its corresponding content using <code>aria-controls</code>, and the currently active tab should have <code>aria-selected="true"</code>.</p>
 <pre>
-<code class="language-html">
-<!-- Accessible Tabs -->
-<div role="tablist" aria-label="Sample Tabs">
-    <button role="tab" aria-selected="true" aria-controls="panel1" id="tab1">Tab 1</button>
-    <button role="tab" aria-selected="false" aria-controls="panel2" id="tab2">Tab 2</button>
-    <button role="tab" aria-selected="false" aria-controls="panel3" id="tab3">Tab 3</button>
-</div>
+<code class="language-html">&lt;!-- Accessible Tabs --&gt;
+&lt;div role=&quot;tablist&quot; aria-label=&quot;Sample Tabs&quot;&gt;
+    &lt;button role=&quot;tab&quot; aria-selected=&quot;true&quot; aria-controls=&quot;panel1&quot; id=&quot;tab1&quot;&gt;Tab 1&lt;/button&gt;
+    &lt;button role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;panel2&quot; id=&quot;tab2&quot;&gt;Tab 2&lt;/button&gt;
+    &lt;button role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;panel3&quot; id=&quot;tab3&quot;&gt;Tab 3&lt;/button&gt;
+&lt;/div&gt;
 
-<div id="panel1" role="tabpanel" tabindex="0" aria-labelledby="tab1">
+&lt;div id=&quot;panel1&quot; role=&quot;tabpanel&quot; tabindex=&quot;0&quot; aria-labelledby=&quot;tab1&quot;&gt;
     Content for Tab 1.
-</div>
-<div id="panel2" role="tabpanel" tabindex="0" aria-labelledby="tab2" hidden>
+&lt;/div&gt;
+&lt;div id=&quot;panel2&quot; role=&quot;tabpanel&quot; tabindex=&quot;0&quot; aria-labelledby=&quot;tab2&quot; hidden&gt;
     Content for Tab 2.
-</div>
-<div id="panel3" role="tabpanel" tabindex="0" aria-labelledby="tab3" hidden>
+&lt;/div&gt;
+&lt;div id=&quot;panel3&quot; role=&quot;tabpanel&quot; tabindex=&quot;0&quot; aria-labelledby=&quot;tab3&quot; hidden&gt;
     Content for Tab 3.
-</div>
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.7.2">3.7.2 Keyboard Accessibility</h4>
 <p>Ensure tabs are fully keyboard accessible. Use the <kbd>Tab</kbd> key to navigate to the tablist, and <kbd>Arrow</kbd> keys to switch between tabs.</p>
 <pre>
-<code class="language-javascript">
-// Keyboard Navigation for Tabs
-const tabs = document.querySelectorAll('[role="tab"]');
-const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+<code class="language-javascript">// Keyboard Navigation for Tabs
+const tabs = document.querySelectorAll('[role=&quot;tab&quot;]');
+const tabPanels = document.querySelectorAll('[role=&quot;tabpanel&quot;]');
 
-tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => activateTab(index));
-    tab.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') activateTab((index + 1) % tabs.length);
-        if (e.key === 'ArrowLeft') activateTab((index - 1 + tabs.length) % tabs.length);
+tabs.forEach((tab, index) =&gt; {
+    tab.addEventListener(&#39;click&#39;, () =&gt; activateTab(index));
+    tab.addEventListener(&#39;keydown&#39;, (e) =&gt; {
+        if (e.key === &#39;ArrowRight&#39;) activateTab((index + 1) % tabs.length);
+        if (e.key === &#39;ArrowLeft&#39;) activateTab((index - 1 + tabs.length) % tabs.length);
     });
 });
 
 function activateTab(index) {
-    tabs.forEach((tab, i) => {
+    tabs.forEach((tab, i) =&gt; {
         const isActive = i === index;
-        tab.setAttribute('aria-selected', isActive);
+        tab.setAttribute(&#39;aria-selected&#39;, isActive);
         tabPanels[i].hidden = !isActive;
     });
 }
@@ -53,38 +51,36 @@ function activateTab(index) {
 <h4 id="3.7.3">3.7.3 ARIA Attributes</h4>
 <p>Use ARIA attributes to enhance the accessibility of tabs. <code>role="tablist"</code> defines the container, <code>role="tab"</code> identifies the tabs, and <code>role="tabpanel"</code> specifies the content panels.</p>
 <pre>
-<code class="language-html">
-<!-- Tabs with ARIA Attributes -->
-<div role="tablist" aria-label="Accessible Tabs">
-    <button role="tab" aria-selected="true" aria-controls="tabpanel1" id="tab1">Overview</button>
-    <button role="tab" aria-selected="false" aria-controls="tabpanel2" id="tab2">Features</button>
-    <button role="tab" aria-selected="false" aria-controls="tabpanel3" id="tab3">Pricing</button>
-</div>
+<code class="language-html">&lt;!-- Tabs with ARIA Attributes --&gt;
+&lt;div role=&quot;tablist&quot; aria-label=&quot;Accessible Tabs&quot;&gt;
+    &lt;button role=&quot;tab&quot; aria-selected=&quot;true&quot; aria-controls=&quot;tabpanel1&quot; id=&quot;tab1&quot;&gt;Overview&lt;/button&gt;
+    &lt;button role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;tabpanel2&quot; id=&quot;tab2&quot;&gt;Features&lt;/button&gt;
+    &lt;button role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;tabpanel3&quot; id=&quot;tab3&quot;&gt;Pricing&lt;/button&gt;
+&lt;/div&gt;
 
-<div id="tabpanel1" role="tabpanel" tabindex="0" aria-labelledby="tab1">
+&lt;div id=&quot;tabpanel1&quot; role=&quot;tabpanel&quot; tabindex=&quot;0&quot; aria-labelledby=&quot;tab1&quot;&gt;
     Overview content goes here.
-</div>
-<div id="tabpanel2" role="tabpanel" tabindex="0" aria-labelledby="tab2" hidden>
+&lt;/div&gt;
+&lt;div id=&quot;tabpanel2&quot; role=&quot;tabpanel&quot; tabindex=&quot;0&quot; aria-labelledby=&quot;tab2&quot; hidden&gt;
     Features content goes here.
-</div>
-<div id="tabpanel3" role="tabpanel" tabindex="0" aria-labelledby="tab3" hidden>
+&lt;/div&gt;
+&lt;div id=&quot;tabpanel3&quot; role=&quot;tabpanel&quot; tabindex=&quot;0&quot; aria-labelledby=&quot;tab3&quot; hidden&gt;
     Pricing content goes here.
-</div>
+&lt;/div&gt;
 </code>
 </pre>
 
 <h4 id="3.7.4">3.7.4 Responsive Design</h4>
 <p>Ensure tabs are responsive and adapt to different screen sizes. For smaller screens, consider displaying tab content in a vertical stack or providing a dropdown for navigation.</p>
 <pre>
-<code class="language-css">
-/* Responsive Tab Styles */
-[role="tablist"] {
+<code class="language-css">/* Responsive Tab Styles */
+[role=&quot;tablist&quot;] {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-[role="tab"] {
+[role=&quot;tab&quot;] {
     flex: 1 1 auto;
     padding: 0.8rem 1.2rem;
     border: 1px solid #ccc;
@@ -93,7 +89,7 @@ function activateTab(index) {
     cursor: pointer;
 }
 
-[role="tab"][aria-selected="true"] {
+[role=&quot;tab&quot;][aria-selected=&quot;true&quot;] {
     background: #005fcc;
     color: #fff;
     border-color: #005fcc;
@@ -104,9 +100,8 @@ function activateTab(index) {
 <h4 id="3.7.5">3.7.5 Visible Focus Indicators</h4>
 <p>Provide visible focus indicators for tabs to assist keyboard users in identifying their current position within the tablist.</p>
 <pre>
-<code class="language-css">
-/* Focus Styles for Tabs */
-[role="tab"]:focus {
+<code class="language-css">/* Focus Styles for Tabs */
+[role=&quot;tab&quot;]:focus {
     outline: 2px solid #005fcc;
     background-color: #e0f0ff;
 }
@@ -116,8 +111,7 @@ function activateTab(index) {
 <h4 id="3.7.6">3.7.6 Testing Tabs for Accessibility</h4>
 <p>Test tabs with assistive technologies and automated tools to ensure they are accessible. Verify proper use of ARIA roles, keyboard navigation, and focus management.</p>
 <pre>
-<code class="language-html">
-// Test Checklist
+<code class="language-html">// Test Checklist
 // - Verify tabs are keyboard operable using Arrow and Tab keys.
 // - Ensure ARIA roles and attributes are correctly implemented.
 // - Check screen reader announcements for tablist, tabs, and panels.

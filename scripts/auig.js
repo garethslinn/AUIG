@@ -34,6 +34,7 @@ const components = [
     { url: '../../../components/sections/avoid.html', id: 'avoid' },
 
     { url: '../../../components/sections/appendix.html', id: 'appendix' },
+    { url: '../../../components/sections/appendix-a.html', id: 'appendix-a' },
     { url: '../../../components/sections/glossary.html', id: 'glossary' }
 ];
 

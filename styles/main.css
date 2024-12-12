@@ -45,13 +45,13 @@ h5 { font-size: 1.25rem; }
 
 
 h1, h2, h3 {
-    color: cornflowerblue;
+    color: #268ca6;
 }
 
 h2 {
     margin-bottom: 0.5rem;
     padding: 0 1rem;
-    background-color: cornflowerblue;
+    background-color: #268ca6;
     color: #fff;
 }
 

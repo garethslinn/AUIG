@@ -541,6 +541,27 @@
     <ul>
         <li>Gareth Slinn: <a href="mailto:gslinn@gmail.com">contact</a>
     </li></ul>
+    <h3>Additional resources</h3>
+    <ul>
+        <li>
+            Neurological UX: Introduction to
+            <a href="https://neurologicalux.com/" aria-label="Books on accessibility, opens in a new tab" target="_blank" rel="noopener noreferrer">
+                books on accessibility
+            </a>.
+        </li>
+        <li>
+            Checkmeister: Useful accessibility-related
+            <a href="https://www.checkmeister.com/" aria-label="tools developed by Gareth, opens in a new tab" target="_blank" rel="noopener noreferrer">
+                tools
+            </a>.
+        </li>
+        <li>
+            Ca11y: Learn more about how accessibility can improve the
+            <a href="https://ca11y.net" aria-label="recruitment process, opens in a new tab" target="_blank" rel="noopener noreferrer">
+                recruitment process.
+            </a>
+        </li>
+    </ul>
 </header></header>
 
             <!-- Sections -->
@@ -565,41 +586,40 @@
 </p>
 </section>
 
-            <section id="introduction" class="section">
-                <h2>Introduction</h2>
-                <p>
-                    Welcome to the Accessible User Interface Guidelines (AUIG). This guide is organised into three distinct categories:
-                    <strong>Global Settings</strong>, <strong>Elements</strong>, and <strong>Components</strong>. Each category addresses different aspects of accessibility to help you create inclusive and user-friendly interfaces. All categories are equally important and work together to ensure a comprehensive approach to accessibility.
-                </p>
-                <h3>Additional resources</h3>
-                <ul>
-                    <li>
-                        Neurological UX: Introduction to
-                        <a href="https://neurologicalux.com/" aria-label="Gareth's books on accessibility, opens in a new tab" target="_blank" rel="noopener noreferrer">
-                            Gareth's books
-                        </a> on accessibility.
-                    </li>
-                    <li>
-                        Checkmeister: Useful accessibility-related
-                        <a href="https://www.checkmeister.com/" aria-label="tools developed by Gareth, opens in a new tab" target="_blank" rel="noopener noreferrer">
-                            tools
-                        </a> developed by Gareth.
-                    </li>
-                    <li>
-                        Ca11y: Learn more about how accessibility can improve the
-                        <a href="https://ca11y.net" aria-label="recruitment process, opens in a new tab" target="_blank" rel="noopener noreferrer">
-                            recruitment process.
-                        </a>
-                    </li>
-                </ul>
-            </section>
+            <section id="introduction" class="section"><h2>How to use these guidelines</h2>
+<p>
+The Accessibility User Interface Guidelines (AUIG) serve as a comprehensive framework for designing and developing accessible digital experiences. This section provides a concise guide on how to navigate and implement the AUIG effectively. By understanding the structure and key components of the AUIG, developers, designers, testers, and user experience professionals can ensure their digital platforms are inclusive, user-friendly, and compliant with accessibility standards. This overview highlights the main sections of the AUIG, offering strategic insights into global settings, UI elements, component accessibility, and common pitfalls to avoid.
+</p>
+<icon-detail type="information" heading-level="h3" style="--background-color: #507c7c; --foreground-color: #ffffff;">
+    <span slot="title">Code Examples throughout this guide</span>
+    <span slot="description">All code examples are correct, but they might not apply exactly to every scenario. Consider them as templates and adjust them according to your specific context.
+    </span>
+</icon-detail>
+<h3>Global Settings</h3>
+<p>
+The Global Settings section outlines foundational elements that apply universally across the entire web platform. It emphasizes the importance of core issues that apply to the main layout and across the application/site. Such issues include Colour, Contrast, Language, Keyboard Access, Meta Data, Skip Links, Responsive Design, Flashing Images.
+From a planning perspective, global settings should be prioritised when developing a new application or website, or when upgrading an existing legacy system.
+</p>
+<h3>Elements</h3>
+<p>
+The Elements section examines specific user interface (UI) components, providing comprehensive best practices to ensure each element is fully accessible. Accessibility should be seamlessly integrated into every phase of the project lifecycle, including design, user experience (UX), development, and quality assurance (QA).
+This includes but not exclusively elements such as Multimedia (images, audio, video etc), Forms, Tables, Headings etc.
+</p>
+<h3>Components</h3>
+<p>
+The Components section concentrates on the accessibility considerations of complex user interface (UI) elements. It covers components such as modals, tooltips, tabs, and accordions. This section provides essential guidelines and illustrative examples to assist in implementing accessible components effectively. Users are encouraged to develop their own methods for achieving accessibility rather than strictly adhering to the provided examples. The primary focus is to ensure that each component is accessible and meets all relevant accessibility requirements.
+</p>
+<h3>What to Avoid</h3>
+<p>
+The What to Avoid section highlights common mistakes and deprecated practices that can hinder accessibility. As the documentation improves this and other sections may grow.
+</p>
+
+
+</section>
 
             <!-- Global Settings -->
             <section id="" class="section">
                 <h2 class="section-head">1. Global Settings</h2>
-                <p>
-                    The <strong>Global Settings</strong> section covers foundational configurations that affect the entire HTML document. This includes linking stylesheets, setting global ARIA attributes, and defining overall layout and theming options to ensure consistency and accessibility across all pages.
-                </p>
                 <section id="global-settings" class="section">
 <h3 id="1.1">1.1 Colour</h3>
 <p>Define and use consistent color schemes across your web content to enhance readability and
@@ -660,7 +680,7 @@ technologies such as screen readers.</p>
     enhances accessibility for users with mobility limitations who rely on different devices, and
     improves usability for all users by providing a consistent experience regardless of the device used.</p>
 
-<icon-detail id="1.8" type="priority" heading-level="h3" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="1.8" type="priority" heading-level="h3" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">1.8 Flashing Images</span>
     <span slot="description">
         Flashing images can trigger seizures and cause significant discomfort for individuals with
@@ -678,9 +698,6 @@ technologies such as screen readers.</p>
             <!-- Elements -->
             <section id="html-elements" class="section">
                 <h2 class="section-head">2. Elements</h2>
-                <p>
-                    The <strong>Elements</strong> section focuses on making individual HTML elements accessible. This includes best practices for using semantic HTML, providing appropriate ARIA roles and labels, and ensuring that each element is usable by all users, including those relying on assistive technologies.
-                </p>
                 <section id="imagesMultimedia" class="section"><h3>2.1. Multimedia</h3>
 <h4 id="2.1.1">2.1.1 Alternative Representation</h4>
 <p>All multimedia elements, including images, video, audio, and graphs,
@@ -820,7 +837,7 @@ technologies such as screen readers.</p>
     video's spoken language. Transcripts also support users experiencing cognitive overloads, such as
     those with ADHD, by allowing them to read content at their own pace.</p>
 
-<icon-detail id="2.1.7" type="consideration" style="--background-color: #ffc008; --foreground-color: #000000;">
+<icon-detail id="2.1.7" type="consideration" style="--background-color: #777c50; --foreground-color: #ffffff;">
     <span slot="title">2.1.7 Sign Language</span>
     <span slot="description">This consideration should be evaluated based on the target audience's needs, especially for content aimed at users who are deaf or hard of hearing.</span>
 </icon-detail>
@@ -1436,7 +1453,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.3.6" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.3.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.3.6 Keyboard Navigation</span>
     <span slot="description">
         Ensure that users can navigate through tables using keyboard controls. Implement logical tab orders and focus indicators to facilitate seamless interaction for users who rely on keyboards.
@@ -1506,7 +1523,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.4.6" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.4.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.4.6 Consistent Styling</span>
     <span slot="description">
         Apply consistent styling to headings to maintain visual coherence across the website. Use CSS classes or styles to ensure that headings of the same level have uniform appearance, enhancing the user experience without compromising accessibility.
@@ -1606,7 +1623,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.5.6" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.5.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.5.6 Keyboard Accessibility</span>
     <span slot="description">
         Ensure that all links can be accessed and activated using keyboard controls. Users should be able to navigate to links using the <kbd>Tab</kbd> key and activate them with the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.
@@ -1700,7 +1717,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.6.6" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.6.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.6.6 Accessible Button States</span>
     <span slot="description">
         Ensure that buttons clearly indicate their states (e.g., disabled, active) through both visual cues and ARIA attributes. This helps users understand the current status of a button and its interactivity.
@@ -1868,7 +1885,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.7.6" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.7.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.7.6 Keyboard Navigation for Interactive Lists</span>
     <span slot="description">
         Ensure that users can navigate through interactive lists using keyboard controls. Implement logical tab orders and focus indicators to facilitate seamless interaction for users who rely on keyboards.
@@ -2048,7 +2065,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.8.8" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.8.8" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.8.8 ARIA Landmarks</span>
     <span slot="description">
         Use ARIA (Accessible Rich Internet Applications) landmarks to enhance navigation for assistive technologies. Assign appropriate roles to semantic elements to provide clear navigation points.
@@ -2163,7 +2180,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.8.20" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.8.20" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.8.20 ARIA Roles with Semantic Elements</span>
     <span slot="description">
         While semantic elements inherently provide meaningful structure, combining them with ARIA roles can further enhance accessibility. Assign appropriate ARIA roles to semantic elements to ensure assistive technologies interpret them correctly.
@@ -2299,7 +2316,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.10.7" type="priority" heading-level="h4" style="--background-color: #d40000; --foreground-color: #ffffff;">
+<icon-detail id="2.10.7" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
     <span slot="title">2.10.7 Keyboard Accessibility for Interactive Graphics</span>
     <span slot="description">
         Ensure that interactive graphics, such as buttons or clickable icons, are accessible via keyboard controls. Assign appropriate tabindex values and ARIA roles to make them focusable and operable using keyboard keys like <kbd>Enter</kbd> or <kbd>Space</kbd>.
@@ -2565,9 +2582,6 @@ greet('World');
             <!-- Components -->
             <section id="ui-components" class="section">
                 <h2 class="section-head">3. Components</h2>
-                <p>
-                    The <strong>Components</strong> section addresses the accessibility of more complex interface elements such as modals, navigation menus, sliders, and other interactive components. Guidelines in this section ensure that these components are navigable, operable, and understandable for all users.
-                </p>
                 <section id="modals" class="section"><h3 id="3.1">3.1 Modals</h3>
 <p>Modals are overlay elements that present content or require user interaction without navigating away from the current page. They are commonly used for dialogs, forms, alerts, and additional information. Ensuring that modals are accessible is vital for providing an inclusive experience for all users, including those using assistive technologies.</p>
 

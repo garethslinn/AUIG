@@ -44,12 +44,16 @@ class IconDetailComponent extends HTMLElement {
 
         switch (type) {
             case 'priority':
-                backgroundColor = '#d40000';
+                backgroundColor = '#7c5064';
                 foregroundColor = '#ffffff';
                 break;
             case 'consideration':
-                backgroundColor = '#ffc008';
-                foregroundColor = '#000000';
+                backgroundColor = '#777c50';
+                foregroundColor = '#ffffff';
+                break;
+            case 'information':
+                backgroundColor = '#507c7c';
+                foregroundColor = '#ffffff';
                 break;
             default:
                 backgroundColor = '#ffffff';
@@ -106,8 +110,8 @@ class IconDetailComponent extends HTMLElement {
                     margin: 0.5rem 0;
                 }
                 .icon {
-                    width: 2rem;
-                    height: 2rem;
+                    width: 3rem;
+                    height: 3rem;
                     background-size: cover;
                     background-position: center;
                     display: inline-block;

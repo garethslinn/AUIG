@@ -1,14 +1,10 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
-
 
     function setupToggleButton() {
         const toggleButton = document.getElementById("toggleButton");
         const toc = document.getElementById("toc");
         const nav = document.getElementById("nav");
         const anchors = nav.querySelectorAll('a');
-
 
         const handleToggle = () => {
             // Toggle the 'show' class on the toc
@@ -27,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         anchors.forEach(anchor => {
             anchor.addEventListener("click", () => {
                 handleToggle();
-                // nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 nav.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -58,8 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial setup if elements are already in the DOM
     setupToggleButton();
-
-
 
     // Initialize Accessibility Controls
     const increaseBtn = document.getElementById('increase-font');
@@ -130,10 +123,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Select the PrismJS theme links
+    const prismLightTheme = document.getElementById('prism-light-theme');
+    const prismDarkTheme = document.getElementById('prism-dark-theme');
+
+    // Function to update PrismJS theme by toggling 'disabled' attribute
+    function updatePrismTheme(theme) {
+        if (prismLightTheme && prismDarkTheme) {
+            if (theme === 'light') {
+                prismLightTheme.disabled = false;
+                prismDarkTheme.disabled = true;
+            } else {
+                prismLightTheme.disabled = true;
+                prismDarkTheme.disabled = false;
+            }
+            // Re-highlight code blocks after theme change
+            if (typeof Prism !== 'undefined') {
+                Prism.highlightAll();
+            }
+        } else {
+            console.warn('PrismJS theme link elements not found.');
+        }
+    }
+
     if (toggleThemeBtn) {
+        // Retrieve saved theme from localStorage or default to 'light'
         let currentTheme = localStorage.getItem('theme') || 'light';
         document.body.setAttribute('data-theme', currentTheme);
         updateToggleIcon(currentTheme);
+        updatePrismTheme(currentTheme);
         updateLogo(currentTheme); // Initialize logo based on current theme
 
         toggleThemeBtn.addEventListener('click', () => {
@@ -142,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
             updateToggleIcon(theme);
+            updatePrismTheme(theme);
             updateLogo(theme); // Update logo when theme changes
         });
     } else {
@@ -153,11 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (theme === 'light') {
                 toggleThemeBtn.innerHTML = moonIcon;
                 toggleThemeBtn.setAttribute('aria-label', 'Switch to Dark Mode');
-                setupToggleButton();
             } else {
                 toggleThemeBtn.innerHTML = sunIcon;
                 toggleThemeBtn.setAttribute('aria-label', 'Switch to Light Mode');
-                setupToggleButton();
             }
         }
     }
@@ -186,7 +203,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-
 
 });

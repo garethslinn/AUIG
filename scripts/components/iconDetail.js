@@ -29,8 +29,23 @@ class IconDetailComponent extends HTMLElement {
         const iconURL = `../images/${type}.svg`;
         const iconElement = this.shadowRoot.querySelector('.icon');
         if (iconElement) {
-            iconElement.style.backgroundImage = `url('${iconURL}')`;
-            iconElement.setAttribute('aria-label', `icon: ${type}`);
+            // Check if the icon file exists to avoid broken images
+            fetch(iconURL)
+                .then(response => {
+                    if (response.ok) {
+                        iconElement.style.backgroundImage = `url('${iconURL}')`;
+                        iconElement.setAttribute('aria-label', `icon: ${type}`);
+                    } else {
+                        // Fallback to a default icon if the specific icon is not found
+                        iconElement.style.backgroundImage = `url('../images/default.svg')`;
+                        iconElement.setAttribute('aria-label', 'icon: default');
+                    }
+                })
+                .catch(() => {
+                    // Fallback in case of network errors
+                    iconElement.style.backgroundImage = `url('../images/default.svg')`;
+                    iconElement.setAttribute('aria-label', 'icon: default');
+                });
         }
     }
 
@@ -53,6 +68,10 @@ class IconDetailComponent extends HTMLElement {
                 break;
             case 'information':
                 backgroundColor = '#507c7c';
+                foregroundColor = '#ffffff';
+                break;
+            case 'avoid':
+                backgroundColor = '#a62654';
                 foregroundColor = '#ffffff';
                 break;
             default:

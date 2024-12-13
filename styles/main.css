@@ -38,7 +38,7 @@ pre {
 
 /* Responsive font sizes for headings */
 h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
+h2 { font-size: 2.5rem; }
 h3 { font-size: 1.75rem; }
 h4 { font-size: 1.50rem; }
 h5 { font-size: 1.25rem; }
@@ -48,17 +48,42 @@ h1, h2, h3 {
     color: #268ca6;
 }
 
-h2 {
-    margin-bottom: 0.5rem;
-    padding: 0 1rem;
-    background-color: #268ca6;
-    color: #fff;
-}
-
 h3, h4, h5, p {
     padding: 0;
     margin: 0;
 }
+
+h2 {
+    margin: 6rem 0 0.5rem 0;
+    background-color: #000;
+    padding: 0 1rem;
+    color: #fff;
+}
+
+h2.title {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+    background-color: #268ca6;
+}
+
+h3, h4, .title-block {
+    color: #fff;
+    background: #39c1e4;
+    padding-left: 1rem;
+}
+
+h4 {
+    color: #000;
+    background: #aee9f7;
+}
+
+.title-block {
+    font-size: 1.1rem;
+    background-color: #278ca6;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
 
 a {
     color: var(--color-link);

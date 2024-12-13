@@ -41,3 +41,65 @@ const components = [
 ];
 
 components.forEach(({ url, id }) => loadComponent(url, id));
+
+
+//
+// // Function to initialize Back to Top functionality
+// function initializeBackToTop() {
+//     const backToTopBtn = document.getElementById('back-to-top');
+//
+//     if (backToTopBtn && !backToTopBtn.dataset.listenerAdded) {
+//         // Function to handle scroll events
+//         const handleScroll = () => {
+//             if (window.scrollY > 200) {
+//                 backToTopBtn.classList.add('show');
+//                 console.log('Added show class');
+//             } else {
+//                 backToTopBtn.classList.remove('show');
+//                 console.log('Removed show class');
+//             }
+//         };
+//
+//         // Attach the scroll event listener
+//         window.addEventListener('scroll', handleScroll);
+//
+//         // Function to handle click on Back to Top button
+//         const scrollToTop = () => {
+//             console.log('Back to Top button clicked');
+//             window.scrollTo({
+//                 top: 0,
+//                 behavior: 'smooth'
+//             });
+//         };
+//
+//         backToTopBtn.addEventListener('click', scrollToTop);
+//
+//         // Mark that listeners have been added to prevent duplication
+//         backToTopBtn.dataset.listenerAdded = 'true';
+//
+//         console.log('Back to Top functionality initialized.');
+//     }
+// }
+//
+//
+// document.addEventListener('DOMContentLoaded', () => {
+//     observer.observe(document.body, { childList: true, subtree: true })
+//
+//     initializeBackToTop();
+//
+// // Observe the DOM for additions of the back-to-top button
+//     const observer = new MutationObserver((mutations) => {
+//         for (let mutation of mutations) {
+//             if (mutation.type === 'childList') {
+//                 for (let node of mutation.addedNodes) {
+//                     if (node.id === 'back-to-top') {
+//                         initializeBackToTop();
+//                     }
+//                 }
+//             }
+//         }
+//     });
+//
+// // Start observing the body for added child nodes
+//     observer.observe(document.body, { childList: true, subtree: true })
+// });

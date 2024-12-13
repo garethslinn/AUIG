@@ -20,5 +20,3 @@ function loadComponent(url, placeholderId) {
             console.error('Error loading component:', error);
         });
 }
-
-

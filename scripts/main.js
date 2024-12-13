@@ -59,31 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial setup if elements are already in the DOM
     setupToggleButton();
 
-    // // Back to Top Button Functionality
-    // const backToTopBtn = document.getElementById('back-to-top');
-    //
-    // if (backToTopBtn) {
-    //     window.addEventListener('scroll', () => {
-    //         if (window.scrollY > 200) {
-    //             alert('here')
-    //             backToTopBtn.classList.add('show');
-    //             console.log('Added show class');
-    //         } else {
-    //             backToTopBtn.classList.remove('show');
-    //             console.log('Removed show class');
-    //         }
-    //     });
-    //
-    //     backToTopBtn.addEventListener('click', () => {
-    //         console.log('Back to Top button clicked');
-    //         window.scrollTo({
-    //             top: 0,
-    //             behavior: 'smooth'
-    //         });
-    //     });
-    // } else {
-    //     console.warn('Back to Top button with id "back-to-top" not found.');
-    // }
+
 
     // Initialize Accessibility Controls
     const increaseBtn = document.getElementById('increase-font');
@@ -210,5 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+
 
 });

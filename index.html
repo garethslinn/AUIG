@@ -55,7 +55,9 @@
     </button>
     <h3 class="sr-only">Table of Contents</h3>
     <ul>
+
         <li><a href="#abstract"><strong>Abstract</strong></a></li>
+        <li><a href="#introduction"><strong>How To Use These Guidelines</strong></a></li>
 
         <li>
             <a href="#global-settings"><strong>1. Global Settings</strong></a>
@@ -519,7 +521,7 @@
             <header id="header">
 <header id="header">
     <h1>Accessible User Interface Guidelines (AUIG)</h1>
-    <h2>A comprehensive set of modern accessibility guidelines that are based on W3C standards and
+    <h2 class="title">A comprehensive set of modern accessibility guidelines that are based on W3C standards and
         expand upon additional considerations such as neurodiversity, presented in an intuitive
         and easy-to-follow format.</h2>
 
@@ -620,6 +622,11 @@ The What to Avoid section highlights common mistakes and deprecated practices th
             <!-- Global Settings -->
             <section id="" class="section">
                 <h2 class="section-head">1. Global Settings</h2>
+                <p class="title-block">Use this section for managing essential elements that apply across the entire web platform.
+                    It includes key aspects such as color, contrast, language, keyboard access, meta data, skip
+                    links, responsive design, and flashing images. When developing a new application or website
+                    or upgrading an existing system, prioritise global settings to ensure a consistent and
+                    effective user experience.</p>
                 <section id="global-settings" class="section">
 <h3 id="1.1">1.1 Colour</h3>
 <p>Define and use consistent color schemes across your web content to enhance readability and
@@ -698,6 +705,13 @@ technologies such as screen readers.</p>
             <!-- Elements -->
             <section id="html-elements" class="section">
                 <h2 class="section-head">2. Elements</h2>
+                <p class="title-block">
+                    Use this section for managing specific UI components to ensure full accessibility. It covers best
+                    practices for elements such as multimedia (images, audio, video), forms, tables, and headings.
+                    Accessibility should be integrated into every phase of the project lifecycle, including design,
+                    user experience (UX), development, and quality assurance (QA). Prioritising these elements helps
+                    create an accessible and user-friendly application or website.
+                </p>
                 <section id="imagesMultimedia" class="section"><h3>2.1. Multimedia</h3>
 <h4 id="2.1.1">2.1.1 Alternative Representation</h4>
 <p>All multimedia elements, including images, video, audio, and graphs,
@@ -2582,6 +2596,13 @@ greet('World');
             <!-- Components -->
             <section id="ui-components" class="section">
                 <h2 class="section-head">3. Components</h2>
+                <p class="title-block">
+                    Use this section for addressing the accessibility of complex UI elements. It covers components such as
+                    modals, tooltips, tabs, and accordions, providing essential guidelines and examples for effective
+                    implementation. While examples are included, users are encouraged to develop their own methods to achieve
+                    accessibility. The primary goal is to ensure each component is accessible and meets all relevant
+                    accessibility requirements.
+                </p>
                 <section id="modals" class="section"><h3 id="3.1">3.1 Modals</h3>
 <p>Modals are overlay elements that present content or require user interaction without navigating away from the current page. They are commonly used for dialogs, forms, alerts, and additional information. Ensuring that modals are accessible is vital for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
@@ -3308,7 +3329,6 @@ tabs<span class="token punctuation">.</span><span class="token function">forEach
 </pre>
 
 <h4>Best Practices for Tabs</h4>
-
 <ul>
     <li><strong>Use Semantic Markup:</strong> Structure tabs with proper roles and attributes, ensuring each tab is associated with its content panel.</li>
     <li><strong>Ensure Keyboard Accessibility:</strong> Support navigation between tabs using Arrow keys and activation with the Enter or Space keys.</li>
@@ -3964,6 +3984,9 @@ document<span class="token punctuation">.</span><span class="token function">que
             </section>
 
             <section id="avoid" class="section"><h2 id="4">4. What to Avoid</h2>
+<p class="title-block">
+    Use this section to highlight common mistakes and outdated practices that can hinder accessibility.
+</p>
 <p>While implementing web accessibility features, it's equally important to recognize and avoid common pitfalls that can hinder the user experience. This section outlines practices and elements that should be avoided to maintain an inclusive and accessible website.</p>
 
 <h3 id="4.1">4.1 Badly Implemented ARIA</h3>
@@ -4421,7 +4444,7 @@ document<span class="token punctuation">.</span><span class="token function">que
 </footer></footer>
 
 <!-- Back to Top Button -->
-<button id="back-to-top" aria-label="Back to Top">Back to top</button>
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
 
 <!-- External JavaScript Files -->
 <link href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.css" rel="stylesheet">

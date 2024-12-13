@@ -45,11 +45,11 @@ h5 { font-size: 1.25rem; }
 
 
 h2, h3 {
-    color: #268ca6;
+    color: var(--title-h2);
 }
 
 h1 {
-    color: var(--title-fg)
+    color: var(--title-fg);
 }
 
 h3, h4, h5, p {
@@ -67,18 +67,18 @@ h2 {
 h2.title {
     margin: 0.5rem 0;
     font-size: 2rem;
-    background-color: #268ca6;
+    background-color: var(--title-h2);
 }
 
 h3, h4, .title-block {
     color: #fff;
-    background: #39c1e4;
+    background: var(--title-h3);
     padding-left: 1rem;
 }
 
 h4 {
-    color: #000;
-    background: #aee9f7;
+    color: var(--title-h4-fg);
+    background: var(--title-h4);
 }
 
 .title-block {

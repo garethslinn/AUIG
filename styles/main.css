@@ -112,6 +112,7 @@ a:hover, a:focus { text-decoration: none; }
 main {
     flex: 1;
     padding: 2rem;
+    padding-top: 0;
     overflow-y: auto;
     margin: 0 auto;
     background-color: var(--main-bg);

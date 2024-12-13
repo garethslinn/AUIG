@@ -79,6 +79,7 @@ h3, h4, .title-block {
 h4 {
     color: var(--title-h4-fg);
     background: var(--title-h4);
+    margin: 1rem 0;
 }
 
 .title-block {

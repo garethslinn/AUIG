@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const logo = document.querySelector('.logo');
     const logoLight = '/images/auig_light.svg';
     const logoDark = '/images/auig_dark.svg';
+    const prismLightTheme = document.getElementById('prism-light-theme');
+    const prismDarkTheme = document.getElementById('prism-dark-theme');
 
     function updateLogo(theme) {
         if (logo) {
@@ -64,12 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function togglePrismTheme(theme) {
+        if (prismLightTheme && prismDarkTheme) {
+            if (theme === 'light') {
+                prismLightTheme.disabled = false;
+                prismDarkTheme.disabled = true;
+            } else {
+                prismLightTheme.disabled = true;
+                prismDarkTheme.disabled = false;
+            }
+        }
+    }
+
     toggleThemeBtn?.addEventListener('click', () => {
         let theme = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
         document.body.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
         updateToggleIcon(theme);
         updateLogo(theme);
+        togglePrismTheme(theme); // Toggle PrismJS theme
     });
 
     // Initial theme setup
@@ -77,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.setAttribute('data-theme', initialTheme);
     updateToggleIcon(initialTheme);
     updateLogo(initialTheme);
+    togglePrismTheme(initialTheme); // Set initial PrismJS theme
 
     // Smooth Scroll and Focus Management for In-Page Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

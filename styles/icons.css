@@ -1,7 +1,7 @@
 .icon {
     width: 2rem;
     height: 2rem;
-    background-image: url('../images/consideration.svg');
+    /*background-image: url('../images/consideration.svg');*/
     background-size: cover;
     background-position: center;
     display: inline-block;
@@ -20,18 +20,23 @@
     align-items: center;
     margin-bottom: 0.625rem;
     font-weight: bold;
+
+    &.information_icon { background: #507c7c; color: #fff; };
+    &.consideration_icon { background: #777c50; color: #fff; };
+    &.priority_icon { background: #7c5064; color: #fff; };
+    &.avoid_icon { background: #a62654; color: #fff; };
 }
 
 .guideline-term .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.625rem;
+    width: 2rem;
+    height: 2rem;
     background-size: contain;
     background-repeat: no-repeat;
+    padding: 0.5rem 1rem;
 }
 
 .guideline-description {
-    margin-left: 2.125rem;
+    margin-left: 0rem;
     margin-bottom: 0.9375rem;
 }
 

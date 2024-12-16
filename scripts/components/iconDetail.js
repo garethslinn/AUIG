@@ -59,20 +59,24 @@ class IconDetailComponent extends HTMLElement {
 
         switch (type) {
             case 'priority':
-                backgroundColor = '#7c5064';
+                backgroundColor = '#9a10bc';
                 foregroundColor = '#ffffff';
                 break;
             case 'consideration':
-                backgroundColor = '#777c50';
-                foregroundColor = '#ffffff';
+                backgroundColor = '#10bc93';
+                foregroundColor = '#000';
                 break;
             case 'information':
-                backgroundColor = '#507c7c';
+                backgroundColor = '#1082bc';
                 foregroundColor = '#ffffff';
                 break;
             case 'avoid':
-                backgroundColor = '#a62654';
+                backgroundColor = '#bc2210';
                 foregroundColor = '#ffffff';
+                break;
+            case 'caution':
+                backgroundColor = '#bcb410';
+                foregroundColor = '#000';
                 break;
             default:
                 backgroundColor = '#ffffff';

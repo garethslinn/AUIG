@@ -21,10 +21,11 @@
     margin-bottom: 0.625rem;
     font-weight: bold;
 
-    &.information_icon { background: #507c7c; color: #fff; };
-    &.consideration_icon { background: #777c50; color: #fff; };
-    &.priority_icon { background: #7c5064; color: #fff; };
-    &.avoid_icon { background: #a62654; color: #fff; };
+    &.information_icon { background: #1082bc; color: #fff; };
+    &.consideration_icon { background: #10bc93; color: #000; };
+    &.priority_icon { background: #9a10bc; color: #fff; };
+    &.avoid_icon { background: #bc2210; color: #fff; };
+    &.caution_icon { background: #bcb410; color: #000; };
 }
 
 .guideline-term .icon {

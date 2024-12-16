@@ -7,7 +7,7 @@
     <title>Accessible User Interface Guidelines (AUIG)</title>
     <meta name="description" content="Ca11y offers inclusive recruitment strategies and accessible hiring practices designed to support individuals with cognitive challenges. Discover how to create an equitable workplace and attract a diverse talent pool.">
     <meta name="keywords" content="accessible recruitment, inclusive hiring, cognitive challenges, diversity in hiring, accessible workplace, recruitment for disabilities, equitable hiring practices">
-    <link rel="stylesheet" href="styles/main.css?v=1.2">
+    <link rel="stylesheet" href="styles/main.css?v=1.1">
 
     <!-- PrismJS Light Theme (Enabled by default) -->
     <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet">
@@ -595,7 +595,7 @@
 <p>
 The Accessibility User Interface Guidelines (AUIG) serve as a comprehensive framework for designing and developing accessible digital experiences. This section provides a concise guide on how to navigate and implement the AUIG effectively. By understanding the structure and key components of the AUIG, developers, designers, testers, and user experience professionals can ensure their digital platforms are inclusive, user-friendly, and compliant with accessibility standards. This overview highlights the main sections of the AUIG, offering strategic insights into global settings, UI elements, component accessibility, and common pitfalls to avoid.
 </p>
-<icon-detail type="information" heading-level="h3" style="--background-color: #507c7c; --foreground-color: #ffffff;">
+<icon-detail type="information" heading-level="h3" style="--background-color: #1082bc; --foreground-color: #ffffff;">
     <span slot="title">Code Examples throughout this guide</span>
     <span slot="description">All code examples are correct, but they might not apply exactly to every scenario. Consider them as templates and adjust them according to your specific context.
     </span>
@@ -625,29 +625,35 @@ The What to Avoid section highlights common mistakes and deprecated practices th
 <p>These icons are used to emphasise specific guidelines, highlighting their importance through both color and visual symbols.</p>
 
 <dl>
-    <dt class="guideline-term priority_icon">
-        <img class="icon" alt="Priority icon" src="../../images/priority.svg" aria-hidden="true">
-        <strong>Priority:</strong>
+    <dt class="guideline-term caution_icon">
+        <img class="icon" alt="Caution icon" src="../../images/caution.svg" aria-hidden="true">
+        <strong>Caution:</strong>
     </dt>
-    <dd class="guideline-description">Indicates high-priority information that requires immediate attention.</dd>
-
-    <dt class="guideline-term consideration_icon">
-        <img class="icon" alt="Consideration icon" src="../../images/consideration.svg" aria-hidden="true">
-        <strong>Consideration:</strong>
-    </dt>
-    <dd class="guideline-description">Highlights points that need careful thought or evaluation.</dd>
-
-        <dt class="guideline-term information_icon">
-            <img class="icon" alt="Information icon" src="../../images/information.svg" aria-hidden="true">
-            <strong>Information:</strong>
-        </dt>
-        <dd class="guideline-description">Provides additional details or context related to the content.</dd>
+    <dd class="guideline-description">A visible warning that caution should be taken.</dd>
 
     <dt class="guideline-term avoid_icon">
         <img class="icon" alt="Avoid icon" src="../../images/avoid.svg" aria-hidden="true">
         <strong>Avoid:</strong>
     </dt>
     <dd class="guideline-description">Marks practices or elements that should be excluded or minimised.</dd>
+
+    <dt class="guideline-term priority_icon">
+        <img class="icon" alt="Priority icon" src="../../images/priority.svg" aria-hidden="true">
+        <strong>Priority:</strong>
+    </dt>
+    <dd class="guideline-description">Indicates high-priority information that requires immediate attention.</dd>
+
+    <dt class="guideline-term information_icon">
+        <img class="icon" alt="Information icon" src="../../images/information.svg" aria-hidden="true">
+        <strong>Information:</strong>
+    </dt>
+    <dd class="guideline-description">Provides additional details or context related to the content.</dd>
+
+    <dt class="guideline-term consideration_icon">
+        <img class="icon" alt="Consideration icon" src="../../images/consideration.svg" aria-hidden="true">
+        <strong>Consideration:</strong>
+    </dt>
+    <dd class="guideline-description">Highlights points that need careful thought or evaluation.</dd>
 </dl></section>
 
             <!-- Global Settings -->
@@ -742,7 +748,7 @@ technologies such as screen readers.</p>
     enhances accessibility for users with mobility limitations who rely on different devices, and
     improves usability for all users by providing a consistent experience regardless of the device used.</p>
 
-<icon-detail id="1.8" type="priority" heading-level="h3" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="1.8" type="priority" heading-level="h3" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">1.8 Flashing Images</span>
     <span slot="description">
         Flashing images can trigger seizures and cause significant discomfort for individuals with
@@ -782,8 +788,14 @@ technologies such as screen readers.</p>
 </pre>
     </li>
     <li>
-        <strong>ARIA Hidden for Decorative Images:</strong>
-        <p>Use <code class="language-html">aria-hidden="true"</code> for decorative images to prevent screen readers from announcing them.</p>
+
+        <icon-detail id="" type="information" heading-level="h5" style="--background-color: #1082bc; --foreground-color: #ffffff;">
+            <span slot="title">ARIA Hidden for Decorative Images:</span>
+            <span slot="description">
+                Use <code class="language-html">aria-hidden="true"</code> for decorative images to
+                prevent screen readers from announcing them.
+            </span>
+        </icon-detail>
 <pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>decorative-border.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code>
 </pre>
     </li>
@@ -906,7 +918,7 @@ technologies such as screen readers.</p>
     video's spoken language. Transcripts also support users experiencing cognitive overloads, such as
     those with ADHD, by allowing them to read content at their own pace.</p>
 
-<icon-detail id="2.1.7" type="consideration" style="--background-color: #777c50; --foreground-color: #ffffff;">
+<icon-detail id="2.1.7" type="consideration" style="--background-color: #10bc93; --foreground-color: #000;">
     <span slot="title">2.1.7 Sign Language</span>
     <span slot="description">This consideration should be evaluated based on the target audience's needs, especially for content aimed at users who are deaf or hard of hearing.</span>
 </icon-detail>
@@ -1522,7 +1534,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.3.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.3.6" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.3.6 Keyboard Navigation</span>
     <span slot="description">
         Ensure that users can navigate through tables using keyboard controls. Implement logical tab orders and focus indicators to facilitate seamless interaction for users who rely on keyboards.
@@ -1592,7 +1604,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.4.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.4.6" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.4.6 Consistent Styling</span>
     <span slot="description">
         Apply consistent styling to headings to maintain visual coherence across the website. Use CSS classes or styles to ensure that headings of the same level have uniform appearance, enhancing the user experience without compromising accessibility.
@@ -1692,7 +1704,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.5.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.5.6" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.5.6 Keyboard Accessibility</span>
     <span slot="description">
         Ensure that all links can be accessed and activated using keyboard controls. Users should be able to navigate to links using the <kbd>Tab</kbd> key and activate them with the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.
@@ -1786,7 +1798,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.6.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.6.6" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.6.6 Accessible Button States</span>
     <span slot="description">
         Ensure that buttons clearly indicate their states (e.g., disabled, active) through both visual cues and ARIA attributes. This helps users understand the current status of a button and its interactivity.
@@ -1954,7 +1966,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.7.6" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.7.6" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.7.6 Keyboard Navigation for Interactive Lists</span>
     <span slot="description">
         Ensure that users can navigate through interactive lists using keyboard controls. Implement logical tab orders and focus indicators to facilitate seamless interaction for users who rely on keyboards.
@@ -2134,7 +2146,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.8.8" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.8.8" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.8.8 ARIA Landmarks</span>
     <span slot="description">
         Use ARIA (Accessible Rich Internet Applications) landmarks to enhance navigation for assistive technologies. Assign appropriate roles to semantic elements to provide clear navigation points.
@@ -2250,7 +2262,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.8.19" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.8.19" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.8.19 ARIA Roles with Semantic Elements</span>
     <span slot="description">
         While semantic elements inherently provide meaningful structure, combining them with ARIA roles can further enhance accessibility. Assign appropriate ARIA roles to semantic elements to ensure assistive technologies interpret them correctly.
@@ -2386,7 +2398,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 
-<icon-detail id="2.10.7" type="priority" heading-level="h4" style="--background-color: #7c5064; --foreground-color: #ffffff;">
+<icon-detail id="2.10.7" type="priority" heading-level="h4" style="--background-color: #9a10bc; --foreground-color: #ffffff;">
     <span slot="title">2.10.7 Keyboard Accessibility for Interactive Graphics</span>
     <span slot="description">
         Ensure that interactive graphics, such as buttons or clickable icons, are accessible via keyboard controls. Assign appropriate tabindex values and ARIA roles to make them focusable and operable using keyboard keys like <kbd>Enter</kbd> or <kbd>Space</kbd>.
@@ -4046,7 +4058,7 @@ document<span class="token punctuation">.</span><span class="token function">que
 <p>While implementing web accessibility features, it's equally important to recognize and avoid common pitfalls that can hinder the user experience. This section outlines practices and elements that should be avoided to maintain an inclusive and accessible website.</p>
 
 <h3 id="4.1">4.1 Badly Implemented ARIA</h3>
-<icon-detail type="avoid" heading-level="h4" style="--background-color: #a62654; --foreground-color: #ffffff;">
+<icon-detail type="avoid" heading-level="h4" style="--background-color: #bc2210; --foreground-color: #ffffff;">
     <span slot="title">Avoid This Practice</span>
     <span slot="description">You risk making access worse by using ARIA without understanding its impact.</span>
 </icon-detail>
@@ -4514,8 +4526,8 @@ document<span class="token punctuation">.</span><span class="token function">que
 <script src="scripts/loader.js?v=1.1"></script>
 <script src="scripts/components/iconDetail.js?v=1.1"></script>
 
-<script src="scripts/main.js?v=1.4"></script>
-<script src="scripts/auig.js?v=1.2"></script>
+<script src="scripts/main.js?v=1.1"></script>
+<script src="scripts/auig.js?v=1.1"></script>
 
 
 

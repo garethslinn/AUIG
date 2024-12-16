@@ -1,4 +1,3 @@
-
 .nav {
     width: 20rem;
     padding: 1rem;
@@ -7,11 +6,11 @@
     color: var(--nav-text);
     transition: background-color var(--transition-speed), color var(--transition-speed);
 
-    .toggle-button {
-        display: none;
-        /*transition: transform 0.1s ease-in-out;*/
-        transform: rotate(0deg);
-    }
+.toggle-button {
+    display: none;
+    /*transition: transform 0.1s ease-in-out;*/
+    transform: rotate(0deg);
+}
 }
 
 .nav ul {
@@ -43,42 +42,51 @@
     .nav {
         width: 100%;
         position: relative;
-        height: 1rem;
         padding-left: 4rem;
 
+    .navlist {
+        padding-top: 3rem;
+    }
+
+    .show {
+         height: auto;
+         overflow-y: scroll;
         .toggle-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            padding: 0;
-
-            border-radius: 0.2rem;
-            cursor: pointer;
-
-            width: 100%;
-            height: 3rem;
-            background-color: #268ca6;
-            color: #fff;
-            font-size: 1.4rem;
-
-            position: fixed;
-            top: 4rem;
-            left: 0rem;
-        }
-        .toggle-button svg {
-            display: block;
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-
-        &.show {
-            height: auto;
-             overflow-y: scroll;
-            .toggle-button {
-                transform: rotate(180deg);
-            }
+            transform: rotate(180deg);
         }
     }
+    #nav {
+        height: 1rem;
+    }
+    #nav.show {
+        height: auto;
+    }
+    .toggle-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: 0;
+
+        border-radius: 0.2rem;
+        cursor: pointer;
+
+        width: 100%;
+        height: 3rem;
+        background-color: #268ca6;
+        color: #fff;
+        font-size: 1.4rem;
+
+        position: fixed;
+        top: 4rem;
+        left: 0rem;
+
+    }
+    .toggle-button svg {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
 
 }

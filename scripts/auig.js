@@ -1,7 +1,7 @@
 const components = [
     { url: '../../../components/header.html', id: 'header' },
     { url: '../../../components/footer.html', id: 'footer' },
-    { url: '../../../components/nav.html', id: 'nav' },
+    { url: '../../../components/nav.html', id: 'navlist' },
     { url: '../../../components/sections/abstract.html', id: 'abstract' },
     { url: '../../../components/sections/introduction.html', id: 'introduction' },
     { url: '../../../components/sections/iconsUsed.html', id: 'iconsUsed' },

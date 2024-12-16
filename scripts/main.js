@@ -1,26 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById("toggleButton");
-    const toc = document.getElementById("toc");
-    const nav = document.getElementById("nav");
 
+    const toggleButton = document.getElementById("toggleButton");
     function handleToggle() {
-        toc.classList.toggle("show");
-        const isShown = toc.classList.contains("show");
+        console.log('nav1' ,nav1)
+        nav.classList.toggle("show");
+        const isShown = nav.classList.contains("show");
         nav.setAttribute("aria-label", isShown ? "Main Navigation open" : "Main Navigation closed");
         toggleButton.setAttribute("aria-expanded", isShown);
     }
 
-    nav.querySelectorAll('a').forEach(anchor => {
-        anchor.addEventListener("click", () => {
-            handleToggle();
-            nav.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    toggleButton?.addEventListener("click", handleToggle);
+
+    const nav1 = document.getElementById("navlist");
+
+    nav1.addEventListener('click', (event) => {
+        handleToggle();
     });
 
-    toggleButton?.addEventListener("click", handleToggle);
 
     // Accessibility font size controls
     const root = document.documentElement;
@@ -29,14 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let fontSize = 1;
 
     increaseBtn?.addEventListener('click', () => {
-        if (fontSize < 2) {
+        if (fontSize < 2) { // Maximum font size
             fontSize += 0.1;
             root.style.setProperty('--font-size-base', `${fontSize}rem`);
         }
     });
 
     decreaseBtn?.addEventListener('click', () => {
-        if (fontSize > 0.8) {
+        if (fontSize > 0.8) { // Minimum font size
             fontSize -= 0.1;
             root.style.setProperty('--font-size-base', `${fontSize}rem`);
         }

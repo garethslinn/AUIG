@@ -38,6 +38,7 @@ const components = [
     { url: '../../../components/sections/appendix.html', id: 'appendix' },
     { url: '../../../components/sections/appendix-a.html', id: 'appendix-a' },
     { url: '../../../components/sections/appendix-b.html', id: 'appendix-b' },
+    { url: '../../../components/sections/appendix-c.html', id: 'appendix-c' },
     { url: '../../../components/sections/glossary.html', id: 'glossary' }
 ];
 

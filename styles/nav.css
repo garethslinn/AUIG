@@ -1,3 +1,4 @@
+
 .nav {
     width: 20rem;
     padding: 1rem;
@@ -5,12 +6,16 @@
     background-color: var(--nav-bg);
     color: var(--nav-text);
     transition: background-color var(--transition-speed), color var(--transition-speed);
+}
 
 .toggle-button {
     display: none;
     /*transition: transform 0.1s ease-in-out;*/
     transform: rotate(0deg);
-}
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .nav ul {
@@ -36,39 +41,39 @@
     text-decoration: underline;
 }
 
-
+/* Responsive Styles */
 @media (max-width: 800px) {
 
     .nav {
         width: 100%;
         position: relative;
         padding-left: 4rem;
+    }
 
     .navlist {
         padding-top: 3rem;
     }
 
     .show {
-         height: auto;
-         overflow-y: scroll;
-        .toggle-button {
-            transform: rotate(180deg);
-        }
+        height: auto;
+        overflow-y: scroll;
     }
+
     #nav {
         height: 1rem;
     }
+
     #nav.show {
         height: auto;
     }
+
     .toggle-button {
-        display: flex;
+        display: flex; /* Show toggle button on mobile */
         justify-content: center;
         align-items: center;
         border: none;
         padding: 0;
 
-        border-radius: 0.2rem;
         cursor: pointer;
 
         width: 100%;
@@ -80,13 +85,51 @@
         position: fixed;
         top: 4rem;
         left: 0;
-
+        z-index: 1000;
     }
+
     .toggle-button svg {
         display: block;
         width: 1.5rem;
         height: 1.5rem;
     }
-}
 
+    .icon-humburger, .icon-close {
+        span, svg {
+            display: inline-block;
+        }
+        span {
+            position: relative;
+            bottom: 0.2rem;
+        }
+    }
+
+    .icon-close {
+        display: none;
+    }
+
+    .show {
+        .icon-humburger {
+            display: none;
+        }
+        .icon-close {
+            display: block;
+            svg {
+                display: inline-block!important;
+            }
+        }
+    }
+
+    .toggle-button svg {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* When menu is shown */
+    .nav.show #hamburgerIcon {
+        display: none;
+    }
+
+    .nav.show #closeIcon {
+        display: block;
+    }
 }

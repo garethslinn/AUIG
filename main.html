@@ -48,16 +48,51 @@
 <!-- Main Container with Two Columns -->
 <div class="container">
     <!-- Sidebar -->
-    <aside id="toc" class="nav"  aria-label="Table of Contents">
-        <nav id="nav" aria-label="Main Navigation closed">
-            <button aria-label="toggle menu" id="toggleButton" class="toggle-button">
-                <svg aria-hidden="true" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="100,20 20,180 180,180" fill="white" stroke="black" stroke-width="2" />
-                </svg>
+
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation" aria-expanded="false">
+            <button
+                    aria-label="Open menu"
+                    aria-controls="navlist"
+                    aria-expanded="false"
+                    id="toggleButton"
+                    class="toggle-button">
+                <!-- Hamburger Icon -->
+                <div class="icon-humburger">
+                    <svg
+                            id="hamburgerIcon"
+                            aria-hidden="true"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                        <line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="3" y1="12" x2="21" y2="12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="3" y1="18" x2="21" y2="18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Menu</span>
+                </div>
+                <!-- Close "X" Icon, hidden by default -->
+                <div class="icon-close">
+                    <svg
+                            id="closeIcon"
+                            aria-hidden="true"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="display: none;">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Close</span>
+                </div>
             </button>
             <div class="navlist" id="navlist"></div>
         </nav>
     </aside>
+
+
 
     <!-- Main Content -->
     <main id="main-content">

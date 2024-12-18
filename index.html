@@ -1,12 +1,19 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+
     <title>Accessible User Interface Guidelines (AUIG)</title>
-    <meta name="description" content="Ca11y offers inclusive recruitment strategies and accessible hiring practices designed to support individuals with cognitive challenges. Discover how to create an equitable workplace and attract a diverse talent pool.">
-    <meta name="keywords" content="accessible recruitment, inclusive hiring, cognitive challenges, diversity in hiring, accessible workplace, recruitment for disabilities, equitable hiring practices">
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
     <link rel="stylesheet" href="styles/main.css?v=1.1">
 
     <!-- PrismJS Light Theme (Enabled by default) -->
@@ -14,18 +21,31 @@
     <!-- PrismJS Dark Theme (Disabled by default) -->
     <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled="">
 
+    <!-- Favicon -->
     <link rel="icon" href="images/favi_1.ico" type="image/x-icon">
-<!--    <base href="/">-->
+
+    <!-- Structured Data for Organization -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "AUIG",
+            "name": "Accessible User Interface Guidelines (AUIG)",
             "url": "https://www.auig.org",
             "logo": "https://www.auig.org/images/auig_light.svg",
-            "description": "Accessibility Guidelines for designing User Interfaces that are accessible and inclusive for everyone."
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "sameAs": [
+                "https://www.facebook.com/auig",
+                "https://twitter.com/auig",
+                "https://www.linkedin.com/company/auig"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-800-123-4567",
+                "contactType": "Customer Service",
+                "areaServed": "US",
+                "availableLanguage": ["English", "Spanish"]
+            }
         }
-
     </script>
 </head>
 <body data-theme="light">
@@ -34,19 +54,22 @@
 <a href="#main-content" class="sr-only">Skip to main content</a>
 
 <!-- Accessibility Controls -->
-<aside class="controls" aria-label="Accessibility controls">
-    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="Ca11y logo depicting cognitive accessibility">
+<aside class="controls" aria-label="Accessibility controls" itemscope="" itemtype="https://schema.org/WebPageElement">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="Ca11y logo depicting cognitive accessibility" itemprop="image">
     <span>
-      <button id="decrease-font" aria-label="Decrease text size">A-</button>
-      <button id="increase-font" aria-label="Increase text size">A+</button>
-      <button id="toggle-theme" aria-label="Switch to Dark Mode"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><title>Moon icon depicting dark mode</title><path d="M21 12.79A9 9 0 1 1 11.21 3 A7 7 0 0 0 21 12.79z"></path></svg></button>
-    </span>
+          <button id="decrease-font" aria-label="Decrease text size" itemprop="action" itemscope="" itemtype="https://schema.org/Action">
+              <span itemprop="name">A-</span>
+          </button>
+          <button id="increase-font" aria-label="Increase text size" itemprop="action" itemscope="" itemtype="https://schema.org/Action">
+              <span itemprop="name">A+</span>
+          </button>
+          <button id="toggle-theme" aria-label="Switch to Dark Mode" itemprop="action" itemscope="" itemtype="https://schema.org/Action"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><title>Moon icon depicting dark mode</title><path d="M21 12.79A9 9 0 1 1 11.21 3 A7 7 0 0 0 21 12.79z"></path></svg></button>
+        </span>
 </aside>
 
 <!-- Main Container with Two Columns -->
 <div class="container">
     <!-- Sidebar -->
-
     <aside id="toc" class="nav" aria-label="Table of Contents">
         <nav id="nav" aria-label="Main Navigation" aria-expanded="false" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
             <button aria-label="Open menu" aria-controls="navlist" aria-expanded="false" id="toggleButton" class="toggle-button">
@@ -2704,12 +2727,11 @@
     </aside>
 
 
-
     <!-- Main Content -->
     <main id="main-content">
         <div class="section-container">
             <!-- Header -->
-            <header id="header"><header class="header" id="header" itemscope="" itemtype="https://schema.org/CreativeWork">
+            <header id="header" itemscope="" itemtype="https://schema.org/WPHeader"><header class="header" id="header" itemscope="" itemtype="https://schema.org/CreativeWork">
     <!-- Title of the CreativeWork -->
     <h1 itemprop="name">Accessible User Interface Guidelines (AUIG)</h1>
 
@@ -2801,7 +2823,7 @@
 </header>
 </header>
 
-            <!-- Sections -->
+            <!-- Abstract Section -->
             <article id="abstract" class="section" itemscope="" itemtype="https://schema.org/Article">
   <!-- Article Headline -->
   <h2 itemprop="headline">Abstract</h2>
@@ -2847,59 +2869,7 @@
   </section>
 </article>
 
-            <article id="introduction" class="section" itemscope="" itemtype="https://schema.org/Article"><article itemscope="" itemtype="https://schema.org/Article">
-    <!-- Article Headline -->
-    <h2 id="how-to-use" itemprop="headline">How to use these guidelines</h2>
-
-    <!-- Article Description -->
-    <p itemprop="description">
-        The Accessibility User Interface Guidelines (AUIG) serve as a comprehensive framework for designing and developing accessible digital experiences. This section provides a concise guide on how to navigate and implement the AUIG effectively. By understanding the structure and key components of the AUIG, developers, designers, testers, and user experience professionals can ensure their digital platforms are inclusive, user-friendly, and compliant with accessibility standards. This overview highlights the main sections of the AUIG, offering strategic insights into global settings, UI elements, component accessibility, and common pitfalls to avoid.
-    </p>
-    <br>
-    <p itemprop="description">
-        The AUIG stands as a pivotal resource throughout the user interface development lifecycle, presenting a modern approach that is both easy to understand and apply. By following these guidelines, organisations ensure their digital offerings are accessible, enhancing user engagement and satisfaction for everyone.
-    </p>
-
-    <!-- Informational Detail: Code Examples Note -->
-    <icon-detail type="information" heading-level="h3" itemscope="" itemtype="https://schema.org/CreativeWork" style="--background-color: #1082bc; --foreground-color: #ffffff;">
-        <span slot="title" itemprop="name">Code Examples throughout this guide</span>
-        <span slot="description" itemprop="description">All code examples are correct, but they might not apply exactly to every scenario. Consider them as templates and adjust them according to your specific context.
-    </span>
-    </icon-detail>
-
-    <!-- Section: Global Settings -->
-    <section itemscope="" itemtype="https://schema.org/CreativeWork">
-        <h3 itemprop="headline">Global Settings</h3>
-        <p itemprop="description">
-            The Global Settings section outlines foundational elements that apply universally across the entire web platform. It emphasizes the importance of core issues that apply to the main layout and across the application/site. Such issues include Colour, Contrast, Language, Keyboard Access, Meta Data, Skip Links, Responsive Design, Flashing Images.
-            From a planning perspective, global settings should be prioritised when developing a new application or website, or when upgrading an existing legacy system.
-        </p>
-    </section>
-
-    <!-- Section: Elements -->
-    <section itemscope="" itemtype="https://schema.org/CreativeWork">
-        <h3 itemprop="headline">Elements</h3>
-        <p itemprop="description">
-            The Elements section examines specific user interface (UI) components, providing comprehensive best practices to ensure each element is fully accessible. Accessibility should be seamlessly integrated into every phase of the project lifecycle, including design, user experience (UX), development, and quality assurance (QA).
-            This includes but not exclusively elements such as Multimedia (images, audio, video etc), Forms, Tables, Headings etc.
-        </p>
-    </section>
-
-    <!-- Section: Components -->
-    <section itemscope="" itemtype="https://schema.org/CreativeWork">
-        <h3 itemprop="headline">Components</h3>
-        <p itemprop="description">
-            The Components section concentrates on the accessibility considerations of complex user interface (UI) elements. It covers components such as modals, tooltips, tabs, and accordions. This section provides essential guidelines and illustrative examples to assist in implementing accessible components effectively. Users are encouraged to develop their own methods for achieving accessibility rather than strictly adhering to the provided examples. The primary focus is to ensure that each component is accessible and meets all relevant accessibility requirements.
-        </p>
-    </section>
-
-    <!-- Section: What to Avoid -->
-    <section itemscope="" itemtype="https://schema.org/CreativeWork">
-        <h3 itemprop="headline">What to Avoid</h3>
-        <p itemprop="description">
-            The What to Avoid section highlights common mistakes and deprecated practices that can hinder accessibility. As the documentation improves this and other sections may grow.
-        </p>
-    </section></article></article>
+            <!-- Icons Used Section -->
             <section id="iconsUsed" class="section" itemscope="" itemtype="https://schema.org/DefinedTermSet">
     <h2 id="guideline-icons" itemprop="name">Guideline Icons</h2>
 
@@ -2946,14 +2916,7 @@
 </section>
 
             <!-- Global Settings -->
-            <section id="" class="section">
-                <h2 class="section-head">1. Global Settings</h2>
-                <p class="title-block">Use this section for managing essential elements that apply across the entire web platform.
-                    It includes key aspects such as color, contrast, language, keyboard access, meta data, skip
-                    links, responsive design, and flashing images. When developing a new application or website
-                    or upgrading an existing system, prioritise global settings to ensure a consistent and
-                    effective user experience.</p>
-                <section id="global-settings" class="section">
+            <section id="global-settings" class="section" itemscope="" itemtype="https://schema.org/CreativeWork">
 <h3 id="1.1">1.1 Colour</h3>
 <p>Define and use consistent color schemes across your web content to enhance readability and
     aesthetic coherence for users with visual impairments.</p>
@@ -3050,19 +3013,16 @@ technologies such as screen readers.</p>
 
 
 </section>
-            </section>
 
             <!-- Elements -->
-            <section id="html-elements" class="section">
-                <h2 class="section-head">2. Elements</h2>
-                <p class="title-block">
-                    Use this section for managing specific UI components to ensure full accessibility. It covers best
-                    practices for elements such as multimedia (images, audio, video), forms, tables, and headings.
-                    Accessibility should be integrated into every phase of the project lifecycle, including design,
-                    user experience (UX), development, and quality assurance (QA). Prioritising these elements helps
-                    create an accessible and user-friendly application or website.
+            <section id="html-elements" class="section" itemscope="" itemtype="https://schema.org/CreativeWork">
+                <h2 class="section-head" itemprop="headline">2. Elements</h2>
+                <p class="title-block" itemprop="description">
+                    The Elements section examines specific user interface (UI) components, providing comprehensive best practices to ensure each element is fully accessible. Accessibility should be seamlessly integrated into every phase of the project lifecycle, including design, user experience (UX), development, and quality assurance (QA).
+                    This includes but not exclusively elements such as Multimedia (images, audio, video etc), Forms, Tables, Headings etc.
                 </p>
-                <section id="imagesMultimedia" class="section"><h3>2.1. Multimedia</h3>
+                <!-- Subsections -->
+                <section id="imagesMultimedia" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3>2.1. Multimedia</h3>
 <h4 id="2.1.1">2.1.1 Alternative Representation</h4>
 <p>All multimedia elements, including images, video, audio, and graphs,
     must provide alternative representations to ensure web content is fully inclusive
@@ -3212,7 +3172,7 @@ technologies such as screen readers.</p>
     <span slot="description">This consideration should be evaluated based on the target audience's needs, especially for content aimed at users who are deaf or hard of hearing.</span>
 </icon-detail>
 </section>
-                <section id="forms" class="section"><h3 id="2.2">2.2 Forms</h3>
+                <section id="forms" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.2">2.2 Forms</h3>
 <p>
     Creating accessible forms is crucial to ensure that all users, including those with disabilities, can interact with and complete forms effectively. This section outlines various accessibility challenges and provides solutions to address them, covering neurological, psychological, visual, auditory, and other considerations.
 </p>
@@ -3725,7 +3685,7 @@ technologies such as screen readers.</p>
         <li><strong>Security and Privacy:</strong> Clearly communicate data handling practices and ensure secure data transmission.</li>
     </ul>
 </div></section>
-                <section id="tables" class="section"><h3 id="2.3">2.3 Tables</h3>
+                <section id="tables" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.3">2.3 Tables</h3>
 <p>Design and implement tables in a way that ensures they are accessible to all users, including those using assistive technologies. Properly structured tables enhance data comprehension and navigation.</p>
 
 <h4 id="2.3.1">2.3.1 Table Structure</h4>
@@ -3838,7 +3798,7 @@ technologies such as screen readers.</p>
 </code>
 </pre>
 </section>
-                <section id="headings" class="section"><h3 id="2.4">2.4 Headings</h3>
+                <section id="headings" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.4">2.4 Headings</h3>
 <p>Proper use of headings is essential for creating a clear content structure, enhancing navigability, and improving accessibility for all users, including those utilising assistive technologies.</p>
 
 <h4 id="2.4.1">2.4.1 Hierarchical Structure</h4>
@@ -3931,7 +3891,7 @@ technologies such as screen readers.</p>
     <li><strong>Avoid Overuse:</strong> Do not use headings excessively. Use them to denote major sections and subsections only.</li>
     <li><strong>Accessible Naming:</strong> Choose meaningful and descriptive names for headings to provide context to all users.</li>
 </ul></section>
-                <section id="links" class="section"><h3 id="2.5">2.5 Links</h3>
+                <section id="links" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.5">2.5 Links</h3>
 <p>Links are fundamental elements for navigation and interaction on the web. Ensuring that links are accessible is crucial for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
 <h4 id="2.5.1">2.5.1 <code>&lt;a&gt;</code> Element</h4>
@@ -4033,7 +3993,7 @@ technologies such as screen readers.</p>
     <li><strong>Use ARIA Attributes Judiciously:</strong> Only add ARIA labels or roles when additional context is necessary and cannot be conveyed through link text alone.</li>
 </ul>
 </section>
-                <section id="buttons" class="section"><h3 id="2.6">2.6 Buttons</h3>
+                <section id="buttons" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.6">2.6 Buttons</h3>
 <p>Buttons are interactive elements that trigger actions or submit forms on a webpage. Ensuring that buttons are accessible is crucial for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
 <h4 id="2.6.1">2.6.1 <code>&lt;button&gt;</code> Element</h4>
@@ -4149,7 +4109,7 @@ technologies such as screen readers.</p>
     <li><strong>Regularly Test for Accessibility:</strong> Continuously evaluate buttons with assistive technologies and automated tools to identify and resolve accessibility issues.</li>
 </ul>
 </section>
-                <section id="lists" class="section"><h3 id="2.7">2.7 Lists</h3>
+                <section id="lists" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.7">2.7 Lists</h3>
 <p>Lists are essential for organizing information in a clear and structured manner. Ensuring that lists are accessible enhances content comprehension and navigation for all users, including those using assistive technologies.</p>
 
 <h4 id="2.7.1">2.7.1 Proper Use of List Elements</h4>
@@ -4341,7 +4301,7 @@ technologies such as screen readers.</p>
     <li><strong>Avoid Using Lists for Layout:</strong> Use appropriate CSS and layout techniques instead of lists to structure page elements.</li>
 </ul>
 </section>
-                <section id="semantic" class="section"><h3 id="2.8">2.8 Semantic HTML Elements</h3>
+                <section id="semantic" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.8">2.8 Semantic HTML Elements</h3>
 <p>Semantic HTML elements provide meaningful structure to web content, enhancing both accessibility and search engine optimisation (SEO). Utilising these elements correctly ensures that assistive technologies can accurately interpret and navigate your website.</p>
 
 <h4 id="2.8.1">2.8.1 <code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span></code> Element</h4>
@@ -4608,7 +4568,7 @@ technologies such as screen readers.</p>
     <li><strong>Educate Your Team:</strong> Ensure that all team members understand the importance of semantic HTML and adhere to best practices during development.</li>
 </ul>
 </section>
-                <section id="graphics" class="section"><h3 id="2.10">2.10 SVGs and Graphics</h3>
+                <section id="graphics" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.10">2.10 SVGs and Graphics</h3>
 <p>Scalable Vector Graphics (SVGs) and other graphical elements play a crucial role in enhancing the visual appeal and functionality of a website. Ensuring that these graphics are accessible is essential for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
 <h4 id="2.10.1">2.10.1 <code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span><span class="token punctuation">&gt;</span></span></code> Elements</h4>
@@ -4728,7 +4688,7 @@ technologies such as screen readers.</p>
     <li><strong>Maintain Consistent Styling:</strong> Apply consistent styles to graphics across the website to aid recognition and usability.</li>
 </ul>
 </section>
-                <section id="inline" class="section"><h3 id="2.11">2.11 Inline Elements</h3>
+                <section id="inline" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.11">2.11 Inline Elements</h3>
 <p>Inline elements are used to format text and other content within a block-level element without disrupting the flow of the document. Proper use of inline elements enhances readability, accessibility, and the overall user experience.</p>
 
 <h4 id="2.11.1">2.11.1 <code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span></code> Element</h4>
@@ -4818,7 +4778,7 @@ greet('World');
 </code>
 </pre>
 </section>
-                <section id="text" class="section"><h3 id="2.12">2.12 Text</h3>
+                <section id="text" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="2.12">2.12 Text</h3>
 <p>Well-structured and thoughtfully formatted text significantly enhances the readability of web content. By adhering to best practices that consider neurological diversity, you ensure that your website is accessible and user-friendly for all visitors, including those with cognitive disabilities such as dyslexia, ADHD, or other neurological conditions.</p>
 
 <h4 id="2.12.1">2.12.1 Clear and Concise Language</h4>
@@ -4951,16 +4911,13 @@ greet('World');
             </section>
 
             <!-- Components -->
-            <section id="ui-components" class="section">
-                <h2 class="section-head">3. Components</h2>
-                <p class="title-block">
-                    Use this section for addressing the accessibility of complex UI elements. It covers components such as
-                    modals, tooltips, tabs, and accordions, providing essential guidelines and examples for effective
-                    implementation. While examples are included, users are encouraged to develop their own methods to achieve
-                    accessibility. The primary goal is to ensure each component is accessible and meets all relevant
-                    accessibility requirements.
+            <section id="ui-components" class="section" itemscope="" itemtype="https://schema.org/CreativeWork">
+                <h2 class="section-head" itemprop="headline">3. Components</h2>
+                <p class="title-block" itemprop="description">
+                    The Components section concentrates on the accessibility considerations of complex user interface (UI) elements. It covers components such as modals, tooltips, tabs, and accordions. This section provides essential guidelines and illustrative examples to assist in implementing accessible components effectively. Users are encouraged to develop their own methods for achieving accessibility rather than strictly adhering to the provided examples. The primary focus is to ensure that each component is accessible and meets all relevant accessibility requirements.
                 </p>
-                <section id="modals" class="section"><h3 id="3.1">3.1 Modals</h3>
+                <!-- Subsections -->
+                <section id="modals" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.1">3.1 Modals</h3>
 <p>Modals are overlay elements that present content or require user interaction without navigating away from the current page. They are commonly used for dialogs, forms, alerts, and additional information. Ensuring that modals are accessible is vital for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
 <h4 id="3.1.1">3.1.1 <code>&lt;dialog&gt;</code> Element</h4>
@@ -5076,7 +5033,7 @@ document<span class="token punctuation">.</span><span class="token function">add
 </code>
 </pre>
 </section>
-                <section id="search" class="section"><h3 id="3.2">3.2 Search</h3>
+                <section id="search" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.2">3.2 Search</h3>
 <p>Search functionality is a critical component of web applications, enabling users to find information quickly and efficiently. Ensuring that search features are accessible is vital for creating an inclusive experience for all users, including those with disabilities or using assistive technologies.</p>
 
 <h4 id="3.2.1">3.2.1 Accessible Search Field</h4>
@@ -5191,7 +5148,7 @@ document<span class="token punctuation">.</span><span class="token function">get
 </code>
 </pre>
 </section>
-                <section id="navigationMenus" class="section"><h3 id="3.3">3.3 Navigation Menus</h3>
+                <section id="navigationMenus" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.3">3.3 Navigation Menus</h3>
 <p>Navigation menus are essential components of a website, providing users with a way to explore and interact with the site’s content. Ensuring that navigation menus are accessible is critical to creating an inclusive experience for all users, including those with disabilities or relying on assistive technologies.</p>
 
 <h4 id="3.3.1">3.3.1 Semantic Markup</h4>
@@ -5321,7 +5278,7 @@ dropdownButton<span class="token punctuation">.</span><span class="token functio
     <li><strong>Test Thoroughly:</strong> Regularly test navigation menus with assistive technologies and automated tools to identify and fix any issues.</li>
 </ul>
 </section>
-                <section id="sliders" class="section"><h3 id="3.4">3.4 Sliders/Carousels</h3>
+                <section id="sliders" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.4">3.4 Sliders/Carousels</h3>
 <p>Sliders and carousels are interactive components used to display content dynamically within limited space. Ensuring that sliders are accessible is critical for providing an inclusive experience, especially for users with disabilities or those relying on assistive technologies.</p>
 
 <h4 id="3.4.1">3.4.1 Semantic Markup</h4>
@@ -5460,7 +5417,7 @@ playButton<span class="token punctuation">.</span><span class="token function">a
     <li><strong>Test Thoroughly:</strong> Regularly test sliders with assistive technologies and automated tools.</li>
 </ul>
 </section>
-                <section id="tooltips" class="section"><h3 id="3.6">3.6 Tooltips</h3>
+                <section id="tooltips" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.6">3.6 Tooltips</h3>
 <p>Tooltips are small, interactive overlays that provide additional information about an element when a user hovers over it, focuses on it, or performs a related action. Ensuring that tooltips are accessible is critical for improving the usability of your application, especially for users who rely on assistive technologies.</p>
 
 <h4 id="3.6.1">3.6.1 Semantic Markup</h4>
@@ -5570,7 +5527,7 @@ button[aria-describedby]:focus + [role="tooltip"]</span> <span class="token punc
     <li><strong>Test Thoroughly:</strong> Regularly test tooltips with assistive technologies to identify and resolve accessibility issues.</li>
 </ul>
 </section>
-                <section id="tabs" class="section"><h3 id="3.7">3.7 Tabs</h3>
+                <section id="tabs" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.7">3.7 Tabs</h3>
 <p>Tabs are a common user interface pattern that organizes content into sections, with each section displayed when its corresponding tab is selected. Ensuring tabs are accessible is critical for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
 <h4 id="3.7.1">3.7.1 Semantic Markup</h4>
@@ -5694,7 +5651,7 @@ tabs<span class="token punctuation">.</span><span class="token function">forEach
     <li><strong>Test Thoroughly:</strong> Regularly test tabs with assistive technologies to identify and resolve accessibility issues.</li>
 </ul>
 </section>
-                <section id="accordions" class="section"><h3 id="3.8">3.8 Accordions</h3>
+                <section id="accordions" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.8">3.8 Accordions</h3>
 <p>Accordions are UI components that allow users to expand and collapse content sections, making it easier to present large amounts of information in a compact space. Ensuring accordions are accessible is critical for providing an inclusive experience for all users.</p>
 
 <h4 id="3.8.1">3.8.1 Semantic Markup</h4>
@@ -5819,7 +5776,7 @@ accordionHeaders<span class="token punctuation">.</span><span class="token funct
     <li><strong>Test Thoroughly:</strong> Regularly test accordions with assistive technologies and automated tools to identify and resolve issues.</li>
 </ul>
 </section>
-                <section id="notifications" class="section"><h3 id="3.9">3.9 Notifications/Toasts</h3>
+                <section id="notifications" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.9">3.9 Notifications/Toasts</h3>
 <p>Notifications or toasts are temporary messages used to inform users about updates, errors, or actions performed. Ensuring notifications are accessible helps provide an inclusive experience for all users, including those using assistive technologies.</p>
 
 <h4 id="3.9.1">3.9.1 Semantic Markup</h4>
@@ -5921,7 +5878,7 @@ document<span class="token punctuation">.</span><span class="token function">que
     <li><strong>Test Thoroughly:</strong> Regularly test notifications with assistive technologies and automated tools to ensure accessibility.</li>
 </ul>
 </section>
-                <section id="pagination" class="section"><h3 id="3.11">3.11 Pagination</h3>
+                <section id="pagination" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.11">3.11 Pagination</h3>
 <p>Pagination is used to divide content into discrete pages, allowing users to navigate through them efficiently. Ensuring that pagination is accessible is crucial for providing an inclusive experience, particularly for users with disabilities.</p>
 
 <h4 id="3.11.1">3.11.1 Semantic Markup</h4>
@@ -6029,7 +5986,7 @@ document<span class="token punctuation">.</span><span class="token function">que
     <li><strong>Test Thoroughly:</strong> Regularly test pagination with assistive technologies and automated tools to ensure accessibility.</li>
 </ul>
 </section>
-                <section id="breadcrumbs" class="section"><h3 id="3.10">3.10 Breadcrumbs</h3>
+                <section id="breadcrumbs" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.10">3.10 Breadcrumbs</h3>
 <p>Breadcrumbs are a navigational aid that allows users to understand their location within a website's hierarchy. They improve usability and accessibility by providing contextual information about the user's path.</p>
 
 <h4 id="3.10.1">3.10.1 Semantic Markup</h4>
@@ -6138,7 +6095,7 @@ document<span class="token punctuation">.</span><span class="token function">que
     <li><strong>Test Thoroughly:</strong> Regularly test breadcrumbs with assistive technologies to ensure accessibility.</li>
 </ul>
 </section>
-                <section id="cards" class="section"><h3 id="3.12">3.12 Cards</h3>
+                <section id="cards" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.12">3.12 Cards</h3>
 <p>Cards are versatile UI components used to display grouped information in a visually distinct container. Ensuring that cards are accessible is essential to make the content within them usable by everyone, including those relying on assistive technologies.</p>
 
 <h4 id="3.12.1">3.12.1 Semantic Markup</h4>
@@ -6239,7 +6196,7 @@ article a:focus</span> <span class="token punctuation">{</span>
     <li><strong>Test Thoroughly:</strong> Regularly test cards with assistive technologies and automated tools to identify and resolve accessibility issues.</li>
 </ul>
 </section>
-                <section id="alerts" class="section"><h3 id="3.13">3.13 Alerts</h3>
+                <section id="alerts" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h3 id="3.13">3.13 Alerts</h3>
 <p>Alerts are used to notify users about important information, such as errors, warnings, or successful actions. Ensuring alerts are accessible helps deliver critical messages effectively to all users, including those using assistive technologies.</p>
 
 <h4 id="3.13.1">3.13.1 Semantic Markup</h4>
@@ -6340,7 +6297,8 @@ document<span class="token punctuation">.</span><span class="token function">que
 </section>
             </section>
 
-            <section id="avoid" class="section"><h2 id="4">4. What to Avoid</h2>
+            <!-- What to Avoid Section -->
+            <section id="avoid" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h2 id="4">4. What to Avoid</h2>
 <p class="title-block">
     Use this section to highlight common mistakes and outdated practices that can hinder accessibility.
 </p>
@@ -6482,7 +6440,8 @@ document<span class="token punctuation">.</span><span class="token function">que
 </ul>
 </section>
 
-            <section id="glossary" class="section"><h2>Glossary of Terms</h2>
+            <!-- Glossary Section -->
+            <section id="glossary" class="section" itemscope="" itemtype="https://schema.org/DefinedTermSet"><h2>Glossary of Terms</h2>
 <dl>
   <dt>Neurological Dispositions</dt>
   <dd>
@@ -6556,11 +6515,13 @@ document<span class="token punctuation">.</span><span class="token function">que
 </dl>
 
 </section>
-            <section id="appendix" class="section"><h2>Appendices</h2>
+
+            <!-- Appendices Section -->
+            <section id="appendix" class="section" itemscope="" itemtype="https://schema.org/CreativeWork"><h2>Appendices</h2>
 
 
 </section>
-            <section id="appendix-a" class="section"><h3 id="appendix-a">Appendix A: Accessibility Guidelines for Developing ATMs</h3>
+            <section id="appendix-a" class="section" itemscope="" itemtype="https://schema.org/DefinedTermSet"><h3 id="appendix-a">Appendix A: Accessibility Guidelines for Developing ATMs</h3>
 <p>This section provides comprehensive accessibility guidelines to ensure ATMs are inclusive for individuals with diverse needs.</p>
 
 <h4 id="a1">A.1 General Design Principles</h4>
@@ -6663,7 +6624,7 @@ document<span class="token punctuation">.</span><span class="token function">que
   <li>A.6.3 Explore accessibility features for hearing and motor impairments.</li>
 </ul>
 </section>
-            <section id="appendix-b" class="section"><h3 id="appendix-b">Appendix B: Overhead Departure Screens</h3>
+            <section id="appendix-b" class="section" itemscope="" itemtype="https://schema.org/DefinedTermSet"><h3 id="appendix-b">Appendix B: Overhead Departure Screens</h3>
 
 <h4 id="b1">B.1 General Design Principles</h4>
 <p>Key considerations to ensure user-friendly and accessible designs for overhead dynamic departure screens.</p>
@@ -6795,7 +6756,7 @@ document<span class="token punctuation">.</span><span class="token function">que
     <li><strong>Feedback Mechanisms:</strong> Provide immediate and clear feedback for user actions to confirm interactions or highlight errors.</li>
 </ul>
 </section>
-            <section id="appendix-c" class="section"><h3 id="appendix-c">Appendix C: Considering Accessibility Settings for Your Users</h3>
+            <section id="appendix-c" class="section" itemscope="" itemtype="https://schema.org/DefinedTermSet"><h3 id="appendix-c">Appendix C: Considering Accessibility Settings for Your Users</h3>
 
 <p>Accessibility settings empower users to tailor their interaction with your website or application to meet their individual needs. By thoughtfully incorporating accessibility options, you ensure that your digital platform is inclusive, user-friendly, and compliant with accessibility standards, benefiting all users, including those with disabilities.</p>
 
@@ -6927,7 +6888,7 @@ document<span class="token punctuation">.</span><span class="token function">que
 </div>
 
 <!-- Footer -->
-<footer id="footer"><footer>
+<footer id="footer" itemscope="" itemtype="https://schema.org/WPFooter"><footer>
     © 2024 ca11y. All rights reserved.
 </footer></footer>
 
@@ -6935,16 +6896,15 @@ document<span class="token punctuation">.</span><span class="token function">que
 <button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
 
 
+<!-- PrismJS Library -->
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
 
-<!-- Main JavaScript Files -->
-
+<!-- Main JavaScript Files with Versioning -->
 <script src="scripts/loader.js?v=1.1"></script>
 <script src="scripts/components/iconDetail.js?v=1.1"></script>
 
-<script src="scripts/main.js?v=1.1"></script>
-<script src="scripts/auig.js?v=1.1"></script>
-
+<script src="scripts/main.js?v=1.1" defer=""></script>
+<script src="scripts/auig.js?v=1.1" defer=""></script>
 
 
 </body></html>

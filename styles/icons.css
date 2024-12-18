@@ -43,9 +43,9 @@
 
 @media (max-width: 600px) {
     .guideline-term {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
     }
+
 
     .guideline-description {
         margin-left: 0;

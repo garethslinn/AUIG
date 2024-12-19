@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const toggleButton = document.getElementById("toggleButton");
     function handleToggle() {
-        console.log('nav1' ,nav1)
         nav.classList.toggle("show");
         const isShown = nav.classList.contains("show");
         nav.setAttribute("aria-label", isShown ? "Main Navigation open" : "Main Navigation closed");

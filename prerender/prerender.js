@@ -36,7 +36,7 @@ const cheerio = require('cheerio'); // Ensure Cheerio is installed
         const $ = cheerio.load(html);
 
         // Remove specific script tags or other unwanted elements
-        const scriptsToRemove = ['scripts/loader.js']; // Extendable list
+        const scriptsToRemove = ['scripts/auig.js']; // Extendable list
         scriptsToRemove.forEach((scriptSrc) => {
             const removed = $(`script[src="${scriptSrc}"]`).remove().length > 0;
             console.log(removed ? `Removed script: ${scriptSrc}` : `Script not found: ${scriptSrc}`);

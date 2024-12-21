@@ -14,7 +14,7 @@
     <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
 
     <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
-    <link rel="stylesheet" href="styles/main.css?v=1.0.0.2">
+    <link rel="stylesheet" href="styles/main.css?v=1.3">
 
     <!-- PrismJS Light Theme (Enabled by default) -->
     <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet">
@@ -133,7 +133,16 @@
                     <a href="#1.1" itemprop="item" itemscope="" itemtype="https://schema.org/WebPage">
                         <span itemprop="name"><strong>1.1 Colour</strong></span>
                     </a>
+                    <ul>
+                        <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                            <meta itemprop="position" content="4.1.1">
+                            <a href="#1.1.1" itemprop="item" itemscope="" itemtype="https://schema.org/WebPage">
+                                <span itemprop="name"><strong>1.1.1 Customised themes</strong></span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
 
                 <!-- Sub ListItem 1.2 -->
                 <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
@@ -2977,6 +2986,19 @@
 <h3 id="1.1">1.1 Colour</h3>
 <p>Define and use consistent color schemes across your web content to enhance readability and
     aesthetic coherence for users with visual impairments.</p>
+
+<icon-detail id="1.1.1" type="consideration" heading-level="h4" style="--background-color: #10bc93; --foreground-color: #fff;">
+    <span slot="title">1.1.1 Customised themes</span>
+    <span slot="description">
+        Consider the possibility that light and dark modes might not address every
+        edge case, leaving some users still struggling with the theme. It may be
+        impractical to account for all potential challenges. To mitigate this,
+        consider adding a settings feature that allows users to customise and
+        save their own theme preferences locally in their browser. Including a
+        reset option for reverting to the default theme would also be beneficial.
+    </span>
+</icon-detail>
+
 
 <h3 id="1.2">1.2 Contrast</h3>
 <p>Ensure sufficient contrast between text and background colors to aid users with low vision or

@@ -11,7 +11,7 @@
     overflow-x: hidden;
 
     @media (max-width: 800px) {
-        width: 100%;
+        width: auto;
         position: relative;
         padding-left: 4rem;
         height: auto;

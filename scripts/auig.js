@@ -18,6 +18,7 @@ const components = [
     { url: '../../../components/sections/graphics.html', id: 'graphics' },
     { url: '../../../components/sections/inline.html', id: 'inline' },
     { url: '../../../components/sections/text.html', id: 'text' },
+    { url: '../../../components/sections/numbers.html', id: 'numbers' },
 
 
     { url: '../../../components/sections/modals.html', id: 'modals' },

@@ -1,0 +1,104 @@
+<h3 id="2.13">2.13 Numbers</h3>
+<p>Ensuring web accessibility for individuals with dyscalculia involves simplifying numerical content, providing alternatives to numerical input, and reducing cognitive load. By designing interfaces that support users with difficulties in understanding and working with numbers, you create a more inclusive and user-friendly experience.</p>
+
+<h4 id="2.13.1">2.13.1 Simplifying Numerical Information</h4>
+<p>Use visual representations and contextual cues to make numerical data easier to interpret. Provide visual aids like graphs or icons and avoid requiring complex mental calculations.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of Simplified Numerical Information --&gt;
+&lt;p&gt;The rating is displayed as stars: &lt;span aria-label=&quot;4 out of 5 stars&quot;&gt;★★★★☆&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Your order weighs: 5 kg&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.13.2">2.13.2 Alternatives to Numerical Input</h4>
+<p>Provide alternatives to entering exact numbers, such as sliders, dropdown menus, or descriptive labels, and allow approximate values where precision is unnecessary.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of Alternative Input --&gt;
+&lt;label for=&quot;rating&quot;&gt;Select a rating:&lt;/label&gt;
+&lt;select id=&quot;rating&quot; name=&quot;rating&quot;&gt;
+    &lt;option value=&quot;low&quot;&gt;Low&lt;/option&gt;
+    &lt;option value=&quot;medium&quot;&gt;Medium&lt;/option&gt;
+    &lt;option value=&quot;high&quot;&gt;High&lt;/option&gt;
+&lt;/select&gt;
+</code>
+</pre>
+
+<h4 id="2.13.3">2.13.3 Simplifying Forms and Interfaces</h4>
+<p>Highlight required fields, provide clear input instructions, and validate errors in real time to make forms more accessible.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of Accessible Form --&gt;
+&lt;form&gt;
+    &lt;label for=&quot;date&quot;&gt;Enter your date of birth (DD/MM/YYYY):&lt;/label&gt;
+    &lt;input id=&quot;date&quot; type=&quot;text&quot; placeholder=&quot;01/01/2000&quot; required&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<h4 id="2.13.4">2.13.4 Enhancing Time and Date Selection</h4>
+<p>Use interactive widgets for date and time selection to reduce cognitive load.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of a Date Picker --&gt;
+&lt;label for=&quot;appointment-date&quot;&gt;Select your appointment date:&lt;/label&gt;
+&lt;input id=&quot;appointment-date&quot; type=&quot;date&quot;&gt;
+</code>
+</pre>
+
+<h4 id="2.13.5">2.13.5 Accessible Representation of Math and Data</h4>
+<p>Present mathematical information using accessible tools like MathML or ARIA, and provide step-by-step examples for clarity.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of Accessible Math --&gt;
+&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
+    &lt;mi&gt;a&lt;/mi&gt;
+    &lt;mo&gt;=&lt;/mo&gt;
+    &lt;msqrt&gt;
+        &lt;msup&gt;
+            &lt;mi&gt;b&lt;/mi&gt;
+            &lt;mn&gt;2&lt;/mn&gt;
+        &lt;/msup&gt;
+    &lt;/msqrt&gt;
+&lt;/math&gt;
+</code>
+</pre>
+
+<h4 id="2.13.6">2.13.6 Reducing Cognitive Load</h4>
+<p>Break down information into smaller chunks and use progressive disclosure to show additional details only when needed.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of Progressive Disclosure --&gt;
+&lt;p&gt;Learn about our process:&lt;/p&gt;
+&lt;button aria-expanded=&quot;false&quot;&gt;Show More&lt;/button&gt;
+&lt;div hidden&gt;
+    &lt;p&gt;Step 1: Research&lt;/p&gt;
+    &lt;p&gt;Step 2: Development&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="2.13.7">2.13.7 Providing Audio and Text Alternatives</h4>
+<p>Offer audio descriptions or narrations for numerical and mathematical content to support users who prefer auditory formats.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of Audio Support --&gt;
+&lt;p&gt;Listen to the summary:&lt;/p&gt;
+&lt;audio controls&gt;
+    &lt;source src=&quot;summary.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+</code>
+</pre>
+
+<h4 id="2.13.8">2.13.8 Assistive Tools and Features</h4>
+<p>Integrate simple calculators or similar tools into your forms to minimize the need for manual calculations.</p>
+<pre>
+<code class="language-html">&lt;!-- Example of an Integrated Calculator --&gt;
+&lt;label for=&quot;price&quot;&gt;Price per unit:&lt;/label&gt;
+&lt;input id=&quot;price&quot; type=&quot;number&quot; placeholder=&quot;10&quot;&gt;
+
+&lt;label for=&quot;quantity&quot;&gt;Quantity:&lt;/label&gt;
+&lt;input id=&quot;quantity&quot; type=&quot;number&quot; placeholder=&quot;2&quot;&gt;
+
+&lt;p&gt;Total: $&lt;span id=&quot;total&quot;&gt;20&lt;/span&gt;&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.13.9">2.13.9 Testing and Feedback</h4>
+<p>Conduct usability tests with individuals with dyscalculia to identify and address barriers effectively. Incorporate their feedback into your design process.</p>

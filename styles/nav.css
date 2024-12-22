@@ -2,10 +2,20 @@
 .nav {
     width: 20rem;
     padding: 1rem;
-    overflow-y: auto;
     background-color: var(--nav-bg);
     color: var(--nav-text);
     transition: background-color var(--transition-speed), color var(--transition-speed);
+
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @media (max-width: 800px) {
+        width: 100%;
+        position: relative;
+        padding-left: 4rem;
+        height: auto;
+    }
 }
 
 .toggle-button {
@@ -43,14 +53,6 @@
 
 /* Responsive Styles */
 @media (max-width: 800px) {
-
-    .nav {
-        width: 100%;
-        position: relative;
-        padding-left: 4rem;
-    }
-
-
 
     .navlist {
         padding-top: 3rem;

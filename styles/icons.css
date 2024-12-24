@@ -59,3 +59,42 @@
         margin-top: 0.625rem;
     }
 }
+
+.item-types {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /*max-width: 6rem;*/
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+        }
+
+        span {
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+    }
+}
+
+@media (max-width: 600px) {
+    .item-types {
+        /*justify-content: center;*/
+    }
+
+    li {
+        /*max-width: 100%;*/
+    }
+}

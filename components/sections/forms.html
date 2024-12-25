@@ -499,15 +499,31 @@
 &lt;/form&gt;
 </code></pre>
 
-<div class="summary">
-    <h4>Summary of Accessibility Considerations for Forms</h4>
-    <ul>
-        <li><strong>Visual Accessibility:</strong> Proper labeling, color contrast, and responsive design.</li>
-        <li><strong>Keyboard Accessibility:</strong> Ensure all elements are navigable via keyboard.</li>
-        <li><strong>Assistive Technology Compatibility:</strong> Use semantic HTML and ARIA attributes where necessary.</li>
-        <li><strong>Error Handling:</strong> Provide clear and accessible error messages.</li>
-        <li><strong>Cognitive Accessibility:</strong> Simplify forms, use clear instructions, and minimise cognitive load.</li>
-        <li><strong>Auditory Accessibility:</strong> Provide alternatives for any auditory instructions or feedback.</li>
-        <li><strong>Security and Privacy:</strong> Clearly communicate data handling practices and ensure secure data transmission.</li>
-    </ul>
-</div>
+<h4 id="2.2.21">2.2.21 Financial Accessibility</h4>
+<p>
+    Ensure that payment systems are inclusive and accessible, addressing diverse financial, technological, and disability-related barriers to enable all users to complete transactions with ease.
+</p>
+
+<ul>
+    <li>Provide diverse payment options, including credit cards, digital wallets, regional methods, and offline alternatives.</li>
+    <li>Display all costs upfront, including taxes and fees, to prevent confusion and ensure transparency.</li>
+    <li>Offer flexible payment plans, discounts, or trials to accommodate users with financial constraints.</li>
+    <li>Ensure payment forms are accessible with screen readers, keyboards, and assistive technologies.</li>
+    <li>Support representatives making payments on behalf of others where necessary.</li>
+</ul>
+
+<pre><code class="language-html">&lt;form action="https://example.com/payment" method="POST"&gt;
+    &lt;label for="payment-method"&gt;Select Payment Method:&lt;/label&gt;
+    &lt;select id="payment-method" name="payment-method" required&gt;
+        &lt;option value="credit-card"&gt;Credit Card&lt;/option&gt;
+        &lt;option value="paypal"&gt;PayPal&lt;/option&gt;
+        &lt;option value="bank-transfer"&gt;Bank Transfer&lt;/option&gt;
+        &lt;option value="cash-on-delivery"&gt;Cash on Delivery&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;p&gt;All fees are shown upfront. No hidden costs. Payments are secure and inclusive.&lt;/p&gt;
+
+    &lt;button type="submit"&gt;Proceed to Payment&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+

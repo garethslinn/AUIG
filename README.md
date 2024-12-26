@@ -70,7 +70,7 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/auig.git
+   git clone https://github.com/garethslinn/auig.git
    cd auig
    ```
 
@@ -117,7 +117,7 @@
 2. **Clone & Navigate**
 
    ```bash
-   git clone https://github.com/yourusername/auig.git
+   git clone https://github.com/garethslinn/auig.git
    cd auig
    ```
 

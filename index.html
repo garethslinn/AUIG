@@ -14,7 +14,7 @@
     <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
 
     <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
-    <link rel="stylesheet" href="styles/main.css?v=1.3">
+    <link rel="stylesheet" href="styles/main.css?v=1.4">
 
     <!-- PrismJS Light Theme (Enabled by default) -->
     <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet">
@@ -2887,15 +2887,13 @@
 
     <!-- Editors Section -->
     <h3>Editor</h3>
-    <ul>
+    <ul class="item-types">
         <li class="icon-item" itemscope="" itemtype="https://schema.org/Person">
             <!-- Editor's Image -->
             <img alt="Picture of Gareth Slinn" src="../images/users/gslinn.png" class="user-image" itemprop="image">
             <!-- Editor's Name -->
-            <span itemprop="name">Gareth Slinn:</span>&nbsp;
-            <!-- Editor's Email -->
-            <a href="mailto:gslinn@gmail.com" itemprop="email">Email</a>
-        </li>
+            <span itemprop="name">Gareth Slinn</span>&nbsp;
+       </li>
     </ul>
 
     <h3>Collaborators</h3>
@@ -3120,7 +3118,7 @@
 <p>Ensure sufficient contrast between text and background colors to aid users with low vision or
     color-blindness.</p>
 <h5>Automatic Calculation:</h5>
-<p>The<a href="https://www.checkmeister.com/tools/contrast-tool" aria-label="Checkmeister Contrast Checking Tool, opens in a new tab" target="_blank" rel="noopener noreferrer" itemprop="relatedLink">Checkmeister Contrast Checking Tool</a>
+<p>The <a href="https://www.checkmeister.com/tools/contrast-tool" aria-label="Checkmeister Contrast Checking Tool, opens in a new tab" target="_blank" rel="noopener noreferrer" itemprop="relatedLink">Checkmeister Contrast Checking Tool</a>
     is an essential utility for ensuring that your website meets the required accessibility standards.
     Proper contrast between text and background colors is vital for readability, especially for users
     with visual impairments. This tool helps you evaluate and adjust color combinations to achieve the
@@ -3133,7 +3131,8 @@
 <pre class="language-html" tabindex="0"><code class="language-html">Contrast Ratio = (Light Color + 0.05) / (Dark Color + 0.05)</code></pre>
 
 <h6>MathML version</h6>
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
     <mrow>
         <mi>Contrast Ratio</mi>
         <mo>=</mo>

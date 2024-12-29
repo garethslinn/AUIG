@@ -32,7 +32,7 @@
     &.consideration_icon { background: #10bc93; color: #fff; };
     &.priority_icon { background: #9a10bc; color: #fff; };
     &.avoid_icon { background: #bc2210; color: #fff; };
-    &.caution_icon { background: #bcb410; color: #000; };
+    &.caution_icon { background: #f0e950; color: #000; };
 }
 
 .guideline-term .icon {

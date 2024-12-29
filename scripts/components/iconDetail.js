@@ -75,7 +75,7 @@ class IconDetailComponent extends HTMLElement {
                 foregroundColor = '#ffffff';
                 break;
             case 'caution':
-                backgroundColor = '#bcb410';
+                backgroundColor = '#f0e950';
                 foregroundColor = '#000';
                 break;
             default:

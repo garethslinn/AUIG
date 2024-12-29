@@ -92,13 +92,20 @@
             />
             <span itemprop="name">Luke Harby</span>
         </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <img
+                    alt="Picture of James Stevenson"
+                    src="../images/users/jamess.jpeg"
+                    class="user-image"
+                    itemprop="image"
+            />
+            <span itemprop="name">James Stevenson</span>
+        </li>
     </ul>
 
     <h3>Video(s)</h3>
-    <ul>
-        <li class="icon-item" itemprop="video">
-            <i class="icon icon-space icon-video"></i>
-            <span>Watch:&nbsp;</span>
+    <ul class="item-types">
+        <li itemprop="video">
             <a
                     href="https://www.youtube.com/watch?v=3bfQVzcw5ic"
                     aria-label="From Compliance to Opportunity, opens in a new tab"
@@ -106,53 +113,68 @@
                     rel="noopener noreferrer"
                     itemprop="relatedLink"
             >
-
-                From Compliance to Opportunity
+                <img
+                        src="../images/video.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Compliance</span>
             </a>.
         </li>
     </ul>
 
     <!-- Resources Section -->
     <h3>Resources</h3>
-    <ul>
-        <li class="icon-item">
-            <i class="icon icon-space icon-nux"></i>
-            Neurological&nbsp;
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Thing">
             <a
                     href="https://neurologicalux.com/"
                     aria-label="Books on accessibility, opens in a new tab"
                     target="_blank"
                     rel="noopener noreferrer"
-                    itemprop="relatedLink"
+                    itemprop="url"
             >
-                books
+                <img
+                        src="../images/nux.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Books</span>
             </a>.
         </li>
-        <li class="icon-item">
-            <i class="icon icon-space icon-cm"></i>
-            Checkmeister&nbsp;
+        <li itemscope itemtype="https://schema.org/Thing">
             <a
                     href="https://www.checkmeister.com/"
                     aria-label="Tools developed by Gareth, opens in a new tab"
                     target="_blank"
                     rel="noopener noreferrer"
-                    itemprop="relatedLink"
+                    itemprop="url"
             >
-                tools
-            </a>.
+                <img
+                        src="../images/cm.svg"
+                        alt="Checkmeister tools icon"
+                        itemprop="image"
+                />
+                <span>Tools</span>
+            </a>
         </li>
-        <li class="icon-item">
-            <i class="icon icon-space icon-ca11y"></i>
-            Ca11y&nbsp;
+        <li itemscope itemtype="https://schema.org/Thing">
             <a
                     href="https://ca11y.net"
                     aria-label="Recruitment process, opens in a new tab"
                     target="_blank"
                     rel="noopener noreferrer"
-                    itemprop="relatedLink"
+                    itemprop="url"
             >
-                recruitment process.
+                <img
+                        src="../images/ca11y.svg"
+                        alt="Ca11y recruitment icon"
+                        class="resource-icon"
+                        itemprop="image"
+                />
+                <span>Ca11y</span>
             </a>
         </li>
     </ul>
+
 </header>

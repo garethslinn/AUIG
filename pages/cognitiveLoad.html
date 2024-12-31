@@ -1,29 +1,7 @@
-const fs = require('fs');
-const path = require('path');
 
-// Directories
-const componentsDir = '../components';
-const sectionsDir = '../components/sections';
-const outputDir = '../pages';
+<!DOCTYPE html>
+<html lang="en">
 
-// Load reusable components
-const loadComponent = (filename) => {
-    const filePath = path.join(componentsDir, filename);
-    if (fs.existsSync(filePath)) {
-        return fs.readFileSync(filePath, 'utf8');
-    } else {
-        console.error(`Component not found: ${filename}`);
-        return '';
-    }
-};
-
-// Ensure output directory exists
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-}
-
-// Common <head> content
-const headContent = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,19 +47,7 @@ const headContent = `
         }
     </script>
 </head>
-`;
 
-// Assemble pages
-fs.readdirSync(sectionsDir).forEach((file) => {
-    if (file.endsWith('.html')) {
-        const sectionContent = fs.readFileSync(path.join(sectionsDir, file), 'utf8');
-        const pageTitle = file.replace('.html', ''); // Extract title from filename
-
-        // Assemble the full page
-        const pageHTML = `
-<!DOCTYPE html>
-<html lang="en">
-${headContent}
 <body data-theme="light">
 
 <!-- Skip to main content link -->
@@ -115,14 +81,19 @@ ${headContent}
 
 
             <!-- Section Content -->
-            ${sectionContent}
+            <h2>X. Checkpoints and considerations</h2>
+<h3>X.Y Multimedia overload</h3>
+<p>Ensure the use of images....</p>
+
         </div>
     </main>
 </div>
 
 <!-- Footer -->
 <footer id="footer">
-    ${loadComponent('footer.html')}
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
 </footer>
 
 <!-- Back to Top Button -->
@@ -137,11 +108,4 @@ ${headContent}
 <script src="../scripts/main.js?v=1.2" defer></script>
 <script src="../scripts/auig.js" defer></script>
 </body>
-</html>`;
-
-        // Write the page to the output directory
-        const outputPath = path.join(outputDir, file);
-        fs.writeFileSync(outputPath, pageHTML, 'utf8');
-        console.log(`Generated: ${outputPath}`);
-    }
-});
+</html>

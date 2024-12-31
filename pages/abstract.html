@@ -1,29 +1,7 @@
-const fs = require('fs');
-const path = require('path');
 
-// Directories
-const componentsDir = '../components';
-const sectionsDir = '../components/sections';
-const outputDir = '../pages';
+<!DOCTYPE html>
+<html lang="en">
 
-// Load reusable components
-const loadComponent = (filename) => {
-    const filePath = path.join(componentsDir, filename);
-    if (fs.existsSync(filePath)) {
-        return fs.readFileSync(filePath, 'utf8');
-    } else {
-        console.error(`Component not found: ${filename}`);
-        return '';
-    }
-};
-
-// Ensure output directory exists
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-}
-
-// Common <head> content
-const headContent = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,19 +47,7 @@ const headContent = `
         }
     </script>
 </head>
-`;
 
-// Assemble pages
-fs.readdirSync(sectionsDir).forEach((file) => {
-    if (file.endsWith('.html')) {
-        const sectionContent = fs.readFileSync(path.join(sectionsDir, file), 'utf8');
-        const pageTitle = file.replace('.html', ''); // Extract title from filename
-
-        // Assemble the full page
-        const pageHTML = `
-<!DOCTYPE html>
-<html lang="en">
-${headContent}
 <body data-theme="light">
 
 <!-- Skip to main content link -->
@@ -115,14 +81,55 @@ ${headContent}
 
 
             <!-- Section Content -->
-            ${sectionContent}
+            
+  <!-- Article Headline -->
+  <h2 itemprop="headline">Abstract</h2>
+
+  <!-- Overview Section -->
+  <section itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <h3 itemprop="name">Overview</h3>
+    <p itemprop="abstract">
+      The Accessible User Interface Guidelines (AUIG) provides a comprehensive framework that transcends
+      traditional accessibility standards by addressing <strong>all barriers to entry</strong>, including
+      solutions for <strong>neurological, cognitive, psychological, and brain injury challenges</strong>, as
+      well as <strong>economic, linguistic, cultural, and technological barriers</strong>. Beyond web-based
+      platforms, its scope extends to all technologies with user interfaces, embracing established standards
+      from the W3C while offering a unique, holistic approach that simplifies the understanding,
+      design, implementation, and testing of accessible interfaces. AUIG aims to minimise barriers to entry
+      for all, ensuring inclusivity, usability, and accessibility beyond traditional disability-focused needs.
+    </p>
+  </section>
+  <!-- Tailored Audience Section -->
+  <section itemscope itemtype="https://schema.org/Audience">
+    <h3>Tailored for:</h3>
+    <ul>
+      <li itemscope itemtype="https://schema.org/Audience" itemprop="audience">
+        <span itemprop="audienceType">Developers</span>: To build user interfaces that prioritise accessibility from the ground up.
+      </li>
+      <li itemscope itemtype="https://schema.org/Audience" itemprop="audience">
+        <span itemprop="audienceType">Designers</span>: To create inclusive visual experiences.
+      </li>
+      <li itemscope itemtype="https://schema.org/Audience" itemprop="audience">
+        <span itemprop="audienceType">UX Professionals</span>: To integrate accessibility into the core of user experience strategies.
+      </li>
+      <li itemscope itemtype="https://schema.org/Audience" itemprop="audience">
+        <span itemprop="audienceType">Testers</span>: To rigorously validate and ensure compliance with accessibility standards.
+      </li>
+      <li itemscope itemtype="https://schema.org/Audience" itemprop="audience">
+        <span itemprop="audienceType">Product Owners and Managers</span>: To embed accessibility into project management and operations effectively.
+      </li>
+    </ul>
+  </section>
+
         </div>
     </main>
 </div>
 
 <!-- Footer -->
 <footer id="footer">
-    ${loadComponent('footer.html')}
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
 </footer>
 
 <!-- Back to Top Button -->
@@ -137,11 +144,4 @@ ${headContent}
 <script src="../scripts/main.js?v=1.2" defer></script>
 <script src="../scripts/auig.js" defer></script>
 </body>
-</html>`;
-
-        // Write the page to the output directory
-        const outputPath = path.join(outputDir, file);
-        fs.writeFileSync(outputPath, pageHTML, 'utf8');
-        console.log(`Generated: ${outputPath}`);
-    }
-});
+</html>

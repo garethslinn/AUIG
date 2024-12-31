@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <h3 id="2.5">2.5 Links</h3>
+<p>Links are fundamental elements for navigation and interaction on the web. Ensuring that links are accessible is crucial for providing an inclusive experience for all users, including those using assistive technologies.</p>
+
+<h4 id="2.5.1">2.5.1 <code>&lt;a&gt;</code> Element</h4>
+<p>Use clear and descriptive text for links that convey their purpose without requiring additional context. Avoid vague phrases like "click here" or "read more."</p>
+<pre>
+<code class="language-html">
+&lt;!-- Descriptive Link Text --&gt;
+&lt;a href="/about"&gt;Learn more about our mission&lt;/a&gt;
+
+&lt;!-- Non-Descriptive Link Text --&gt;
+&lt;a href="/about"&gt;Click here&lt;/a&gt;
+</code>
+</pre>
+
+<h4 id="2.5.2">2.5.2 Avoiding Redundant Links</h4>
+<p>Ensure that each link on a page has a unique purpose. Avoid placing multiple links with the same text leading to different destinations, as this can confuse users relying on screen readers.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Unique Link Purposes --&gt;
+&lt;a href="/services"&gt;View our Services&lt;/a&gt;
+&lt;a href="/contact"&gt;Contact Us&lt;/a&gt;
+
+&lt;!-- Redundant Links --&gt;
+&lt;a href="/services"&gt;Learn More&lt;/a&gt;
+&lt;a href="/about"&gt;Learn More&lt;/a&gt;
+</code>
+</pre>
+
+<h4 id="2.5.3">2.5.3 Visible Focus Indicators</h4>
+<p>Ensure that links are easily identifiable when navigated using a keyboard. Visible focus indicators help users understand which link is currently focused.</p>
+<pre>
+<code class="language-css">
+/* Custom Focus Style for Links */
+a:focus {
+    outline: 3px solid #005fcc;
+    background-color: #e0f0ff;
+}
+</code>
+</pre>
+
+<h4 id="2.5.4">2.5.4 Link Purpose and Destination</h4>
+<p>Provide context about the link’s destination or purpose within the link text itself. This helps users understand where the link will take them without additional information.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Contextual Link Text --&gt;
+&lt;a href="/download/report.pdf"&gt;Download the Christmas Menu (PDF)&lt;/a&gt;
+</code>
+</pre>
+
+<h4 id="2.5.5">2.5.5 Distinguishable Links</h4>
+<p>Ensure that links are visually distinct from regular text. Use underlining, color differentiation, or other styling techniques to make links easily recognisable.</p>
+<pre>
+<code class="language-css">
+/* Distinguish Links from Regular Text */
+a {
+    color: #005fcc;
+    text-decoration: underline;
+}
+
+a:hover, a:focus {
+    color: #003399;
+    text-decoration: none;
+}
+</code>
+</pre>
+
+<icon-detail id="2.5.6" type="priority" heading-level="h4">
+    <span slot="title">2.5.6 Keyboard Accessibility</span>
+    <span slot="description">
+        Ensure that all links can be accessed and activated using keyboard controls. Users should be able to navigate to links using the <kbd>Tab</kbd> key and activate them with the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.
+    </span>
+</icon-detail>
+
+<h4 id="2.5.7">2.5.7 Opening Links in New Tabs</h4>
+<p>If a link opens in a new tab or window, inform users of this behavior to prevent confusion. This can be done through link text or by using ARIA attributes.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Informative Link Text --&gt;
+&lt;a href="https://externalwebsite.com" target="_blank" rel="noopener noreferrer"&gt;
+    Visit our Partner (opens in a new tab)
+&lt;/a&gt;
+
+&lt;!-- Using ARIA to Indicate New Tab --&gt;
+&lt;a href="https://externalwebsite.com" target="_blank" rel="noopener noreferrer" aria-label="Visit our Partner, opens in a new tab"&gt;
+    Visit our Partner
+&lt;/a&gt;
+</code>
+</pre>
+
+<h4 id="2.5.8">2.5.8 Testing Links for Accessibility</h4>
+<p>Regularly test links using various assistive technologies, such as screen readers, to ensure they are announced correctly and function as intended. Tools like automated accessibility checkers can also help identify potential issues.</p>
+<pre>
+<code class="language-html">
+// Example: Using a screen reader to verify link accessibility
+// Ensure that all links are announced with their purpose and destination
+</code>
+</pre>
+
+<h4>Best Practices for Links</h4>
+<ul>
+    <li><strong>Use Clear and Descriptive Text:</strong> Link text should clearly indicate the destination or action, avoiding vague phrases like "click here."</li>
+    <li><strong>Maintain Consistent Styling:</strong> Ensure that all links have a consistent visual style throughout the website to aid recognition.</li>
+    <li><strong>Provide Contextual Information:</strong> Include additional context in the link text or through ARIA labels when necessary, especially for links that open in new tabs.</li>
+    <li><strong>Ensure Keyboard Navigability:</strong> All links should be accessible via keyboard, with visible focus states to indicate the current selection.</li>
+    <li><strong>Avoid Broken Links:</strong> Regularly check and update links to prevent broken or dead links, enhancing the user experience.</li>
+    <li><strong>Use ARIA Attributes Judiciously:</strong> Only add ARIA labels or roles when additional context is necessary and cannot be conveyed through link text alone.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            <header class="header" id="header" itemscope itemtype="https://schema.org/CreativeWork">
+    <!-- Title of the CreativeWork -->
+    <h1 itemprop="name">Accessible User Interface Guidelines (AUIG)</h1>
+
+    <!-- Description of the CreativeWork -->
+    <h2 class="title" itemprop="description">
+        A comprehensive set of modern accessibility guidelines that are based on W3C standards and
+        expand upon additional considerations such as neurodiversity, presented in an intuitive
+        and easy-to-follow format.
+    </h2>
+
+    <!-- Version Section -->
+    <h3>Version</h3>
+    <ul>
+        <!-- Current Version -->
+        <li>
+            <span itemprop="version">This version: 0.1.5</span>
+        </li>
+        <!-- Publication Date -->
+        <li>
+            Date:
+            <time itemprop="datePublished" datetime="2024-12-29">December 29, 2024</time>
+        </li>
+    </ul>
+
+    <!-- Source Section -->
+    <h3>Source</h3>
+    <ul>
+        <!-- Repository URL -->
+        <li>
+            Repo:
+            <a href="https://github.com/garethslinn/auig" itemprop="codeRepository"><span class="sr-only">Link leaves this site</span>auig</a>
+        </li>
+        <!-- Issues Page URL -->
+        <li>
+            Raise
+            <a href="https://github.com/garethslinn/auig/issues" itemprop="issueTracker"><span class="sr-only">Link leaves this site</span>Issues</a>
+        </li>
+    </ul>
+
+    <!-- Editors Section -->
+    <h3>Editor</h3>
+    <ul class="item-types">
+        <li class="icon-item" itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/garethslinn"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Gareth Slinn"
+                        src="../images/users/gslinn.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <!-- Editor's Name -->
+                <span itemprop="name">Gareth Slinn</span>&nbsp;
+            </a>
+       </li>
+    </ul>
+
+    <h3>Collaborators</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/getify"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Kyle Simpson"
+                        src="../images/users/ks.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Kyle Simpson</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/Tim-sansom"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Timski"
+                        src="../images/users/timski.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Timski</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/adampfoster"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Adam Foster"
+                        src="../images/users/adamp.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Adam Foster</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/lharby"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Luke Harby"
+                        src="../images/users/lukeh.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Luke Harby</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/presencewebdesign"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of James Stevenson"
+                        src="../images/users/jamess.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">James Stevenson</span>
+            </a>
+        </li>
+    </ul>
+
+    <h3>Video(s)</h3>
+    <ul class="item-types">
+        <li itemprop="video">
+            <a
+                    href="https://www.youtube.com/watch?v=3bfQVzcw5ic"
+                    aria-label="From Compliance to Opportunity, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        src="../images/video.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Compliance</span>
+            </a>.
+        </li>
+    </ul>
+
+    <!-- Resources Section -->
+    <h3>Resources</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://neurologicalux.com/"
+                    aria-label="Books on accessibility, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/nux.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Books</span>
+            </a>.
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://www.checkmeister.com/"
+                    aria-label="Tools developed by Gareth, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/cm.svg"
+                        alt="Checkmeister tools icon"
+                        itemprop="image"
+                />
+                <span>Tools</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://ca11y.net"
+                    aria-label="Recruitment process, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/ca11y.svg"
+                        alt="Ca11y recruitment icon"
+                        class="resource-icon"
+                        itemprop="image"
+                />
+                <span>Ca11y</span>
+            </a>
+        </li>
+    </ul>
+
+</header>
+
+
+            <!-- Section Content -->
+            <h3 id="appendix-a">Appendix A: Accessibility Guidelines for Developing ATMs</h3>
+<p>This section provides comprehensive accessibility guidelines to ensure ATMs are inclusive for individuals with diverse needs.</p>
+
+<h4 id="a1">A.1 General Design Principles</h4>
+<p>Key considerations to ensure user-friendly designs.</p>
+<ul>
+  <li><strong>A.1.1 Unobstructed Access:</strong> Ensure clear, obstacle-free paths with adequate space for wheelchair users.</li>
+  <li><strong>A.1.2 Height and Reach:</strong> Position input controls and screens at heights accessible to both standing and seated users.</li>
+  <li><strong>A.1.3 Standardised Design:</strong> Maintain consistent placement and design of components across all devices.</li>
+  <li><strong>A.1.4 Feedback Mechanisms:</strong> Provide tactile, auditory, and visual feedback for all user actions.</li>
+</ul>
+
+<h4 id="a2">A.2 Input and Output Accessibility</h4>
+<p>Guidelines for designing accessible input and output interfaces.</p>
+
+<h5 id="a2.1">A.2.1 Keypads</h5>
+<ul>
+  <li>A.2.1.1 Use raised, tactilely discernible keys.</li>
+  <li>A.2.1.2 Ensure consistent arrangement of number pads across all devices.</li>
+  <li>A.2.1.3 Contrast keypads against surrounding surfaces for visibility.</li>
+</ul>
+
+<h5 id="a2.2">A.2.2 Touchscreens</h5>
+<ul>
+  <li>A.2.2.1 Provide physical or tactile alternatives to touch interfaces.</li>
+  <li>A.2.2.2 Ensure touchscreens meet WCAG AA contrast requirements.</li>
+  <li>A.2.2.3 Integrate screen-reading and voice guidance functionality.</li>
+</ul>
+
+<h5 id="a2.3">A.2.3 Audio Feedback</h5>
+<ul>
+  <li>A.2.3.1 Equip devices with standardised audio jacks and Braille instructions.</li>
+  <li>A.2.3.2 Attach headphones by default and position them consistently.</li>
+  <li>A.2.3.3 Provide clear, speech-enabled audio instructions and feedback.</li>
+</ul>
+
+<h4 id="a3">A.3 Physical Interface Accessibility</h4>
+<p>Recommendations for improving physical component usability.</p>
+
+<h5 id="a3.1">A.3.1 Card Slots</h5>
+<ul>
+  <li>A.3.1.1 Standardise slot position and orientation with Braille instructions.</li>
+  <li>A.3.1.2 Use a swipe mechanism instead of retaining cards throughout the process.</li>
+</ul>
+
+<h5 id="a3.2">A.3.2 Cash and Check Slots</h5>
+<ul>
+  <li>A.3.2.1 Clearly differentiate cash and check slots with tactile markers or Braille labels.</li>
+</ul>
+
+<h5 id="a3.3">A.3.3 Security Authentication</h5>
+<ul>
+  <li>A.3.3.1 Standardise whether ATM rooms require authentication.</li>
+  <li>A.3.3.2 Provide tactile or Braille instructions on doors or handles.</li>
+</ul>
+
+<h4 id="a4">A.4 Assistive Features</h4>
+<p>Features to aid users with specific accessibility needs.</p>
+
+<h5 id="a4.1">A.4.1 Voice Guidance</h5>
+<ul>
+  <li>A.4.1.1 Provide real-time voice instructions for navigation and operations.</li>
+  <li>A.4.1.2 Deliver clear, timely feedback to reduce user confusion.</li>
+</ul>
+
+<h5 id="a4.2">A.4.2 Braille Labels</h5>
+<ul>
+  <li>A.4.2.1 Include Braille instructions on buttons, slots, and jacks.</li>
+  <li>A.4.2.2 Provide Braille-labeled ATM cards indicating magnetic strip orientation.</li>
+</ul>
+
+<h5 id="a4.3">A.4.3 Haptic Feedback</h5>
+<ul>
+  <li>A.4.3.1 Integrate haptic feedback for tasks like button presses and slot usage.</li>
+</ul>
+
+<h4 id="a5">A.5 Environmental Accessibility</h4>
+<p>Address external factors that impact user experience.</p>
+
+<h5 id="a5.1">A.5.1 Lighting</h5>
+<ul>
+  <li>A.5.1.1 Ensure proper lighting to assist users with partial vision.</li>
+  <li>A.5.1.2 Avoid glare or reflections on screens.</li>
+</ul>
+
+<h5 id="a5.2">A.5.2 Noise Reduction</h5>
+<ul>
+  <li>A.5.2.1 Minimise ambient noise to improve the effectiveness of audio instructions.</li>
+</ul>
+
+<h5 id="a5.3">A.5.3 Signage</h5>
+<ul>
+  <li>A.5.3.1 Provide high-contrast, large-print signage with tactile elements for guidance.</li>
+</ul>
+
+<h4 id="a6">A.6 Additional Considerations</h4>
+<p>Strategies for user-centric design and iterative testing.</p>
+<ul>
+  <li>A.6.1 Build trust with users through clear, intuitive interfaces.</li>
+  <li>A.6.2 Conduct usability testing with diverse user groups.</li>
+  <li>A.6.3 Explore accessibility features for hearing and motor impairments.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

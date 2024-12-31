@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            <header class="header" id="header" itemscope itemtype="https://schema.org/CreativeWork">
+    <!-- Title of the CreativeWork -->
+    <h1 itemprop="name">Accessible User Interface Guidelines (AUIG)</h1>
+
+    <!-- Description of the CreativeWork -->
+    <h2 class="title" itemprop="description">
+        A comprehensive set of modern accessibility guidelines that are based on W3C standards and
+        expand upon additional considerations such as neurodiversity, presented in an intuitive
+        and easy-to-follow format.
+    </h2>
+
+    <!-- Version Section -->
+    <h3>Version</h3>
+    <ul>
+        <!-- Current Version -->
+        <li>
+            <span itemprop="version">This version: 0.1.5</span>
+        </li>
+        <!-- Publication Date -->
+        <li>
+            Date:
+            <time itemprop="datePublished" datetime="2024-12-29">December 29, 2024</time>
+        </li>
+    </ul>
+
+    <!-- Source Section -->
+    <h3>Source</h3>
+    <ul>
+        <!-- Repository URL -->
+        <li>
+            Repo:
+            <a href="https://github.com/garethslinn/auig" itemprop="codeRepository"><span class="sr-only">Link leaves this site</span>auig</a>
+        </li>
+        <!-- Issues Page URL -->
+        <li>
+            Raise
+            <a href="https://github.com/garethslinn/auig/issues" itemprop="issueTracker"><span class="sr-only">Link leaves this site</span>Issues</a>
+        </li>
+    </ul>
+
+    <!-- Editors Section -->
+    <h3>Editor</h3>
+    <ul class="item-types">
+        <li class="icon-item" itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/garethslinn"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Gareth Slinn"
+                        src="../images/users/gslinn.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <!-- Editor's Name -->
+                <span itemprop="name">Gareth Slinn</span>&nbsp;
+            </a>
+       </li>
+    </ul>
+
+    <h3>Collaborators</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/getify"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Kyle Simpson"
+                        src="../images/users/ks.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Kyle Simpson</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/Tim-sansom"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Timski"
+                        src="../images/users/timski.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Timski</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/adampfoster"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Adam Foster"
+                        src="../images/users/adamp.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Adam Foster</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/lharby"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Luke Harby"
+                        src="../images/users/lukeh.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Luke Harby</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/presencewebdesign"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of James Stevenson"
+                        src="../images/users/jamess.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">James Stevenson</span>
+            </a>
+        </li>
+    </ul>
+
+    <h3>Video(s)</h3>
+    <ul class="item-types">
+        <li itemprop="video">
+            <a
+                    href="https://www.youtube.com/watch?v=3bfQVzcw5ic"
+                    aria-label="From Compliance to Opportunity, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        src="../images/video.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Compliance</span>
+            </a>.
+        </li>
+    </ul>
+
+    <!-- Resources Section -->
+    <h3>Resources</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://neurologicalux.com/"
+                    aria-label="Books on accessibility, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/nux.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Books</span>
+            </a>.
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://www.checkmeister.com/"
+                    aria-label="Tools developed by Gareth, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/cm.svg"
+                        alt="Checkmeister tools icon"
+                        itemprop="image"
+                />
+                <span>Tools</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://ca11y.net"
+                    aria-label="Recruitment process, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/ca11y.svg"
+                        alt="Ca11y recruitment icon"
+                        class="resource-icon"
+                        itemprop="image"
+                />
+                <span>Ca11y</span>
+            </a>
+        </li>
+    </ul>
+
+</header>
+
+
+            <!-- Section Content -->
+            <h3 id="3.6">3.6 Tooltips</h3>
+<p>Tooltips are small, interactive overlays that provide additional information about an element when a user hovers over it, focuses on it, or performs a related action. Ensuring that tooltips are accessible is critical for improving the usability of your application, especially for users who rely on assistive technologies.</p>
+
+<h4 id="3.6.1">3.6.1 Semantic Markup</h4>
+<p>Use semantic HTML and ARIA attributes to associate tooltips with their corresponding elements. Avoid relying solely on visual cues for tooltips.</p>
+<pre>
+<code class="language-html">&lt;!-- Tooltip with ARIA Attributes --&gt;
+&lt;button id=&quot;tooltipButton&quot; aria-describedby=&quot;tooltip1&quot;&gt;More Info&lt;/button&gt;
+&lt;div id=&quot;tooltip1&quot; role=&quot;tooltip&quot; hidden&gt;
+    This button provides additional information.
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="3.6.2">3.6.2 Keyboard Accessibility</h4>
+<p>Tooltips should be accessible to keyboard users. Ensure that they appear when the related element is focused and can be dismissed or hidden using the keyboard.</p>
+<pre>
+<code class="language-javascript">// Show tooltip on focus and hide on blur
+const tooltipButton = document.getElementById(&#39;tooltipButton&#39;);
+const tooltip = document.getElementById(&#39;tooltip1&#39;);
+
+tooltipButton.addEventListener(&#39;focus&#39;, () =&gt; {
+    tooltip.hidden = false;
+});
+
+tooltipButton.addEventListener(&#39;blur&#39;, () =&gt; {
+    tooltip.hidden = true;
+});
+</code>
+</pre>
+
+<h4 id="3.6.3">3.6.3 Visible on Hover and Focus</h4>
+<p>Ensure that tooltips appear on both hover (for mouse users) and focus (for keyboard users) and remain visible for an appropriate duration.</p>
+<pre>
+<code class="language-html">&lt;!-- Tooltip with Hover and Focus Behavior --&gt;
+&lt;button id=&quot;tooltipButton2&quot; aria-describedby=&quot;tooltip2&quot;&gt;Help&lt;/button&gt;
+&lt;div id=&quot;tooltip2&quot; role=&quot;tooltip&quot; hidden&gt;
+    This is a helpful tooltip.
+&lt;/div&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Show and hide tooltip on hover and focus
+const tooltipButton2 = document.getElementById(&#39;tooltipButton2&#39;);
+const tooltip2 = document.getElementById(&#39;tooltip2&#39;);
+
+tooltipButton2.addEventListener(&#39;mouseover&#39;, () =&gt; {
+    tooltip2.hidden = false;
+});
+
+tooltipButton2.addEventListener(&#39;mouseout&#39;, () =&gt; {
+    tooltip2.hidden = true;
+});
+
+tooltipButton2.addEventListener(&#39;focus&#39;, () =&gt; {
+    tooltip2.hidden = false;
+});
+
+tooltipButton2.addEventListener(&#39;blur&#39;, () =&gt; {
+    tooltip2.hidden = true;
+});
+</code>
+</pre>
+
+<h4 id="3.6.4">3.6.4 ARIA Attributes</h4>
+<p>Use ARIA attributes like <code>aria-describedby</code> to associate the tooltip with its trigger element. The tooltip should have a <code>role="tooltip"</code> attribute to indicate its purpose.</p>
+<pre>
+<code class="language-html">&lt;!-- Tooltip with ARIA Attributes --&gt;
+&lt;button aria-describedby=&quot;tooltip3&quot;&gt;More Details&lt;/button&gt;
+&lt;div id=&quot;tooltip3&quot; role=&quot;tooltip&quot; hidden&gt;
+    Additional information about this feature.
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="3.6.5">3.6.5 Responsive Design</h4>
+<p>Ensure that tooltips are responsive and do not obstruct other content, especially on smaller screens. Consider positioning tooltips dynamically to avoid overlap.</p>
+<pre>
+<code class="language-css">/* Tooltip Styling */
+[role=&quot;tooltip&quot;] {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    max-width: 200px;
+    z-index: 1000;
+}
+
+/* Tooltip Positioning */
+button[aria-describedby]:hover + [role=&quot;tooltip&quot;],
+button[aria-describedby]:focus + [role=&quot;tooltip&quot;] {
+    display: block;
+}
+</code>
+</pre>
+
+<h4 id="3.6.6">3.6.6 Testing Tooltips for Accessibility</h4>
+<p>Test tooltips with assistive technologies to ensure they are announced correctly and function as intended. Verify that ARIA attributes, keyboard navigation, and focus behaviors are implemented correctly.</p>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify that the tooltip is announced by screen readers when the trigger element is focused.
+// - Ensure tooltips are keyboard accessible and visible on hover and focus.
+// - Validate that the tooltip does not overlap important content.
+</code>
+</pre>
+
+<h4>Best Practices for Tooltips</h4>
+<ul>
+    <li><strong>Use ARIA Attributes:</strong> Associate tooltips with their trigger elements using <code>aria-describedby</code> and <code>role="tooltip"</code>.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make tooltips accessible via focus and dismissible using the keyboard.</li>
+    <li><strong>Provide Visible Cues:</strong> Ensure tooltips are visible on hover and focus for both mouse and keyboard users.</li>
+    <li><strong>Design for Responsiveness:</strong> Avoid obstructing content by dynamically positioning tooltips.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test tooltips with assistive technologies to identify and resolve accessibility issues.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

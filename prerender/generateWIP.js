@@ -42,9 +42,9 @@ const headContent = `
     <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
     <link rel="stylesheet" href="../styles/main.css?v=1.3">
 
-    <!-- PrismJS Light Theme (Enabled by default) -->
+    <!-- PrismJS Light Theme -->
     <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
-    <!-- PrismJS Dark Theme (Disabled by default) -->
+    <!-- PrismJS Dark Theme -->
     <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
 
     <!-- Favicon -->
@@ -82,13 +82,61 @@ fs.readdirSync(sectionsDir).forEach((file) => {
 <!DOCTYPE html>
 <html lang="en">
 ${headContent}
-<body>
-    ${loadComponent('header.html')}
-    ${loadComponent('nav.html')}
-    <main>
-        ${sectionContent}
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            ${loadComponent('header.html')}
+
+            <!-- Section Content -->
+            ${sectionContent}
+        </div>
     </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
     ${loadComponent('footer.html')}
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
 </body>
 </html>`;
 

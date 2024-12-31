@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            <header class="header" id="header" itemscope itemtype="https://schema.org/CreativeWork">
+    <!-- Title of the CreativeWork -->
+    <h1 itemprop="name">Accessible User Interface Guidelines (AUIG)</h1>
+
+    <!-- Description of the CreativeWork -->
+    <h2 class="title" itemprop="description">
+        A comprehensive set of modern accessibility guidelines that are based on W3C standards and
+        expand upon additional considerations such as neurodiversity, presented in an intuitive
+        and easy-to-follow format.
+    </h2>
+
+    <!-- Version Section -->
+    <h3>Version</h3>
+    <ul>
+        <!-- Current Version -->
+        <li>
+            <span itemprop="version">This version: 0.1.5</span>
+        </li>
+        <!-- Publication Date -->
+        <li>
+            Date:
+            <time itemprop="datePublished" datetime="2024-12-29">December 29, 2024</time>
+        </li>
+    </ul>
+
+    <!-- Source Section -->
+    <h3>Source</h3>
+    <ul>
+        <!-- Repository URL -->
+        <li>
+            Repo:
+            <a href="https://github.com/garethslinn/auig" itemprop="codeRepository"><span class="sr-only">Link leaves this site</span>auig</a>
+        </li>
+        <!-- Issues Page URL -->
+        <li>
+            Raise
+            <a href="https://github.com/garethslinn/auig/issues" itemprop="issueTracker"><span class="sr-only">Link leaves this site</span>Issues</a>
+        </li>
+    </ul>
+
+    <!-- Editors Section -->
+    <h3>Editor</h3>
+    <ul class="item-types">
+        <li class="icon-item" itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/garethslinn"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Gareth Slinn"
+                        src="../images/users/gslinn.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <!-- Editor's Name -->
+                <span itemprop="name">Gareth Slinn</span>&nbsp;
+            </a>
+       </li>
+    </ul>
+
+    <h3>Collaborators</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/getify"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Kyle Simpson"
+                        src="../images/users/ks.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Kyle Simpson</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/Tim-sansom"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Timski"
+                        src="../images/users/timski.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Timski</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/adampfoster"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Adam Foster"
+                        src="../images/users/adamp.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Adam Foster</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/lharby"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Luke Harby"
+                        src="../images/users/lukeh.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Luke Harby</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/presencewebdesign"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of James Stevenson"
+                        src="../images/users/jamess.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">James Stevenson</span>
+            </a>
+        </li>
+    </ul>
+
+    <h3>Video(s)</h3>
+    <ul class="item-types">
+        <li itemprop="video">
+            <a
+                    href="https://www.youtube.com/watch?v=3bfQVzcw5ic"
+                    aria-label="From Compliance to Opportunity, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        src="../images/video.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Compliance</span>
+            </a>.
+        </li>
+    </ul>
+
+    <!-- Resources Section -->
+    <h3>Resources</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://neurologicalux.com/"
+                    aria-label="Books on accessibility, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/nux.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Books</span>
+            </a>.
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://www.checkmeister.com/"
+                    aria-label="Tools developed by Gareth, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/cm.svg"
+                        alt="Checkmeister tools icon"
+                        itemprop="image"
+                />
+                <span>Tools</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://ca11y.net"
+                    aria-label="Recruitment process, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/ca11y.svg"
+                        alt="Ca11y recruitment icon"
+                        class="resource-icon"
+                        itemprop="image"
+                />
+                <span>Ca11y</span>
+            </a>
+        </li>
+    </ul>
+
+</header>
+
+
+            <!-- Section Content -->
+            <h3 id="3.2">3.2 Search</h3>
+<p>Search functionality is a critical component of web applications, enabling users to find information quickly and efficiently. Ensuring that search features are accessible is vital for creating an inclusive experience for all users, including those with disabilities or using assistive technologies.</p>
+
+<h4 id="3.2.1">3.2.1 Accessible Search Field</h4>
+<p>Search fields should be implemented using semantic HTML and include appropriate labels for screen readers. This ensures that the purpose of the field is clear to all users.</p>
+<pre>
+<code class="language-html">&lt;!-- Accessible Search Field --&gt;
+&lt;form action=&quot;/search&quot; method=&quot;get&quot; role=&quot;search&quot;&gt;
+    &lt;label for=&quot;searchField&quot; class=&quot;sr-only&quot;&gt;Search the site&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;q&quot; placeholder=&quot;Search the site&quot; aria-label=&quot;Search the site&quot;&gt;
+    &lt;button type=&quot;submit&quot; aria-label=&quot;Submit search&quot;&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<h4 id="3.2.2">3.2.2 Keyboard Accessibility</h4>
+<p>Ensure that users can interact with the search field and submit the search using only the keyboard. The <kbd>Tab</kbd> key should navigate to the search field, and the <kbd>Enter</kbd> key should submit the form.</p>
+<pre>
+<code class="language-html">&lt;!-- Example Search Form --&gt;
+&lt;form action=&quot;/search&quot; method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;q&quot; placeholder=&quot;Search the site&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Handle keyboard events for custom search interactions (if applicable)
+document.getElementById(&#39;searchField&#39;).addEventListener(&#39;keydown&#39;, (e) =&gt; {
+    if (e.key === &#39;Enter&#39;) {
+        // Custom logic if necessary
+    }
+});
+</code>
+</pre>
+
+<h4 id="3.2.3">3.2.3 Placeholder Text and Labels</h4>
+<p>Do not rely solely on placeholder text as a label for the search field, as it may not be accessible to all users. Always provide a visible or screen reader-friendly label.</p>
+<pre>
+<code class="language-html">&lt;!-- Correct: Accessible Label with Placeholder --&gt;
+&lt;form action=&quot;/search&quot; method=&quot;get&quot;&gt;
+    &lt;label for=&quot;searchField&quot;&gt;Search&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;q&quot; placeholder=&quot;Enter keywords&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- Incorrect: Placeholder Used as Label --&gt;
+&lt;form action=&quot;/search&quot; method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;q&quot; placeholder=&quot;Search the site&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<h4 id="3.2.4">3.2.4 ARIA Roles and Attributes</h4>
+<p>Use ARIA roles and attributes to enhance the accessibility of custom search components. For example, you can use <code>role="search"</code> to define the search region.</p>
+<pre>
+<code class="language-html">&lt;!-- Example with ARIA Attributes --&gt;
+&lt;form action=&quot;/search&quot; method=&quot;get&quot; role=&quot;search&quot; aria-label=&quot;Site search&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;q&quot; placeholder=&quot;Search the site&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<h4 id="3.2.5">3.2.5 Clear Search Button</h4>
+<p>Include a clear search button that allows users to reset the search field easily. This is particularly useful for users with motor impairments or those relying on screen readers.</p>
+<pre>
+<code class="language-html">&lt;!-- Search Form with Clear Button --&gt;
+&lt;form action=&quot;/search&quot; method=&quot;get&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;q&quot; placeholder=&quot;Search the site&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+    &lt;button type=&quot;button&quot; aria-label=&quot;Clear search&quot; onclick=&quot;document.getElementById(&#39;searchField&#39;).value = &#39;&#39;;&quot;&gt;Clear&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<h4 id="3.2.6">3.2.6 Responsive Design</h4>
+<p>Ensure that the search field and buttons are responsive and work well on devices of all sizes, including mobile and touch screens.</p>
+<pre>
+<code class="language-css">/* Responsive Search Field */
+form[role=&quot;search&quot;] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+form[role=&quot;search&quot;] input[type=&quot;text&quot;] {
+    flex: 1 1 auto;
+    min-width: 200px;
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+form[role=&quot;search&quot;] button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+</code>
+</pre>
+
+<h4 id="3.2.7">3.2.7 Search Suggestions</h4>
+<p>Provide accessible search suggestions to help users refine their queries. Ensure that suggestions are keyboard navigable and properly announced by screen readers.</p>
+<pre>
+<code class="language-html">&lt;!-- Search Field with Suggestions --&gt;
+&lt;form action=&quot;/search&quot; method=&quot;get&quot; role=&quot;search&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;q&quot; placeholder=&quot;Search the site&quot; aria-autocomplete=&quot;list&quot; aria-controls=&quot;suggestions&quot;&gt;
+    &lt;ul id=&quot;suggestions&quot; role=&quot;listbox&quot; aria-label=&quot;Search suggestions&quot;&gt;
+        &lt;li role=&quot;option&quot;&gt;Suggestion 1&lt;/li&gt;
+        &lt;li role=&quot;option&quot;&gt;Suggestion 2&lt;/li&gt;
+        &lt;li role=&quot;option&quot;&gt;Suggestion 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Handle search suggestion interactions
+document.getElementById(&#39;searchField&#39;).addEventListener(&#39;input&#39;, (e) =&gt; {
+    // Show or update suggestions based on input
+});
+</code>
+</pre>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

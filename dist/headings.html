@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+            <!-- Header -->
+            <header class="header" id="header" itemscope itemtype="https://schema.org/CreativeWork">
+    <!-- Title of the CreativeWork -->
+    <h1 itemprop="name">Accessible User Interface Guidelines (AUIG)</h1>
+
+    <!-- Description of the CreativeWork -->
+    <h2 class="title" itemprop="description">
+        A comprehensive set of modern accessibility guidelines that are based on W3C standards and
+        expand upon additional considerations such as neurodiversity, presented in an intuitive
+        and easy-to-follow format.
+    </h2>
+
+    <!-- Version Section -->
+    <h3>Version</h3>
+    <ul>
+        <!-- Current Version -->
+        <li>
+            <span itemprop="version">This version: 0.1.5</span>
+        </li>
+        <!-- Publication Date -->
+        <li>
+            Date:
+            <time itemprop="datePublished" datetime="2024-12-29">December 29, 2024</time>
+        </li>
+    </ul>
+
+    <!-- Source Section -->
+    <h3>Source</h3>
+    <ul>
+        <!-- Repository URL -->
+        <li>
+            Repo:
+            <a href="https://github.com/garethslinn/auig" itemprop="codeRepository"><span class="sr-only">Link leaves this site</span>auig</a>
+        </li>
+        <!-- Issues Page URL -->
+        <li>
+            Raise
+            <a href="https://github.com/garethslinn/auig/issues" itemprop="issueTracker"><span class="sr-only">Link leaves this site</span>Issues</a>
+        </li>
+    </ul>
+
+    <!-- Editors Section -->
+    <h3>Editor</h3>
+    <ul class="item-types">
+        <li class="icon-item" itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/garethslinn"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Gareth Slinn"
+                        src="../images/users/gslinn.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <!-- Editor's Name -->
+                <span itemprop="name">Gareth Slinn</span>&nbsp;
+            </a>
+       </li>
+    </ul>
+
+    <h3>Collaborators</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/getify"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Kyle Simpson"
+                        src="../images/users/ks.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Kyle Simpson</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/Tim-sansom"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Timski"
+                        src="../images/users/timski.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Timski</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/adampfoster"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Adam Foster"
+                        src="../images/users/adamp.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Adam Foster</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/lharby"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Luke Harby"
+                        src="../images/users/lukeh.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Luke Harby</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/presencewebdesign"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of James Stevenson"
+                        src="../images/users/jamess.jpeg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">James Stevenson</span>
+            </a>
+        </li>
+    </ul>
+
+    <h3>Video(s)</h3>
+    <ul class="item-types">
+        <li itemprop="video">
+            <a
+                    href="https://www.youtube.com/watch?v=3bfQVzcw5ic"
+                    aria-label="From Compliance to Opportunity, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        src="../images/video.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Compliance</span>
+            </a>.
+        </li>
+    </ul>
+
+    <!-- Resources Section -->
+    <h3>Resources</h3>
+    <ul class="item-types">
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://neurologicalux.com/"
+                    aria-label="Books on accessibility, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/nux.svg"
+                        alt="Neurological books icon"
+                        itemprop="image"
+                />
+                <span>Books</span>
+            </a>.
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://www.checkmeister.com/"
+                    aria-label="Tools developed by Gareth, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/cm.svg"
+                        alt="Checkmeister tools icon"
+                        itemprop="image"
+                />
+                <span>Tools</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Thing">
+            <a
+                    href="https://ca11y.net"
+                    aria-label="Recruitment process, opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="url"
+            >
+                <img
+                        src="../images/ca11y.svg"
+                        alt="Ca11y recruitment icon"
+                        class="resource-icon"
+                        itemprop="image"
+                />
+                <span>Ca11y</span>
+            </a>
+        </li>
+    </ul>
+
+</header>
+
+
+            <!-- Section Content -->
+            <h3 id="2.4">2.4 Headings</h3>
+<p>Proper use of headings is essential for creating a clear content structure, enhancing navigability, and improving accessibility for all users, including those utilising assistive technologies.</p>
+
+<h4 id="2.4.1">2.4.1 Hierarchical Structure</h4>
+<p>Use headings in a hierarchical manner to reflect the document structure. Start with a single <code class="language-html">&lt;h1&gt;</code> for the main title, followed by <code class="language-html">&lt;h2&gt;</code> for primary sections, <code class="language-html">&lt;h3&gt;</code> for subsections, and so on. This hierarchy helps users understand the organisation of content and navigate efficiently.</p>
+<pre>
+<code class="language-html">
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section 1&lt;/h2&gt;
+&lt;h3&gt;Subsection 1.1&lt;/h3&gt;
+&lt;h2&gt;Section 2&lt;/h2&gt;
+&lt;h3&gt;Subsection 2.1&lt;/h3&gt;
+</code>
+</pre>
+
+<h4 id="2.4.2">2.4.2 Descriptive Headings</h4>
+<p>Ensure that each heading clearly and concisely describes the content that follows. Descriptive headings provide users with a quick understanding of the section's purpose, aiding in content scanning and comprehension.</p>
+<pre>
+<code class="language-html">
+&lt;h2&gt;Benefits of Responsive Design&lt;/h2&gt;
+&lt;p&gt;Responsive design ensures that your website looks great on all devices...&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.4.3">2.4.3 Avoid Skipping Heading Levels</h4>
+<p>Do not skip heading levels (e.g., jumping from <code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h3&gt;</code>). Maintaining a logical flow of heading levels ensures that assistive technologies can accurately interpret the document structure.</p>
+<pre>
+<code class="language-html">
+<!-- Correct -->
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+
+<!-- Incorrect -->
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+</code>
+</pre>
+
+<h4 id="2.4.4">2.4.4 Semantic Use of Headings</h4>
+<p>Utilise headings to convey semantic meaning rather than for visual styling purposes. Avoid using headings solely to change text size or appearance. Instead, use CSS for styling and maintain proper heading semantics for accessibility.</p>
+<pre>
+<code class="language-html">
+<!-- Semantic Heading -->
+&lt;h2&gt;About Us&lt;/h2&gt;
+
+<!-- Non-Semantic, Avoid This -->
+&lt;div class="heading"&gt;About Us&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="2.4.5">2.4.5 Accessible Navigation</h4>
+<p>Headings play a crucial role in enabling keyboard and screen reader users to navigate content efficiently. Implement skip links and ensure that heading levels are used consistently to facilitate quick navigation between sections.</p>
+<pre>
+<code class="language-html">
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+&lt;h1 id="main-content"&gt;Welcome to Our Website&lt;/h1&gt;
+</code>
+</pre>
+
+<icon-detail id="2.4.6" type="priority" heading-level="h4">
+    <span slot="title">2.4.6 Consistent Styling</span>
+    <span slot="description">
+        Apply consistent styling to headings to maintain visual coherence across the website. Use CSS classes or styles to ensure that headings of the same level have uniform appearance, enhancing the user experience without compromising accessibility.
+    </span>
+</icon-detail>
+
+<h4 id="2.4.7">2.4.7 ARIA Roles and Landmarks</h4>
+<p>While headings themselves are inherently semantic, combining them with ARIA roles and landmarks can further enhance accessibility. Use ARIA attributes judiciously to define regions of the page, aiding assistive technologies in understanding the layout.</p>
+<pre>
+<code class="language-html">
+&lt;header role="banner"&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav role="navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#section1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="2.4.8">2.4.8 Testing and Validation</h4>
+<p>Regularly test your headings with various assistive technologies and validation tools to ensure they meet accessibility standards. Tools like screen readers can help verify that headings are announced correctly and that the document structure is logical.</p>
+<pre>
+<code class="language-html">
+// Example: Using a screen reader to navigate headings
+// Ensure that headings are announced in the correct order and hierarchy
+</code>
+</pre>
+
+<h4>Best Practices for Headings</h4>
+<ul>
+    <li><strong>Use Only One <code class="language-html">&lt;h1&gt;</code>:</strong> Ensure that each page has a single <code class="language-html">&lt;h1&gt;</code> tag representing the main title. This helps search engines and assistive technologies understand the primary topic of the page.</li>
+    <li><strong>Maintain Logical Order:</strong> Follow a sequential order of headings without skipping levels to maintain a clear content hierarchy.</li>
+    <li><strong>Avoid Overuse:</strong> Do not use headings excessively. Use them to denote major sections and subsections only.</li>
+    <li><strong>Accessible Naming:</strong> Choose meaningful and descriptive names for headings to provide context to all users.</li>
+</ul>
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

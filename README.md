@@ -1,4 +1,4 @@
-Here’s the updated `README.md` reflecting the latest `scripts` configuration:
+Here’s the updated `README.md` reflecting the use of `npm --prefix prerender` to run the `prerender` scripts from the root directory:
 
 ---
 
@@ -109,7 +109,7 @@ Here’s the updated `README.md` reflecting the latest `scripts` configuration:
 1. **Generate Static Files**
 
    ```bash
-   npm run build
+   npm --prefix prerender run build
    ```
 
    - Generates all pages into the `pages/` directory with injected components and structured layouts.
@@ -119,7 +119,7 @@ Here’s the updated `README.md` reflecting the latest `scripts` configuration:
 1. **Serve the Built Files**
 
    ```bash
-   npm run serve-dist
+   npm --prefix prerender run serve-dist
    ```
 
    - Hosts the static files in the `pages/` directory at [http://localhost:8080](http://localhost:8080).
@@ -129,7 +129,7 @@ Here’s the updated `README.md` reflecting the latest `scripts` configuration:
 1. **Rebuild the Project**
 
    ```bash
-   npm run rebuild
+   npm --prefix prerender run rebuild
    ```
 
    - Removes the `pages/` directory and prepares for a fresh build.
@@ -207,4 +207,4 @@ This project is licensed under the [License](LICENSE.md).
 
 ---
 
-This `README.md` reflects the latest `scripts` section, including the commands to build, clean, and serve the `pages/` directory.
+This updated `README.md` explains how to run `prerender` scripts from the root directory using `npm --prefix prerender`. Let me know if further adjustments are needed!

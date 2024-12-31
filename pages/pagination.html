@@ -5,30 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Cache Control for Security and Performance -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
     <title>Accessible User Interface Guidelines (AUIG)</title>
 
-    <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
 
     <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
 
-    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
-    <link rel="stylesheet" href="../styles/main.css?v=1.3.1">
-
-    <!-- PrismJS Light Theme -->
+    <link rel="stylesheet" href="../styles/main.css?v=7dcded15e32e9fa6">
     <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
-    <!-- PrismJS Dark Theme -->
     <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
 
-    <!-- Favicon -->
     <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
 
-    <!-- Structured Data for Organization -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -49,39 +41,28 @@
 </head>
 
 <body data-theme="light">
-
-<!-- Skip to main content link -->
-<a href="#main-content" class="sr-only">Skip to main content</a>
-
-<!-- Accessibility Controls -->
-<aside class="controls" aria-label="Accessibility controls">
-    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
-    <span>
-        <button id="decrease-font" aria-label="Decrease text size">A-</button>
-        <button id="increase-font" aria-label="Increase text size">A+</button>
-        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
-    </span>
-</aside>
-
-<div class="container">
-    <!-- Sidebar -->
-    <aside id="toc" class="nav" aria-label="Table of Contents">
-        <nav id="nav" aria-label="Main Navigation">
-            <button id="toggleButton" class="toggle-button">
-                <div class="icon-hamburger">Menu</div>
-                <div class="icon-close" style="display: none;">Close</div>
-            </button>
-            <div class="navlist" id="navlist"></div>
-        </nav>
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    <aside class="controls" aria-label="Accessibility controls">
+        <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+        <span>
+            <button id="decrease-font" aria-label="Decrease text size">A-</button>
+            <button id="increase-font" aria-label="Increase text size">A+</button>
+            <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+        </span>
     </aside>
-
-    <!-- Main Content -->
-    <main id="main-content">
-        <div class="section-container">
-
-
-            <!-- Section Content -->
-            <nav aria-label="Breadcrumb">
+    <div class="container">
+        <aside id="toc" class="nav" aria-label="Table of Contents">
+            <nav id="nav" aria-label="Main Navigation">
+                <button id="toggleButton" class="toggle-button">
+                    <div class="icon-hamburger">Menu</div>
+                    <div class="icon-close" style="display: none;">Close</div>
+                </button>
+                <div class="navlist" id="navlist"></div>
+            </nav>
+        </aside>
+        <main id="main-content">
+            <div class="section-container">
+                <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
         <li aria-current="page">Pagination</li>
@@ -203,27 +184,18 @@ nav[aria-label=&quot;Pagination&quot;] a:focus {
     <li><strong>Test Thoroughly:</strong> Regularly test pagination with assistive technologies and automated tools to ensure accessibility.</li>
 </ul>
 
-        </div>
-    </main>
-</div>
-
-<!-- Footer -->
-<footer id="footer">
-    <footer>
-    &copy; 2024 ca11y. All rights reserved.
+            </div>
+        </main>
+    </div>
+    <footer id="footer">
+        <footer>
+    &copy; 2025 AUIG. All rights reserved.
 </footer>
-</footer>
-
-<!-- Back to Top Button -->
-<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
-
-<!-- PrismJS Library -->
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
-
-<!-- Main JavaScript Files -->
-<script src="../scripts/loader.js?v=1.2"></script>
-<script src="../scripts/components/iconDetail.js?v=1.2"></script>
-<script src="../scripts/main.js?v=1.2" defer></script>
-<script src="../scripts/auig.js" defer></script>
+    </footer>
+    <button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+    <script src="../scripts/loader.js?v=5b441bf697bfe61a"></script>
+    <script src="../scripts/components/iconDetail.js?v=5b441bf697bfe61a"></script>
+    <script src="../scripts/main.js?v=5b441bf697bfe61a" defer></script>
+    <script src="../scripts/auig.js?v=5b441bf697bfe61a" defer></script>
 </body>
 </html>

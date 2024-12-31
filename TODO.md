@@ -5,6 +5,7 @@
 ## 3. Dynamically update the head including title, this is also a throwback to original layout
 ## 4. Make nav scrollable and fix the auto height issue for mobile
 ## 5. Make breadcrumbs change to dark mode
-## 6. Work on certifications
+## 6. Random hash the resources on build to prevent caching
+## 7. Work on certifications
 
 

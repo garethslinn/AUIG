@@ -1,6 +1,6 @@
 # TODO
 
-## 1. Separate out the different sections
-## 2. Create a build script
-## 3. Improve SEO and load time
+## 1. Add breadcrumbs for pages
+## 2. Work on certifications
+
 

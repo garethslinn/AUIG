@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <h3 id="3.12">3.12 Cards</h3>
+<p>Cards are versatile UI components used to display grouped information in a visually distinct container. Ensuring that cards are accessible is essential to make the content within them usable by everyone, including those relying on assistive technologies.</p>
+
+<h4 id="3.12.1">3.12.1 Semantic Markup</h4>
+<p>Use semantic HTML to structure cards. Wrap the card content in a <code>&lt;section&gt;</code> or <code>&lt;article&gt;</code> element to make it a standalone, meaningful unit.</p>
+<pre>
+<code class="language-html">&lt;!-- Accessible Card --&gt;
+&lt;article aria-labelledby=&quot;cardTitle1&quot;&gt;
+    &lt;h3 id=&quot;cardTitle1&quot;&gt;Card Title&lt;/h3&gt;
+    &lt;p&gt;Description of the card content goes here. This provides a brief summary or details.&lt;/p&gt;
+    &lt;a href=&quot;/details&quot; aria-label=&quot;Read more about Card Title&quot;&gt;Read More&lt;/a&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+<h4 id="3.12.2">3.12.2 Keyboard Accessibility</h4>
+<p>Ensure cards and their interactive elements (e.g., links, buttons) are keyboard accessible. Users should be able to navigate to and interact with all actionable elements using the <kbd>Tab</kbd> key.</p>
+<pre>
+<code class="language-html">&lt;!-- Keyboard Accessible Card --&gt;
+&lt;article&gt;
+    &lt;h3&gt;Card Title&lt;/h3&gt;
+    &lt;p&gt;Card content goes here.&lt;/p&gt;
+    &lt;button&gt;Action&lt;/button&gt;
+    &lt;a href=&quot;/learn-more&quot;&gt;Learn More&lt;/a&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+<h4 id="3.12.3">3.12.3 Focus Management</h4>
+<p>Provide clear focus styles for interactive elements within cards to assist keyboard users in identifying their current position.</p>
+<pre>
+<code class="language-css">/* Focus Styles for Card Elements */
+article button:focus,
+article a:focus {
+    outline: 2px solid #005fcc;
+    background-color: #e0f0ff;
+}
+</code>
+</pre>
+
+<h4 id="3.12.4">3.12.4 ARIA Attributes</h4>
+<p>Use ARIA attributes to enhance accessibility when needed. For example, use <code>aria-labelledby</code> and <code>aria-describedby</code> to associate a card's title and description.</p>
+<pre>
+<code class="language-html">&lt;!-- Card with ARIA Attributes --&gt;
+&lt;article aria-labelledby=&quot;cardTitle2&quot; aria-describedby=&quot;cardDesc2&quot;&gt;
+    &lt;h3 id=&quot;cardTitle2&quot;&gt;Card Title&lt;/h3&gt;
+    &lt;p id=&quot;cardDesc2&quot;&gt;Brief description of the card content.&lt;/p&gt;
+    &lt;a href=&quot;/details&quot; aria-label=&quot;Read more about Card Title&quot;&gt;Learn More&lt;/a&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+<h4 id="3.12.5">3.12.5 Responsive Design</h4>
+<p>Design cards to be responsive and adapt gracefully to different screen sizes. Use flexible layouts and ensure content remains legible on smaller screens.</p>
+<pre>
+<code class="language-css">/* Responsive Card Styling */
+article {
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+article p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    article {
+        padding: 0.8rem;
+    }
+
+    article h3 {
+        font-size: 1.3rem;
+    }
+}
+</code>
+</pre>
+
+<h4 id="3.12.6">3.12.6 Testing Cards for Accessibility</h4>
+<p>Test cards with assistive technologies to ensure they are accessible. Verify correct keyboard navigation, focus management, and screen reader announcements.</p>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify all interactive elements are keyboard accessible.
+// - Ensure proper use of ARIA attributes, like aria-labelledby.
+// - Check screen reader announcements for card content and actionable elements.
+// - Validate responsive behavior for smaller screens.
+</code>
+</pre>
+
+<h4>Best Practices for Cards</h4>
+<ul>
+    <li><strong>Use Semantic HTML:</strong> Structure cards with <code>&lt;section&gt;</code> or <code>&lt;article&gt;</code> to provide meaning and context.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make all interactive elements within cards navigable using the keyboard.</li>
+    <li><strong>Provide Visible Focus Styles:</strong> Highlight focused elements to aid keyboard users.</li>
+    <li><strong>Use ARIA Attributes:</strong> Enhance accessibility with attributes like <code>aria-labelledby</code> and <code>aria-describedby</code>.</li>
+    <li><strong>Design Responsively:</strong> Ensure cards adapt to different screen sizes and remain usable on mobile devices.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test cards with assistive technologies and automated tools to identify and resolve accessibility issues.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

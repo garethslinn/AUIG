@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <h3>2.1. Multimedia</h3>
+<h4 id="2.1.1">2.1.1 Alternative Representation</h4>
+<p>All multimedia elements, including images, video, audio, and graphs,
+    must provide alternative representations to ensure web content is fully inclusive
+    and accessible to all users.</p>
+<p><strong>Examples:</strong></p>
+
+<ul class="no-list-style">
+    <li>
+        <strong>Descriptive ALT Attributes for Images:</strong>
+        <p>Provide meaningful alternative text for non-decorative images to aid users who rely on screen readers.</p>
+<pre>
+<code class="language-html">&lt;img src="profile.jpg" alt="Portrait of the Queen smiling"&gt;</code>
+</pre>
+    </li>
+    <li>
+
+        <icon-detail id="" type="information" heading-level="h5">
+            <span slot="title">ARIA Hidden for Decorative Images:</span>
+            <span slot="description">
+                Use <code class="language-html">aria-hidden="true"</code> for decorative images to
+                prevent screen readers from announcing them.
+            </span>
+        </icon-detail>
+<pre>
+<code class="language-html">&lt;img src="decorative-border.png" alt="" aria-hidden="true"&gt;</code>
+</pre>
+    </li>
+    <li>
+        <strong>Captions and Context with FIGCAPTION:</strong>
+        <p>Use <code class="language-html">figcaption</code> within <code class="language-html">figure</code> tags to provide context to images and other media.</p>
+<pre>
+<code class="language-html">
+&lt;figure&gt;
+    &lt;img src="diagram.png" alt="Flowchart of the user registration process"&gt;
+    &lt;figcaption&gt;Figure 1: User Registration Flowchart&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Responsive and Optimised Images:</strong>
+        <p>Ensure images are responsive and optimised for faster loading across different devices.</p>
+<pre>
+<code class="language-html">
+&lt;img src="responsive-image.jpg" alt="Responsive design example" style="max-width: 100%; height: auto;"&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Accessible Audio Elements:</strong>
+        <p>Provide transcripts and captions for audio content to support users with hearing impairments.</p>
+<pre>
+<code class="language-html">
+&lt;audio controls&gt;
+    &lt;source src="podcast.mp3" type="audio/mpeg"&gt;
+    &lt;track kind="captions" src="captions_en.vtt" srclang="en" label="English"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+</code>
+</pre>
+        <p>Basic example: You could include a transcript below the audio player.</p>
+<pre>
+<code class="language-html">
+&lt;div&gt;
+    &lt;h3&gt;Podcast Transcript&lt;/h3&gt;
+    &lt;p&gt;[Transcript text goes here...]&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Accessible SVG Graphs and Charts:</strong>
+        <p>Use <code class="language-html">svg</code> elements with appropriate <code class="language-html">aria</code> attributes and titles to describe the content for screen readers.</p>
+<pre>
+<code class="language-html">
+&lt;svg role="img" aria-labelledby="svgTitle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"&gt;
+    &lt;title id="svgTitle"&gt;Sales Growth Chart for 2023&lt;/title&gt;
+    &lt;!-- SVG content goes here --&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+        <p>Provide a detailed description of the SVG content below the graphic for additional context.</p>
+<pre>
+<code class="language-html">
+&lt;div&gt;
+    &lt;h3&gt;Sales Growth Chart for 2023&lt;/h3&gt;
+    &lt;p&gt;This chart illustrates a steady increase in sales from January to December, with a peak in November.&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Responsive and Optimised Multimedia:</strong>
+        <p>Ensure all multimedia content is responsive and optimised for faster loading to improve accessibility and user experience on various devices.</p>
+<pre>
+<code class="language-html">
+&lt;video controls style="max-width: 100%; height: auto;"&gt;
+    &lt;source src="responsive-video.mp4" type="video/mp4"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+</code>
+</pre>
+    </li>
+    <li>
+        <strong>Accessible Canvas Elements:</strong>
+        <p>Provide alternative descriptions and fallback content for <code class="language-html">&lt;canvas&gt;</code> elements to support users who rely on screen readers.</p>
+<pre>
+<code class="language-html">
+&lt;canvas id="chart" aria-label="Sales Growth Chart for 2023" role="img"&gt;
+    Your browser does not support the canvas element. Please see the
+    &lt;a href="#chart-description"&gt;description&lt;/a&gt;
+    of this chart.
+&lt;/canvas&gt;
+</code>
+</pre>
+</li>
+    <li>
+
+        <strong>Map</strong>
+        <p>Consider adding <code class="language-html">aria-label</code> to a <code class="language-html">map</code> element and providing a detailed textual description with a link, screen readers can convey the information represented in the map to users with visual impairments.</p>
+        <pre>
+        <code class="language-html">
+            &lt;img src="world-map.jpg" alt="Interactive world map showing major cities" usemap="#worldmap"&gt;
+            &lt;map name="worldmap" aria-label="Interactive World Map" role="img"&gt;
+                &lt;area shape="rect" coords="34,44,270,350" alt="New York City" href="https://www.nyc.gov"&gt;
+                &lt;area shape="circle" coords="337,300,44" alt="Los Angeles" href="https://www.lacity.org"&gt;
+                Your browser does not support the map element. Please see the
+                &lt;a href="#map-description"&gt;description&lt;/a&gt;
+                of this map.
+            &lt;/map&gt;
+            &lt;div id="map-description" hidden&gt;
+                This interactive map highlights major cities such as New York City and Los Angeles. Click on each city to visit its official website.
+            &lt;/div&gt;
+        </code>
+    </pre>
+</li>
+</ul>
+
+<h4 id="2.1.2">2.1.2 Avoid Autoplay</h4>
+<p>Avoid autoplaying media; provide clear user controls for playback.</p>
+<h4 id="2.1.3">2.1.3 Controls</h4>
+<p>Provide clear indicators of media status such as stop, play, playback and pause for example.</p>
+<h4 id="2.1.4">2.1.4 Flashing items</h4>
+<p>Prevent seizure-inducing flashing or rapidly changing visuals.</p>
+
+<h4 id="2.1.5">2.1.5 Video Subtitles(Captions)</h4>
+<p>Provide subtitles to assist individuals with hearing impairments, those in noisy environments, or those for
+    whom the spoken language is not their first language. Subtitles can also be beneficial for individuals
+    experiencing cognitive overload, such as those with ADHD.</p>
+<h4 id="2.1.6">2.1.6 Video Transcripts</h4>
+<p>Video transcripts provide a text version of the audio content in videos, making it accessible to those
+    with hearing impairments, individuals in noisy environments, or those whose first language isn't the
+    video's spoken language. Transcripts also support users experiencing cognitive overloads, such as
+    those with ADHD, by allowing them to read content at their own pace.</p>
+
+<icon-detail id="2.1.7" type="consideration">
+    <span slot="title">2.1.7 Sign Language</span>
+    <span slot="description">This consideration should be evaluated based on the target audience's needs, especially for content aimed at users who are deaf or hard of hearing.</span>
+</icon-detail>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <h2 id="1">1. Global Settings</h2>
+<h3 id="1.1">1.1 Appearance Settings</h3>
+<p>Define and use consistent color schemes across your web content to enhance readability and
+    aesthetic coherence for users with visual impairments.</p>
+
+<icon-detail id="1.1.1" type="consideration" heading-level="h4">
+    <span slot="title">1.1.1 Customised themes</span>
+    <span slot="description">
+        Consider the possibility that light and dark modes might not address every
+        edge case, leaving some users still struggling with the theme. It may be
+        impractical to account for all potential challenges. To mitigate this,
+        consider adding a settings feature that allows users to customise and
+        save their own theme preferences locally in their browser. Including a
+        reset option for reverting to the default theme would also be beneficial.
+    </span>
+</icon-detail>
+
+
+<h4 id="1.1.2">1.1.2 Contrast</h4>
+<p>Ensure sufficient contrast between text and background colors to aid users with low vision or
+    color-blindness.</p>
+<h5>Automatic Calculation:</h5>
+<p>The <a
+        href="https://www.checkmeister.com/tools/contrast-tool"
+        aria-label="Checkmeister Contrast Checking Tool, opens in a new tab"
+        target="_blank"
+        rel="noopener noreferrer"
+        itemprop="relatedLink">Checkmeister Contrast Checking Tool</a>
+    is an essential utility for ensuring that your website meets the required accessibility standards.
+    Proper contrast between text and background colors is vital for readability, especially for users
+    with visual impairments. This tool helps you evaluate and adjust color combinations to achieve the
+    best possible contrast ratios.</p>
+
+<icon-detail id="" type="caution" heading-level="h5">
+    <span slot="title">Manual Calculation</span>
+    <span slot="description">
+        While using online tools is highly recommended for accuracy, understanding the manual calculation
+    in simpler terms can be beneficial.
+    </span>
+</icon-detail>
+
+<p><strong>Formula:</strong></p>
+<pre><code class="language-html">Contrast Ratio = (Light Color + 0.05) / (Dark Color + 0.05)</code></pre>
+
+<h6>MathML version</h6>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <mi>Contrast Ratio</mi>
+        <mo>=</mo>
+        <mfrac>
+            <mrow>
+                <mi>Light Color</mi>
+                <mo>+</mo>
+                <mn>0.05</mn>
+            </mrow>
+            <mrow>
+                <mi>Dark Color</mi>
+                <mo>+</mo>
+                <mn>0.05</mn>
+            </mrow>
+        </mfrac>
+    </mrow>
+</math>
+
+
+<ul>
+    <li><strong>Light Color:</strong> The brightness value of the lighter color.</li>
+    <li><strong>Dark Color:</strong> The brightness value of the darker color.</li>
+</ul>
+<p><strong>How to Calculate Brightness (Relative Luminance):</strong></p>
+<ul>
+    <li>Convert the RGB (Red, Green, Blue) values of the color to a linear format using the WCAG formula:
+        <ul>
+            <li>If the RGB value is ≤ 0.03928, divide it by 12.92.</li>
+            <li>If the RGB value is > 0.03928, raise it to the power of 2.4 and multiply by 1.055, then subtract 0.055.</li>
+        </ul>
+    </li>
+    <li>Use the formula to find relative luminance:
+        <code>0.2126 * R + 0.7152 * G + 0.0722 * B</code>, where R, G, and B are the linear RGB values.</li>
+</ul>
+<p><strong>Why Tools Are Better:</strong></p>
+<ul>
+    <li>Manual calculations can be tricky and may lead to errors, especially when converting RGB values.</li>
+    <li>Online tools make the process easier by doing the math for you and ensuring precise results.</li>
+</ul>
+<p><strong>Tip for Visual Learners:</strong> Use visual aids, like sliders or color pickers, to better
+    understand the effect of contrast on accessibility.</p>
+
+
+<icon-detail id="1.1.3" type="priority" heading-level="h4">
+    <span slot="title">1.1.3 Flashing Images</span>
+    <span slot="description">
+        Flashing images can trigger seizures and cause significant discomfort for individuals with
+        photosensitive epilepsy, posing serious health risks. To ensure an inclusive and safe
+        environment, avoid using flashing or strobe visuals. If their use is unavoidable, provide
+        advance warnings to users.
+    </span>
+</icon-detail>
+
+<h3 id="1.2">1.2 General Settings</h3>
+
+<h4 id="1.2.1">1.2.1 Keyboard Access</h4>
+<p>Implement keyboard-navigable web interfaces to support users who cannot use a mouse.</p>
+
+<h4 id="1.2.2">1.2.2 Skip Links</h4>
+<p>The user should be able to jump ahead of specific elements such
+    as the navigation and go directly to the main content.  This is particularly important for assistive
+    technologies such as screen readers.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Skip link to the main content --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;Go to main content&lt;/a&gt;
+&lt;main id="main-content"&gt;
+    &lt;!-- Main content goes here --&gt;
+&lt;/main&gt;
+</code>
+</pre>
+
+<h4 id="1.2.3">1.2.3 Responsive Design</h4>
+<p>Responsive design ensures that digital content is accessible and legible across all devices,
+    from desktops to smartphones. By adapting to various screen sizes and orientations, responsive design
+    enhances accessibility for users with mobility limitations who rely on different devices, and
+    improves usability for all users by providing a consistent experience regardless of the device used.</p>
+
+
+<h3 id="1.3">1.3 Localisation</h3>
+<p>Use the correct language for the document using the <strong>lang</strong> attribute.  If the language changes
+    in any part of the document then state the corresponding language</p>
+<pre>
+<code class="language-html">
+&lt;!-- Example of setting the document language --&gt;
+&lt;html lang="en"&gt;
+    &lt;body&gt;
+        &lt;p&gt;This is a paragraph in English.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+
+<pre>
+<code class="language-html">
+&lt;!-- Example of changing language within a document --&gt;
+&lt;p lang="en"&gt;This is an English text.&lt;/p&gt;
+&lt;p lang="fr"&gt;Ceci est un texte en français.&lt;/p&gt;
+</code>
+</pre>
+
+<h3 id="1.4">1.4 Meta Data</h3>
+
+<h4 id="1.4.1">1.4.1 Meta Tags</h4>
+<p>
+    Use <code>&lt;meta&gt;</code> tags to provide essential information about the page to search engines, assistive technologies, and browsers. This includes metadata for character encoding, description, keywords, viewport settings, and more.
+</p>
+
+<pre>
+<code class="language-html">
+&lt;!-- Example of meta tags --&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="description" content="An accessible and inclusive user interface guide."&gt;
+&lt;meta name="keywords" content="accessibility, user interface, guidelines"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</code>
+</pre>
+
+<h4 id="1.4.2">1.4.2 Page Title</h4>
+<p>
+    Ensure each page has a descriptive and meaningful <code>&lt;title&gt;</code> element that clearly conveys its content and purpose. This improves navigation for all users, especially those using assistive technologies.
+</p>
+
+<pre>
+<code class="language-html">
+&lt;!-- Example of a descriptive title --&gt;
+&lt;title&gt;Accessible User Interface Guidelines - Home&lt;/title&gt;
+</code>
+</pre>
+
+<icon-detail id="1.5" type="priority" heading-level="h3">
+    <span slot="title">1.5 Consistent Layout</span>
+    <span slot="description">
+        Consistency in UI layout is essential for creating a seamless, intuitive user experience.
+        When elements like navigation menus, buttons, and interactive components are consistently
+        placed in predictable locations, users can interact with your interface more efficiently,
+        without the mental friction of having to search for familiar features. A sudden shift in
+        where a key element is located or an unexpected layout change can disrupt the user's
+        flow and cause confusion and anxiety. By adhering to consistent placement rules, such
+        as always positioning close buttons in the top right or using uniform modal components, designers
+        should ensure that users feel confident navigating the interface, <strong>reducing cognitive load</strong> and
+        enhancing overall usability. Predictability is key to building trust and ensuring that users
+        can focus on tasks rather than figuring out how to use the interface.
+    </span>
+</icon-detail>
+
+
+
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2024 ca11y. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

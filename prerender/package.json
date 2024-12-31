@@ -4,12 +4,10 @@
   "description": "Prerendering scripts for AUIG",
   "main": "server.js",
   "scripts": {
-    "start-server": "node server.js",
-    "prerender": "node prerender.js",
-    "prerender-all": "concurrently \"npm run start-server\" \"wait-on http://localhost:3000 && npm run prerender\"",
+    "start": "node server.js",
     "build": "node generateWIP.js",
-    "serve-dist": "http-server ./dist -p 8080",
-    "clean": "rimraf dist",
+    "serve-dist": "http-server ./pages -p 8080",
+    "clean": "rimraf pages",
     "rebuild": "npm run clean && npm run build"
   },
 

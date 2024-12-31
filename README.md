@@ -1,3 +1,7 @@
+Here’s the updated `README.md` reflecting the latest `scripts` configuration:
+
+---
+
 # AUIG: Accessible User Interface Guidelines
 
 ![AUIG Logo](https://raw.githubusercontent.com/garethslinn/auig-project/main/images/auig_light.svg)
@@ -12,12 +16,13 @@
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Runbook](#runbook)
-   - [Local Setup](#local-setup)
-   - [Prerendering](#prerendering)
-   - [Testing](#testing)
-   - [Deployment](#deployment)
-   - [Troubleshooting](#troubleshooting)
+- [Build Process](#build-process)
+   - [Building the Project](#building-the-project)
+   - [Serving the Build](#serving-the-build)
+   - [Cleaning Builds](#cleaning-builds)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -50,7 +55,7 @@
 - **Responsive Layout:** Optimized for desktops, tablets, and mobiles.
 - **Interactive TOC:** Easy navigation through sections.
 - **Theme & Font Controls:** Customizable viewing preferences.
-- **Prerendered Content:** Enhanced SEO and accessibility.
+- **Static Content Generation:** Efficient and SEO-friendly builds.
 
 ---
 
@@ -58,8 +63,7 @@
 
 - **HTML5 & CSS3:** Semantic structure and styling.
 - **JavaScript:** Interactive functionalities.
-- **Node.js & Express:** Local server and prerendering.
-- **Puppeteer:** Automated prerendering.
+- **Node.js:** Local server and build automation.
 - **PrismJS:** Syntax highlighting.
 - **Web Standards:** Compliance with accessibility guidelines.
 
@@ -77,104 +81,88 @@
 2. **Install Dependencies**
 
    ```bash
-   cd prerender
    npm install
    ```
-
-3. **Start the Local Server & Prerender**
-
-   ```bash
-   npm run prerender-all
-   ```
-
-   This command starts the server, prerenders `index.html`, and saves it in the project root.
 
 ---
 
 ## Usage
 
-1. **View the Guidelines**
+### View the Guidelines Locally
+
+1. **Start the Development Server**
+
+   ```bash
+   npm start
+   ```
+
+2. **Access the Local Site**
 
    Open [http://localhost:3000](http://localhost:3000) in your browser to explore the guidelines.
 
-2. **Customize View**
+---
 
-   - **Toggle Theme:** Switch between light and dark modes.
-   - **Adjust Font Size:** Increase or decrease text size for better readability.
-   - **Navigate:** Use the Table of Contents or "Back to Top" button for easy navigation.
+## Build Process
+
+### Building the Project
+
+1. **Generate Static Files**
+
+   ```bash
+   npm run build
+   ```
+
+   - Generates all pages into the `pages/` directory with injected components and structured layouts.
+
+### Serving the Build
+
+1. **Serve the Built Files**
+
+   ```bash
+   npm run serve-dist
+   ```
+
+   - Hosts the static files in the `pages/` directory at [http://localhost:8080](http://localhost:8080).
+
+### Cleaning Builds
+
+1. **Rebuild the Project**
+
+   ```bash
+   npm run rebuild
+   ```
+
+   - Removes the `pages/` directory and prepares for a fresh build.
 
 ---
 
-## Runbook
-
-### Local Setup
-
-1. **Ensure Prerequisites**
-
-   - **Git**
-   - **Node.js**
-
-2. **Clone & Navigate**
-
-   ```bash
-   git clone https://github.com/garethslinn/auig.git
-   cd auig
-   ```
-
-3. **Install Dependencies**
-
-   ```bash
-   cd prerender
-   npm install
-   ```
-
-4. **Launch**
-
-   ```bash
-   npm run prerender-all
-   ```
-
-### Prerendering
-
-1. **Navigate to Prerender Directory**
-
-   ```bash
-   cd prerender
-   ```
-
-2. **Run Prerender Script**
-
-   ```bash
-   npm run prerender-all
-   ```
-
-3. **Verify `index.html`**
-
-   Open `index.html` to ensure all components are correctly injected.
-
-### Testing
+## Testing
 
 - **Accessibility Tools:** Use [WAVE](https://wave.webaim.org/) or [AXE](https://www.deque.com/axe/) for compliance checks.
 - **Responsive Testing:** Utilize browser dev tools to test on various devices.
 - **Functionality Checks:** Verify interactive elements like theme toggles and font adjustments.
 
-### Deployment
+---
 
-1. **Choose Platform**
+## Deployment
+
+1. **Choose a Deployment Platform**
 
    - **GitHub Pages**
    - **Netlify**
    - **Vercel**
 
-2. **Deploy**
+2. **Deploy the Static Build**
 
-   Follow platform-specific instructions to deploy the static site, ensuring `index.html` is served correctly.
+   Upload the contents of the `pages/` directory to your chosen platform, ensuring that `index.html` is served correctly.
 
-### Troubleshooting
+---
 
-- **Missing Components:** Ensure all component paths are correct and accessible.
-- **JavaScript Errors:** Check browser console for errors during prerendering.
-- **Server Issues:** Verify the local server is running and not conflicting on ports.
+## Troubleshooting
+
+- **Build Issues:** Verify that all component paths are correct and accessible in `generateWIP.js`.
+- **JavaScript Errors:** Check browser console for errors in interactive features.
+- **Server Issues:** Ensure no port conflicts when running the development or static servers.
 
 ---
 
@@ -219,4 +207,4 @@ This project is licensed under the [License](LICENSE.md).
 
 ---
 
-Feel free to customize this template further to better fit your project's specific needs!
+This `README.md` reflects the latest `scripts` section, including the commands to build, clean, and serve the `pages/` directory.

@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Pagination</li>
+    </ol>
+</nav>
+<h1 itemprop="name">Accessibility UI Guidelines: Pagination</h1>
+<h2>Pagination</h2>
+<h3 id="3.11">3.11 Pagination</h3>
+<p>Pagination is used to divide content into discrete pages, allowing users to navigate through them efficiently. Ensuring that pagination is accessible is crucial for providing an inclusive experience, particularly for users with disabilities.</p>
+
+<h4 id="3.11.1">3.11.1 Semantic Markup</h4>
+<p>Use semantic HTML to create pagination components. Wrap pagination links in a <code>&lt;nav&gt;</code> element with <code>aria-label=&quot;Pagination&quot;</code> to provide context for assistive technologies.</p>
+<pre>
+<code class="language-html">&lt;!-- Accessible Pagination --&gt;
+&lt;nav aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=1&quot; aria-label=&quot;Page 1&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=2&quot; aria-label=&quot;Page 2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=3&quot; aria-label=&quot;Page 3&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=4&quot; aria-label=&quot;Next Page&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.11.2">3.11.2 Keyboard Accessibility</h4>
+<p>Ensure that all pagination links are accessible via keyboard navigation. Users should be able to focus on each link using the <kbd>Tab</kbd> key and activate it using the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.</p>
+<pre>
+<code class="language-html">&lt;!-- Keyboard Accessible Pagination --&gt;
+&lt;nav aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=1&quot; tabindex=&quot;0&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=2&quot; tabindex=&quot;0&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=3&quot; tabindex=&quot;0&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=4&quot; tabindex=&quot;0&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.11.3">3.11.3 ARIA Attributes</h4>
+<p>Use ARIA attributes to enhance pagination accessibility. Apply <code>aria-current=&quot;page&quot;</code> to the currently active page and provide meaningful labels using <code>aria-label</code> for navigation links.</p>
+<pre>
+<code class="language-html">&lt;!-- Pagination with ARIA Attributes --&gt;
+&lt;nav aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=1&quot; aria-label=&quot;Page 1&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=2&quot; aria-label=&quot;Page 2&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=3&quot; aria-current=&quot;page&quot; aria-label=&quot;Current Page&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;?page=4&quot; aria-label=&quot;Next Page&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code>
+</pre>
+
+<h4 id="3.11.4">3.11.4 Responsive Design</h4>
+<p>Ensure pagination adapts to smaller screens by using flexible layouts or collapsing pagination links into a dropdown menu.</p>
+<pre>
+<code class="language-css">/* Responsive Pagination Styling */
+nav[aria-label=&quot;Pagination&quot;] ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+}
+
+nav[aria-label=&quot;Pagination&quot;] a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #005fcc;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+}
+
+nav[aria-label=&quot;Pagination&quot;] a:hover {
+    background-color: #f0f0f0;
+}
+
+nav[aria-label=&quot;Pagination&quot;] a[aria-current=&quot;page&quot;] {
+    background-color: #005fcc;
+    color: white;
+    font-weight: bold;
+}
+</code>
+</pre>
+
+<h4 id="3.11.5">3.11.5 Visible Focus Indicators</h4>
+<p>Provide clear focus indicators for pagination links to assist keyboard users in identifying their current position.</p>
+<pre>
+<code class="language-css">/* Focus Styles for Pagination Links */
+nav[aria-label=&quot;Pagination&quot;] a:focus {
+    outline: 2px solid #005fcc;
+    background-color: #e0f0ff;
+}
+</code>
+</pre>
+
+<h4 id="3.11.6">3.11.6 Testing Pagination for Accessibility</h4>
+<p>Test pagination components with assistive technologies to ensure they are accessible. Verify correct use of ARIA attributes, keyboard navigation, and focus management.</p>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify pagination links are keyboard accessible.
+// - Ensure the current page is marked with aria-current=&quot;page&quot;.
+// - Check screen reader announcements for navigation links.
+// - Validate responsive behavior for smaller screens.
+</code>
+</pre>
+
+<h4>Best Practices for Pagination</h4>
+<ul>
+    <li><strong>Use Semantic HTML:</strong> Wrap pagination in a <code>&lt;nav&gt;</code> element with <code>aria-label=&quot;Pagination&quot;</code>.</li>
+    <li><strong>Ensure Keyboard Accessibility:</strong> Make all pagination links navigable and operable via keyboard.</li>
+    <li><strong>Apply ARIA Attributes:</strong> Use <code>aria-current=&quot;page&quot;</code> for the active page and <code>aria-label</code> for navigation links.</li>
+    <li><strong>Design for Responsiveness:</strong> Ensure pagination works well on all screen sizes, adapting layout as needed.</li>
+    <li><strong>Provide Visible Focus Indicators:</strong> Highlight the currently focused link for better usability.</li>
+    <li><strong>Test Thoroughly:</strong> Regularly test pagination with assistive technologies and automated tools to ensure accessibility.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

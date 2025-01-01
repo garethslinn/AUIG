@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Modals</li>
+    </ol>
+</nav>
+<h1 itemprop="name">Accessibility UI Guidelines: Modals</h1>
+<h2>Modals</h2>
+<h3 id="3.1">3.1 Modals</h3>
+<p>Modals are overlay elements that present content or require user interaction without navigating away from the current page. They are commonly used for dialogs, forms, alerts, and additional information. Ensuring that modals are accessible is vital for providing an inclusive experience for all users, including those using assistive technologies.</p>
+
+<h4 id="3.1.1">3.1.1 <code>&lt;dialog&gt;</code> Element</h4>
+<p>The HTML <code>&lt;dialog&gt;</code> element provides a native way to create modal dialogs. It offers built-in accessibility features and simplifies the implementation process.</p>
+<pre>
+<code class="language-html">&lt;!-- Modal Trigger --&gt;
+&lt;button id=&quot;openModal&quot;&gt;Open Modal&lt;/button&gt;
+
+&lt;!-- Modal Structure --&gt;
+&lt;dialog id=&quot;myModal&quot; aria-labelledby=&quot;modalTitle&quot; aria-describedby=&quot;modalDescription&quot;&gt;
+    &lt;h2 id=&quot;modalTitle&quot;&gt;Modal Title&lt;/h2&gt;
+    &lt;p id=&quot;modalDescription&quot;&gt;This is an accessible modal dialog.&lt;/p&gt;
+    &lt;button id=&quot;closeModal&quot;&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+</code>
+</pre>
+
+<h4 id="3.1.2">3.1.2 Focus Management</h4>
+<p>Proper focus management ensures that keyboard users can interact with modals seamlessly.</p>
+<pre>
+<code class="language-javascript">// JavaScript to Manage Focus Within Modal
+const openModalButton = document.getElementById(&#39;openModal&#39;);
+const closeModalButton = document.getElementById(&#39;closeModal&#39;);
+const modal = document.getElementById(&#39;myModal&#39;);
+let lastFocusedElement;
+
+openModalButton.addEventListener(&#39;click&#39;, () =&gt; {
+    lastFocusedElement = document.activeElement;
+    if (typeof modal.showModal === &quot;function&quot;) {
+        modal.showModal();
+    } else {
+        // Fallback for browsers that do not support &lt;dialog&gt;
+        modal.style.display = &#39;block&#39;;
+    }
+    modal.setAttribute(&#39;aria-hidden&#39;, &#39;false&#39;);
+    closeModalButton.focus();
+    trapFocus(modal);
+});
+
+closeModalButton.addEventListener(&#39;click&#39;, () =&gt; {
+    if (typeof modal.close === &quot;function&quot;) {
+        modal.close();
+    } else {
+        // Fallback for browsers that do not support &lt;dialog&gt;
+        modal.style.display = &#39;none&#39;;
+    }
+    modal.setAttribute(&#39;aria-hidden&#39;, &#39;true&#39;);
+    lastFocusedElement.focus();
+});
+
+function trapFocus(element) {
+    const focusableElements = element.querySelectorAll(&#39;a[href], button, textarea, input, select, [tabindex]:not([tabindex=&quot;-1&quot;])&#39;);
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    element.addEventListener(&#39;keydown&#39;, (e) =&gt; {
+        const isTabPressed = (e.key === &#39;Tab&#39; || e.keyCode === 9);
+        if (!isTabPressed) return;
+
+        if (e.shiftKey) { // Shift + Tab
+            if (document.activeElement === firstFocusable) {
+                e.preventDefault();
+                lastFocusable.focus();
+            }
+        } else { // Tab
+            if (document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
+            }
+        }
+    });
+}
+</code>
+</pre>
+
+<h4 id="3.1.3">3.1.3 Keyboard Accessibility</h4>
+<p>Modals should be fully operable using the keyboard to accommodate users who rely on keyboard navigation.</p>
+<pre>
+<code class="language-html">&lt;!-- Modal Structure with Close Button --&gt;
+&lt;dialog id=&quot;myModal&quot; aria-labelledby=&quot;modalTitle&quot; aria-describedby=&quot;modalDescription&quot;&gt;
+    &lt;h2 id=&quot;modalTitle&quot;&gt;Modal Title&lt;/h2&gt;
+    &lt;p id=&quot;modalDescription&quot;&gt;This is an accessible modal dialog.&lt;/p&gt;
+    &lt;button id=&quot;closeModal&quot;&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+</code>
+</pre>
+<pre>
+<code class="language-javascript">// Listen for keydown events to handle Escape key
+document.addEventListener(&#39;keydown&#39;, (e) =&gt; {
+    if (e.key === &#39;Escape&#39; &amp;&amp; modal.open) {
+        modal.close();
+        lastFocusedElement.focus();
+    }
+});
+</code>
+</pre>
+
+<h4 id="3.1.4">3.1.4 Visible Focus Indicators</h4>
+<p>Visible focus indicators help users identify which element is currently focused, especially during keyboard navigation.</p>
+<pre>
+<code class="language-css">/* Custom Focus Style for Modal Elements */
+#myModal button:focus,
+#myModal a:focus,
+#myModal input:focus {
+    outline: 2px solid #005fcc;
+    background-color: #e0f0ff;
+}
+</code>
+</pre>
+
+<h4 id="3.1.5">3.1.5 ARIA Attributes for Modals</h4>
+<p>Appropriate ARIA attributes enhance the accessibility of modals by providing additional context to assistive technologies.</p>
+<pre>
+<code class="language-html">&lt;dialog id=&quot;myModal&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;modalTitle&quot; aria-describedby=&quot;modalDescription&quot;&gt;
+    &lt;h2 id=&quot;modalTitle&quot;&gt;Modal Title&lt;/h2&gt;
+    &lt;p id=&quot;modalDescription&quot;&gt;This is an accessible modal dialog.&lt;/p&gt;
+    &lt;button id=&quot;closeModal&quot;&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+</code>
+</pre>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

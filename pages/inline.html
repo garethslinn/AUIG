@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Inline Elements</li>
+    </ol>
+</nav>
+<h1 itemprop="name">Accessibility UI Guidelines: Inline Elements</h1>
+<h2>Inline</h2>
+<h3 id="2.11">2.11 Inline Elements</h3>
+<p>Inline elements are used to format text and other content within a block-level element without disrupting the flow of the document. Proper use of inline elements enhances readability, accessibility, and the overall user experience.</p>
+
+<h4 id="2.11.1">2.11.1 <code class="language-html">&lt;span&gt;</code> Element</h4>
+<p>The <code class="language-html">&lt;span&gt;</code> element is a generic inline container for phrasing content. It does not inherently represent anything and is typically used to apply styles or manipulate specific parts of text.</p>
+<pre>
+<code class="language-html">&lt;!-- Applying a CSS class to a span --&gt;
+&lt;p&gt;This is a &lt;span class=&quot;highlight&quot;&gt;highlighted&lt;/span&gt; word in a sentence.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.11.2">2.11.2 <code class="language-html">&lt;a&gt;</code> Element</h4>
+<p>The <code class="language-html">&lt;a&gt;</code> (anchor) element creates hyperlinks, enabling navigation between different parts of a website or to external resources. Ensuring that links are accessible is crucial for users relying on assistive technologies.</p>
+<pre>
+<code class="language-html">&lt;!-- Descriptive Link Text --&gt;
+&lt;a href=&quot;/contact&quot;&gt;Contact Us for More Information&lt;/a&gt;
+
+&lt;!-- Non-Descriptive Link Text (Avoid) --&gt;
+&lt;a href=&quot;/contact&quot;&gt;Click Here&lt;/a&gt;
+</code>
+</pre>
+
+<h4 id="2.11.3">2.11.3 <code class="language-html">&lt;strong&gt;</code> and <code class="language-html">&lt;em&gt;</code> Elements</h4>
+<p>The <code class="language-html">&lt;strong&gt;</code> element indicates that the text is of strong importance, while the <code class="language-html">&lt;em&gt;</code> element emphasises text. Both elements carry semantic meaning and are recognised by assistive technologies.</p>
+<pre>
+<code class="language-html">&lt;!-- Strong Importance --&gt;
+&lt;p&gt;This is a &lt;strong&gt;critical&lt;/strong&gt; update that must be addressed immediately.&lt;/p&gt;
+
+&lt;!-- Emphasised Text --&gt;
+&lt;p&gt;Please &lt;em&gt;read&lt;/em&gt; the instructions carefully before proceeding.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.11.4">2.11.4 <code class="language-html">&lt;abbr&gt;</code> Element</h4>
+<p>The <code class="language-html">&lt;abbr&gt;</code> element represents an abbreviation or acronym, providing an expansion via the <code class="language-html">title</code> attribute. This enhances accessibility by allowing assistive technologies to convey the full meaning.</p>
+<pre>
+<code class="language-html">&lt;!-- Abbreviation with Expansion --&gt;
+&lt;p&gt;The &lt;abbr title=&quot;World Health Organisation&quot;&gt;WHO&lt;/abbr&gt; provides global health guidelines.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.11.5">2.11.5 <code class="language-html">&lt;img&gt;</code> Element</h4>
+<p>The <code class="language-html">&lt;img&gt;</code> element embeds images into the document. Providing descriptive alternative text is essential for accessibility, allowing screen readers to convey the purpose of the image to users who cannot see it.</p>
+<pre>
+<code class="language-html">&lt;!-- Image with Alt Text --&gt;
+&lt;img src=&quot;logo.png&quot; alt=&quot;Company Logo&quot;&gt;
+
+&lt;!-- Decorative Image (Empty Alt Attribute) --&gt;
+&lt;img src=&quot;decorative-line.png&quot; alt=&quot;&quot;&gt;
+</code>
+</pre>
+
+<h4 id="2.11.6">2.11.6 <code class="language-html">&lt;code&gt;</code> and <code class="language-html">&lt;pre&gt;</code> Elements</h4>
+<p>The <code class="language-html">&lt;code&gt;</code> element represents a fragment of computer code, while the <code class="language-html">&lt;pre&gt;</code> element preserves both spaces and line breaks, displaying text in a fixed-width font. These elements are important for presenting code snippets and preformatted text clearly.</p>
+<pre>
+<code class="language-html">&lt;!-- Inline Code Example --&gt;
+&lt;p&gt;Use the &lt;code class=&quot;language-html&quot;&gt;getElementById()&lt;/code&gt; method to access elements.&lt;/p&gt;
+
+&lt;!-- Preformatted Code Block --&gt;
+&lt;pre&gt;
+&lt;code class=&quot;language-javascript&quot;&gt;
+function greet(name) {
+    console.log(&#39;Hello, &#39; + name + &#39;!&#39;);
+}
+greet(&#39;World&#39;);
+&lt;/code&gt;
+&lt;/pre&gt;
+</code>
+</pre>
+
+<h4 id="2.11.7">2.11.7 <code class="language-html">&lt;mark&gt;</code> Element</h4>
+<p>The <code class="language-html">&lt;mark&gt;</code> element highlights text for reference purposes, such as search results or important points. It provides semantic meaning, indicating that the text is relevant or noteworthy.</p>
+<pre>
+<code class="language-html">&lt;!-- Highlighted Text --&gt;
+&lt;p&gt;To improve accessibility, use the &lt;mark&gt;semantic HTML elements&lt;/mark&gt; appropriately.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.11.8">2.11.8 <code class="language-html">&lt;small&gt;</code> and <code class="language-html">&lt;big&gt;</code> Elements</h4>
+<p>The <code class="language-html">&lt;small&gt;</code> element represents side comments or small print, while the <code class="language-html">&lt;big&gt;</code> element increases the font size of the enclosed text. Use these elements judiciously to convey additional information without compromising readability.</p>
+<pre>
+<code class="language-html">&lt;!-- Small Print --&gt;
+&lt;p&gt;&lt;small&gt;© 2024 Company Name. All rights reserved.&lt;/small&gt;&lt;/p&gt;
+
+&lt;!-- Increased Font Size --&gt;
+&lt;p&gt;This is a &lt;big&gt;larger&lt;/big&gt; piece of text.&lt;/p&gt;
+</code>
+</pre>
+
+<h4 id="2.11.9">2.11.9 ARIA Attributes for Inline Elements</h4>
+<p>Use ARIA (Accessible Rich Internet Applications) attributes to enhance the accessibility of inline elements when necessary. This is particularly useful for interactive or dynamic content.</p>
+<pre>
+<code class="language-html">&lt;!-- Inline Button with ARIA Label --&gt;
+&lt;span role=&quot;button&quot; tabindex=&quot;0&quot; aria-label=&quot;Close Window&quot; onclick=&quot;closeWindow()&quot;&gt;
+    &amp;times;
+&lt;/span&gt;
+</code>
+</pre>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

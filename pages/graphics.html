@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Graphics</li>
+    </ol>
+</nav>
+<h1 itemprop="name">Accessibility UI Guidelines: SVG's</h1>
+<h2>Graphics</h2>
+<h3 id="2.10">2.10 SVGs and Graphics</h3>
+<p>Scalable Vector Graphics (SVGs) and other graphical elements play a crucial role in enhancing the visual appeal and functionality of a website. Ensuring that these graphics are accessible is essential for providing an inclusive experience for all users, including those using assistive technologies.</p>
+
+<h4 id="2.10.1">2.10.1 <code class="language-html">&lt;svg&gt;</code> Elements</h4>
+<p>Use the <code class="language-html">&lt;svg&gt;</code> element to embed SVG graphics directly into your HTML. This approach allows for better control over the accessibility and interactivity of the graphics.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Inline SVG Example --&gt;
+&lt;svg width="100" height="100" role="img" aria-labelledby="svgTitle svgDesc"&gt;
+    &lt;title id="svgTitle"&gt;Company Logo&lt;/title&gt;
+    &lt;desc id="svgDesc"&gt;A vector graphic representing the company's logo.&lt;/desc&gt;
+    &lt;circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+
+<h4 id="2.10.2">2.10.2 Providing Alternative Text</h4>
+<p>Always provide alternative text for graphics to ensure that users who cannot see them can understand their purpose. For SVGs, use the <code class="language-html">&lt;title&gt;</code> and <code class="language-html">&lt;desc&gt;</code> elements to describe the graphic.</p>
+<pre>
+<code class="language-html">
+&lt;!-- SVG with Alternative Text --&gt;
+&lt;svg width="200" height="200" role="img" aria-labelledby="svgTitle svgDesc"&gt;
+    &lt;title id="svgTitle"&gt;Pie Chart Showing Sales Distribution&lt;/title&gt;
+    &lt;desc id="svgDesc"&gt;A pie chart illustrating the distribution of sales across different regions.&lt;/desc&gt;
+    &lt;circle cx="100" cy="100" r="80" fill="#f00" /&gt;
+    &lt;path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#0f0" /&gt;
+    &lt;path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#00f" /&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+
+<h4 id="2.10.3">2.10.3 Accessible Descriptions and Titles</h4>
+<p>Use the <code class="language-html">&lt;title&gt;</code> and <code class="language-html">&lt;desc&gt;</code> elements within SVGs to provide accessible names and descriptions. The <code class="language-html">&lt;title&gt;</code> should offer a concise description, while the <code class="language-html">&lt;desc&gt;</code> can provide more detailed information.</p>
+<pre>
+<code class="language-html">
+&lt;!-- SVG with Title and Description --&gt;
+&lt;svg width="150" height="150" role="img" aria-labelledby="svgTitle svgDesc"&gt;
+    &lt;title id="svgTitle"&gt;Informative Icon&lt;/title&gt;
+    &lt;desc id="svgDesc"&gt;An icon representing information, consisting of a circle with an "i" inside.&lt;/desc&gt;
+    &lt;circle cx="75" cy="75" r="70" stroke="black" stroke-width="5" fill="#fff" /&gt;
+    &lt;text x="75" y="85" font-size="60" text-anchor="middle" fill="#000"&gt;i&lt;/text&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+
+<h4 id="2.10.4">2.10.4 Color Contrast and Visibility</h4>
+<p>Ensure that the colors used in graphics meet the required contrast ratios to be easily distinguishable by users with visual impairments. Adhere to the Web Content Accessibility Guidelines (WCAG) for color contrast.</p>
+<pre>
+<code class="language-css">
+/* Example CSS for High Contrast SVG Elements */
+svg {
+    filter: contrast(1.5);
+}
+
+svg text {
+    fill: #000000; /* Ensure text has sufficient contrast against background */
+}
+</code>
+</pre>
+
+<h4 id="2.10.5">2.10.5 Responsive Graphics</h4>
+<p>Ensure that SVGs and other graphics are responsive, maintaining their accessibility and readability across various devices and screen sizes. Use viewBox attributes and scalable units to achieve responsiveness.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Responsive SVG Example --&gt;
+&lt;svg viewBox="0 0 100 100" width="100%" height="auto" role="img" aria-labelledby="responsiveTitle"&gt;
+    &lt;title id="responsiveTitle"&gt;Responsive Icon&lt;/title&gt;
+    &lt;rect width="100" height="100" fill="#00f" /&gt;
+    &lt;text x="50" y="55" font-size="20" text-anchor="middle" fill="#fff"&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+
+<h4 id="2.10.6">2.10.6 ARIA Attributes for Graphics</h4>
+<p>Use ARIA attributes to enhance the accessibility of graphics, especially when they convey important information or are interactive. Assign appropriate roles and labels to ensure assistive technologies can interpret them correctly.</p>
+<pre>
+<code class="language-html">
+&lt;!-- Interactive SVG with ARIA Attributes --&gt;
+&lt;svg width="200" height="200" role="button" tabindex="0" aria-label="Play Button" onclick="playVideo()"&gt;
+    &lt;circle cx="100" cy="100" r="90" fill="#28a745" /&gt;
+    &lt;polygon points="80,60 80,140 140,100" fill="#fff" /&gt;
+&lt;/svg&gt;
+</code>
+</pre>
+
+<icon-detail id="2.10.7" type="priority" heading-level="h4">
+    <span slot="title">2.10.7 Keyboard Accessibility for Interactive Graphics</span>
+    <span slot="description">
+        Ensure that interactive graphics, such as buttons or clickable icons, are accessible via keyboard controls. Assign appropriate tabindex values and ARIA roles to make them focusable and operable using keyboard keys like <kbd>Enter</kbd> or <kbd>Space</kbd>.
+    </span>
+</icon-detail>
+
+<h4 id="2.10.8">2.10.8 Animations and Motion</h4>
+<p>When using animations or motion in graphics, provide options for users to pause, stop, or reduce motion to accommodate those with vestibular disorders or motion sensitivities. Use the prefers-reduced-motion media query to detect user preferences.</p>
+<pre>
+<code class="language-css">
+/* Example CSS for Reducing Motion Based on User Preference */
+@media (prefers-reduced-motion: reduce) {
+    svg animation {
+        display: none;
+    }
+}
+</code>
+</pre>
+
+<h4 id="2.10.9">2.10.9 Testing Graphics for Accessibility</h4>
+<p>Regularly test SVGs and other graphics with various assistive technologies, such as screen readers, to ensure they are announced correctly and function as intended. Use accessibility testing tools to identify and address potential issues.</p>
+<pre>
+<code class="language-html">
+// Example: Using a screen reader to verify SVG accessibility
+// Ensure that SVG titles and descriptions are announced correctly
+</code>
+</pre>
+
+<h4 id="2.10.10">2.10.10 Best Practices for SVGs and Graphics</h4>
+<ul>
+    <li><strong>Provide Alternative Text:</strong> Always include <code class="language-html">&lt;title&gt;</code> and <code class="language-html">&lt;desc&gt;</code> elements within SVGs to describe their purpose and content.</li>
+    <li><strong>Ensure Sufficient Color Contrast:</strong> Use colors that meet WCAG contrast requirements to make graphics easily distinguishable.</li>
+    <li><strong>Make Graphics Responsive:</strong> Use scalable units and viewBox attributes to ensure graphics adapt to different screen sizes and devices.</li>
+    <li><strong>Enhance with ARIA Attributes:</strong> Assign appropriate ARIA roles and labels to interactive graphics to improve accessibility.</li>
+    <li><strong>Enable Keyboard Accessibility:</strong> Ensure that interactive graphics can be navigated and activated using keyboard controls.</li>
+    <li><strong>Provide Controls for Animations:</strong> Allow users to pause, stop, or reduce motion in animated graphics to accommodate motion sensitivities.</li>
+    <li><strong>Use Semantic SVG Elements:</strong> Utilise semantic elements within SVGs to convey meaning and structure effectively.</li>
+    <li><strong>Avoid Overly Complex Graphics:</strong> Keep graphics as simple as possible to prevent confusion and maintain accessibility.</li>
+    <li><strong>Test with Assistive Technologies:</strong> Regularly verify that graphics are correctly interpreted by screen readers and other assistive tools.</li>
+    <li><strong>Maintain Consistent Styling:</strong> Apply consistent styles to graphics across the website to aid recognition and usability.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

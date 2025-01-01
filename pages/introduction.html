@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Introduction</li>
+    </ol>
+</nav>
+<h1 itemprop="name">Accessibility UI Guidelines: About AUIG</h1>
+    <!-- Article Headline -->
+    <h2 id="how-to-use" itemprop="headline">How to use these guidelines</h2>
+
+    <!-- Article Description -->
+    <p itemprop="description">
+        The Accessibility User Interface Guidelines (AUIG) serve as a comprehensive framework for designing and developing accessible digital experiences. This section provides a concise guide on how to navigate and implement the AUIG effectively. By understanding the structure and key components of the AUIG, developers, designers, testers, and user experience professionals can ensure their digital platforms are inclusive, user-friendly, and compliant with accessibility standards. This overview highlights the main sections of the AUIG, offering strategic insights into global settings, UI elements, component accessibility, and common pitfalls to avoid.
+    </p>
+    <br>
+    <p itemprop="description">
+        The AUIG stands as a pivotal resource throughout the user interface development lifecycle, presenting a modern approach that is both easy to understand and apply. By following these guidelines, organisations ensure their digital offerings are accessible, enhancing user engagement and satisfaction for everyone.
+    </p>
+
+    <!-- Informational Detail: Code Examples Note -->
+    <icon-detail type="information" heading-level="h3" itemscope itemtype="https://schema.org/CreativeWork">
+        <span slot="title" itemprop="name">Code Examples throughout this guide</span>
+        <span slot="description" itemprop="description">All code examples are correct, but they might not apply exactly to every scenario. Consider them as templates and adjust them according to your specific context.
+    </span>
+    </icon-detail>
+
+    <!-- Section: Global Settings -->
+    <section itemscope itemtype="https://schema.org/CreativeWork">
+        <h3 itemprop="headline">Global Settings</h3>
+        <p itemprop="description">
+            The Global Settings section outlines foundational elements that apply universally across the entire web platform. It emphasizes the importance of core issues that apply to the main layout and across the application/site. Such issues include Colour, Contrast, Language, Keyboard Access, Meta Data, Skip Links, Responsive Design, Flashing Images.
+            From a planning perspective, global settings should be prioritised when developing a new application or website, or when upgrading an existing legacy system.
+        </p>
+    </section>
+
+    <!-- Section: Elements -->
+    <section itemscope itemtype="https://schema.org/CreativeWork">
+        <h3 itemprop="headline">Elements</h3>
+        <p itemprop="description">
+            The Elements section examines specific user interface (UI) components, providing comprehensive best practices to ensure each element is fully accessible. Accessibility should be seamlessly integrated into every phase of the project lifecycle, including design, user experience (UX), development, and quality assurance (QA).
+            This includes but not exclusively elements such as Multimedia (images, audio, video etc), Forms, Tables, Headings etc.
+        </p>
+    </section>
+
+    <!-- Section: Components -->
+    <section itemscope itemtype="https://schema.org/CreativeWork">
+        <h3 itemprop="headline">Components</h3>
+        <p itemprop="description">
+            The Components section concentrates on the accessibility considerations of complex user interface (UI) elements. It covers components such as modals, tooltips, tabs, and accordions. This section provides essential guidelines and illustrative examples to assist in implementing accessible components effectively. Users are encouraged to develop their own methods for achieving accessibility rather than strictly adhering to the provided examples. The primary focus is to ensure that each component is accessible and meets all relevant accessibility requirements.
+        </p>
+    </section>
+
+    <!-- Section: What to Avoid -->
+    <section itemscope itemtype="https://schema.org/CreativeWork">
+        <h3 itemprop="headline">What to Avoid</h3>
+        <p itemprop="description">
+            The What to Avoid section highlights common mistakes and deprecated practices that can hinder accessibility. As the documentation improves this and other sections may grow.
+        </p>
+    </section>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

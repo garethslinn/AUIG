@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon-hamburger">Menu</div>
+                <div class="icon-close" style="display: none;">Close</div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Notes</li>
+    </ol>
+</nav>
+<h1>HTML Elements Overview</h1>
+<h2>consider using this in appendix: not in the main doc</h2>
+<nav>
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#document-metadata">1. Document Metadata</a></li>
+        <li><a href="#content-sectioning">2. Content Sectioning</a></li>
+        <li><a href="#text-content">3. Text Content</a></li>
+        <li><a href="#inline-text-semantics">4. Inline Text Semantics</a></li>
+        <li><a href="#image-and-multimedia">5. Image and Multimedia</a></li>
+        <li><a href="#embedded-content">6. Embedded Content</a></li>
+        <li><a href="#scripting">7. Scripting</a></li>
+        <li><a href="#demarcating-edits">8. Demarcating Edits</a></li>
+        <li><a href="#table-content">9. Table Content</a></li>
+        <li><a href="#forms">10. Forms</a></li>
+        <li><a href="#interactive-elements">11. Interactive Elements</a></li>
+        <li><a href="#web-components">12. Web Components</a></li>
+        <li><a href="#obsolete-elements">13. Obsolete Elements</a></li>
+        <li><a href="#summary">Summary</a></li>
+    </ul>
+</nav>
+
+<section id="document-metadata">
+    <h2>1. Document Metadata</h2>
+    <p>Elements that provide metadata about the HTML document, such as title, scripts, styles, and other information not displayed directly on the page.</p>
+    <ul>
+        <li><code class="language-html">&lt;base&gt;</code>: Specifies the base URL for all relative URLs in the document.</li>
+        <li><code class="language-html">&lt;head&gt;</code>: Contains metadata and links to scripts, styles, etc.</li>
+        <li><code class="language-html">&lt;link&gt;</code>: Links external resources like stylesheets.</li>
+        <li><code class="language-html">&lt;meta&gt;</code>: Defines metadata like character set, viewport, and descriptions.</li>
+        <li><code class="language-html">&lt;style&gt;</code>: Embeds CSS styles within the document.</li>
+        <li><code class="language-html">&lt;title&gt;</code>: Sets the title of the document shown in the browser tab.</li>
+    </ul>
+</section>
+
+<section id="content-sectioning">
+    <h2>2. Content Sectioning</h2>
+    <p>Elements that define the structure and layout of the document, helping to organise content into logical sections.</p>
+    <ul>
+        <li><code class="language-html">&lt;address&gt;</code>: Provides contact information for the author/owner.</li>
+        <li><code class="language-html">&lt;article&gt;</code>: Represents a self-contained composition, such as a blog post.</li>
+        <li><code class="language-html">&lt;aside&gt;</code>: Contains content indirectly related to the main content, like sidebars.</li>
+        <li><code class="language-html">&lt;footer&gt;</code>: Defines the footer for a section or page.</li>
+        <li><code class="language-html">&lt;header&gt;</code>: Represents introductory content or navigation links.</li>
+        <li><code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h6&gt;</code>: Define headings, with <code class="language-html">&lt;h1&gt;</code> being the highest level.</li>
+        <li><code class="language-html">&lt;main&gt;</code>: Specifies the main content of the document.</li>
+        <li><code class="language-html">&lt;nav&gt;</code>: Contains navigation links.</li>
+        <li><code class="language-html">&lt;section&gt;</code>: Groups related content into a thematic section.</li>
+        <li><code class="language-html">&lt;summary&gt;</code>: Provides a summary for <code class="language-html">&lt;details&gt;</code>.</li>
+        <li><code class="language-html">&lt;details&gt;</code>: Creates a disclosure widget that can show/hide additional content.</li>
+    </ul>
+</section>
+
+<section id="text-content">
+    <h2>3. Text Content</h2>
+    <p>Elements that handle the main textual content of the document.</p>
+    <ul>
+        <li><code class="language-html">&lt;blockquote&gt;</code>: Denotes a section quoted from another source.</li>
+        <li><code class="language-html">&lt;dd&gt;</code>: Description/details of a term in a definition list.</li>
+        <li><code class="language-html">&lt;div&gt;</code>: Generic container for flow content, used for styling and scripting.</li>
+        <li><code class="language-html">&lt;dl&gt;</code>: Definition list.</li>
+        <li><code class="language-html">&lt;dt&gt;</code>: Term/name in a definition list.</li>
+        <li><code class="language-html">&lt;figcaption&gt;</code>: Caption for a <code class="language-html">&lt;figure&gt;</code>.</li>
+        <li><code class="language-html">&lt;figure&gt;</code>: Self-contained content, like images with captions.</li>
+        <li><code class="language-html">&lt;hr&gt;</code>: Represents a thematic break between paragraphs.</li>
+        <li><code class="language-html">&lt;li&gt;</code>: List item within <code class="language-html">&lt;ul&gt;</code>, <code class="language-html">&lt;ol&gt;</code>, or <code class="language-html">&lt;menu&gt;</code>.</li>
+        <li><code class="language-html">&lt;ol&gt;</code>: Ordered list.</li>
+        <li><code class="language-html">&lt;p&gt;</code>: Paragraph.</li>
+        <li><code class="language-html">&lt;pre&gt;</code>: Preformatted text.</li>
+        <li><code class="language-html">&lt;ul&gt;</code>: Unordered list.</li>
+    </ul>
+</section>
+
+<section id="inline-text-semantics">
+    <h2>4. Inline Text Semantics</h2>
+    <p>Elements that define the meaning and structure of text within a block of content.</p>
+    <ul>
+        <li><code class="language-html">&lt;a&gt;</code>: Hyperlink to another page or location.</li>
+        <li><code class="language-html">&lt;abbr&gt;</code>: Abbreviation or acronym.</li>
+        <li><code class="language-html">&lt;b&gt;</code>: Bold text without extra importance.</li>
+        <li><code class="language-html">&lt;bdi&gt;</code>: Isolates a span of text to prevent it from being affected by surrounding text direction.</li>
+        <li><code class="language-html">&lt;bdo&gt;</code>: Overrides the current text direction.</li>
+        <li><code class="language-html">&lt;br&gt;</code>: Line break.</li>
+        <li><code class="language-html">&lt;cite&gt;</code>: Title of a work.</li>
+        <li><code class="language-html">&lt;code&gt;</code>: Inline code snippet.</li>
+        <li><code class="language-html">&lt;data&gt;</code>: Links content with machine-readable data.</li>
+        <li><code class="language-html">&lt;dfn&gt;</code>: Defines a term.</li>
+        <li><code class="language-html">&lt;em&gt;</code>: Emphasised text, typically rendered in italics.</li>
+        <li><code class="language-html">&lt;i&gt;</code>: Italic text without extra importance.</li>
+        <li><code class="language-html">&lt;kbd&gt;</code>: User input, typically rendered in a monospace font.</li>
+        <li><code class="language-html">&lt;mark&gt;</code>: Marked/highlighted text.</li>
+        <li><code class="language-html">&lt;meter&gt;</code>: Scalar measurement within a known range.</li>
+        <li><code class="language-html">&lt;noscript&gt;</code>: Content displayed when scripts are disabled.</li>
+        <li><code class="language-html">&lt;output&gt;</code>: Result of a calculation or user action.</li>
+        <li><code class="language-html">&lt;picture&gt;</code>: Container for multiple image sources.</li>
+        <li><code class="language-html">&lt;progress&gt;</code>: Displays progress of a task.</li>
+        <li><code class="language-html">&lt;q&gt;</code>: Short inline quotation.</li>
+        <li><code class="language-html">&lt;ruby&gt;</code>: Ruby annotations for East Asian typography.</li>
+        <li><code class="language-html">&lt;s&gt;</code>: Text that is no longer accurate or relevant.</li>
+        <li><code class="language-html">&lt;samp&gt;</code>: Sample output from a computer program.</li>
+        <li><code class="language-html">&lt;small&gt;</code>: Side comments or small print.</li>
+        <li><code class="language-html">&lt;span&gt;</code>: Generic inline container for text.</li>
+        <li><code class="language-html">&lt;strong&gt;</code>: Important text, typically rendered in bold.</li>
+        <li><code class="language-html">&lt;sub&gt;</code>: Subscript text.</li>
+        <li><code class="language-html">&lt;sup&gt;</code>: Superscript text.</li>
+        <li><code class="language-html">&lt;time&gt;</code>: Represents a specific time or date.</li>
+        <li><code class="language-html">&lt;u&gt;</code>: Underlined text without extra importance.</li>
+        <li><code class="language-html">&lt;var&gt;</code>: Variable in a mathematical expression or programming context.</li>
+    </ul>
+</section>
+
+<section id="image-and-multimedia">
+    <h2>5. Image and Multimedia</h2>
+    <p>Elements that handle images, videos, audio, and other media types.</p>
+    <ul>
+        <li><code class="language-html">&lt;area&gt;</code>: Defines an area within an image map.</li>
+        <li><code class="language-html">&lt;audio&gt;</code>: Embeds sound content.</li>
+        <li><code class="language-html">&lt;img&gt;</code>: Embeds an image.</li>
+        <li><code class="language-html">&lt;map&gt;</code>: Defines an image map with clickable areas.</li>
+        <li><code class="language-html">&lt;track&gt;</code>: Specifies text tracks for media elements like <code class="language-html">&lt;audio&gt;</code> and <code class="language-html">&lt;video&gt;</code>.</li>
+        <li><code class="language-html">&lt;video&gt;</code>: Embeds video content.</li>
+    </ul>
+</section>
+
+<section id="embedded-content">
+    <h2>6. Embedded Content</h2>
+    <p>Elements for embedding external resources like documents, iframes, and more.</p>
+    <ul>
+        <li><code class="language-html">&lt;embed&gt;</code>: Embeds external content.</li>
+        <li><code class="language-html">&lt;iframe&gt;</code>: Embeds another HTML page within the current page.</li>
+        <li><code class="language-html">&lt;object&gt;</code>: Embeds external resources, such as images, videos, or Flash content.</li>
+        <li><code class="language-html">&lt;param&gt;</code>: Defines parameters for <code class="language-html">&lt;object&gt;</code>.</li>
+        <li><code class="language-html">&lt;source&gt;</code>: Specifies multiple media resources for <code class="language-html">&lt;audio&gt;</code> and <code class="language-html">&lt;video&gt;</code>.</li>
+    </ul>
+</section>
+
+<section id="scripting">
+    <h2>7. Scripting</h2>
+    <p>Elements related to scripting and dynamic content.</p>
+    <ul>
+        <li><code class="language-html">&lt;canvas&gt;</code>: Used to draw graphics on the fly via scripting.</li>
+        <li><code class="language-html">&lt;noscript&gt;</code>: Content to display if scripts are disabled.</li>
+        <li><code class="language-html">&lt;script&gt;</code>: Embeds or references executable scripts.</li>
+        <li><code class="language-html">&lt;template&gt;</code>: Holds client-side content that is not rendered immediately.</li>
+        <li><code class="language-html">&lt;slot&gt;</code>: Placeholder inside a web component for content.</li>
+    </ul>
+</section>
+
+<section id="demarcating-edits">
+    <h2>8. Demarcating Edits</h2>
+    <p>Elements that indicate changes to the document.</p>
+    <ul>
+        <li><code class="language-html">&lt;del&gt;</code>: Text that has been deleted from the document.</li>
+        <li><code class="language-html">&lt;ins&gt;</code>: Text that has been inserted into the document.</li>
+    </ul>
+</section>
+
+<section id="table-content">
+    <h2>9. Table Content</h2>
+    <p>Elements for creating and managing tables.</p>
+    <ul>
+        <li><code class="language-html">&lt;caption&gt;</code>: Provides a title for a table.</li>
+        <li><code class="language-html">&lt;col&gt;</code>: Specifies column properties for each column within a <code class="language-html">&lt;colgroup&gt;</code>.</li>
+        <li><code class="language-html">&lt;colgroup&gt;</code>: Groups columns for styling.</li>
+        <li><code class="language-html">&lt;table&gt;</code>: Defines a table.</li>
+        <li><code class="language-html">&lt;tbody&gt;</code>: Groups the body content in a table.</li>
+        <li><code class="language-html">&lt;td&gt;</code>: Table cell containing data.</li>
+        <li><code class="language-html">&lt;tfoot&gt;</code>: Groups the footer content in a table.</li>
+        <li><code class="language-html">&lt;th&gt;</code>: Header cell in a table.</li>
+        <li><code class="language-html">&lt;thead&gt;</code>: Groups the header content in a table.</li>
+        <li><code class="language-html">&lt;tr&gt;</code>: Table row.</li>
+    </ul>
+</section>
+
+<section id="forms">
+    <h2>10. Forms</h2>
+    <p>Elements that create interactive forms for user input.</p>
+    <ul>
+        <li><code class="language-html">&lt;button&gt;</code>: Clickable button.</li>
+        <li><code class="language-html">&lt;datalist&gt;</code>: Provides a list of predefined options for an <code class="language-html">&lt;input&gt;</code>.</li>
+        <li><code class="language-html">&lt;fieldset&gt;</code>: Groups related elements in a form.</li>
+        <li><code class="language-html">&lt;form&gt;</code>: Defines a form for user input.</li>
+        <li><code class="language-html">&lt;input&gt;</code>: Various types of input fields.</li>
+        <li><code class="language-html">&lt;label&gt;</code>: Defines a label for an <code class="language-html">&lt;input&gt;</code>.</li>
+        <li><code class="language-html">&lt;legend&gt;</code>: Caption for a <code class="language-html">&lt;fieldset&gt;</code>.</li>
+        <li><code class="language-html">&lt;meter&gt;</code>: Represents a scalar measurement.</li>
+        <li><code class="language-html">&lt;optgroup&gt;</code>: Groups related options within a <code class="language-html">&lt;select&gt;</code>.</li>
+        <li><code class="language-html">&lt;option&gt;</code>: Defines an option in a <code class="language-html">&lt;select&gt;</code> list.</li>
+        <li><code class="language-html">&lt;output&gt;</code>: Represents the result of a calculation.</li>
+        <li><code class="language-html">&lt;progress&gt;</code>: Displays progress of a task.</li>
+        <li><code class="language-html">&lt;select&gt;</code>: Drop-down list.</li>
+        <li><code class="language-html">&lt;textarea&gt;</code>: Multiline text input.</li>
+    </ul>
+</section>
+
+<section id="interactive-elements">
+    <h2>11. Interactive Elements</h2>
+    <p>Elements that enhance user interaction beyond forms.</p>
+    <ul>
+        <li><code class="language-html">&lt;details&gt;</code>: Creates a disclosure widget that users can open and close.</li>
+        <li><code class="language-html">&lt;dialog&gt;</code>: Represents a dialog box or window.</li>
+        <li><code class="language-html">&lt;menu&gt;</code>: Defines a list/menu of commands.</li>
+        <li><code class="language-html">&lt;menuitem&gt;</code>: Represents a command/menu item within a <code class="language-html">&lt;menu&gt;</code>.</li>
+        <li><code class="language-html">&lt;summary&gt;</code>: Summary for a <code class="language-html">&lt;details&gt;</code> element.</li>
+    </ul>
+</section>
+
+<section id="web-components">
+    <h2>12. Web Components</h2>
+    <p>Elements used to create custom, reusable components.</p>
+    <ul>
+        <li><code class="language-html">&lt;slot&gt;</code>: Placeholder inside a web component for external content.</li>
+        <li><code class="language-html">&lt;template&gt;</code>: Holds client-side content that is not rendered immediately.</li>
+    </ul>
+</section>
+
+<section id="obsolete-elements">
+    <h2>13. Obsolete Elements</h2>
+    <p>Elements that are deprecated and should not be used in modern HTML. They may still work in browsers but lack support and accessibility features.</p>
+    <ul>
+        <li><code class="language-html">&lt;acronym&gt;</code>: Use <code class="language-html">&lt;abbr&gt;</code> instead.</li>
+        <li><code class="language-html">&lt;applet&gt;</code>: Use <code class="language-html">&lt;object&gt;</code> instead.</li>
+        <li><code class="language-html">&lt;basefont&gt;</code>: Use CSS for font styling.</li>
+        <li><code class="language-html">&lt;big&gt;</code>: Use CSS for font size.</li>
+        <li><code class="language-html">&lt;blink&gt;</code>: Non-standard and unsupported.</li>
+        <li><code class="language-html">&lt;center&gt;</code>: Use CSS for alignment.</li>
+        <li><code class="language-html">&lt;font&gt;</code>: Use CSS for font styling.</li>
+        <li><code class="language-html">&lt;frame&gt;</code> and <code class="language-html">&lt;frameset&gt;</code>: Use <code class="language-html">&lt;iframe&gt;</code> instead.</li>
+        <li><code class="language-html">&lt;isindex&gt;</code>: Deprecated in favor of <code class="language-html">&lt;input&gt;</code>.</li>
+        <li><code class="language-html">&lt;keygen&gt;</code>: Deprecated, use other authentication methods.</li>
+        <li><code class="language-html">&lt;listing&gt;</code>: Use <code class="language-html">&lt;pre&gt;</code> instead.</li>
+        <li><code class="language-html">&lt;marquee&gt;</code>: Non-standard and unsupported.</li>
+        <li><code class="language-html">&lt;multicol&gt;</code>: Deprecated, use CSS columns.</li>
+        <li><code class="language-html">&lt;nextid&gt;</code>: Deprecated.</li>
+        <li><code class="language-html">&lt;nobr&gt;</code>: Use CSS white-space property.</li>
+        <li><code class="language-html">&lt;spacer&gt;</code>: Use CSS for spacing.</li>
+        <li><code class="language-html">&lt;strike&gt;</code>: Use <code class="language-html">&lt;s&gt;</code> or <code class="language-html">&lt;del&gt;</code> instead.</li>
+        <li><code class="language-html">&lt;tt&gt;</code>: Use CSS for monospace font.</li>
+        <li><code class="language-html">&lt;xmp&gt;</code>: Use <code class="language-html">&lt;pre&gt;</code> instead.</li>
+    </ul>
+</section>
+
+<section id="summary" class="summary">
+    <h2>Summary</h2>
+    <p>Understanding and properly utilising HTML elements is crucial for creating well-structured, accessible, and semantically meaningful web pages. Here's a quick recap of the key categories:</p>
+    <ul>
+        <li><strong>Document Metadata:</strong> Information about the document, not displayed directly.</li>
+        <li><strong>Content Sectioning:</strong> Organising content into logical sections.</li>
+        <li><strong>Text Content:</strong> Managing the main textual content.</li>
+        <li><strong>Inline Text Semantics:</strong> Enhancing the meaning of text within blocks.</li>
+        <li><strong>Image and Multimedia:</strong> Handling visual and audio media.</li>
+        <li><strong>Embedded Content:</strong> Incorporating external resources.</li>
+        <li><strong>Scripting:</strong> Adding dynamic and interactive features.</li>
+        <li><strong>Demarcating Edits:</strong> Indicating changes in content.</li>
+        <li><strong>Table Content:</strong> Creating and managing tables.</li>
+        <li><strong>Forms:</strong> Building interactive user input forms.</li>
+        <li><strong>Interactive Elements:</strong> Enhancing user interaction beyond forms.</li>
+        <li><strong>Web Components:</strong> Creating custom, reusable components.</li>
+        <li><strong>Obsolete Elements:</strong> Deprecated tags to avoid in modern HTML.</li>
+    </ul>
+</section>
+
+
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.2"></script>
+<script src="../scripts/main.js?v=1.2" defer></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

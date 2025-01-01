@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Question Form</title>
+    <style>
+        /* Add your styles here */
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #28a745;
+            width: 0;
+            transition: width 0.3s ease-in-out;
+        }
+        .progress-tracker {
+            text-align: right;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .question-container {
+            margin-top: 20px;
+        }
+        .option-btn {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .option-btn:hover {
+            background-color: #eaeaea;
+        }
+        .option-btn.selected {
+            background-color: #d4edda;
+            border-color: #28a745;
+            position: relative;
+        }
+        .option-btn.selected::after {
+            content: "✔";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            right: 10px;
+        }
+        .nav-buttons {
+            margin-top: 20px;
+        }
+        button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .pass {
+            color: #28a745;
+        }
+        .fail {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<h1>This is a test page</h1>
+
+<h1>Earn Your Lifetime Web Accessibility Certification for Free</h1>
+<p>In today’s fast-evolving digital landscape, accessibility has become a cornerstone of ethical and professional web development. The AUIG Developer Certification is your chance to stand out in the competitive market by showcasing your expertise in web accessibility. The best part? <strong>It’s currently free to take!</strong></p>
+<p>However, this unique opportunity won’t last forever. In the near future, the certification will transition to a paid model to reflect the value it provides and ensure the continued development of the program. Here’s why you should act now:</p>
+
+<h2>Why Take the Certification Now?</h2>
+<ul>
+    <li><strong>Lifetime Recognition:</strong> By passing the exam, you’ll earn a lifetime certification that won’t require renewal, even after the service becomes paid.</li>
+    <li><strong>No Cost:</strong> Take advantage of this free offering to validate your web accessibility skills without spending a penny.</li>
+    <li><strong>Future-Proof Your Career:</strong> Accessibility is not just a trend—it’s a necessity. Gaining this certification will demonstrate your commitment to inclusivity and compliance with industry standards.</li>
+    <li><strong>Be an Early Adopter:</strong> Getting certified now places you ahead of the curve, giving you a competitive edge as one of the early holders of this respected qualification.</li>
+</ul>
+
+<h2>What Does the Certification Offer?</h2>
+<h3>AUIG - Associate certification</h3>
+<ul>
+    <li>A rigorous assessment designed to test your knowledge of web accessibility principles and practices.</li>
+    <li>Validation of your ability to design and develop inclusive digital experiences.</li>
+    <li>A respected credential to showcase to employers, clients, and collaborators.</li>
+</ul>
+
+<h2>Take the Next Step</h2>
+<p>Don’t miss this chance to secure your lifetime AUIG Developer Certification at no cost. Passing the exam now ensures you retain all the benefits, even after the program becomes a paid service.</p>
+<p>The clock is ticking—invest in your future today by taking this free certification and join the growing community of accessibility advocates who are making the web a better place for everyone.</p>
+
+<a href="/certification/start" class="cta">Take the Free Exam Now</a>
+
+<p>Todo list</p>
+<h2>Is This Certification Worth Taking?</h2> <p>Achieving a passing rate in this assessment demonstrates a strong understanding of web accessibility. It provides an excellent way to showcase your expertise to your audience, highlighting your commitment to inclusivity and giving you a competitive edge.</p> <p>Considering the increasingly competitive development market, the AUIG Developer Certification can elevate your profile as a developer.</p> <h3>Key Advantages:</h3> <ul> <li><strong>Demonstrates Expertise:</strong> Validates your proficiency in web accessibility, showcasing your ability to create inclusive digital experiences.</li> <li><strong>Career Advancement:</strong> Helps you stand out in a crowded job market, increasing your appeal to employers and clients.</li> <li><strong>Enhanced Credibility:</strong> Builds trust with stakeholders by proving your commitment to meeting accessibility standards.</li> <li><strong>Future-Proof Skills:</strong> Aligns your knowledge with industry trends as accessibility becomes increasingly vital in web development.</li> <li><strong>Networking Opportunities:</strong> Positions you as part of a community of developers dedicated to accessibility and innovation.</li> </ul>
+<ul>
+    <li>Offer the user to take the official test</li>
+    <li>this includes a PDF downloadable certificate</li>
+    <li>url online access certificate for your resume or CV etc</li>
+    <li>If you fail you may have 2 more attempts, then wait 24 hours to try again.</li>
+    <li></li>
+</ul>
+<a href="/">&lt;--Back</a>
+
+<!-- Progress Bar -->
+<div class="progress-container">
+    <div id="progress-bar" class="progress-bar"></div>
+</div>
+<div id="progress-tracker" class="progress-tracker"></div>
+
+<div id="question-container" class="question-container"></div>
+<div class="nav-buttons">
+    <button id="prev-btn" disabled>Previous</button>
+    <button id="next-btn">Next</button>
+</div>
+
+<script type="module">
+    import { mock_Q, mock_A } from './test.js';
+
+    let currentQuestionIndex = 0;
+    const answers = {};
+    const passMark = 78;
+
+    const questionContainer = document.getElementById("question-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const progressBar = document.getElementById("progress-bar");
+    const progressTracker = document.getElementById("progress-tracker");
+
+    function updateProgress() {
+        const progress = ((currentQuestionIndex + 1) / mock_Q.length) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressTracker.textContent = `${currentQuestionIndex + 1}/${mock_Q.length}`;
+    }
+
+    function renderQuestion(index) {
+        const questionData = mock_Q[index];
+        questionContainer.innerHTML = `
+        <h2>${questionData.question}</h2>
+        ${questionData.options
+            .map((option, i) => `
+            <button class="option-btn ${
+                answers[questionData.id] === i ? "selected" : ""
+            }" data-id="${questionData.id}" data-option="${i}">
+              ${String.fromCharCode(65 + i)}. ${option}
+            </button>
+          `)
+            .join("")}
+      `;
+
+        prevBtn.disabled = index === 0;
+        nextBtn.textContent = index === mock_Q.length - 1 ? "Get My Score" : "Next";
+        updateProgress();
+    }
+
+    prevBtn.addEventListener("click", () => {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            renderQuestion(currentQuestionIndex);
+        }
+    });
+
+    nextBtn.addEventListener("click", () => {
+        if (currentQuestionIndex < mock_Q.length - 1) {
+            currentQuestionIndex++;
+            renderQuestion(currentQuestionIndex);
+        } else {
+            calculateScore();
+        }
+    });
+
+    questionContainer.addEventListener("click", (e) => {
+        if (e.target.classList.contains("option-btn")) {
+            const questionId = e.target.getAttribute("data-id");
+            const selectedOption = parseInt(e.target.getAttribute("data-option"));
+            answers[questionId] = selectedOption;
+            renderQuestion(currentQuestionIndex);
+        }
+    });
+
+    function calculateScore() {
+        let score = 0;
+        mock_Q.forEach((q, i) => {
+            if (answers[q.id] === mock_A[i].a[0]) {
+                score++;
+            }
+        });
+        const percentage = (score / mock_Q.length) * 100;
+        const passed = percentage >= passMark;
+
+        questionContainer.innerHTML = `
+        <h2>Your Score: ${percentage.toFixed(2)}%</h2>
+        <p class="${passed ? "pass" : "fail"}">
+          ${passed ? "Congratulations! You passed!" : "Sorry, you didn't pass this time."}
+        </p>
+      `;
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+    }
+
+    renderQuestion(currentQuestionIndex);
+</script>
+</body>
+</html>

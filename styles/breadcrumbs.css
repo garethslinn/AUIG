@@ -1,5 +1,6 @@
+/* Breadcrumb Styles */
 nav[aria-label="Breadcrumb"] {
-    background: #f5f5f5;
+    background: var(--breadcrumb-bg);
     padding: 0.75rem 1rem;
     margin: 1rem 0;
     display: flex;
@@ -18,13 +19,13 @@ nav[aria-label="Breadcrumb"] ol {
 nav[aria-label="Breadcrumb"] ol li {
     display: flex;
     align-items: center;
-    color: #333;
+    color: var(--breadcrumb-text);
 }
 
 nav[aria-label="Breadcrumb"] ol li::after {
     content: '/';
     padding: 0 0.5rem;
-    color: #999;
+    color: var(--breadcrumb-separator);
 }
 
 nav[aria-label="Breadcrumb"] ol li:last-child::after {
@@ -33,17 +34,18 @@ nav[aria-label="Breadcrumb"] ol li:last-child::after {
 
 nav[aria-label="Breadcrumb"] ol li a {
     text-decoration: underline;
-    color: #333;
+    color: var(--breadcrumb-text);
     transition: color 0.3s ease, outline 0.3s ease;
 }
 
 nav[aria-label="Breadcrumb"] ol li a:hover,
 nav[aria-label="Breadcrumb"] ol li a:focus {
-    color: #d7372f;
+    color: var(--breadcrumb-hover);
     text-decoration: underline;
-    outline: 4px solid #eb9cb1;
+    outline: 4px solid var(--breadcrumb-outline);
 }
 
 nav[aria-label="Breadcrumb"] ol li[aria-current="page"] {
     font-weight: bold;
-    color: #333;
+    color: var(--breadcrumb-text);
+}

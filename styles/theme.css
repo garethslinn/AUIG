@@ -47,6 +47,20 @@
     --button-bg-dark: #ff8a65; /* Dark mode button background */
     --button-text-dark: #121212; /* Dark mode button text */
     --button-border-dark: #ff7043; /* Dark mode button border */
+
+    /* Breadcrumb Colors */
+    --breadcrumb-bg-light: #f5f5f5; /* Light theme breadcrumb background */
+    --breadcrumb-text-light: #333333; /* Light theme breadcrumb text */
+    --breadcrumb-separator-light: #999999; /* Light theme breadcrumb separator */
+    --breadcrumb-hover-light: #d7372f; /* Light theme breadcrumb hover color */
+    --breadcrumb-outline-light: #eb9cb1; /* Light theme breadcrumb focus outline */
+
+    --breadcrumb-bg-dark: #1e1e1e; /* Dark theme breadcrumb background */
+    --breadcrumb-text-dark: #e0e0e0; /* Dark theme breadcrumb text */
+    --breadcrumb-separator-dark: #666666; /* Dark theme breadcrumb separator */
+    --breadcrumb-hover-dark: #ff8a65; /* Dark theme breadcrumb hover color */
+    --breadcrumb-outline-dark: #ff7043; /* Dark theme breadcrumb focus outline */
+
 }
 
 [data-theme="light"] {
@@ -90,6 +104,13 @@
     --title-h3: var(--title-fg-h3);
     --title-h4: #aee9f7;
     --title-h4-fg: #000000;
+
+    --breadcrumb-bg: var(--breadcrumb-bg-light);
+    --breadcrumb-text: var(--breadcrumb-text-light);
+    --breadcrumb-separator: var(--breadcrumb-separator-light);
+    --breadcrumb-hover: var(--breadcrumb-hover-light);
+    --breadcrumb-outline: var(--breadcrumb-outline-light);
+
 }
 
 [data-theme="dark"] {
@@ -133,6 +154,12 @@
     --title-h3: #1d6b83;
     --title-h4: #18596f;
     --title-h4-fg: #ffffff;
+
+    --breadcrumb-bg: var(--breadcrumb-bg-dark);
+    --breadcrumb-text: var(--breadcrumb-text-dark);
+    --breadcrumb-separator: var(--breadcrumb-separator-dark);
+    --breadcrumb-hover: var(--breadcrumb-hover-dark);
+    --breadcrumb-outline: var(--breadcrumb-outline-dark);
 
 }
 

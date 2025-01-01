@@ -40,12 +40,12 @@
     --control-border-dark: #444444; /* Dark mode control border */
 
     /* Button Colors */
-    --button-bg-light: #e76f51; /* Light mode button background */
+    --button-bg-light: #268ca6; /* Light mode button background */
     --button-text-light: #ffffff; /* Light mode button text */
     --button-border-light: #d65a3c; /* Light mode button border */
 
-    --button-bg-dark: #ff8a65; /* Dark mode button background */
-    --button-text-dark: #121212; /* Dark mode button text */
+    --button-bg-dark: #268ca6; /* Dark mode button background */
+    --button-text-dark: #ffffff; /* Dark mode button text */
     --button-border-dark: #ff7043; /* Dark mode button border */
 
     /* Breadcrumb Colors */

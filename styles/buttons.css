@@ -4,16 +4,17 @@
     bottom: 2rem;
     right: 1rem;
     display: block;
-    border: none;
     background-color: var(--button-bg);
     color: var(--button-text);
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     cursor: pointer;
     font-size: 1rem;
     z-index: 1000; /* Ensure it stays on top */
     transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
     opacity: 1;
     transform: translateY(20px);
+    border-radius: 2rem;
+    border: 2px solid var(--button-text);
 }
 
 #back-to-top.show {

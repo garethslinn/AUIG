@@ -21,6 +21,26 @@
 .icon-nux { background-image: url('../images/nux.svg'); }
 .icon-cm { background-image: url('../images/cm.svg'); }
 .icon-ca11y { background-image: url('../images/ca11y.svg'); }
+.icon-hamburger { display: block; background-image: url('../images/icon_hamburger.svg'); }
+.icon-close { display: none; background-image: url('../images/icon_close.svg'); }
+
+.icon-hamburger, .icon-close {
+    position: relative;
+    right: 1.9rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    span {
+        position: relative;
+        left: 2rem;
+        bottom: 0.1rem;
+        font-size: 1.5rem;
+    }
+}
+
+.show {
+    .icon-hamburger { display: none; }
+    .icon-close { display: block; }
+}
 
 .guideline-term {
     display: flex;

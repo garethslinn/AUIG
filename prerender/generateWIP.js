@@ -41,6 +41,9 @@ const headContent = `
 
     <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
     <link rel="stylesheet" href="../styles/main.css?v=1.3">
+    <script>
+          document.write(\`<link rel="stylesheet" href="../styles/main.cssv=${Math.random().toString(36).substring(2, 15)}"">\`);
+    </script>
 
     <!-- PrismJS Light Theme -->
     <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
@@ -102,8 +105,8 @@ ${headContent}
     <aside id="toc" class="nav" aria-label="Table of Contents">
         <nav id="nav" aria-label="Main Navigation">
             <button id="toggleButton" class="toggle-button">
-                <div class="icon-hamburger">Menu</div>
-                <div class="icon-close" style="display: none;">Close</div>
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
             </button>
             <div class="navlist" id="navlist"></div>
         </nav>
@@ -131,10 +134,15 @@ ${headContent}
 <!-- PrismJS Library -->
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
 
-<!-- Main JavaScript Files -->
 <script src="../scripts/loader.js?v=1.2"></script>
-<script src="../scripts/components/iconDetail.js?v=1.2"></script>
-<script src="../scripts/main.js?v=1.2" defer></script>
+
+<script>
+    document.write(\`<script src="../scripts/components/iconDetail.js?v=${Math.random().toString(36).substring(2, 15)}" defer></script>\`);
+    document.write(\`<script src="../scripts/main.js?v=${Math.random().toString(36).substring(2, 15)}" defer></script>\`);
+</script>
+
+
+<!-- Main JavaScript Files -->
 <script src="../scripts/auig.js" defer></script>
 </body>
 </html>`;

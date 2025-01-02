@@ -41,9 +41,6 @@ const headContent = `
 
     <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
     <link rel="stylesheet" href="../styles/main.css?v=1.3">
-    <script>
-          document.write(\`<link rel="stylesheet" href="../styles/main.cssv=${Math.random().toString(36).substring(2, 15)}"">\`);
-    </script>
 
     <!-- PrismJS Light Theme -->
     <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />

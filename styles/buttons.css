@@ -4,7 +4,7 @@
     bottom: 2rem;
     right: 1rem;
     display: block;
-    background-color: var(--button-bg);
+    background-color: #000;
     color: var(--button-text);
     padding: 0.7rem 1rem;
     cursor: pointer;

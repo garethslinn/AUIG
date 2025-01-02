@@ -56,7 +56,7 @@ h1 {
     line-height: 3rem;
 }
 
-h3, h4, h5, p {
+h4, h5, p {
     padding: 0;
     margin: 0;
 }
@@ -141,6 +141,10 @@ a:focus, button:focus {
 
 pre, p {
     margin-left: 0;
+}
+
+p {
+    margin-bottom: 1rem;
 }
 
 footer {

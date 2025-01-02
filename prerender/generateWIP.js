@@ -135,14 +135,8 @@ ${headContent}
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
 
 <script src="../scripts/loader.js?v=1.2"></script>
-
-<script>
-    document.write(\`<script src="../scripts/components/iconDetail.js?v=${Math.random().toString(36).substring(2, 15)}" defer></script>\`);
-    document.write(\`<script src="../scripts/main.js?v=${Math.random().toString(36).substring(2, 15)}" defer></script>\`);
-</script>
-
-
-<!-- Main JavaScript Files -->
+<script src="../scripts/components/iconDetail.js?v=1.3"></script>
+<script src="../scripts/main.js?v=1.3"></script>
 <script src="../scripts/auig.js" defer></script>
 </body>
 </html>`;

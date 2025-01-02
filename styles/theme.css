@@ -6,14 +6,14 @@
     --color-bg-light: #f9f9f9; /* Subtle light gray for background */
     --color-text-light: #222222; /* Slightly softer black for text */
     --color-primary-light: #ffffff; /* Main white background */
-    --color-link-light: #e76f51; /* Primary link color */
+    --color-link-light: #000; /* Primary link color */
     --color-accent-light: #f0f9f8; /* Light accent for regions */
 
     /* Dark Mode Colors */
     --color-bg-dark: #121212; /* Dark background */
     --color-text-dark: #e0e0e0; /* Light gray text for better contrast */
     --color-primary-dark: #1f3a40; /* Main dark background */
-    --color-link-dark: #ff8a65; /* Slightly brighter link color for visibility */
+    --color-link-dark: #fff; /* Slightly brighter link color for visibility */
     --color-accent-dark: #1e2d2b; /* Dark accent for regions */
 
     /* Common Colors */

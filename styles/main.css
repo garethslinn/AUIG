@@ -47,7 +47,7 @@ h4 { font-size: 1.50rem; }
 h5 { font-size: 1.25rem; }
 
 
-h2, h3 {
+h2 {
     color: var(--title-h2);
 }
 
@@ -80,6 +80,10 @@ h3, h4, .title-block {
     padding-left: 1rem;
 }
 
+h3 {
+    color: #000;
+}
+
 h4 {
     color: var(--title-h4-fg);
     background: var(--title-h4);
@@ -95,7 +99,7 @@ h4 {
 
 
 a {
-    color: var(--color-link);
+    color: var(--link-color);
     text-decoration: underline;
 }
 

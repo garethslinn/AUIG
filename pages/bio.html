@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+    <script>
+          document.write(`<link rel="stylesheet" href="../styles/main.cssv=q11aqdrpf9"">`);
+    </script>
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Bio</li>
+  </ol>
+</nav>
+
+<h1 itemprop="name">About Gareth Slinn</h1>
+<h2>Accessibility Advocate | Developer | Author</h2>
+
+<!-- Section: Accessibility Journey -->
+<section id="accessibility-journey">
+  <h3>Accessibility Since 2002</h3>
+  <p>
+    My journey into accessibility began in 2002 with the creation of my first tool, <strong>Hermish</strong>. Although now
+    obsolete, Hermish marked the beginning of my dedication to improving web accessibility.
+    My passion for this field was further ignited through my personal experience with text-to-speech tools in the early 2000s.
+    As someone with ADHD and dyslexia, assistive technology provided tremendous support,
+    enabling me to navigate and engage with digital spaces more effectively. This transformative experience made me realise
+    that as the web continues to expand, so does its audience and with it, the critical need
+    for accessible technologies. This understanding has been the driving force behind my work for over two decades, shaping my
+    commitment to inclusivity and innovation in the digital world.
+  </p>
+
+
+</section>
+
+<!-- Section: CheckMeister -->
+<section id="checkmeister">
+  <h3>Developer of CheckMeister</h3>
+  <p>
+    <strong>
+      <a
+            href="https://www.checkmeister.com/"
+            aria-label="Tools developed by Gareth, opens in a new tab"
+            target="_blank"
+            rel="noopener noreferrer"
+            itemprop="url"
+    >CheckMeister
+    </a>
+    </strong> is a groundbreaking platform designed to rapidly improve website accessibility. It engages individuals with disabilities  a demographic often overlooked but crucial for market inclusivity.
+    By leveraging CheckMeister’s comprehensive tools, businesses can quickly address accessibility issues, ensuring compliance with standards and embracing a demographic with considerable economic influence.
+  </p>
+  <p>
+    CheckMeister simplifies the complex aspects of web accessibility, allowing businesses to focus on resolving issues efficiently. It’s a tool designed to make accessibility not just achievable, but seamless.
+  </p>
+</section>
+
+<!-- Section: Books -->
+<section id="books">
+  <h3>Author of Accessibility Books</h3>
+
+  <!-- Accessibility by Example -->
+  <article>
+    <h4>Accessibility by Example (2007)</h4>
+    <p>
+      In 2007, I wrote <em>Accessibility by Example</em>, a pocket guide aimed at helping developers navigate the complexities of web accessibility. The book provided practical, actionable insights
+      during a time when W3C standards were difficult to fully grasp. Although out of print, its impact remains significant.
+    </p>
+  </article>
+
+  <!-- Accessibility: Don't Panic -->
+  <article>
+    <h4>Accessibility: Don't Panic (2022)</h4>
+    <p>
+      <em>
+        <a
+                href="https://www.amazon.co.uk/Accessibility-Dont-Panic-Gareth-Slinn/dp/B0DL4CSBS8/"
+                aria-label="Book on accessibility, opens in a new tab"
+                target="_blank"
+                rel="noopener noreferrer"
+                itemprop="url"
+        >
+        Accessibility: Don’t Panic
+        </a>
+      </em> is a step-by-step guide to meeting EAA and WCAG guidelines. With a calm and practical approach, this book equips developers, designers, and business owners with
+      the tools to create inclusive and compliant websites. In a world where 20% of web traffic comes from individuals with disabilities, this book is your roadmap to getting accessibility right the first time.
+    </p>
+  </article>
+
+  <!-- Neurological UX -->
+  <article>
+    <h4>NeurologicalUX: Leading Accessibility in Design</h4>
+    <p>
+      Accessibility isn’t just about code it’s about design. My work in
+      <a
+              href="https://neurologicalux.com/"
+              aria-label="Book on accessibility, opens in a new tab"
+              target="_blank"
+              rel="noopener noreferrer"
+              itemprop="url"
+      >
+      NeurologicalUX
+      </a>
+      focuses on the unique needs of individuals with neurological differences, such as autism, ADHD, and dyslexia.
+      These differences shape how users perceive and interact with digital content, yet they’re often overlooked in design practices.
+    </p>
+    <ul>
+      <li><strong>Understanding Neurodiversity:</strong> Dive deep into how neurological differences influence user interaction.</li>
+      <li><strong>Design Principles:</strong> Learn to craft interfaces that are both accessible and engaging.</li>
+      <li><strong>Practical Strategies:</strong> Implement techniques that make a tangible difference.</li>
+      <li><strong>Empathy-Driven Design:</strong> Foster a design mindset that values every user's experience.</li>
+      <li><strong>Comprehensive Coverage:</strong> From typography and colour themes to error prevention and focus-mode features.</li>
+    </ul>
+    <p>
+      Designers are not just creators of aesthetic interfaces; they are architects of experiences that can empower or exclude. This book is dedicated to those ready to lead the charge in making digital
+      experiences accessible for everyone.
+    </p>
+  </article>
+</section>
+
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.2"></script>
+
+<script>
+    document.write(`<script src="../scripts/components/iconDetail.js?v=h45qii1k9i" defer></script>`);
+    document.write(`<script src="../scripts/main.js?v=vt3t1naq0ab" defer></script>`);
+</script>
+
+
+<!-- Main JavaScript Files -->
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

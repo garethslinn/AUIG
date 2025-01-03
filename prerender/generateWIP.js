@@ -89,7 +89,7 @@ ${headContent}
 
 <!-- Accessibility Controls -->
 <aside class="controls" aria-label="Accessibility controls">
-    <img class="logo" width="auto" height="40" src="../images/ca11y_light.svg" alt="Ca11y logo depicting cognitive accessibility" />
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
     <span>
         <button id="decrease-font" aria-label="Decrease text size">A-</button>
         <button id="increase-font" aria-label="Increase text size">A+</button>

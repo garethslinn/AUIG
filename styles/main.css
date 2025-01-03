@@ -7,10 +7,10 @@
 @import "section.css";
 @import "icons.css";
 
-/** {*/
-/*    background: white!important;*/
-/*    color: black!important;*/
-/*}*/
+.bw-mode * {
+    background: white !important;
+    color: black !important;
+}
 
 html, body {
     margin: 0;

@@ -82,134 +82,84 @@
 
             <!-- Section Content -->
             <nav aria-label="Breadcrumb">
-    <ol>
-        <li><a href="/">Home</a></li>
-        <li aria-current="page">Modals</li>
-    </ol>
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Statement</li>
+  </ol>
 </nav>
-<h1 itemprop="name">Accessibility UI Guidelines: Modals</h1>
-<h2>Modals</h2>
-<h3 id="3.1">3.1 Modals</h3>
-<p>Modals are overlay elements that present content or require user interaction without navigating away from the current page. They are commonly used for dialogs, forms, alerts, and additional information. Ensuring that modals are accessible is vital for providing an inclusive experience for all users, including those using assistive technologies.</p>
 
-<h4 id="3.1.1">3.1.1 <code>&lt;dialog&gt;</code> Element</h4>
-<p>The HTML <code>&lt;dialog&gt;</code> element provides a native way to create modal dialogs. It offers built-in accessibility features and simplifies the implementation process.</p>
-<pre>
-<code class="language-html">&lt;!-- Modal Trigger --&gt;
-&lt;button id=&quot;openModal&quot;&gt;Open Modal&lt;/button&gt;
+<h1 id="accessibility-statement">Accessibility Statement</h1>
 
-&lt;!-- Modal Structure --&gt;
-&lt;dialog id=&quot;myModal&quot; aria-labelledby=&quot;modalTitle&quot; aria-describedby=&quot;modalDescription&quot;&gt;
-    &lt;h2 id=&quot;modalTitle&quot;&gt;Modal Title&lt;/h2&gt;
-    &lt;p id=&quot;modalDescription&quot;&gt;This is an accessible modal dialog.&lt;/p&gt;
-    &lt;button id=&quot;closeModal&quot;&gt;Close&lt;/button&gt;
-&lt;/dialog&gt;
-</code>
-</pre>
+<section aria-labelledby="accessibility-statement">
+  <p>
+    We are committed to ensuring that our website is fully accessible to all users, regardless of ability or technology. Our goal is to provide an inclusive and user-friendly experience that meets or exceeds current accessibility standards, including the <strong>Web Content Accessibility Guidelines (WCAG) 2.2 Level AA</strong>.
+  </p>
 
-<h4 id="3.1.2">3.1.2 Focus Management</h4>
-<p>Proper focus management ensures that keyboard users can interact with modals seamlessly.</p>
-<pre>
-<code class="language-javascript">// JavaScript to Manage Focus Within Modal
-const openModalButton = document.getElementById(&#39;openModal&#39;);
-const closeModalButton = document.getElementById(&#39;closeModal&#39;);
-const modal = document.getElementById(&#39;myModal&#39;);
-let lastFocusedElement;
+  <h2>Accessibility Features</h2>
+  <ul>
+    <li>
+      <strong>Keyboard Navigation</strong>
+      <p>All interactive elements are fully accessible using the keyboard, with clear focus indicators for improved usability.</p>
+    </li>
+    <li>
+      <strong>Screen Reader Support</strong>
+      <p>
+        Content is structured using semantic HTML, ensuring compatibility with screen readers and assistive technologies. ARIA landmarks and labels are provided for improved navigation.
+      </p>
+    </li>
+    <li>
+      <strong>Flexible Text Sizing</strong>
+      <p>Users can adjust text size using built-in controls (<kbd>A+</kbd> and <kbd>A-</kbd>) to suit their preferences.</p>
+    </li>
+    <li>
+      <strong>High Contrast Modes</strong>
+      <p>
+        Multiple themes are available, including:
+      <ul>
+        <li>Light Mode</li>
+        <li>Dark Mode</li>
+        <li>Black and White (Minimum Reading) Mode</li>
+      </ul>
+      These modes enhance readability for users with visual impairments.
+      </p>
+    </li>
+    <li>
+      <strong>Responsive Design</strong>
+      <p>The site is fully responsive and functions across a range of devices, screen sizes, and orientations.</p>
+    </li>
+    <li>
+      <strong>Colour Accessibility</strong>
+      <p>Colour schemes have been carefully chosen to ensure sufficient contrast. Where edge cases occur, fallback options are provided.
+      Whilst there may be edge cases the option to switch between themes will ensure complete access.</p>
+    </li>
+    <li>
+      <strong>Keyboard Focus Management</strong>
+      <p>Intuitive focus management ensures smooth navigation between sections, improving the experience for keyboard and screen reader users.</p>
+    </li>
+    <li>
+      <strong>Skip Links</strong>
+      <p>A <em>Skip to Content</em> link is provided to allow users to bypass repetitive navigation elements.</p>
+    </li>
+    <li>
+      <strong>Content Simplification may not be possible</strong>
+      <p>Be aware this is a technology based site which may contain some challenging words and phrases.  Although
+      paragraphs are generally minimalistic someone of a less than basic technical background in HTML may find
+      this site difficult to engage.</p>
+    </li>
+    <li>
+      <strong>Inclusive Media</strong>
+      <p>Images include descriptive alt text, and multimedia content provides captions or transcripts where necessary.</p>
+    </li>
+  </ul>
 
-openModalButton.addEventListener(&#39;click&#39;, () =&gt; {
-    lastFocusedElement = document.activeElement;
-    if (typeof modal.showModal === &quot;function&quot;) {
-        modal.showModal();
-    } else {
-        // Fallback for browsers that do not support &lt;dialog&gt;
-        modal.style.display = &#39;block&#39;;
-    }
-    modal.setAttribute(&#39;aria-hidden&#39;, &#39;false&#39;);
-    closeModalButton.focus();
-    trapFocus(modal);
-});
+  <h2>Feedback</h2>
+  <p>
+    We are constantly working to improve the accessibility of our site. If you encounter any issues or
+    have suggestions for improvement, please contact us at <a href="mailto:gslinn@gmail.com">gslinn@gmail.com</a>.
+  </p>
+  <p>Thank you for visiting our site!</p>
+</section>
 
-closeModalButton.addEventListener(&#39;click&#39;, () =&gt; {
-    if (typeof modal.close === &quot;function&quot;) {
-        modal.close();
-    } else {
-        // Fallback for browsers that do not support &lt;dialog&gt;
-        modal.style.display = &#39;none&#39;;
-    }
-    modal.setAttribute(&#39;aria-hidden&#39;, &#39;true&#39;);
-    lastFocusedElement.focus();
-});
-
-function trapFocus(element) {
-    const focusableElements = element.querySelectorAll(&#39;a[href], button, textarea, input, select, [tabindex]:not([tabindex=&quot;-1&quot;])&#39;);
-    const firstFocusable = focusableElements[0];
-    const lastFocusable = focusableElements[focusableElements.length - 1];
-
-    element.addEventListener(&#39;keydown&#39;, (e) =&gt; {
-        const isTabPressed = (e.key === &#39;Tab&#39; || e.keyCode === 9);
-        if (!isTabPressed) return;
-
-        if (e.shiftKey) { // Shift + Tab
-            if (document.activeElement === firstFocusable) {
-                e.preventDefault();
-                lastFocusable.focus();
-            }
-        } else { // Tab
-            if (document.activeElement === lastFocusable) {
-                e.preventDefault();
-                firstFocusable.focus();
-            }
-        }
-    });
-}
-</code>
-</pre>
-
-<h4 id="3.1.3">3.1.3 Keyboard Accessibility</h4>
-<p>Modals should be fully operable using the keyboard to accommodate users who rely on keyboard navigation.</p>
-<pre>
-<code class="language-html">&lt;!-- Modal Structure with Close Button --&gt;
-&lt;dialog id=&quot;myModal&quot; aria-labelledby=&quot;modalTitle&quot; aria-describedby=&quot;modalDescription&quot;&gt;
-    &lt;h2 id=&quot;modalTitle&quot;&gt;Modal Title&lt;/h2&gt;
-    &lt;p id=&quot;modalDescription&quot;&gt;This is an accessible modal dialog.&lt;/p&gt;
-    &lt;button id=&quot;closeModal&quot;&gt;Close&lt;/button&gt;
-&lt;/dialog&gt;
-</code>
-</pre>
-<pre>
-<code class="language-javascript">// Listen for keydown events to handle Escape key
-document.addEventListener(&#39;keydown&#39;, (e) =&gt; {
-    if (e.key === &#39;Escape&#39; &amp;&amp; modal.open) {
-        modal.close();
-        lastFocusedElement.focus();
-    }
-});
-</code>
-</pre>
-
-<h4 id="3.1.4">3.1.4 Visible Focus Indicators</h4>
-<p>Visible focus indicators help users identify which element is currently focused, especially during keyboard navigation.</p>
-<pre>
-<code class="language-css">/* Custom Focus Style for Modal Elements */
-#myModal button:focus,
-#myModal a:focus,
-#myModal input:focus {
-    outline: 2px solid #005fcc;
-    background-color: #e0f0ff;
-}
-</code>
-</pre>
-
-<h4 id="3.1.5">3.1.5 ARIA Attributes for Modals</h4>
-<p>Appropriate ARIA attributes enhance the accessibility of modals by providing additional context to assistive technologies.</p>
-<pre>
-<code class="language-html">&lt;dialog id=&quot;myModal&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;modalTitle&quot; aria-describedby=&quot;modalDescription&quot;&gt;
-    &lt;h2 id=&quot;modalTitle&quot;&gt;Modal Title&lt;/h2&gt;
-    &lt;p id=&quot;modalDescription&quot;&gt;This is an accessible modal dialog.&lt;/p&gt;
-    &lt;button id=&quot;closeModal&quot;&gt;Close&lt;/button&gt;
-&lt;/dialog&gt;
-</code>
-</pre>
 
         </div>
     </main>

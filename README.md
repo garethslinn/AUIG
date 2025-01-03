@@ -1,6 +1,6 @@
 # AUIG: Accessible User Interface Guidelines
 
-![AUIG Logo](https://raw.githubusercontent.com/garethslinn/auig-project/main/images/auig_light.svg)
+![AUIG Logo](https://raw.githubusercontent.com/garethslinn/AUIG/refs/heads/main/images/auig_light.svg)
 
 ## [Visit the Website](https://www.auig.org)
 

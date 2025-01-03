@@ -1,17 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Existing code...
+
+    document.getElementById("back-to-top").addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    const toggleButton = document.getElementById("toggleButton");
+    function handleToggle() {
+        nav.classList.toggle("show");
+        const isShown = nav.classList.contains("show");
+        nav.setAttribute("aria-label", isShown ? "Main Navigation open" : "Main Navigation closed");
+        toggleButton.setAttribute("aria-expanded", isShown);
+    }
+
+    toggleButton?.addEventListener("click", handleToggle);
+
+    const nav1 = document.getElementById("navlist");
+
+    nav1.addEventListener('click', (event) => {
+        handleToggle();
+    });
 
     // Theme toggle
     const toggleThemeBtn = document.getElementById('toggle-theme');
     const logo = document.querySelector('.logo');
     const logoLight = '/images/auig_light.svg';
     const logoDark = '/images/auig_dark.svg';
+    const logoBW = '/images/auig_bw.svg';
     const prismLightTheme = document.getElementById('prism-light-theme');
     const prismDarkTheme = document.getElementById('prism-dark-theme');
 
+
+
+    // Theme functions
     function updateLogo(theme) {
         if (logo) {
-            logo.src = theme === 'light' ? logoLight : theme === 'dark' ? logoDark : '/images/auig_bw.svg'; // Add black and white logo
+            logo.src = theme === 'light' ? logoLight :
+                theme === 'dark' ? logoDark :
+                    logoBW;
         }
     }
 
@@ -52,9 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
         updateToggleIcon(theme);
         updateLogo(theme);
-        togglePrismTheme(theme); // Toggle PrismJS theme
+        togglePrismTheme(theme);
 
-        // Apply global styles for Black and White mode
         if (theme === 'bw') {
             document.body.classList.add('bw-mode');
         } else {
@@ -67,9 +94,48 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.setAttribute('data-theme', initialTheme);
     updateToggleIcon(initialTheme);
     updateLogo(initialTheme);
-    togglePrismTheme(initialTheme); // Set initial PrismJS theme
+    togglePrismTheme(initialTheme);
 
     if (initialTheme === 'bw') {
         document.body.classList.add('bw-mode');
     }
+
+    // Font size control
+    const root = document.documentElement;
+    const increaseBtn = document.getElementById('increase-font');
+    const decreaseBtn = document.getElementById('decrease-font');
+    let fontSize = parseFloat(getComputedStyle(root).getPropertyValue('--font-size-base')) || 1;
+
+    increaseBtn?.addEventListener('click', () => {
+        if (fontSize < 2) {
+            fontSize += 0.1;
+            fontSize = Math.round(fontSize * 10) / 10;
+            root.style.setProperty('--font-size-base', `${fontSize}rem`);
+        }
+    });
+
+    decreaseBtn?.addEventListener('click', () => {
+        if (fontSize > 0.8) {
+            fontSize -= 0.1;
+            fontSize = Math.round(fontSize * 10) / 10;
+            root.style.setProperty('--font-size-base', `${fontSize}rem`);
+        }
+    });
+
+    // Back to Top
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            backToTopBtn.classList.remove('hide');
+        } else {
+            backToTopBtn.classList.add('hide');
+        }
+    });
+
+    backToTopBtn?.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });

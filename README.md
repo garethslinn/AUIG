@@ -200,7 +200,3 @@ This project is licensed under the [License](LICENSE.md).
 - **Lead Developer:** Gareth Slinn
 - **Email:** [gslinn@gmail.com](mailto:gslinn@gmail.com)
 - **Website:** [www.auig.org](https://www.auig.org)
-
----
-
-This updated `README.md` explains how to run `prerender` scripts from the root directory using `npm --prefix prerender`. Let me know if further adjustments are needed!

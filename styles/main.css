@@ -7,6 +7,11 @@
 @import "section.css";
 @import "icons.css";
 
+/** {*/
+/*    background: white!important;*/
+/*    color: black!important;*/
+/*}*/
+
 html, body {
     margin: 0;
     padding: 0;

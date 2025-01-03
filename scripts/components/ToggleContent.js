@@ -100,7 +100,7 @@ class ToggleContent extends HTMLElement {
     `;
 
         const slots = this.childrenArray.map(
-            (_, index) => `<slot name="version-${index + 1}"></slot>`
+            (_, index) => `<slot name="${index + 1}"></slot>`
         ).join('');
 
         this.shadowRoot.innerHTML = `

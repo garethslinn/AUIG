@@ -7,9 +7,19 @@
 @import "section.css";
 @import "icons.css";
 
+
 .bw-mode * {
     background: white !important;
     color: black !important;
+    img {
+        display: none!important;
+    }
+    header {
+        img {
+            display: block!important;
+        }
+    }
+
 }
 
 html, body {

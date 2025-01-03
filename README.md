@@ -1,7 +1,3 @@
-Here’s the updated `README.md` reflecting the use of `npm --prefix prerender` to run the `prerender` scripts from the root directory:
-
----
-
 # AUIG: Accessible User Interface Guidelines
 
 ![AUIG Logo](https://raw.githubusercontent.com/garethslinn/auig-project/main/images/auig_light.svg)

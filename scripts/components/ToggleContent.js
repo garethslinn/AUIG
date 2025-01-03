@@ -61,7 +61,7 @@ class ToggleContent extends HTMLElement {
             position: absolute;
             top: 0.625rem;
             left: 0.625rem;
-            background-color: #007bff;
+            background-color: #278ca6;
             color: #fff;
             border-radius: 50%;
             width: 1.875rem;
@@ -70,6 +70,11 @@ class ToggleContent extends HTMLElement {
             justify-content: center;
             align-items: center;
             cursor: pointer;
+        }
+        
+        
+        .toggle-icon svg path {
+            fill: #fff; /* Ensure the arrow in the middle of the circle is white */
         }
 
         .toggle-icon:hover {

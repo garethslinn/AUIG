@@ -3,7 +3,7 @@
     --font-size-base: 1rem;
 
     /* Light Mode Colors */
-    --footer-bg-light: #268ca6; /* Light mode footer background */
+    --footer-bg-light: #1a5d70; /* Light mode footer background */
     --footer-text-light: #ffffff; /* Light mode footer text */
 
     /* Dark Mode Colors */
@@ -62,7 +62,7 @@
 
 .footer-column h2,
 .footer-column h3 {
-    color: var(--footer-text-color);
+    color: #000;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }

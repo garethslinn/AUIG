@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <div class="navlist" id="navlist"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="section-container">
+
+
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li aria-current="page">Statement</li>
+  </ol>
+</nav>
+
+<h1 id="accessibility-statement">Accessibility Statement</h1>
+
+<section aria-labelledby="accessibility-statement">
+  <p>
+    We are committed to ensuring that our website is fully accessible to all users, regardless of ability or technology. Our goal is to provide an inclusive and user-friendly experience that meets or exceeds current accessibility standards, including the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong>.
+  </p>
+
+  <h2>Accessibility Features</h2>
+  <ul>
+    <li>
+      <strong>Keyboard Navigation</strong>
+      <p>All interactive elements are fully accessible using the keyboard, with clear focus indicators for improved usability.</p>
+    </li>
+    <li>
+      <strong>Screen Reader Support</strong>
+      <p>
+        Content is structured using semantic HTML, ensuring compatibility with screen readers and assistive technologies. ARIA landmarks and labels are provided for improved navigation.
+      </p>
+    </li>
+    <li>
+      <strong>Flexible Text Sizing</strong>
+      <p>Users can adjust text size using built-in controls (<kbd>A+</kbd> and <kbd>A-</kbd>) to suit their preferences.</p>
+    </li>
+    <li>
+      <strong>High Contrast Modes</strong>
+      <p>
+        Multiple themes are available, including:
+      <ul>
+        <li>Light Mode</li>
+        <li>Dark Mode</li>
+        <li>Black and White (Minimum Reading) Mode</li>
+      </ul>
+      These modes enhance readability for users with visual impairments.
+      </p>
+    </li>
+    <li>
+      <strong>Responsive Design</strong>
+      <p>The site is fully responsive and functions across a range of devices, screen sizes, and orientations.</p>
+    </li>
+    <li>
+      <strong>Color Accessibility</strong>
+      <p>Color schemes have been carefully chosen to ensure sufficient contrast. Where edge cases occur, fallback options are provided.</p>
+    </li>
+    <li>
+      <strong>Keyboard Focus Management</strong>
+      <p>Intuitive focus management ensures smooth navigation between sections, improving the experience for keyboard and screen reader users.</p>
+    </li>
+    <li>
+      <strong>Skip Links</strong>
+      <p>A “Skip to Content” link is provided to allow users to bypass repetitive navigation elements.</p>
+    </li>
+    <li>
+      <strong>Accessible Forms</strong>
+      <p>Forms include clear labels, error messages, and ARIA attributes for usability.</p>
+    </li>
+    <li>
+      <strong>Customisable Settings</strong>
+      <p>Users can customise their experience with theme toggles and font size adjustments, ensuring comfort and readability.</p>
+    </li>
+    <li>
+      <strong>Content Simplification</strong>
+      <p>Plain language is used throughout the site to make content easy to understand for a diverse audience.</p>
+    </li>
+    <li>
+      <strong>Inclusive Media</strong>
+      <p>Images include descriptive alt text, and multimedia content provides captions or transcripts where necessary.</p>
+    </li>
+  </ul>
+
+  <h2>Feedback</h2>
+  <p>
+    We are constantly working to improve the accessibility of our site. If you encounter any issues or have suggestions for improvement, please contact us at <a href="mailto:your-email@example.com">your-email@example.com</a>.
+  </p>
+  <p>Thank you for visiting our site!</p>
+</section>
+
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <footer>
+    &copy; 2025 AUIG. All rights reserved.
+</footer>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.2"></script>
+<script src="../scripts/components/iconDetail.js?v=1.3"></script>
+<script src="../scripts/main.js?v=1.3"></script>
+<script src="../scripts/auig.js" defer></script>
+</body>
+</html>

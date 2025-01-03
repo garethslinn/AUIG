@@ -1,3 +1,4 @@
+/* Importing External CSS Files */
 @import "theme.css";
 @import "header.css";
 @import "footer.css";
@@ -8,41 +9,7 @@
 @import "section.css";
 @import "icons.css";
 
-
-.bw-mode * {
-    background: white !important;
-    color: black !important;
-
-    .site-footer {
-        background: red !important;
-        color: white !important;
-    }
-    img {
-        display: none!important;
-    }
-    header {
-        img {
-            display: block!important;
-        }
-    }
-    img.logo {
-        display: block!important;
-    }
-
-}
-
-.bw-mode icon-detail {
-    --background-color: white !important;
-    --foreground-color: black !important;
-}
-
-.bw-mode icon-detail::part(title),
-.bw-mode icon-detail::part(description) {
-    color: var(--foreground-color);
-}
-
-
-
+/* General Styling */
 html, body {
     margin: 0;
     padding: 0;
@@ -51,118 +18,18 @@ html, body {
 
 body {
     font-size: var(--font-size-base);
+    font-family: Arial, sans-serif;
     width: 100%;
     height: 100vh;
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
     display: flex;
     flex-direction: column;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-pre {
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    background-color: #f5f5f5;
-    padding: 1em;
-    border-radius: 5px;
-    max-width: 100%;
-    box-sizing: border-box;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* Responsive font sizes for headings */
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.50rem; }
-h5 { font-size: 1.25rem; }
-
-
-h2 {
-    color: var(--title-h2);
-}
-
-h1 {
-    color: var(--title-fg);
-    line-height: 3rem;
-}
-
-h4, h5, p {
-    padding: 0;
-    margin: 0;
-}
-
-h2 {
-    margin: 0 0 0.5rem 0;
-    background-color: #000;
-    padding: 0 1rem;
-    color: #fff;
-}
-
-h2.title {
-    margin: 0.5rem 0;
-    font-size: 2rem;
-    background-color: var(--title-h2);
-}
-
-h3, h4, .title-block {
-    color: #fff;
-    background: var(--title-h3);
-    padding-left: 1rem;
-}
-
-h3 {
-    color: #000;
-}
-
-h4 {
-    color: var(--title-h4-fg);
-    background: var(--title-h4);
-    margin: 1rem 0;
-}
-
-.title-block {
-    font-size: 1.1rem;
-    background-color: #278ca6;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-
-
-a {
-    color: var(--link-color);
-    text-decoration: underline;
-}
-
-a:hover, a:focus { text-decoration: none; }
-
-.container {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    /*overflow: hidden;*/
-    width: 100%;
-}
-
-.container pre, .container pre code {
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
-}
-
-main {
-    flex: 1;
-    padding: 2rem;
-    padding-top: 0;
-    overflow-y: auto;
-    margin: 0 auto;
-    background-color: var(--main-bg);
-}
-
+/* Accessible Focus */
 a:focus, button:focus {
     outline: 3px dashed var(--color-link);
     outline-offset: 2px;
@@ -179,14 +46,86 @@ a:focus, button:focus {
     border: 0;
 }
 
-pre, p {
-    margin-left: 0;
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: var(--title-fg);
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+    padding: 0 1rem;
+    color: #fff;
+    background-color: #000;
+}
+
+h3, h4, h5 {
+    margin: 1rem 0;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #000;
+    background: var(--title-h3);
+    padding-left: 1rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: var(--title-h4-fg);
+    background: var(--title-h4);
 }
 
 p {
     margin-bottom: 1rem;
 }
 
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    padding: 1em;
+    border-radius: 5px;
+    max-width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+/* Containers */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.container pre, .container pre code {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+}
+
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    margin: 0 auto;
+    background-color: var(--main-bg);
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 1rem;
@@ -194,23 +133,75 @@ footer {
     color: var(--footer-text-color);
 }
 
+/* BW Mode Overrides */
+.bw-mode * {
+    background: white !important;
+    color: black !important;
+}
 
+.bw-mode img {
+    display: none !important;
+}
+
+.bw-mode header img {
+    display: block !important;
+}
+
+.bw-mode .site-footer img {
+    display: block !important;
+}
+
+.footer-logo.light {
+    display: block;
+}
+.bw-mode .footer-logo.light {
+    display: none;
+}
+
+.footer-logo.bw {
+    display: none;
+}
+.bw-mode .footer-logo.bw {
+    display: block;
+}
+
+.bw-mode .site-footer {
+    background: white !important;
+    color: black !important;
+}
+
+/* Icon Detail in BW Mode */
+.bw-mode icon-detail {
+    --background-color: white !important;
+    --foreground-color: black !important;
+}
+
+.bw-mode icon-detail::part(title),
+.bw-mode icon-detail::part(description) {
+    color: var(--foreground-color);
+}
+
+/* Responsive Design */
 @media (max-width: 800px) {
     main {
         padding: 1rem;
         margin: 0;
     }
+
     .container {
         flex-direction: column;
     }
-    h2 { font-size: 1.5rem; }
+
     h1 {
         font-size: 2rem;
         line-height: 1.3;
     }
-    h3, h4 { font-size: 1.25rem; }
 
-    pre, p {
-        margin-left: 0;
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3, h4 {
+        font-size: 1.25rem;
     }
 }

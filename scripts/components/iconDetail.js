@@ -63,11 +63,11 @@ class IconDetailComponent extends HTMLElement {
                 foregroundColor = '#ffffff';
                 break;
             case 'consideration':
-                backgroundColor = '#10bc93';
+                backgroundColor = '#0c8669';
                 foregroundColor = '#fff';
                 break;
             case 'information':
-                backgroundColor = '#1082bc';
+                backgroundColor = '#0c628e';
                 foregroundColor = '#ffffff';
                 break;
             case 'avoid':

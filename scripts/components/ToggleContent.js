@@ -61,7 +61,7 @@ class ToggleContent extends HTMLElement {
             position: absolute;
             top: 0.625rem;
             left: 0.625rem;
-            background-color: #278ca6;
+            background-color: #007bff;
             color: #fff;
             border-radius: 50%;
             width: 1.875rem;
@@ -71,14 +71,13 @@ class ToggleContent extends HTMLElement {
             align-items: center;
             cursor: pointer;
         }
-        
-        
-        .toggle-icon svg path {
-            fill: #fff; /* Ensure the arrow in the middle of the circle is white */
-        }
 
         .toggle-icon:hover {
             background-color: #0056b3;
+        }
+
+        .toggle-icon svg path {
+            fill: #fff; /* Ensure the arrow in the middle of the circle is white */
         }
 
         .simplify-text {
@@ -98,27 +97,21 @@ class ToggleContent extends HTMLElement {
             color: #000;
             font-family: Arial, sans-serif;
         }
-
-        ::slotted(*) {
-            display: none; /* Hide all by default */
-        }
-
-        ::slotted(.active) {
-            display: block; /* Show only the active one */
-        }
     `;
+
+        const slots = this.childrenArray.map(
+            (_, index) => `<slot name="version-${index + 1}"></slot>`
+        ).join('');
 
         this.shadowRoot.innerHTML = `
         <div role="button" aria-label="Cycle text versions" tabindex="0" class="toggle-icon" title="Cycle text version button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="1.25rem" height="1.25rem" aria-hidden="true">
                 <path d="M25.988 5.503c-7.694-2.198-8.41 7.097-4.122 9.34l10.308 5.377C16.086 28.914 8.439 47.808 13.949 65.244c6.4 20.057 27.848 31.128 47.906 24.728 20.058-6.4 31.129-27.849 24.728-47.907a38.12 38.12 0 0 0-4.728-9.746l-7.525 7.302a27.865 27.865 0 0 1 2.483 5.562c4.679 14.662-3.414 30.34-18.076 35.018-14.662 4.679-30.34-3.414-35.018-18.075-4.009-12.607 1.4-26.296 12.943-32.758l-.742 11.996c-.899 7.21 9.394 8.35 10.098 1.507l1.866-20.298.8-6.073-5.205-2.331Z"/>
-            </svg>
+                </svg>
         </div>
-        <div class="simplify-text" aria-hidden="true">Initializing...</div>
+        <div class="simplify-text" aria-hidden="true">Initialising...</div>
         <div class="content">
-            <slot name="version-1"></slot>
-            <slot name="version-2"></slot>
-            <slot name="version-3"></slot>
+            ${slots}
         </div>
     `;
 
@@ -130,6 +123,7 @@ class ToggleContent extends HTMLElement {
             if (e.key === 'Enter') this.handleToggle();
         });
     }
+
 
 }
 

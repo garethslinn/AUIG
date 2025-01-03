@@ -118,12 +118,14 @@ ${headContent}
             ${sectionContent}
         </div>
     </main>
+
 </div>
 
-<!-- Footer -->
-<footer id="footer">
+    <!-- Footer -->
+<footer id="footer" class="site-footer" aria-labelledby="footer-heading">
     ${loadComponent('footer.html')}
 </footer>
+
 
 <!-- Back to Top Button -->
 <button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>

@@ -1,5 +1,6 @@
 @import "theme.css";
 @import "header.css";
+@import "footer.css";
 @import "controls.css";
 @import "buttons.css";
 @import "nav.css";
@@ -11,6 +12,11 @@
 .bw-mode * {
     background: white !important;
     color: black !important;
+
+    .site-footer {
+        background: red !important;
+        color: white !important;
+    }
     img {
         display: none!important;
     }
@@ -22,6 +28,7 @@
     img.logo {
         display: block!important;
     }
+
 }
 
 .bw-mode icon-detail {
@@ -33,6 +40,8 @@
 .bw-mode icon-detail::part(description) {
     color: var(--foreground-color);
 }
+
+
 
 html, body {
     margin: 0;

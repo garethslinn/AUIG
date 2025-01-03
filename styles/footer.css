@@ -1,0 +1,99 @@
+:root {
+    /* Base Font Size */
+    --font-size-base: 1rem;
+
+    /* Light Mode Colors */
+    --footer-bg-light: #268ca6; /* Light mode footer background */
+    --footer-text-light: #ffffff; /* Light mode footer text */
+
+    /* Dark Mode Colors */
+    --footer-bg-dark: #000000; /* Dark mode footer background */
+    --footer-text-dark: #ffffff; /* Dark mode footer text */
+
+    /* Transition for Theme Switching */
+    --transition-speed: 0.3s;
+}
+
+[data-theme="light"] {
+    --footer-bg: var(--footer-bg-light);
+    --footer-text-color: var(--footer-text-light);
+}
+
+[data-theme="dark"] {
+    --footer-bg: var(--footer-bg-dark);
+    --footer-text-color: var(--footer-text-dark);
+}
+
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text-color);
+    padding: 3rem 1rem;
+    font-size: var(--font-size-base);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.site-footer a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+    color: #e0e0e0;
+}
+
+.footer-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h2,
+.footer-column h3 {
+    color: var(--footer-text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    display: block;
+    max-width: 8rem;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 0.7rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--footer-text-color);
+}
+
+.footer-links a:hover {
+    color: #e0e0e0;
+}
+
+.footer-note {
+    border-top: 1px solid #ffffff;
+    padding-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--footer-text-color);
+}

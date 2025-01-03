@@ -7,10 +7,32 @@
 @import "section.css";
 @import "icons.css";
 
-/** {*/
-/*    background: white!important;*/
-/*    color: black!important;*/
-/*}*/
+
+.bw-mode * {
+    background: white !important;
+    color: black !important;
+    img {
+        display: none!important;
+    }
+    header {
+        img {
+            display: block!important;
+        }
+    }
+    img.logo {
+        display: block!important;
+    }
+}
+
+.bw-mode icon-detail {
+    --background-color: white !important;
+    --foreground-color: black !important;
+}
+
+.bw-mode icon-detail::part(title),
+.bw-mode icon-detail::part(description) {
+    color: var(--foreground-color);
+}
 
 html, body {
     margin: 0;

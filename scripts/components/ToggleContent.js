@@ -20,19 +20,25 @@ class ToggleContent extends HTMLElement {
 
     updateContent() {
         const children = this.childrenArray;
-        console.log('Assigned elements:', children); // Debug output
         children.forEach((child, index) => {
-            child.style.display = index === this.currentVersion ? 'block' : 'none';
+            const isVisible = index === this.currentVersion;
+            child.style.display = isVisible ? 'block' : 'none';
+            child.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
         });
+
         const simplifyText = this.shadowRoot.querySelector('.simplify-text');
         if (simplifyText) {
             simplifyText.textContent = children.length
                 ? `Cycle text version ${this.currentVersion + 1} of ${children.length}`
                 : 'No versions available';
         }
+
+        // Announce the update for screen readers
+        const liveRegion = this.shadowRoot.querySelector('.live-region');
+        if (liveRegion) {
+            liveRegion.textContent = simplifyText.textContent;
+        }
     }
-
-
 
     connectedCallback() {
         this.render();
@@ -42,8 +48,6 @@ class ToggleContent extends HTMLElement {
         }
         setTimeout(() => this.updateContent(), 0); // Delay to allow slot assignment
     }
-
-
 
     render() {
         const style = document.createElement('style');
@@ -77,7 +81,7 @@ class ToggleContent extends HTMLElement {
         }
 
         .toggle-icon svg path {
-            fill: #fff; /* Ensure the arrow in the middle of the circle is white */
+            fill: #fff; 
         }
 
         .simplify-text {
@@ -90,6 +94,16 @@ class ToggleContent extends HTMLElement {
             background-color: #f8f9fa;
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
+        }
+
+        .live-region {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            white-space: nowrap;
         }
 
         .content {
@@ -109,7 +123,8 @@ class ToggleContent extends HTMLElement {
                 <path d="M25.988 5.503c-7.694-2.198-8.41 7.097-4.122 9.34l10.308 5.377C16.086 28.914 8.439 47.808 13.949 65.244c6.4 20.057 27.848 31.128 47.906 24.728 20.058-6.4 31.129-27.849 24.728-47.907a38.12 38.12 0 0 0-4.728-9.746l-7.525 7.302a27.865 27.865 0 0 1 2.483 5.562c4.679 14.662-3.414 30.34-18.076 35.018-14.662 4.679-30.34-3.414-35.018-18.075-4.009-12.607 1.4-26.296 12.943-32.758l-.742 11.996c-.899 7.21 9.394 8.35 10.098 1.507l1.866-20.298.8-6.073-5.205-2.331Z"/>
                 </svg>
         </div>
-        <div class="simplify-text" aria-hidden="true">Initialising...</div>
+        <div class="simplify-text">Initialising...</div>
+        <div class="live-region" aria-live="polite"></div>
         <div class="content">
             ${slots}
         </div>
@@ -123,8 +138,6 @@ class ToggleContent extends HTMLElement {
             if (e.key === 'Enter') this.handleToggle();
         });
     }
-
-
 }
 
 customElements.define('toggle-content', ToggleContent);

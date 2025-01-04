@@ -1,0 +1,97 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">EaseSwitcher</li>
+    </ol>
+</nav>
+<h1 itemprop="name">Accessibility UI Guidelines: EaseSwitcher</h1>
+<h2>3.5 EaseSwitcher</h2>
+<h3 id="3.5">3.5 EaseSwitcher</h3>
+<p>
+    EaseSwitcher is a custom web component designed to improve accessibility and readability by offering users multiple versions of text with varying complexity. This allows readers to select a version of the content that best matches their reading ability or preference. By cycling through text variations, EaseSwitcher provides a tailored experience that accommodates diverse accessibility needs.
+</p>
+
+<h4 id="3.5.1">3.5.1 Key Features</h4>
+<ul>
+    <li><strong>Customisable Properties:</strong> Supports multiple props to style the component and control its behavior, such as button size, hover color, and text status.</li>
+    <li><strong>Dynamic Content:</strong> Cycles through different versions of text to ensure readability for users with varied needs.</li>
+    <li><strong>Improved Accessibility:</strong> Includes live region updates and ARIA attributes to support assistive technologies.</li>
+    <li><strong>Framework Support:</strong> Currently available in the <code>AUIG</code> repository, with plans to release React, Vue, and Angular versions soon.</li>
+</ul>
+
+<h4 id="3.5.2">3.5.2 Semantic Markup</h4>
+<p>
+    EaseSwitcher uses semantic HTML and ARIA roles to ensure accessible and dynamic content cycling. Each content version is hidden visually and from screen readers when not active.
+</p>
+<pre>
+<code class="language-html">&lt;!-- Basic EaseSwitcher Markup --&gt;
+<ease-switcher status-text="Switch version">
+    &lt;div slot="1"&gt;Simple version of text.&lt;/div&gt;
+    &lt;div slot="2"&gt;Moderate version of text.&lt;/div&gt;
+    &lt;div slot="3"&gt;Complex version of text.&lt;/div&gt;
+</ease-switcher>
+</code>
+</pre>
+
+<h4 id="3.5.3">3.5.3 Customisable Properties</h4>
+<p>
+    EaseSwitcher supports a variety of props to customise its appearance and behavior. Below are examples demonstrating how to configure the component.
+</p>
+
+<h5>Basic Example</h5>
+<pre>
+<code class="language-html">&lt;!-- Default EaseSwitcher --&gt;
+<ease-switcher>
+    &lt;div slot="1"&gt;Basic version.&lt;/div&gt;
+    &lt;div slot="2"&gt;Detailed version.&lt;/div&gt;
+&lt;/ease-switcher&gt;
+</code>
+</pre>
+
+<h5>Fully Customised Example</h5>
+<pre>
+<code class="language-html">&lt;!-- Customised EaseSwitcher --&gt;
+<ease-switcher
+        status-text="Cycle through versions"
+        button-fill="#28a745"
+        button-stroke="#ffffff"
+        border-colour="#6c757d"
+        background-colour="#f8f9fa"
+        foreground-colour="#343a40"
+        font-size="1rem"
+        button-size="3rem"
+        button-hover-colour="#ff5733">
+    &lt;div slot="1"&gt;Simple text version.&lt;/div&gt;
+    &lt;div slot="2"&gt;Intermediate text version.&lt;/div&gt;
+    &lt;div slot="3"&gt;Advanced text version.&lt;/div&gt;
+&lt;/ease-switcher&gt;
+</code>
+</pre>
+
+<h4 id="3.5.4">3.5.4 Accessibility Enhancements</h4>
+<p>
+    EaseSwitcher improves accessibility through several features:
+</p>
+<ul>
+    <li><strong>Dynamic Text Updates:</strong> Uses a live region (<code>aria-live="polite"</code>) to announce text changes to assistive technologies.</li>
+    <li><strong>Keyboard Support:</strong> The toggle button is fully operable with the keyboard, supporting <kbd>Enter</kbd> and <kbd>Space</kbd> keys.</li>
+    <li><strong>ARIA Attributes:</strong> Hidden elements use <code>aria-hidden</code> to ensure only the active text is announced by screen readers.</li>
+</ul>
+
+<h4 id="3.5.5">3.5.5 Plans for Framework Support</h4>
+<p>
+    While the current implementation of EaseSwitcher is available as a standalone web component in the <code>AUIG</code> repository, additional versions are planned for major frameworks, including:
+</p>
+<ul>
+    <li><strong>React:</strong> A React component version with hooks for state management.</li>
+    <li><strong>Vue:</strong> A Vue component version leveraging its reactive data system.</li>
+    <li><strong>Angular:</strong> An Angular component version with declarative bindings.</li>
+</ul>
+
+<h4>3.5.6 Best Practices for Using EaseSwitcher</h4>
+<ul>
+    <li><strong>Use Descriptive Slots:</strong> Ensure each slot contains clear and concise text for effective content cycling.</li>
+    <li><strong>Configure Props Thoughtfully:</strong> Customise props like <code>button-hover-colour</code> and <code>font-size</code> to match your design and accessibility requirements.</li>
+    <li><strong>Test Accessibility:</strong> Verify that live region updates, ARIA attributes, and keyboard navigation work as expected across devices and screen readers.</li>
+    <li><strong>Plan Framework Integration:</strong> Consider integrating EaseSwitcher into your preferred framework when additional versions are released.</li>
+</ul>

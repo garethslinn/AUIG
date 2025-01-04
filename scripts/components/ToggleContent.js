@@ -1,8 +1,23 @@
 class ToggleContent extends HTMLElement {
+    static get observedAttributes() {
+        return ['status-text', 'button-fill', 'button-stroke', 'border-colour', 'background-colour', 'foreground-colour', 'font-size'];
+    }
+
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         this.currentVersion = 0;
+
+        // Default properties
+        this.defaults = {
+            statusText: 'Cycle text version',
+            buttonFill: '#007bff',
+            buttonStroke: '#f1f1f1',
+            borderColour: '#ccc',
+            backgroundColour: '#fff',
+            foregroundColour: '#000',
+            fontSize: '1rem',
+        };
     }
 
     get childrenArray() {
@@ -11,6 +26,12 @@ class ToggleContent extends HTMLElement {
 
     get totalVersions() {
         return this.childrenArray.length;
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+            this.render(); // Re-render when attributes change
+        }
     }
 
     handleToggle = () => {
@@ -29,11 +50,10 @@ class ToggleContent extends HTMLElement {
         const simplifyText = this.shadowRoot.querySelector('.simplify-text');
         if (simplifyText) {
             simplifyText.textContent = children.length
-                ? `Cycle text version ${this.currentVersion + 1} of ${children.length}`
+                ? `${this.getAttribute('status-text') || this.defaults.statusText} ${this.currentVersion + 1} of ${children.length}`
                 : 'No versions available';
         }
 
-        // Announce the update for screen readers
         const liveRegion = this.shadowRoot.querySelector('.live-region');
         if (liveRegion) {
             liveRegion.textContent = simplifyText.textContent;
@@ -46,27 +66,38 @@ class ToggleContent extends HTMLElement {
         if (slot) {
             slot.addEventListener('slotchange', () => this.updateContent());
         }
-        setTimeout(() => this.updateContent(), 0); // Delay to allow slot assignment
+        setTimeout(() => this.updateContent(), 0);
     }
 
     render() {
         const style = document.createElement('style');
+        const buttonFill = this.getAttribute('button-fill') || this.defaults.buttonFill;
+        const buttonStroke = this.getAttribute('button-stroke') || this.defaults.buttonStroke;
+        const borderColour = this.getAttribute('border-colour') || this.defaults.borderColour;
+        const backgroundColour = this.getAttribute('background-colour') || this.defaults.backgroundColour;
+        const foregroundColour = this.getAttribute('foreground-colour') || this.defaults.foregroundColour;
+        const fontSize = this.getAttribute('font-size') || this.defaults.fontSize;
+
         style.textContent = `
         :host {
             display: block;
             position: relative;
             padding: 1rem;
-            border: 0.0625rem solid #ccc;
+            border: 0.0625rem solid ${borderColour};
             border-radius: 0.5rem;
             margin-bottom: 1rem;
+            background-color: ${backgroundColour};
+            color: ${foregroundColour};
+            font-size: ${fontSize};
         }
 
         .toggle-icon {
             position: absolute;
             top: 0.625rem;
             left: 0.625rem;
-            background-color: #007bff;
-            color: #fff;
+            background-color: ${buttonFill};
+            color: ${foregroundColour};
+            border: 0.0625rem solid ${buttonStroke};
             border-radius: 50%;
             width: 1.875rem;
             height: 1.875rem;
@@ -77,23 +108,21 @@ class ToggleContent extends HTMLElement {
         }
 
         .toggle-icon:hover {
-            background-color: #0056b3;
+            background-color: ${this.shadeColor(buttonFill, -20)};
         }
 
-        .toggle-icon svg path {
-            fill: #fff; 
+       .toggle-icon svg {
+            fill: ${buttonStroke};
         }
 
         .simplify-text {
             position: absolute;
             top: 0.625rem;
             left: 3.125rem;
-            color: #000;
-            font-size: 0.875rem;
-            font-weight: bold;
-            background-color: #f8f9fa;
+            background-color: ${backgroundColour};
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
+            font-weight: bold;
         }
 
         .live-region {
@@ -108,8 +137,6 @@ class ToggleContent extends HTMLElement {
 
         .content {
             margin-top: 2.5rem;
-            color: #000;
-            font-family: Arial, sans-serif;
         }
     `;
 
@@ -118,12 +145,12 @@ class ToggleContent extends HTMLElement {
         ).join('');
 
         this.shadowRoot.innerHTML = `
-        <div role="button" aria-label="Cycle text versions" tabindex="0" class="toggle-icon" title="Cycle text version button">
+        <div role="button" aria-label="${this.getAttribute('status-text') || this.defaults.statusText}" tabindex="0" class="toggle-icon" title="${this.getAttribute('status-text') || this.defaults.statusText}">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="1.25rem" height="1.25rem" aria-hidden="true">
                 <path d="M25.988 5.503c-7.694-2.198-8.41 7.097-4.122 9.34l10.308 5.377C16.086 28.914 8.439 47.808 13.949 65.244c6.4 20.057 27.848 31.128 47.906 24.728 20.058-6.4 31.129-27.849 24.728-47.907a38.12 38.12 0 0 0-4.728-9.746l-7.525 7.302a27.865 27.865 0 0 1 2.483 5.562c4.679 14.662-3.414 30.34-18.076 35.018-14.662 4.679-30.34-3.414-35.018-18.075-4.009-12.607 1.4-26.296 12.943-32.758l-.742 11.996c-.899 7.21 9.394 8.35 10.098 1.507l1.866-20.298.8-6.073-5.205-2.331Z"/>
-                </svg>
+            </svg>
         </div>
-        <div class="simplify-text">Initialising...</div>
+        <div class="simplify-text" aria-hidden="true">Initialising...</div>
         <div class="live-region" aria-live="polite"></div>
         <div class="content">
             ${slots}
@@ -137,6 +164,16 @@ class ToggleContent extends HTMLElement {
         toggleButton.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') this.handleToggle();
         });
+    }
+
+    // Utility function to adjust color brightness
+    shadeColor(color, percent) {
+        const num = parseInt(color.slice(1), 16);
+        const amt = Math.round(2.55 * percent);
+        const R = (num >> 16) + amt;
+        const G = (num >> 8 & 0x00FF) + amt;
+        const B = (num & 0x0000FF) + amt;
+        return `#${(0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1)}`;
     }
 }
 

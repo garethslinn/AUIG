@@ -10,6 +10,7 @@
 ## 8. ~~Allow build and start server called from root~~
 ## 9. ~~Create 3rd colour setting mode - minimal~~ 
 ## 10. ~~Create an accessibility statement~~
+## 11. ~~Introduce ease switching~~
 
 
 

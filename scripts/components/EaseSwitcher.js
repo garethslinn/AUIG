@@ -28,7 +28,7 @@ class EaseSwitcher extends HTMLElement {
             foregroundColour: '#000',
             fontSize: '1rem',
             buttonSize: '1.875rem',
-            buttonHoverColour: 'black', // Default hover color
+            buttonHoverColour: '#000',
         };
     }
 

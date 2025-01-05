@@ -22,8 +22,8 @@ if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
 }
 
-// Common <head> content
-const headContent = `
+// Common <head> content template
+const headTemplate = (title) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@ const headContent = `
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Accessible User Interface Guidelines (AUIG)</title>
+    <title>${title}</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -75,7 +75,13 @@ const headContent = `
 fs.readdirSync(sectionsDir).forEach((file) => {
     if (file.endsWith('.html')) {
         const sectionContent = fs.readFileSync(path.join(sectionsDir, file), 'utf8');
-        const pageTitle = file.replace('.html', ''); // Extract title from filename
+        const pageTitle = file
+            .replace('.html', '') // Remove file extension
+            .replace(/-/g, ' ') // Replace hyphens with spaces
+            .replace(/\b\w/g, char => char.toUpperCase()); // Capitalize each word
+
+        // Create dynamic <head> content
+        const headContent = headTemplate(`${pageTitle} - Accessible User Interface Guidelines (AUIG)`);
 
         // Assemble the full page
         const pageHTML = `
@@ -112,20 +118,16 @@ ${headContent}
     <!-- Main Content -->
     <main id="main-content">
         <div class="section-container">
-
-
             <!-- Section Content -->
             ${sectionContent}
         </div>
     </main>
-
 </div>
 
-    <!-- Footer -->
+<!-- Footer -->
 <footer id="footer" class="site-footer" aria-labelledby="footer-heading">
     ${loadComponent('footer.html')}
 </footer>
-
 
 <!-- Back to Top Button -->
 <button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>

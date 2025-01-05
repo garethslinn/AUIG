@@ -144,6 +144,10 @@ footer {
     display: none !important;
 }
 
+.bw-mode aside img {
+    display: block !important;
+}
+
 .bw-mode header img {
     display: block !important;
 }

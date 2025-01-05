@@ -21,7 +21,7 @@
     --color-accent: #f0f9f8;
 
     /* Transition for Theme Switching */
-    --transition-speed: 0.05s;
+    --transition-speed: 0s;
 
     /* Typography */
     --title-h1: 2rem;
@@ -171,6 +171,7 @@
 
 /* Smooth Transition for Theme Change */
 * {
-    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+    color var(--transition-speed),
+    border-color var(--transition-speed);
 }
 

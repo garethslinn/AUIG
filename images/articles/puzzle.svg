@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 297 210">
+  <defs>
+    <path id="a" fill="#fc0" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M152.698 77.138c-3.02-.689-5.837-1.58-11.284.157L98.702 96.262l-4.93 2.19c-4.277 2.041-5.957 5.858-5.942 11.125l.144 51.562c.342 4.71 1.814 7.156 5.485 8.62l49.523 23.507c6.137 1.445 6.397 1.106 12.067-.784l45.95-22.975c4.913-2.26 4.827-5.457 4.853-10.246l.27-49.368c.198-4.615-2.197-8.902-6.368-10.9z"/>
+      <path id="b" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M87.036 110.25c2.314-6.541 5.533-6.663 9.283-5.341l42.476 19.023c7.021 3.612 13.433 3.546 19.246-.034l41.673-19.178c2.698-1.225 5.859-.969 6.737 1.612"/>
+      <path id="c" fill="#fff" d="M200.142 107.392c4.863-2.322 5.642 1.532 5.642 5.015v49.053c0 3.472-1.864 6.532-5.015 7.992l-47.015 21.784c-3.151 1.46-4.881-2.953-4.858-6.425l.313-47.172c.023-3.473 2.508-7.123 5.642-8.62z" opacity=".587"/>
+      <path id="d" fill="#e89f9f" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M136.97 36.502c1.435 4.56 1.584 9.621 6.372 11.666 6.25 1.076 11.377-1.059 18.215-2.843l3.412-5.529-2.235-6.235s-4.706-4.941-6.235-4.941c-1.53 0-8.823.706-8.823.706l-4.941 2.588z"/>
+      <path id="e" fill="#c10000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m133.395 46.362 6.592-1.81c1.9-.453 3.243.225 4.473 2.234 5.546 10.408 12.422 23.704 15.344 31.48.732 2.064.505 3.669-.464 4.017l-9.297 2.205z"/>
+      <path id="f" fill="red" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M137.128 50.429c-2.375-5.618-3.994-4.012-6.036-3.018l-23.087 17.353c-2.174 2.41-2.76 4.265-1.807 5.58 6.643 3.498 28.085 9.95 41.695 13.858 7.3 1.709 2.571-5.85 1.045-9.045z"/>
+      <path id="g" fill="#ffd5d5" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m192.027 13.326-27.274.234c-10.55-1.58-20.245 2.233-29.068 6.029-5.516 1.864-7.92 3.825-11.5 7.785-4.818 5.346-9.098 11.32-11.25 18.052-1.259 3.837-1.773 7.109 1.705 9.828 1.465 1.107 3.143 1.023 5.027-.092 7.228-5.759 11.998-8.585 15.891-16.66 21.151-11.26 34.169-.298 18.118 13.898-14.715 11.043-.986 27.48 11.85 15.182l9.325-11.434c5.731-1.27 16.42-5.387 19.283-9.426 2.14-3.195 5.846-4.111 10.716-3.985z"/>
+      <path id="h" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".912" d="M146.97 35.56c2.819 5.197 7.78 4.642 13.176 3.648"/>
+      <path id="i" fill="#fff" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M156.904 59.055c-.546.005-1.108.193-1.7.74l-2.117 2.824c-.795 2.842 1.52 4.683 3.412 6.352 1.294.795 2.588.53 3.882-.235l2.47-2.117c.223-.375.346-.727.401-1.064.466-3.163-4.39-6.419-6.348-6.5z"/>
+      <path id="j" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".912" d="m164.063 55.446 2.226 2.264"/>
+      <path id="k" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.364" d="M148.264 97.594a24.759 12.928 0 0 0-24.498 11.074 27.222 14.214 0 0 0 23.839 7.367 27.222 14.214 0 0 0 24.804-8.37 24.759 12.928 0 0 0-24.145-10.071z"/>
+      <path id="l" fill="#a68500" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M178.137 134.113c1.626-2.415 2.501-7.625 6.322-1.859l10.572 16.237c1.915 2.985 6.474 9.013-.615 11.6l-28.55 12.694c-4.09 1.434-5.964.494-4.09-4.462z"/>
+      <path id="m" stroke="#000" stroke-linecap="round" stroke-width="2.4" d="M178.137 134.113c1.626-2.415 2.501-7.625 6.322-1.859l12.002 19.098-33.2 14.35z"/>
+      <path id="n" d="M94.615 106.536c-4.863-2.322-5.642 1.532-5.642 5.015v49.053c0 3.472 1.864 6.532 5.015 7.992l47.015 21.784c3.151 1.46 4.881-2.953 4.858-6.426l-.313-47.171c-.023-3.473-2.508-7.124-5.642-8.62z" opacity=".093"/>
+      <path id="o" fill="#c10000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M118.902 131.995a1.26 1.26 0 0 0-.504.126l-3.885.921.855 2.84-9.062 14.417c-1.614 2.516-4.251 5.186 1.724 7.366l20.652 9.183-.225.068 2 3.014 4.271-1.06c1.49-.115 1.904-1.386.815-4.266l-13.791-28.836c-.92-1.367-1.556-3.799-2.85-3.773z"/>
+      <path id="p" fill="red" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M117.437 136.847c-1.37-2.035-2.108-6.427-5.329-1.567l-10.117 16.098c-1.614 2.516-4.252 5.186 1.724 7.366l24.065 10.7c3.447 1.209 5.027.417 3.448-3.76z"/>
+      <path id="q" fill="#fff" d="M159.614 12.937c-8.675-.022-16.74 3.193-24.185 6.396-5.516 1.864-7.92 3.825-11.5 7.786-4.818 5.346-9.098 11.319-11.25 18.052-1.258 3.836-1.773 7.108 1.705 9.827.77.581 1.597.832 2.482.78-2.825-2.618-2.3-5.724-1.118-9.328 2.153-6.733 6.433-12.706 11.252-18.052 3.58-3.96 5.983-5.922 11.499-7.786 8.823-3.796 18.518-7.61 29.068-6.03l24.771-.211-.567-1.3-27.274.233a33.493 33.493 0 0 0-4.883-.367zm-1.832 22.332c4.47 2.952 4.008 9.473-4.361 16.876-10.172 7.633-6.752 17.84.569 19.357-4.981-3.323-6.104-11.621 2.5-18.078 9.964-8.813 8.724-16.377 1.292-18.155z" opacity=".702"/>
+      <path id="r" fill="#a00" d="M150.497 32.829c-4.196.074-9.502 1.483-15.45 4.65-3.893 8.075-8.664 10.9-15.891 16.66-1.884 1.115-3.563 1.2-5.028.092-.792-.62-1.375-1.268-1.792-1.945.248 1.442 1 2.773 2.56 3.992 1.465 1.107 3.143 1.023 5.027-.092 7.228-5.76 11.998-8.586 15.891-16.66 12.143-6.465 21.602-5.604 24.422-1.013-.62-3.564-4.218-5.781-9.74-5.684zm52.942 8.874c-4.428.008-7.81 1.001-9.817 3.996-2.863 4.039-13.551 8.156-19.283 9.426l-9.325 11.434c-7.134 6.835-14.542 4.792-17.19-.266 1.538 6.45 9.923 10.01 17.958 2.312l9.325-11.433c5.73-1.27 16.42-5.388 19.283-9.427 2.14-3.194 5.846-4.111 10.716-3.984l-.893-2.049a32.13 32.13 0 0 0-.774-.01z" opacity=".249"/>
+  </defs>
+    <g paint-order="stroke fill markers">
+    <rect width="291.631" height="206.188" x="2.558" y="1.535" fill="#99f5fa" rx="0" ry="0"/>
+        <use xlink:href="#a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <ellipse cx="147.605" cy="101.821" fill="#a68500" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" rx="27.222" ry="14.214"/>
+        <use xlink:href="#c" opacity=".587"/>
+        <use xlink:href="#d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#g" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#h" stroke-linecap="round" stroke-linejoin="round" stroke-width=".912"/>
+        <use xlink:href="#i" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <use xlink:href="#j" stroke-linecap="round" stroke-linejoin="round" stroke-width=".912"/>
+        <use xlink:href="#k" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.364"/>
+        <use xlink:href="#l" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+        <use xlink:href="#m" stroke-linecap="round" stroke-width="2.4"/>
+        <use xlink:href="#n" opacity=".093"/>
+        <use xlink:href="#o" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+        <use xlink:href="#p" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+        <use xlink:href="#q" opacity=".702"/>
+        <use xlink:href="#r" opacity=".249"/>
+        <rect width="291.631" height="206.188" x="2.558" y="1.535" fill="#99f5fa" rx="0" ry="0"/>
+        <use xlink:href="#a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <ellipse cx="147.605" cy="101.821" fill="#a68500" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" rx="27.222" ry="14.214"/>
+        <use xlink:href="#c" opacity=".587"/>
+        <use xlink:href="#d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#g" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <use xlink:href="#h" stroke-linecap="round" stroke-linejoin="round" stroke-width=".912"/>
+        <use xlink:href="#i" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <use xlink:href="#j" stroke-linecap="round" stroke-linejoin="round" stroke-width=".912"/>
+        <use xlink:href="#k" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.364"/>
+        <use xlink:href="#l" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+        <use xlink:href="#m" stroke-linecap="round" stroke-width="2.4"/>
+        <use xlink:href="#n" opacity=".093"/>
+        <use xlink:href="#o" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+        <use xlink:href="#p" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/>
+        <use xlink:href="#q" opacity=".702"/>
+        <use xlink:href="#r" opacity=".249"/>
+  </g>
+</svg>

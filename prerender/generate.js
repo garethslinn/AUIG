@@ -5,6 +5,7 @@ const path = require('path');
 const componentsDir = '../components';
 const sectionsDir = '../components/sections';
 const outputDir = '../pages';
+const rootDir = '../'; // Root directory to copy index.html
 
 // Load reusable components
 const loadComponent = (filename) => {
@@ -146,3 +147,14 @@ ${headContent}
         console.log(`Generated: ${outputPath}`);
     }
 });
+
+// Copy pages/index.html to the root directory
+const sourceFile = path.join(outputDir, 'index.html');
+const destinationFile = path.join(rootDir, 'index.html');
+
+if (fs.existsSync(sourceFile)) {
+    fs.copyFileSync(sourceFile, destinationFile);
+    console.log(`Copied index.html to root: ${destinationFile}`);
+} else {
+    console.error('index.html not found in the output directory.');
+}

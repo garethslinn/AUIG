@@ -76,7 +76,7 @@ const headTemplate = (title) => `
 </head>`;
 
 // Function to assemble pages
-const assemblePages = (inputDir, outputDir) => {
+const assemblePages = (inputDir, outputDir, isNavigation) => {
     if (!fs.existsSync(inputDir)) {
         console.error(`Directory not found: ${inputDir}`);
         return;
@@ -121,9 +121,10 @@ ${headContent}
                 <div class="icon icon-hamburger"><span>Menu</span></div>
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
-            <div class="navlist" id="navlist"></div>
+            <div class="navlist" id="navlist" aria-hidden="${!isNavigation}" style="display: ${isNavigation ? 'block' : 'none'}"></div>
         </nav>
     </aside>
+
 
     <!-- Main Content -->
     <main id="main-content">
@@ -159,10 +160,10 @@ ${headContent}
 };
 
 // Process sections
-assemblePages(sectionsDir, outputDir);
+assemblePages(sectionsDir, outputDir, true);
 
 // Process articles
-assemblePages(articlesDir, articlesOutputDir);
+assemblePages(articlesDir, articlesOutputDir, false);
 
 // Copy pages/index.html to the root directory
 const sourceFile = path.join(outputDir, 'index.html');

@@ -199,15 +199,17 @@ footer {
     color: var(--foreground-color);
 }
 
-/* Responsive Design */
 @media (max-width: 800px) {
-    main {
-        padding: 1rem;
-        margin: 0;
+    .container {
+        flex-direction: column; /* Stack navigation and content vertically */
     }
 
-    .container {
-        flex-direction: column;
+    aside.nav {
+        flex: none; /* Allow natural height adjustment */
+    }
+
+    main {
+        padding: 1rem;
     }
 
     h1 {

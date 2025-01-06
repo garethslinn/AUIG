@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     document.getElementById("back-to-top").addEventListener("click", function () {
         window.scrollTo({
             top: 0,
@@ -8,11 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const toggleButton = document.getElementById("toggleButton");
+    const toc = document.getElementById("toc"); // Reference to the #toc element
+
     function handleToggle() {
+        const nav = document.getElementById("nav"); // Ensure nav is defined
         nav.classList.toggle("show");
         const isShown = nav.classList.contains("show");
         nav.setAttribute("aria-label", isShown ? "Main Navigation open" : "Main Navigation closed");
         toggleButton.setAttribute("aria-expanded", isShown);
+
+        // Corrected overflow states
+        toc.style.overflow = isShown ? "scroll" : "hidden";
     }
 
     toggleButton?.addEventListener("click", handleToggle);
@@ -32,9 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const prismLightTheme = document.getElementById('prism-light-theme');
     const prismDarkTheme = document.getElementById('prism-dark-theme');
 
-
-
-    // Theme functions
     function updateLogo(theme) {
         if (logo) {
             logo.src = theme === 'light' ? logoLight :
@@ -89,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial theme setup
     let initialTheme = localStorage.getItem('theme') || 'light';
     document.body.setAttribute('data-theme', initialTheme);
     updateToggleIcon(initialTheme);
@@ -100,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('bw-mode');
     }
 
-    // Font size control
     const root = document.documentElement;
     const increaseBtn = document.getElementById('increase-font');
     const decreaseBtn = document.getElementById('decrease-font');
@@ -122,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Back to Top
     const backToTopBtn = document.getElementById('back-to-top');
     const scrollableContainer = document.querySelector('main');
 

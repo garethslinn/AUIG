@@ -156,7 +156,7 @@
 
 ## Troubleshooting
 
-- **Build Issues:** Verify that all component paths are correct and accessible in `generateWIP.js`.
+- **Build Issues:** Verify that all component paths are correct and accessible in `generate.js`.
 - **JavaScript Errors:** Check browser console for errors in interactive features.
 - **Server Issues:** Ensure no port conflicts when running the development or static servers.
 

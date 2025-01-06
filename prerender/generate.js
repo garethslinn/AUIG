@@ -3,8 +3,10 @@ const path = require('path');
 
 // Directories
 const componentsDir = '../components';
-const sectionsDir = '../components/sections';
+const sectionsDir = path.join(componentsDir, 'sections');
+const articlesDir = path.join(componentsDir, 'articles'); // Articles directory
 const outputDir = '../pages';
+const articlesOutputDir = '../articles'; // Separate output directory for articles
 const rootDir = '../'; // Root directory to copy index.html
 
 // Load reusable components
@@ -18,10 +20,12 @@ const loadComponent = (filename) => {
     }
 };
 
-// Ensure output directory exists
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-}
+// Ensure output directories exist
+[outputDir, articlesOutputDir].forEach((dir) => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+});
 
 // Common <head> content template
 const headTemplate = (title) => `
@@ -69,23 +73,28 @@ const headTemplate = (title) => `
             }
         }
     </script>
-</head>
-`;
+</head>`;
 
-// Assemble pages
-fs.readdirSync(sectionsDir).forEach((file) => {
-    if (file.endsWith('.html')) {
-        const sectionContent = fs.readFileSync(path.join(sectionsDir, file), 'utf8');
-        const pageTitle = file
-            .replace('.html', '') // Remove file extension
-            .replace(/-/g, ' ') // Replace hyphens with spaces
-            .replace(/\b\w/g, char => char.toUpperCase()); // Capitalize each word
+// Function to assemble pages
+const assemblePages = (inputDir, outputDir) => {
+    if (!fs.existsSync(inputDir)) {
+        console.error(`Directory not found: ${inputDir}`);
+        return;
+    }
 
-        // Create dynamic <head> content
-        const headContent = headTemplate(`${pageTitle} - Accessible User Interface Guidelines (AUIG)`);
+    fs.readdirSync(inputDir).forEach((file) => {
+        if (file.endsWith('.html')) {
+            const content = fs.readFileSync(path.join(inputDir, file), 'utf8');
+            const pageTitle = file
+                .replace('.html', '')
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, char => char.toUpperCase());
 
-        // Assemble the full page
-        const pageHTML = `
+            // Create dynamic <head> content
+            const headContent = headTemplate(`${pageTitle} - Accessible User Interface Guidelines (AUIG)`);
+
+            // Assemble the full page
+            const pageHTML = `
 <!DOCTYPE html>
 <html lang="en">
 ${headContent}
@@ -120,7 +129,7 @@ ${headContent}
     <main id="main-content">
         <div class="section-container">
             <!-- Section Content -->
-            ${sectionContent}
+            ${content}
         </div>
     </main>
 </div>
@@ -141,12 +150,19 @@ ${headContent}
 </body>
 </html>`;
 
-        // Write the page to the output directory
-        const outputPath = path.join(outputDir, file);
-        fs.writeFileSync(outputPath, pageHTML, 'utf8');
-        console.log(`Generated: ${outputPath}`);
-    }
-});
+            // Write the page to the output directory
+            const outputPath = path.join(outputDir, file);
+            fs.writeFileSync(outputPath, pageHTML, 'utf8');
+            console.log(`Generated: ${outputPath}`);
+        }
+    });
+};
+
+// Process sections
+assemblePages(sectionsDir, outputDir);
+
+// Process articles
+assemblePages(articlesDir, articlesOutputDir);
 
 // Copy pages/index.html to the root directory
 const sourceFile = path.join(outputDir, 'index.html');

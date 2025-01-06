@@ -200,11 +200,11 @@ footer {
 
 @media (max-width: 800px) {
     .container {
-        flex-direction: column; /* Stack navigation and content vertically */
+        flex-direction: column;
     }
 
     aside.nav {
-        flex: none; /* Allow natural height adjustment */
+        flex: none;
     }
 
     main {

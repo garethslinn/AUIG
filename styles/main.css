@@ -14,8 +14,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100%; /* Full viewport height */
-    /*overflow: hidden; !* Prevent scrolling for the entire document *!*/
+    height: 100%;
 }
 
 body {
@@ -123,9 +122,9 @@ a:hover, a:focus {
 
 /* Sidebar Navigation */
 aside.nav {
-    flex: 0 0 250px; /* Fixed width for the sidebar */
-    max-height: 100%; /* Allow scrolling within the sidebar */
-    overflow-y: auto; /* Independent scrolling for navigation */
+    flex: 0 0 250px;
+    max-height: 100%;
+    overflow-y: auto;
 }
 
 main {

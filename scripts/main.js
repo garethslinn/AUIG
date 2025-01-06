@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Back to Top
     const backToTopBtn = document.getElementById('back-to-top');
-    const scrollableContainer = document.querySelector('main'); // Adjust this to the main scrollable element
+    const scrollableContainer = document.querySelector('main');
 
     scrollableContainer?.addEventListener('scroll', () => {
         if (scrollableContainer.scrollTop > 200) {

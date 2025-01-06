@@ -124,8 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Back to Top
     const backToTopBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
+    const scrollableContainer = document.querySelector('main'); // Adjust this to the main scrollable element
+
+    scrollableContainer?.addEventListener('scroll', () => {
+        if (scrollableContainer.scrollTop > 200) {
             backToTopBtn.classList.remove('hide');
         } else {
             backToTopBtn.classList.add('hide');
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backToTopBtn?.addEventListener('click', () => {
-        window.scrollTo({
+        scrollableContainer.scrollTo({
             top: 0,
             behavior: 'smooth'
         });

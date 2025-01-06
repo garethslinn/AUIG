@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "node generateWIP.js",
+    "build": "node generate.js",
     "serve-dist": "http-server ./pages -p 8080",
     "clean": "rimraf pages",
     "rebuild": "npm run clean && npm run build"

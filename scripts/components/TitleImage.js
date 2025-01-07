@@ -20,8 +20,8 @@ class TitleImage extends HTMLElement {
 
     render() {
         const baseUrl = '../../images/articles/';
-        const alt = this.getAttribute('alt') || "Drawing of a child's toy with shapes and holes, showing a hand trying to fit a triangle into a circular hole.";
-        const src = this.getAttribute('src') ? `${baseUrl}${this.getAttribute('src')}` : `${baseUrl}puzzle.svg`;
+        const alt = this.getAttribute('alt') || "missing image";
+        const src = this.getAttribute('src') ? `${baseUrl}${this.getAttribute('src')}` : `${baseUrl}missing.svg`;
 
         const style = document.createElement('style');
         style.textContent = `

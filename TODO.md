@@ -14,7 +14,7 @@
 
 
 # TODO ARTICLES
-## 1. Make separate nav work with builder
+## 1. ~~Make separate nav work with builder~~
 ## 2. Make nav for articles auto generate
 ## 3. Add share facility with author component
 ## 3. make author html into a js component

@@ -122,7 +122,6 @@ ${headContent}
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
                   <div class="navlist" id="${isNavigation ? 'navlist' : 'navlistArticles'}"></div>
-            <!-- div class="navlist" id="navlist" aria-hidden="${!isNavigation}" style="display: ${isNavigation ? 'block' : 'none'}"></div -->
         </nav>
     </aside>
 

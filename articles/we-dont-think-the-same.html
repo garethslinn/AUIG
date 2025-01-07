@@ -71,7 +71,6 @@
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
                   <div class="navlist" id="navlistArticles"></div>
-            <!-- div class="navlist" id="navlist" aria-hidden="true" style="display: none"></div -->
         </nav>
     </aside>
 
@@ -98,15 +97,38 @@
     </a>
     <div class="author-details">
         <span>Author:
-        <a href="/pages/bio.html" class="author-name">Gareth Slinn</a>
-            </span>
-            <time datetime="2025-01-06">
-                Published: January, 6th 2025
-            </time>
+            <a href="/pages/bio.html" class="author-name">Gareth Slinn</a>
+        </span>
+        <time datetime="2025-01-06">
+            Published: January, 6th 2025
+        </time>
 
-        <h3>Share Article?</h3>
+        <div class="share-buttons">
+            <span>Share: </span>
+            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20article&url=YOUR_ARTICLE_URL"
+               target="_blank" class="share-button X" aria-label="Share on X. Opens in separate tab">
+                <img
+                        alt="X logo"
+                        src="../../images/socialMedia/x.svg"
+                        width="30"
+                />
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_ARTICLE_URL"
+               target="_blank" class="share-button facebook" aria-label="Share on facebook. Opens in separate tab">
+                <img
+                        alt="Facebook logo"
+                        src="../../images/socialMedia/facebook.svg"
+                        width="30"
+                />
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=YOUR_ARTICLE_URL&title=Check%20out%20this%20article"
+               target="_blank" class="share-button linkedin">LinkedIn</a>
+            <a href="mailto:?subject=Check%20out%20this%20article&body=Read%20this%20amazing%20article:%20YOUR_ARTICLE_URL"
+               class="share-button email">Email</a>
+        </div>
     </div>
 </div>
+
 
 <img
         alt="Drawing of a child's toy with shapes and holes, showing a hand trying to fit a triangle into a circular hole."

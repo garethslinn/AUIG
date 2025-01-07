@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const articleURL = encodeURIComponent(window.location.href);
+    const shareButtons = document.querySelectorAll('.share-button');
+
+    if (shareButtons) {
+        shareButtons.forEach(button => {
+            const href = button.getAttribute('href').replace('YOUR_ARTICLE_URL', articleURL);
+            button.setAttribute('href', href);
+        });
+    }
+
+
     document.getElementById("back-to-top").addEventListener("click", function () {
         window.scrollTo({
             top: 0,
@@ -17,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggleButton?.addEventListener("click", handleToggle);
 
-    const nav1 = document.getElementById("navlist");
+    const nav1 = document.getElementsByClassName("navlist")[0];
 
     nav1.addEventListener('click', (event) => {
         handleToggle();

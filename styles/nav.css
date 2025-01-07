@@ -136,3 +136,9 @@
         display: block;
     }
 }
+
+.main-nav {
+    display: block;
+    background: var(--breadcrumb-bg);
+    padding: 1rem;
+}

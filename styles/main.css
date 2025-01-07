@@ -6,8 +6,10 @@
 @import "buttons.css";
 @import "nav.css";
 @import "breadcrumbs.css";
+@import "author.css";
 @import "section.css";
 @import "icons.css";
+@import "share.css";
 
 /* General Styling */
 html, body {

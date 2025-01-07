@@ -3,8 +3,10 @@ const path = require('path');
 
 // Directories
 const componentsDir = '../components';
-const sectionsDir = '../components/sections';
+const sectionsDir = path.join(componentsDir, 'sections');
+const articlesDir = path.join(componentsDir, 'articles'); // Articles directory
 const outputDir = '../pages';
+const articlesOutputDir = '../articles'; // Separate output directory for articles
 const rootDir = '../'; // Root directory to copy index.html
 
 // Load reusable components
@@ -18,10 +20,12 @@ const loadComponent = (filename) => {
     }
 };
 
-// Ensure output directory exists
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-}
+// Ensure output directories exist
+[outputDir, articlesOutputDir].forEach((dir) => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+});
 
 // Common <head> content template
 const headTemplate = (title) => `
@@ -69,23 +73,28 @@ const headTemplate = (title) => `
             }
         }
     </script>
-</head>
-`;
+</head>`;
 
-// Assemble pages
-fs.readdirSync(sectionsDir).forEach((file) => {
-    if (file.endsWith('.html')) {
-        const sectionContent = fs.readFileSync(path.join(sectionsDir, file), 'utf8');
-        const pageTitle = file
-            .replace('.html', '') // Remove file extension
-            .replace(/-/g, ' ') // Replace hyphens with spaces
-            .replace(/\b\w/g, char => char.toUpperCase()); // Capitalize each word
+// Function to assemble pages
+const assemblePages = (inputDir, outputDir, isNavigation) => {
+    if (!fs.existsSync(inputDir)) {
+        console.error(`Directory not found: ${inputDir}`);
+        return;
+    }
 
-        // Create dynamic <head> content
-        const headContent = headTemplate(`${pageTitle} - Accessible User Interface Guidelines (AUIG)`);
+    fs.readdirSync(inputDir).forEach((file) => {
+        if (file.endsWith('.html')) {
+            const content = fs.readFileSync(path.join(inputDir, file), 'utf8');
+            const pageTitle = file
+                .replace('.html', '')
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, char => char.toUpperCase());
 
-        // Assemble the full page
-        const pageHTML = `
+            // Create dynamic <head> content
+            const headContent = headTemplate(`${pageTitle} - Accessible User Interface Guidelines (AUIG)`);
+
+            // Assemble the full page
+            const pageHTML = `
 <!DOCTYPE html>
 <html lang="en">
 ${headContent}
@@ -112,15 +121,19 @@ ${headContent}
                 <div class="icon icon-hamburger"><span>Menu</span></div>
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
-            <div class="navlist" id="navlist"></div>
+                  <div class="navlist" id="${isNavigation ? 'navlist' : 'navlistArticles'}"></div>
         </nav>
     </aside>
 
     <!-- Main Content -->
     <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url=/articles" title="Articles"></nav-buttons>
+        </nav>
         <div class="section-container">
             <!-- Section Content -->
-            ${sectionContent}
+            ${content}
         </div>
     </main>
 </div>
@@ -136,17 +149,27 @@ ${headContent}
 <script src="../scripts/loader.js?v=1.2"></script>
 <script src="../scripts/components/iconDetail.js?v=1.3"></script>
 <script src="../scripts/components/EaseSwitcher.js?v=1.3"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.3"></script>
+<script src="../scripts/components/TitleImage.js?v=1.3"></script>
+<script src="../scripts/components/NavButtons.js?v=1.3"></script>
 <script src="../scripts/main.js?v=1.3"></script>
 <script src="../scripts/auig.js" defer></script>
 </body>
 </html>`;
 
-        // Write the page to the output directory
-        const outputPath = path.join(outputDir, file);
-        fs.writeFileSync(outputPath, pageHTML, 'utf8');
-        console.log(`Generated: ${outputPath}`);
-    }
-});
+            // Write the page to the output directory
+            const outputPath = path.join(outputDir, file);
+            fs.writeFileSync(outputPath, pageHTML, 'utf8');
+            console.log(`Generated: ${outputPath}`);
+        }
+    });
+};
+
+// Process sections
+assemblePages(sectionsDir, outputDir, true);
+
+// Process articles
+assemblePages(articlesDir, articlesOutputDir, false);
 
 // Copy pages/index.html to the root directory
 const sourceFile = path.join(outputDir, 'index.html');

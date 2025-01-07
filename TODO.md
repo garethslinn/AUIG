@@ -13,4 +13,12 @@
 ## 11. ~~Introduce ease switching~~
 
 
+# TODO ARTICLES
+## 1. ~~Make separate nav work with builder~~
+## 2. ~~Add share facility with author component~~
+## 3. ~~make author html into a js component~~
+
+
+
+
 

@@ -121,8 +121,8 @@ ${headContent}
                 <div class="icon icon-hamburger"><span>Menu</span></div>
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
-                  <!-- div class="navlist" id="${isNavigation ? 'navList' : 'navListArticle'}"></div -->
-            <div class="navlist" id="navlist" aria-hidden="${!isNavigation}" style="display: ${isNavigation ? 'block' : 'none'}"></div>
+                  <div class="navlist" id="${isNavigation ? 'navlist' : 'navlistArticles'}"></div>
+            <!-- div class="navlist" id="navlist" aria-hidden="${!isNavigation}" style="display: ${isNavigation ? 'block' : 'none'}"></div -->
         </nav>
     </aside>
 

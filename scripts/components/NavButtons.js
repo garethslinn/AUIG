@@ -37,7 +37,6 @@ class NavButtons extends HTMLElement {
                 text-decoration: none;
                 font-size: var(--font-size-base);
                 padding: 0.5rem 1rem;
-                border: 1px solid var(--button-border);
                 background-color: var(--button-bg);
                 color: var(--button-text);
                 transition: background-color var(--transition-speed), color var(--transition-speed);
@@ -47,7 +46,7 @@ class NavButtons extends HTMLElement {
             a:focus {
                 background-color: var(--breadcrumb-hover);
                 color: #fff;
-                outline: 2px solid var(--breadcrumb-outline);
+                outline: 3px dashed var(--color-link);
                 outline-offset: 2px;
             }
 

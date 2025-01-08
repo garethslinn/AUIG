@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Accessible User Interface Guidelines (AUIG)</title>
+    <title>Bio - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -18,7 +18,7 @@
     <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
 
     <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
-    <link rel="stylesheet" href="../styles/main.css?v=1.3">
+    <link rel="stylesheet" href="../styles/main.css?v=1.6">
 
     <!-- PrismJS Light Theme -->
     <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
@@ -47,7 +47,6 @@
         }
     </script>
 </head>
-
 <body data-theme="light">
 
 <!-- Skip to main content link -->
@@ -71,15 +70,17 @@
                 <div class="icon icon-hamburger"><span>Menu</span></div>
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
-            <div class="navlist" id="navlist"></div>
+                  <div class="navlist" id="navlist"></div>
         </nav>
     </aside>
 
     <!-- Main Content -->
     <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url=/articles" title="Articles"></nav-buttons>
+        </nav>
         <div class="section-container">
-
-
             <!-- Section Content -->
             <nav aria-label="Breadcrumb">
   <ol>
@@ -93,6 +94,31 @@
 
 <!-- Section: Accessibility Journey -->
 <section id="accessibility-journey">
+  <h3>About me</h3>
+  <p>
+    Many people don't know that I'm an occasional therapist, a role I've practiced since my late 20s. I began with
+    hypnotherapy, mainly addressing stress, but over time, my approach evolved into analysis, listening, and
+    offering solutions. Having personally overcome chronic anxiety and addictions, I've learned and applied strategies that I now
+    share with others. For me, identity isn’t solely tied to vocation, I’ve always believed I’m more than what I do.
+  </p>
+  <p>
+    I’m also an illustrator and graphic designer, skilled in freehand drawing and digital creation. As a web
+    developer, I continue to expand my skills, and I’ve written several books over the years. But at my core,
+    I’m passionate about web accessibility, because it's deeply personal.
+  </p>
+  <p>
+    Accessibility isn’t just about compliance; it’s about creating a world where everyone can participate fully,
+    regardless of their challenges. This ties back to my work as a therapist: mental health affects people from all
+    walks of life, including high-level professionals. They often hide their struggles, but what they need most is a
+    supportive environment, and the same goes for the web.
+ </p>
+  <p>
+    When we apply critical thinking to accessibility, we move beyond superficial solutions to address deeper barriers.
+    Imagine a world where digital spaces are thoughtfully designed to meet diverse needs, just as we should approach
+    mental health with understanding and care. By fostering accessibility and critical thinking, we can construct a
+    world that’s not just functional but inclusive, both online and offline.
+  </p>
+
   <h3>Accessibility Since 2002</h3>
   <p>
     My journey into accessibility began in 2002 with the creation of my first tool, <strong>Hermish</strong>. Although now
@@ -195,76 +221,9 @@
 
         </div>
     </main>
-
 </div>
 
-    <!-- Footer -->
-<footer id="footer" class="site-footer" aria-labelledby="footer-heading">
-    <div class="footer-container">
-    <div class="footer-column">
-        <img src="/images/auig_white.svg" alt="Site Logo" class="footer-logo light">
-        <img src="/images/auig_bw.svg" alt="Site Logo" class="footer-logo bw">
-        <h3 id="footer-heading">Site Navigation</h3>
-        <nav aria-label="Internal Links">
-            <ul class="footer-links">
-                <li><a href="/pages/">Home</a></li>
-                <li><a href="/pages/abstract.html">Abstract</a></li>
-                <li><a href="/pages/support.html">Support</a></li>
-                <li><a href="/pages/introduction.html">Introduction</a></li>
-                <li><a href="/pages/global.html">Global</a></li>
-                <li><a href="/pages/components.html">Components</a></li>
-                <li><a href="/pages/statment.html">Accessibility Statement</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Column 2: External Links -->
-    <div class="footer-column">
-        <h3>External Resources</h3>
-        <ul class="footer-links">
-            <li>
-                <a href="https://www.checkmeister.com" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">Link leaves this site</span>CheckMeister Accessibility Tool
-                </a>
-            </li>
-            <li>
-                <a href="https://www.neurologicalux.com" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">Link leaves this site</span>Neurological UX Book Info
-                </a>
-            </li>
-            <li>
-                <a href="https://www.ca11y.net" target="_blank" rel="noopener noreferrer">
-                    <span class="sr-only">Link leaves this site</span>Cognitive Friendly Hiring Practices
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Column 3: Contribute -->
-    <div class="footer-column">
-        <h3>Contribute</h3>
-        <ul class="footer-links">
-            <li>
-                <a href="https://github.com/garethslinn/auig" itemprop="codeRepository">
-                    <span class="sr-only">Link leaves this site</span>Git Repo
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/garethslinn/auig/issues" itemprop="issueTracker">
-                    <span class="sr-only">Link leaves this site</span>Raise Issues
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- Footer Note -->
-<div class="footer-note">
-    <p>&copy; 2025 AUIG. All rights reserved.</p>
-</div>
-
-
-</footer>
-
+<!-- Footer (removed to aid scrolling) -->
 
 <!-- Back to Top Button -->
 <button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
@@ -272,9 +231,13 @@
 <!-- PrismJS Library -->
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
 
-<script src="../scripts/loader.js?v=1.2"></script>
-<script src="../scripts/components/iconDetail.js?v=1.3"></script>
-<script src="../scripts/main.js?v=1.3"></script>
-<script src="../scripts/auig.js" defer></script>
+<script src="../scripts/loader.js?v=1.6"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6"></script>
+<script src="../scripts/main.js?v=1.6"></script>
+<script src="../scripts/auig.js?v=1.6" defer></script>
 </body>
 </html>

@@ -171,13 +171,24 @@ assemblePages(sectionsDir, outputDir, true);
 // Process articles
 assemblePages(articlesDir, articlesOutputDir, false);
 
-// Copy pages/index.html to the root directory
-const sourceFile = path.join(outputDir, 'index.html');
-const destinationFile = path.join(rootDir, 'index.html');
+// Define the file names
+const sourceFileIndex = path.join(outputDir, 'index.html');
+const destinationFileIndex = path.join(rootDir, 'index.html');
+const sourceFileBio = path.join(outputDir, 'bio.html');
+const destinationFileBio = path.join(rootDir, 'bio.html');
 
-if (fs.existsSync(sourceFile)) {
-    fs.copyFileSync(sourceFile, destinationFile);
-    console.log(`Copied index.html to root: ${destinationFile}`);
+// Copy index.html to the root directory
+if (fs.existsSync(sourceFileIndex)) {
+    fs.copyFileSync(sourceFileIndex, destinationFileIndex);
+    console.log(`Copied index.html to root: ${destinationFileIndex}`);
 } else {
     console.error('index.html not found in the output directory.');
+}
+
+// Copy bio.html to the root directory
+if (fs.existsSync(sourceFileBio)) {
+    fs.copyFileSync(sourceFileBio, destinationFileBio);
+    console.log(`Copied bio.html to root: ${destinationFileBio}`);
+} else {
+    console.error('bio.html not found in the output directory.');
 }

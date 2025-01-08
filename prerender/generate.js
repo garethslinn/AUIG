@@ -55,7 +55,7 @@ const headTemplate = (title) => `
     <!-- Favicon -->
     <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
     
-    <link rel="canonical" href="https://www.auig.org/">
+    <link rel="canonical" href="https://auig.org/">
 
     <!-- Structured Data for Organization -->
     <script type="application/ld+json">

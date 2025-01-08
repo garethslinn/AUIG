@@ -1,0 +1,24 @@
+.download-button {
+    margin-top: 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 0.75rem 1rem 0.75rem 2.4rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: background-color var(--transition-speed);
+
+    svg {
+        position: absolute;
+        left: 10px;
+        top: 16px;
+    }
+}
+
+.download-button:hover,
+.download-button:focus {
+    background-color: var(--breadcrumb-hover);
+    outline: none;
+}

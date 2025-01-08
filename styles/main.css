@@ -10,6 +10,8 @@
 @import "section.css";
 @import "icons.css";
 @import "share.css";
+@import "books.css";
+@import "download.css";
 
 /* General Styling */
 html, body {

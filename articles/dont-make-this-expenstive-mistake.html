@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Dont Make This Expenstive Mistake - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.6">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+                  <div class="navlist" id="navlistArticles"></div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url=/articles" title="Articles"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <!-- Section Content -->
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li aria-current="page">Don't make this expensive mistake</li>
+    </ol>
+</nav>
+
+<h1>Don’t Make This Expensive Mistake: Why Accessibility Matters in IT</h1>
+
+<h2>Article</h2>
+
+<div class="author-container">
+    <a href="/pages/bio.html" class="author-image">
+        <img src="../../images/users/gslinn.png" alt="Author's portrait" />
+    </a>
+    <div class="author-details">
+        <span>Author:
+            <a href="/pages/bio.html" class="author-name">Gareth Slinn</a>
+        </span>
+        <time datetime="2025-01-07">
+            Published: January, 7th 2025
+        </time>
+        <share-buttons article-url="dont-make-this-expenstive-mistake.html"></share-buttons>
+    </div>
+</div>
+
+<title-image
+        alt="sign saying, Accessibility mistake"
+        src="mistake.svg"
+></title-image>
+
+<p>
+Accessibility is often misunderstood in the tech world. Many IT professionals dismiss it as a low-priority, compliance-driven task, assuming it only affects 0.1% of users. This misconception, coupled with the belief that accessibility is not in demand, discourages developers from learning the necessary skills. Why invest the time if there’s no visible payoff?
+</p>
+<p>
+Here’s the reality: ignoring accessibility can block 15-20% of your intended user base. That’s not just a small niche, it’s a significant audience. These barriers don’t just impact users with disabilities but also people with temporary impairments or situational challenges, such as poor lighting or a noisy environment. If your code is fast and efficient but inaccessible, it creates a barrier to entry, turning away potential customers.
+</p>
+<p>
+This oversight has real financial consequences. By excluding a large segment of users, your company risks losing out on substantial profits. Accessibility isn’t just about doing the right thing, it’s a business advantage. Inclusive products reach more people, generate more revenue, and build stronger brand loyalty.
+</p>
+<p>
+Don’t make the expensive mistake of ignoring accessibility. By investing in inclusive design and development, you ensure your code works for everyone, maximising its effectiveness and delivering true value to your users, and your employer.
+</p>
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6"></script>
+<script src="../scripts/main.js?v=1.6"></script>
+<script src="../scripts/auig.js?v=1.6" defer></script>
+</body>
+</html>

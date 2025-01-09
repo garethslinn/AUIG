@@ -30,17 +30,51 @@ const loadComponent = (filename) => {
 // Common <head> content template
 const headTemplate = (title) => `
 <head>
-    <meta charset="UTF-8">
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+
     <title>${title}</title>
-    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces.">
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
     <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
     <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
     <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
     <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
 </head>`;
 
 // Function to assemble pages with dynamic navigation
@@ -87,6 +121,10 @@ ${headContent}
     <!-- Sidebar -->
     <aside id="toc" class="nav" aria-label="Table of Contents">
         <nav id="nav" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
             ${navContent}
         </nav>
     </aside>
@@ -107,6 +145,9 @@ ${headContent}
 
 <!-- Back to Top Button -->
 <button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
 
 <script src="../scripts/loader.js?v=1.6.1"></script>
 <script src="../scripts/components/iconDetail.js?v=1.6.1"></script>

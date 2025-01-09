@@ -191,14 +191,9 @@
         <changefreq>daily</changefreq><priority>1.0</priority>
     </url>
     <url>
-        <loc>https://auig.org/</loc>
-        <lastmod>2025-01-09T21:03:38+00:00</lastmod>
-        <priority>0.64</priority>
-    </url>
-    <url>
         <loc>https://auig.org/pages/bio.html</loc>
         <lastmod>2025-01-09T21:03:38+00:00</lastmod>
-        <priority>0.64</priority>
+        <priority>0.1</priority>
     </url>
     <url>
         <loc>https://auig.org/articles/</loc>

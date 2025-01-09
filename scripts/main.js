@@ -7,24 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (href) button.setAttribute('href', href);
     });
 
-    // Back to Top functionality
+    // Back to Top
     const backToTopBtn = document.getElementById('back-to-top');
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    const scrollableContainer = document.querySelector('main');
 
-        // Visibility based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
-                backToTopBtn.classList.remove('hide');
-            } else {
-                backToTopBtn.classList.add('hide');
-            }
+    scrollableContainer?.addEventListener('scroll', () => {
+        if (scrollableContainer.scrollTop > 200) {
+            backToTopBtn.classList.remove('hide');
+        } else {
+            backToTopBtn.classList.add('hide');
+        }
+    });
+
+    backToTopBtn?.addEventListener('click', () => {
+        scrollableContainer.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    } else {
-        console.warn('Element with id "back-to-top" not found.');
-    }
+    });
 
     // Navigation toggle
     const toggleButton = document.getElementById('toggleButton');

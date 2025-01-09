@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Cache Control for Security and Performance -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -67,12 +67,58 @@
 <div class="container">
     <!-- Sidebar -->
     <aside id="toc" class="nav" aria-label="Table of Contents">
-        <nav id="nav" aria-label="Main Navigation">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
             <button id="toggleButton" class="toggle-button">
                 <div class="icon icon-hamburger"><span>Menu</span></div>
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
-                  <div class="navlist" id="navlistArticles"></div>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/">
+            <span><strong>Articles</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/we-dont-think-the-same.html" aria-label="We don't think the same">
+            <span title="We don't think the same"><strong>We don't think...</strong></span>
+        </a>
+
+    </li>
+    <li>
+        <a href="/articles/dont-make-this-expenstive-mistake.html" aria-label="Don't make this expensive mistake">
+            <span title="Don't make this expensive mistake"><strong>Don't make this...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/automated-vs-manual-testing.html" aria-label="Automated Accessibility vs. Manual Testing">
+            <span title="Automated Accessibility vs. Manual Testing"><strong>Automated Accessibility...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/the-anxiety-of-forms.html" aria-label="The anxiety of forms">
+            <span><strong>The anxiety of forms</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/cognitive-load-and-accessibility.html" aria-label="Cognitive Load and Accessibility">
+            <span><strong>Cognitive Load...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/the-power-of-hyper-focus.html" aria-label="The power of hyper focus">
+            <span><strong>The power of hyper focus</strong></span>
+        </a>
+    </li>
+</ul>
+
+
         </nav>
     </aside>
 
@@ -83,7 +129,6 @@
             <nav-buttons url=/articles" title="Articles"></nav-buttons>
         </nav>
         <div class="section-container">
-            <!-- Section Content -->
             <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
@@ -183,6 +228,5 @@
 <script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
 <script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
 <script src="../scripts/main.js?v=1.6.1" defer></script>
-<script src="../scripts/auig.js?v=1.6.1" defer></script>
 </body>
 </html>

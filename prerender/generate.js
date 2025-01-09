@@ -4,12 +4,12 @@ const path = require('path');
 // Directories
 const componentsDir = '../components';
 const sectionsDir = path.join(componentsDir, 'sections');
-const articlesDir = path.join(componentsDir, 'articles'); // Articles directory
+const articlesDir = path.join(componentsDir, 'articles');
 const outputDir = '../pages';
-const articlesOutputDir = '../articles'; // Separate output directory for articles
-const rootDir = '../'; // Root directory to copy index.html
+const articlesOutputDir = '../articles';
+const rootDir = '../';
 
-// Load reusable components
+// Function to load reusable components
 const loadComponent = (filename) => {
     const filePath = path.join(componentsDir, filename);
     if (fs.existsSync(filePath)) {
@@ -30,7 +30,7 @@ const loadComponent = (filename) => {
 // Common <head> content template
 const headTemplate = (title) => `
 <head>
-    <meta charset="UTF-8">
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Cache Control for Security and Performance -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -77,12 +77,15 @@ const headTemplate = (title) => `
     </script>
 </head>`;
 
-// Function to assemble pages
-const assemblePages = (inputDir, outputDir, isNavigation) => {
+// Function to assemble pages with dynamic navigation
+const assemblePages = (inputDir, outputDir, navFile) => {
     if (!fs.existsSync(inputDir)) {
         console.error(`Directory not found: ${inputDir}`);
         return;
     }
+
+    // Load the navigation HTML
+    const navContent = loadComponent(navFile);
 
     fs.readdirSync(inputDir).forEach((file) => {
         if (file.endsWith('.html')) {
@@ -92,7 +95,6 @@ const assemblePages = (inputDir, outputDir, isNavigation) => {
                 .replace(/-/g, ' ')
                 .replace(/\b\w/g, char => char.toUpperCase());
 
-            // Create dynamic <head> content
             const headContent = headTemplate(`${pageTitle} - Accessible User Interface Guidelines (AUIG)`);
 
             // Assemble the full page
@@ -118,12 +120,12 @@ ${headContent}
 <div class="container">
     <!-- Sidebar -->
     <aside id="toc" class="nav" aria-label="Table of Contents">
-        <nav id="nav" aria-label="Main Navigation">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
             <button id="toggleButton" class="toggle-button">
                 <div class="icon icon-hamburger"><span>Menu</span></div>
                 <div class="icon icon-close"><span>Close</span></div>
             </button>
-                  <div class="navlist" id="${isNavigation ? 'navlist' : 'navlistArticles'}"></div>
+            ${navContent}
         </nav>
     </aside>
 
@@ -134,7 +136,6 @@ ${headContent}
             <nav-buttons url=/articles" title="Articles"></nav-buttons>
         </nav>
         <div class="section-container">
-            <!-- Section Content -->
             ${content}
         </div>
     </main>
@@ -155,11 +156,9 @@ ${headContent}
 <script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
 <script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
 <script src="../scripts/main.js?v=1.6.1" defer></script>
-<script src="../scripts/auig.js?v=1.6.1" defer></script>
 </body>
 </html>`;
 
-            // Write the page to the output directory
             const outputPath = path.join(outputDir, file);
             fs.writeFileSync(outputPath, pageHTML, 'utf8');
             console.log(`Generated: ${outputPath}`);
@@ -167,30 +166,18 @@ ${headContent}
     });
 };
 
-// Process sections
-assemblePages(sectionsDir, outputDir, true);
+// Process sections with primary navigation
+assemblePages(sectionsDir, outputDir, 'nav.html');
 
-// Process articles
-assemblePages(articlesDir, articlesOutputDir, false);
-
-// Define the file names
-const sourceFileIndex = path.join(outputDir, 'index.html');
-const destinationFileIndex = path.join(rootDir, 'index.html');
-const sourceFileBio = path.join(outputDir, 'bio.html');
-const destinationFileBio = path.join(rootDir, 'bio.html');
+// Process articles with articles navigation
+assemblePages(articlesDir, articlesOutputDir, 'navArticles.html');
 
 // Copy index.html to the root directory
+const sourceFileIndex = path.join(outputDir, 'index.html');
+const destinationFileIndex = path.join(rootDir, 'index.html');
 if (fs.existsSync(sourceFileIndex)) {
     fs.copyFileSync(sourceFileIndex, destinationFileIndex);
     console.log(`Copied index.html to root: ${destinationFileIndex}`);
 } else {
     console.error('index.html not found in the output directory.');
-}
-
-// Copy bio.html to the root directory
-if (fs.existsSync(sourceFileBio)) {
-    fs.copyFileSync(sourceFileBio, destinationFileBio);
-    console.log(`Copied bio.html to root: ${destinationFileBio}`);
-} else {
-    console.error('bio.html not found in the output directory.');
 }

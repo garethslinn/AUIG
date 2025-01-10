@@ -3,7 +3,9 @@
         <li aria-current="page">Home</li>
     </ol>
 </nav>
-<header class="header" id="header" itemscope itemtype="https://schema.org/CreativeWork">
+
+
+<section class="header" id="header" itemscope itemtype="https://schema.org/CreativeWork">
     <!-- Title of the CreativeWork -->
     <h1 itemprop="name">Accessible User Interface Guidelines (AUIG)</h1>
 
@@ -19,14 +21,33 @@
     <ul>
         <!-- Current Version -->
         <li>
-            <span itemprop="version">This version: 0.1.5</span>
+            <span itemprop="version">This version: 1.0.0.3</span>
         </li>
         <!-- Publication Date -->
         <li>
             Date:
-            <time itemprop="datePublished" datetime="2024-12-29">December 29, 2024</time>
+            <time itemprop="datePublished" datetime="2025-01-09">January 9, 2025</time>
         </li>
     </ul>
+
+    <h3>Suporter(s)</h3>
+    <ul class="item-types">
+        <li class="icon-item">
+        <a
+                    href="/articles/supporter-garimasystem.html"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Garima System logo"
+                        src="../images/supporters/garimasystem.svg"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Garima System</span>&nbsp;
+            </a>
+        </li>
+    </ul>
+
 
     <!-- Source Section -->
     <h3>Source</h3>
@@ -43,15 +64,11 @@
         </li>
     </ul>
 
-    <!-- Editors Section -->
-    <h3>Editor</h3>
+    <h3>Founder</h3>
     <ul class="item-types">
         <li class="icon-item" itemscope itemtype="https://schema.org/Person">
             <a
-                    href="https://github.com/garethslinn"
-                    aria-label="this link opens in a new tab"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="bio.html"
                     itemprop="relatedLink"
             >
                 <img
@@ -60,7 +77,7 @@
                         class="user-image"
                         itemprop="image"
                 />
-                <!-- Editor's Name -->
+                <!-- Founder's Name -->
                 <span itemprop="name">Gareth Slinn</span>&nbsp;
             </a>
         </li>
@@ -83,6 +100,23 @@
                         itemprop="image"
                 />
                 <span itemprop="name">Kyle Simpson</span>
+            </a>
+        </li>
+        <li itemscope itemtype="https://schema.org/Person">
+            <a
+                    href="https://github.com/arkam-shakil"
+                    aria-label="this link opens in a new tab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    itemprop="relatedLink"
+            >
+                <img
+                        alt="Picture of Arkam"
+                        src="../images/users/arkams.png"
+                        class="user-image"
+                        itemprop="image"
+                />
+                <span itemprop="name">Arkam Shakill</span>
             </a>
         </li>
         <li itemscope itemtype="https://schema.org/Person">
@@ -155,78 +189,45 @@
         </li>
     </ul>
 
-    <h3>Video(s)</h3>
-    <ul class="item-types">
-        <li itemprop="video">
-            <a
-                    href="https://www.youtube.com/watch?v=3bfQVzcw5ic"
-                    aria-label="From Compliance to Opportunity, opens in a new tab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    itemprop="relatedLink"
-            >
-                <img
-                        src="../images/video.svg"
-                        alt="Neurological books icon"
-                        itemprop="image"
-                />
-                <span>Compliance</span>
-            </a>.
-        </li>
-    </ul>
-
-    <!-- Resources Section -->
     <h3>Resources</h3>
-    <ul class="item-types">
-        <li itemscope itemtype="https://schema.org/Thing">
-            <a
-                    href="https://neurologicalux.com/"
-                    aria-label="Books on accessibility, opens in a new tab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    itemprop="url"
-            >
-                <img
-                        src="../images/nux.svg"
-                        alt="Neurological books icon"
-                        itemprop="image"
-                />
-                <span>Books</span>
-            </a>.
-        </li>
-        <li itemscope itemtype="https://schema.org/Thing">
-            <a
-                    href="https://www.checkmeister.com/"
-                    aria-label="Tools developed by Gareth, opens in a new tab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    itemprop="url"
-            >
-                <img
-                        src="../images/cm.svg"
-                        alt="Checkmeister tools icon"
-                        itemprop="image"
-                />
-                <span>Tools</span>
-            </a>
-        </li>
-        <li itemscope itemtype="https://schema.org/Thing">
-            <a
-                    href="https://ca11y.net"
-                    aria-label="Recruitment process, opens in a new tab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    itemprop="url"
-            >
-                <img
-                        src="../images/ca11y.svg"
-                        alt="Ca11y recruitment icon"
-                        class="resource-icon"
-                        itemprop="image"
-                />
-                <span>Ca11y</span>
-            </a>
-        </li>
-    </ul>
 
-</header>
+    <h4>Accessibility checking tool</h4>
+    <ol class="gallery">
+        <li>
+            <a target="_blank" href="https://www.checkmeister.com/">
+                <span class="sr-only">Opens in a separate tab</span>
+                <img src="/images/cms.png" alt="Picture of checkmeister character from the checkmeister website">
+                <span>Checkmeister</span>
+            </a>
+        </li>
+    </ol>
+
+    <h4>Books</h4>
+
+    <ol class="gallery">
+        <li>
+            <a target="_blank" href="https://www.amazon.co.uk/dp/B0DN1NJSLZ/">
+                <span class="sr-only">Opens in a separate tab</span>
+                <img src="/images/nux.jpg" alt="Cover of Neurological UX - Designing for Neurological Inclusivity">
+                <span>Neurological UX</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.amazon.co.uk/Accessibility-Dont-Panic-Gareth-Slinn/dp/B0DL4CSBS8/">
+                <span class="sr-only">Opens in a separate tab</span>
+                <img src="/images/acc.jpg" alt="Cover of Accessibility: Don’t Panic - Your Essential Guide to EAA and WCAG Compliance">
+                <span>Accessibility: Don’t Panic</span>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" href="https://www.amazon.co.uk/Mental-Self-Defence-Critically-Confidently/dp/B0DM5FPSCN/">
+                <span class="sr-only">Opens in a separate tab</span>
+                <img src="/images/msd.jpg" alt="Cover of Mental Self Defence: Train Your Mind to Think Clearly, Critically, and Confidently">
+                <span>Mental Self Defence</span>
+            </a>
+        </li>
+    </ol>
+
+    <h4>Videos</h4>
+    <iframe width="150" height="" src="https://www.youtube.com/embed/3bfQVzcw5ic?si=F5c3tfWro4DFd1ye" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>

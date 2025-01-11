@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "node generate.js",
+    "generatePages": "node generate.js",
     "articles": "node buildArticlesPage.js",
-    "build:full": "run-s build articles",
+    "build": "run-s generatePages articles",
     "serve-dist": "http-server ./pages -p 8080",
     "clean": "rimraf pages",
     "rebuild": "npm run clean && npm run build:full"

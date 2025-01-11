@@ -98,39 +98,65 @@
 
 ---
 
-## Build Process
+### **Build Process**
 
-### Building the Project
+#### **Building the Project**
 
-1. **Generate Static Files**
+1. **Generate Articles Data**
+
+   The first step is to generate the required articles data from the navigation component. This creates a JSON file used for building dynamic pages.
 
    ```bash
    npm --prefix prerender run build
    ```
 
-   - Generates all pages into the `pages/` directory with injected components and structured layouts.
+   - This executes `generate.js` to extract data from `navArticles.html` and save it as a JSON file in the `prerender/` directory.
 
-### Serving the Build
+2. **Build Articles Page**
 
-1. **Serve the Built Files**
-
-   ```bash
-   npm --prefix prerender run serve-dist
-   ```
-
-   - Hosts the static files in the `pages/` directory at [http://localhost:8080](http://localhost:8080).
-
-### Cleaning Builds
-
-1. **Rebuild the Project**
+   After generating the articles data, this script creates a responsive articles grid in the `index.html` file under the `articles/` directory.
 
    ```bash
-   npm --prefix prerender run rebuild
+   npm --prefix prerender run articles
    ```
 
-   - Removes the `pages/` directory and prepares for a fresh build.
+   - This runs `buildArticlesPage.js`, ensuring the grid is updated dynamically based on the latest articles data.
+
+3. **Full Build**
+
+   To execute both steps sequentially:
+
+   ```bash
+   npm --prefix prerender run build:full
+   ```
+
+   - Runs `generate.js` first and then `buildArticlesPage.js`.
 
 ---
+
+### **Clean Build**
+
+To clean and rebuild the project:
+
+```bash
+npm --prefix prerender run rebuild
+```
+
+- Removes the `pages/` directory and regenerates all files.
+
+---
+
+### **Troubleshooting**
+
+- **Missing Articles Data:**
+  Ensure `generate.js` runs successfully before `buildArticlesPage.js`. Use the `build:full` script for sequential execution.
+
+- **Issues with Articles Page:**
+  Check that the `navArticles.html` file contains valid `aria-label`, `href`, and `data-image` attributes for all articles.
+
+- **JavaScript Errors:**
+  Verify the logic in both `generate.js` and `buildArticlesPage.js`. Debug any Cheerio-related manipulations in case of malformed HTML.
+
 
 ## Testing
 

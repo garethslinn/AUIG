@@ -64,22 +64,60 @@ h4 {
 @media (max-width: 500px) {
     .responsive-gallery {
         flex-direction: row;
+
+        .category {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+        .gallery {
+            flex-direction: column; /* Stacks items vertically */
+        }
+
+        .gallery img {
+            max-width: 100%; /* Ensures images stretch to fit the container */
+        }
+
+        iframe {
+            max-width: 100%;
+        }
     }
 
-    .category {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    .gallery {
-        flex-direction: column; /* Stacks items vertically */
-    }
-
-    .gallery img {
-        max-width: 100%; /* Ensures images stretch to fit the container */
-    }
-
-    iframe {
-        max-width: 100%;
-    }
 }
+
+
+.source-supporters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .source-section,
+    .supporter-section {
+        flex: 1 1 48%;
+        max-width: 48%;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .icon-item img {
+        max-width: 100px;
+        height: auto;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 800px) {
+        .source-section,
+        .supporter-section  {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+    }
+
+}
+
+

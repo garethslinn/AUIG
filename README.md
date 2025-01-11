@@ -100,39 +100,58 @@
 
 ### **Build Process**
 
-#### **Building the Project**
+#### **Generating and Building the Project**
 
-1. **Generate Articles Data**
+1 **Build**
 
-   The first step is to generate the required articles data from the navigation component. This creates a JSON file used for building dynamic pages.
-
-   ```bash
-   npm --prefix prerender run build
-   ```
-
-   - This executes `generate.js` to extract data from `navArticles.html` and save it as a JSON file in the `prerender/` directory.
-
-2. **Build Articles Page**
-
-   After generating the articles data, this script creates a responsive articles grid in the `index.html` file under the `articles/` directory.
 
    ```bash
-   npm --prefix prerender run articles
+   npm run build
    ```
-
-   - This runs `buildArticlesPage.js`, ensuring the grid is updated dynamically based on the latest articles data.
-
-3. **Full Build**
-
-   To execute both steps sequentially:
-
-   ```bash
-   npm --prefix prerender run build:full
-   ```
-
-   - Runs `generate.js` first and then `buildArticlesPage.js`.
 
 ---
+
+#### **Serving the Build**
+
+1. **Host the Built Files**
+
+   Serve the static files locally to test the final output:
+
+   ```bash
+   npm run serve-dist
+   ```
+
+    - This hosts the content of the `pages/` directory at [http://localhost:8080](http://localhost:8080).
+
+---
+
+#### **Cleaning and Rebuilding**
+
+1. **Clean the Build**
+
+   If you need a fresh build, first clean the `pages/` directory:
+
+   ```bash
+   npm run clean
+   ```
+
+2. **Rebuild the Project**
+
+   Combine cleaning and building in one command:
+
+   ```bash
+   npm run rebuild
+   ```
+
+    - This ensures the `pages/` directory is cleared and re-generated with the latest content.
+
+---
+
+### **Key Notes**
+- **Dependencies:** Ensure `npm-run-all` is installed as a `devDependency` to enable sequential script execution.
+- **Error Handling:** If any errors occur during the build, check the logs for issues in `generate.js` or `buildArticlesPage.js`.
+- **Testing:** Use the `serve-dist` script to verify that all pages render correctly after the build.
+
 
 ### **Clean Build**
 

@@ -80,6 +80,8 @@ npm start
 The project will be available at `http://localhost:3000`.
 
 ### Workflow
+
+- **Important:** If you want to change the content of the pages, make updates in the `components` templates only. The `./pages` and root HTML files are automatically generated each time the component files are changed.
 - The project automatically rebuilds when changes are detected in the `components`, `scripts`, `images`, or `styles` directories.
 - Static files are served from the `./pages` directory.
 

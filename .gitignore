@@ -1,3 +1,13 @@
+# Ignore node_modules in any subdirectory
+node_modules/
+prerender/node_modules/
+
+# Ignore IDE configuration files
 .idea/
-.node_modules
-prerender/node_modules
+
+# Other temporary or build files
+.DS_Store
+*.log
+*.tmp
+*.bak
+pages/

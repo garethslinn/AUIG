@@ -116,7 +116,7 @@ Ensure your contributions align with project standards and enhance accessibility
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [License](LICENSE.md).
 
 ---
 

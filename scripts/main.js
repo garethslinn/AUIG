@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
             top: 0,
             behavior: 'smooth'
         });
+        
+        // Setting keyboard focus on the skip to main content link
+        document.querySelector("#skip-to-main-content").focus();
     });
 
     // Navigation toggle

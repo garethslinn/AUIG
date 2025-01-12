@@ -1,0 +1,23 @@
+{
+  "name": "auig-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npm run watch --prefix ./prerender",
+    "start": "concurrently \"npm run watch --prefix ./prerender\" \"npm run start --prefix ./prerender\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garethslinn/AUIG.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garethslinn/AUIG/issues"
+  },
+  "homepage": "https://github.com/garethslinn/AUIG#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

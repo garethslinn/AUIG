@@ -66,13 +66,14 @@
    ```bash
    npm install
    ```
+   **NOTE: in both root and prerender folder**
 
 ---
 
 ## Usage
 
 ### Start the Development Server
-Run the following command to start the server and watch for changes:
+Run the following command (in the root) to start the server and watch for changes:
 ```bash
 npm start
 ```
@@ -81,9 +82,9 @@ The project will be available at `http://localhost:3000`.
 
 ### Workflow
 
-- **Important:** If you want to change the content of the pages, make updates in the `components` templates only. The `./pages` and root HTML files are automatically generated each time the component files are changed.
+- **Important:** If you want to change the content of the pages, make updates in the `components` templates only. The `./pages`, `./articles` and root HTML files are automatically generated each time the component files are changed.
 - The project automatically rebuilds when changes are detected in the `components`, `scripts`, `images`, or `styles` directories.
-- Static files are served from the `./pages` directory.
+- Static files are served from the `./pages` and `./articles` directory.
 
 ---
 
@@ -130,5 +131,5 @@ This project is licensed under the [License](LICENSE.md).
 
 ### **Quick Start**
 1. Clone the repo.
-2. Run `npm install`.
+2. Run `npm install` in both root and prerender folder.
 3. Start the project with `npm start`.

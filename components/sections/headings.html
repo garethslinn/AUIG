@@ -13,11 +13,19 @@
 <p>Use headings in a hierarchical manner to reflect the document structure. Start with a single <code class="language-html">&lt;h1&gt;</code> for the main title, followed by <code class="language-html">&lt;h2&gt;</code> for primary sections, <code class="language-html">&lt;h3&gt;</code> for subsections, and so on. This hierarchy helps users understand the organisation of content and navigate efficiently.</p>
 <pre>
 <code class="language-html">
+&lt;!-- Native HTML example --&gt;
 &lt;h1&gt;Main Title&lt;/h1&gt;
 &lt;h2&gt;Section 1&lt;/h2&gt;
 &lt;h3&gt;Subsection 1.1&lt;/h3&gt;
 &lt;h2&gt;Section 2&lt;/h2&gt;
 &lt;h3&gt;Subsection 2.1&lt;/h3&gt;
+
+&lt;!-- ARIA example --&gt;
+&lt;div role="heading" aria-level="1"&gt;Main Title&lt;/div&gt;
+&lt;div role="heading" aria-level="2"&gt;Section 1&lt;/div&gt;
+&lt;div role="heading" aria-level="3"&gt;Subsection 1.1&lt;/div&gt;
+&lt;div role="heading" aria-level="2"&gt;Section 2&lt;/div&gt;
+&lt;div role="heading" aria-level="3"&gt;Subsection 2.1&lt;/div&gt;
 </code>
 </pre>
 
@@ -34,12 +42,12 @@
 <p>Do not skip heading levels (e.g., jumping from <code class="language-html">&lt;h1&gt;</code> to <code class="language-html">&lt;h3&gt;</code>). Maintaining a logical flow of heading levels ensures that assistive technologies can accurately interpret the document structure.</p>
 <pre>
 <code class="language-html">
-<!-- Correct -->
+&lt;!-- Correct --&gt;
 &lt;h1&gt;Main Title&lt;/h1&gt;
 &lt;h2&gt;Section Title&lt;/h2&gt;
 &lt;h3&gt;Subsection Title&lt;/h3&gt;
 
-<!-- Incorrect -->
+&lt;!-- Incorrect --&gt;
 &lt;h1&gt;Main Title&lt;/h1&gt;
 &lt;h3&gt;Subsection Title&lt;/h3&gt;
 </code>
@@ -49,11 +57,12 @@
 <p>Utilise headings to convey semantic meaning rather than for visual styling purposes. Avoid using headings solely to change text size or appearance. Instead, use CSS for styling and maintain proper heading semantics for accessibility.</p>
 <pre>
 <code class="language-html">
-<!-- Semantic Heading -->
-&lt;h2&gt;About Us&lt;/h2&gt;
+&lt;!-- Correct -->
+&lt;p&gt;Responsive design ensures that your website looks great on all devices...&lt;/p&gt;
+&lt;h2 role="presentation"&gt;Responsive design ensures that your website looks great on all devices...&lt;/h2&gt;
 
-<!-- Non-Semantic, Avoid This -->
-&lt;div class="heading"&gt;About Us&lt;/div&gt;
+&lt;!-- Incorrect --&gt;
+&lt;h2&gt;Responsive design ensures that your website looks great on all devices...&lt;/h2&gt;
 </code>
 </pre>
 
@@ -79,14 +88,13 @@
 <code class="language-html">
 &lt;header role="banner"&gt;
     &lt;h1&gt;Website Title&lt;/h1&gt;
+    &lt;nav role="navigation"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#section1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section2"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
 &lt;/header&gt;
-
-&lt;nav role="navigation"&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href="#section1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
 </code>
 </pre>
 
@@ -105,4 +113,5 @@
     <li><strong>Maintain Logical Order:</strong> Follow a sequential order of headings without skipping levels to maintain a clear content hierarchy.</li>
     <li><strong>Avoid Overuse:</strong> Do not use headings excessively. Use them to denote major sections and subsections only.</li>
     <li><strong>Accessible Naming:</strong> Choose meaningful and descriptive names for headings to provide context to all users.</li>
+    <li><strong>Prioritize Native HTML Headings Over ARIA Roles:</strong> Use native HTML heading tags (&lt;h1&lt;, &gt;h2&lt;, etc.) to define headings, rather than relying on ARIA roles. Native headings are more semantically meaningful and better supported by screen readers and other assistive technologies.</li>
 </ul>

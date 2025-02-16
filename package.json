@@ -1,10 +1,10 @@
 {
   "name": "auig-main",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "chokidar \"./components/**/*\" \"./scripts/**/*\" \"./images/**/*\" \"./styles/**/*\" -c \"npm run build\"",
+    "watch": "npx chokidar \"./components/**/*\" \"./scripts/**/*\" \"./images/**/*\" \"./styles/**/*\" -c \"npm run build\"",
     "serve": "node ./prerender/server.js",
     "clean": "npm run clean --prefix ./prerender",
     "build": "npm run build --prefix ./prerender",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garethslinn/AUIG.git"
+    "url": "https://github.com/garethslinn/AUIG.git"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/garethslinn/AUIG#readme",
   "devDependencies": {
+    "chokidar": "^3.6.0",
+    "chokidar-cli": "^3.0.0",
     "concurrently": "^9.1.2",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.0"
   }
 }

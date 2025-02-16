@@ -33,6 +33,14 @@ nav[aria-label="Breadcrumb"] ol {
     max-width: 49.5%;
 }
 
+.full-section {
+    max-width: 100%;
+
+    h3 {
+        font-size: 1rem;
+    }
+}
+
 ul {
     list-style: none;
     padding: 0;

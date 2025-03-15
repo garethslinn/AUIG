@@ -4,6 +4,11 @@
 
 ## [Visit the Website](https://www.auig.org)
 
+### **Quick Start**
+1. Clone the repo.
+2. Run `npm install` in both root and prerender folder.
+3. Start the project with `npm run watch`.
+
 ---
 
 ## Table of Contents
@@ -75,7 +80,7 @@
 ### Start the Development Server
 Run the following command (in the root) to start the server and watch for changes:
 ```bash
-npm start
+npm run watch
 ```
 
 The project will be available at `http://localhost:3000`.
@@ -129,7 +134,4 @@ This project is licensed under the [License](LICENSE.md).
 
 ---
 
-### **Quick Start**
-1. Clone the repo.
-2. Run `npm install` in both root and prerender folder.
-3. Start the project with `npm start`.
+

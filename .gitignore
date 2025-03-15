@@ -1,6 +1,5 @@
 # Ignore node_modules in any subdirectory
-node_modules/
-prerender/node_modules/
+**/node_modules/
 
 # Ignore IDE configuration files
 .idea/

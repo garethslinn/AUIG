@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Index - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Active - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -120,37 +120,69 @@
             <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
-        <li aria-current="page">Cog</li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-active</li>
     </ol>
 </nav>
 
-<h1>Accessible User Interface Guidelines</h1>
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h2>CogJS – Cognitive-Oriented Web Accessibility Toolkit</h2>
-
-<h3>Introducing CogJS</h3>
+<h3>cog-active</h3>
 
 <p>
-    <strong>CogJS</strong> is a lightweight, production-ready JavaScript library designed to improve web accessibility for neurodivergent and cognitively diverse users. It enables developers to enhance user experience using simple, declarative HTML attributes-no frameworks, build tools, or heavy dependencies required.
+    <code>cog-active</code> is a high-level control attribute that enables or disables all CogJS features on a specific element and its children. It is ideal for excluding interactive components, legacy sections, or third-party content from CogJS enhancements.
 </p>
 
+<h4 id="4.3.1">4.3.1 What It Does</h4>
 <p>
-    Unlike traditional accessibility tools that primarily focus on screen readers or motor impairments, CogJS addresses the needs of users with ADHD, autism spectrum conditions, dyslexia, cognitive fatigue, and sensory sensitivities.
+    When set to <code>cog-active="false"</code>, all CogJS functionality (e.g., backgrounds, reading buttons, animation suppression) is disabled for the element and its descendants. This ensures those parts of the page remain unaffected by CogJS processing.
 </p>
 
+<pre>
+<code class="language-html">&lt;section cog-active="false"&gt;
+  &lt;p&gt;This section is excluded from CogJS features.&lt;/p&gt;
+  &lt;button&gt;Custom feature not managed by CogJS&lt;/button&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4 id="4.3.2">4.3.2 Use Cases</h4>
+<ul>
+    <li>Sections where CogJS styling or interactivity is undesirable</li>
+    <li>Third-party widgets or embedded apps</li>
+    <li>Legacy code areas not compatible with CogJS</li>
+    <li>Admin panels or developer tools</li>
+</ul>
+
+<h4 id="4.3.3">4.3.3 Default Behavior</h4>
 <p>
-    With CogJS, you can reduce cognitive load, increase clarity, and offer more user control-right from your markup.
+    By default, CogJS is globally active when <code>window.cogConfig.active = true</code>. Use <code>cog-active</code> to selectively override this behavior at the element level.
 </p>
 
-<p>
-    The full source code and documentation are available on <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank" rel="noopener">GitHub</a>.
-</p>
+<h4 id="4.3.6">4.3.6 Accessibility Considerations</h4>
+<ul>
+    <li><strong>Respects Developer Intent:</strong> Gives precise control over where accessibility enhancements apply.</li>
+    <li><strong>Avoids Conflict:</strong> Prevents CogJS from altering functionality in complex UI components.</li>
+    <li><strong>Scoped Deactivation:</strong> Deactivation is inherited by all nested child elements.</li>
+</ul>
 
-<p>
-    Use the navigation menu to explore individual CogJS features, including accessible backgrounds, chunked forms, hints, reading assistance, and more.
-</p>
+<h4 id="4.3.7">4.3.7 Testing cog-active</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-active="false" to a test block
+// - Verify no CogJS buttons, backgrounds, or effects apply within it
+// - Confirm that outside sections still behave as expected
+// - Test nested elements and mixed usage
+</code>
+</pre>
 
-
+<h4>Best Practices for cog-active</h4>
+<ul>
+    <li><strong>Use for Isolation:</strong> Wrap non-accessible components or third-party UIs in <code>cog-active="false"</code>.</li>
+    <li><strong>Document Exclusions:</strong> Note why a section is excluded to aid future audits and maintenance.</li>
+    <li><strong>Keep It Scoped:</strong> Don’t disable CogJS globally unless absolutely necessary.</li>
+    <li><strong>Re-test Frequently:</strong> Revisit exclusions when features evolve or accessibility audits are conducted.</li>
+</ul>
 
         </div>
     </main>

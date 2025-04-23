@@ -29,7 +29,7 @@
 
     /* Control Colors */
     --title-fg-h1: #268ca6;
-    --title-fg-h3: #39c1e4;
+    --title-fg-h3: #0068e4;
 
     --control-bg-light: #ffffff; /* Light mode control background */
     --control-text-light: #222222; /* Light mode control text */
@@ -102,7 +102,7 @@
     --title-fg: var(--title-fg-h1);
     --title-h2: var(--title-fg-h1);
     --title-h3: var(--title-fg-h3);
-    --title-h4: #aee9f7;
+    --title-h4: #fff;
     --title-h4-fg: #000000;
 
     --breadcrumb-bg: var(--breadcrumb-bg-light);
@@ -152,7 +152,7 @@
     --title-fg: #fff;
     --title-h2: #134554;
     --title-h3: #1d6b83;
-    --title-h4: #18596f;
+    --title-h4: #fff;
     --title-h4-fg: #ffffff;
 
     --breadcrumb-bg: var(--breadcrumb-bg-dark);

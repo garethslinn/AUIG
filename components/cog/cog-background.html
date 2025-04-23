@@ -1,0 +1,94 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-background</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-background</h3>
+
+
+<p><code>cog-background</code> is a declarative attribute used to apply cognitive-friendly themes to elements on a page. It is part of <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank">CogJS</a>, a lightweight JavaScript library focused on cognitive and neurodivergent accessibility enhancements.</p>
+
+<h4 id="4.1.1">4.1.1 What It Does</h4>
+<p>The attribute enables accessible theming without additional CSS. Developers can use predefined or custom themes to reduce visual stress and enhance readability, especially for users with dyslexia, sensory sensitivity, or ADHD.</p>
+
+<pre>
+<code class="language-html">&lt;body cog-background="dyslexic-yellow"&gt;
+  &lt;section&gt;
+    &lt;p&gt;This content uses the dyslexic-yellow background for improved readability.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/body&gt;
+</code>
+</pre>
+
+<h4 id="4.1.2">4.1.2 Theme Configuration</h4>
+<p>Configure themes in <code>cog-theme.js</code> before loading the script. You can define custom background and foreground color combinations.</p>
+
+<pre>
+<code class="language-javascript">window.cogThemeConfig = {
+  defaultTheme: 'dyslexic-yellow',
+  themes: {
+    'dyslexic-yellow': {
+      background: '#fffce0',
+      foreground: '#000'
+    },
+    'dyslexic-blue': {
+      background: '#e6f0ff',
+      foreground: '#000'
+    },
+    'dark-mode': {
+      background: '#1e1e1e',
+      foreground: '#fff'
+    }
+  },
+  targets: {
+    background: ['body', 'section'],
+    foreground: ['p', 'h1', 'h2', 'li', 'a']
+  }
+};
+</code>
+</pre>
+
+<h4 id="4.1.3">4.1.3 Enabling in HTML</h4>
+<p>To enable a theme, add <code>cog-background="theme-name"</code> to the root element or any section of your page.</p>
+
+<pre>
+<code class="language-html">&lt;section cog-background="dark-mode"&gt;
+  &lt;h2&gt;Dark Themed Section&lt;/h2&gt;
+  &lt;p&gt;This area uses a dark background with light foreground for improved contrast.&lt;/p&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4 id="4.1.6">4.1.6 Accessibility Considerations</h4>
+<ul>
+    <li><strong>Improves Readability:</strong> Helpful for users with dyslexia, Irlen Syndrome, or sensory fatigue.</li>
+    <li><strong>Reduces Visual Noise:</strong> Muted background themes reduce distraction.</li>
+    <li><strong>Declarative & Flexible:</strong> Works on any HTML element without additional CSS.</li>
+    <li><strong>Supports System Preferences:</strong> Can be configured to respect OS-level dark/light mode.</li>
+</ul>
+
+<h4 id="4.1.7">4.1.7 Testing cog-background</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Apply cog-background to a &lt;body&gt; or &lt;section&gt;
+// - Verify correct background and foreground colors appear
+// - Check legibility in different light environments
+// - Ensure user settings (if any) are respected
+</code>
+</pre>
+
+<h4>Best Practices for cog-background</h4>
+<ul>
+    <li><strong>Use Semantic Themes:</strong> Choose color combinations that are WCAG AA/AAA compliant where possible.</li>
+    <li><strong>Provide Options:</strong> Let users switch between themes if feasible.</li>
+    <li><strong>Apply Intelligently:</strong> Use per-section overrides only where appropriate.</li>
+    <li><strong>Combine Thoughtfully:</strong> Works well with <code>cog-read</code> and <code>cog-toggle-content</code> for layered support.</li>
+    <li><strong>Always Test:</strong> Manually inspect and use tools to validate theme contrast ratios.</li>
+</ul>
+
+

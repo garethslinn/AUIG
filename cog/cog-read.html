@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Index - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Read - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -120,37 +120,105 @@
             <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
-        <li aria-current="page">Cog</li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-read</li>
     </ol>
 </nav>
 
-<h1>Accessible User Interface Guidelines</h1>
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h2>CogJS – Cognitive-Oriented Web Accessibility Toolkit</h2>
-
-<h3>Introducing CogJS</h3>
+<h3>cog-read</h3>
 
 <p>
-    <strong>CogJS</strong> is a lightweight, production-ready JavaScript library designed to improve web accessibility for neurodivergent and cognitively diverse users. It enables developers to enhance user experience using simple, declarative HTML attributes-no frameworks, build tools, or heavy dependencies required.
+    <code>cog-read</code> is a declarative attribute that adds a speech synthesis button to read aloud the contents of a section or block of text. It supports users with dyslexia, ADHD, cognitive fatigue, and those who benefit from audio reinforcement.
 </p>
 
+<h4 id="4.4.1">4.4.1 What It Does</h4>
 <p>
-    Unlike traditional accessibility tools that primarily focus on screen readers or motor impairments, CogJS addresses the needs of users with ADHD, autism spectrum conditions, dyslexia, cognitive fatigue, and sensory sensitivities.
+    When applied to any element, CogJS injects an accessible "Read Aloud" button that uses the browser’s built-in speech synthesis (Text-to-Speech API) to vocalize the element’s text content. It enhances comprehension and reduces reading fatigue.
 </p>
 
+<pre>
+<code class="language-html">&lt;section cog-read&gt;
+  &lt;p&gt;This paragraph will be read aloud when the button is clicked.&lt;/p&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4 id="4.4.2">4.4.2 Customising cog-read</h4>
 <p>
-    With CogJS, you can reduce cognitive load, increase clarity, and offer more user control-right from your markup.
+    You can customize the button label, style, icon, and size via <code>window.cogReadConfig</code>. This allows you to align it with your design system.
 </p>
 
+<pre>
+<code class="language-javascript">window.cogReadConfig = {
+  read: {
+    label: "Speak text",
+    iconSize: "1.25rem",
+    styles: `
+      .cog-read-button {
+        background-color: #007acc;
+        color: white;
+        border-radius: 4px;
+        padding: 0.25rem;
+      }
+      .cog-read-button:hover {
+        background-color: #005fa3;
+      }
+      .cog-read-button svg {
+        fill: white;
+      }
+    `
+  }
+};
+</code>
+</pre>
+
+<h4 id="4.4.3">4.4.3 Enabling in HTML</h4>
 <p>
-    The full source code and documentation are available on <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank" rel="noopener">GitHub</a>.
+    Simply add <code>cog-read</code> to the element you want to be read aloud. The button is injected automatically when CogJS initializes.
 </p>
 
-<p>
-    Use the navigation menu to explore individual CogJS features, including accessible backgrounds, chunked forms, hints, reading assistance, and more.
-</p>
+<pre>
+<code class="language-html">&lt;article cog-read&gt;
+  &lt;h2&gt;Key Policy Update&lt;/h2&gt;
+  &lt;p&gt;We’ve revised our privacy terms effective May 1st.&lt;/p&gt;
+&lt;/article&gt;
+</code>
+</pre>
 
+<h4 id="4.4.4">4.4.4 Technical Details</h4>
+<ul>
+    <li>Uses <code>SpeechSynthesisUtterance</code> for voice playback</li>
+    <li>Button is labelled with <code>aria-label</code> for assistive technology</li>
+    <li>Only reads visible text within the element</li>
+</ul>
 
+<h4 id="4.4.6">4.4.6 Accessibility Considerations</h4>
+<ul>
+    <li><strong>Enhances Multimodal Access:</strong> Ideal for users who prefer audio to visual reading.</li>
+    <li><strong>Fully Keyboard Accessible:</strong> Injected buttons are focusable and operable via keyboard.</li>
+    <li><strong>Screen Reader Compatible:</strong> Button includes an ARIA label for clarity.</li>
+</ul>
+
+<h4 id="4.4.7">4.4.7 Testing cog-read</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Apply cog-read to a section with content
+// - Verify read button appears and reads aloud correctly
+// - Confirm keyboard accessibility and visible focus styles
+// - Check fallback if browser does not support speech synthesis
+</code>
+</pre>
+
+<h4>Best Practices for cog-read</h4>
+<ul>
+    <li><strong>Use for Important Content:</strong> Apply to summaries, policy updates, help instructions, or long articles.</li>
+    <li><strong>Keep It Short:</strong> Break long sections into smaller <code>cog-read</code> blocks to improve control.</li>
+    <li><strong>Style Accessibly:</strong> Ensure button contrast and focus styles are visible to all users.</li>
+    <li><strong>Test in Multiple Browsers:</strong> Speech support varies slightly across platforms—test for consistency.</li>
+    <li><strong>Pair with cog-background:</strong> Enhance both visual and auditory comprehension for diverse users.</li>
+</ul>
 
         </div>
     </main>

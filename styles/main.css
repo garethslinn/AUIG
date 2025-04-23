@@ -74,7 +74,7 @@ h3, h4, h5 {
 
 h3 {
     font-size: 1.75rem;
-    color: #000;
+    color: #fff;
     background: var(--title-h3);
     padding-left: 1rem;
 }

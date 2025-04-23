@@ -14,9 +14,14 @@
     <code>cog-active</code> is a high-level control attribute that enables or disables all CogJS features on a specific element and its children. It is ideal for excluding interactive components, legacy sections, or third-party content from CogJS enhancements.
 </p>
 
-<h4 id="4.3.1">4.3.1 What It Does</h4>
+<h4>What It Does</h4>
 <p>
     When set to <code>cog-active="false"</code>, all CogJS functionality (e.g., backgrounds, reading buttons, animation suppression) is disabled for the element and its descendants. This ensures those parts of the page remain unaffected by CogJS processing.
+</p>
+
+<h4>Enabling in HTML</h4>
+<p>
+    To enable a theme, add <code>cog-active="false"</code> to the root element or any section of your page.
 </p>
 
 <pre>
@@ -27,7 +32,7 @@
 </code>
 </pre>
 
-<h4 id="4.3.2">4.3.2 Use Cases</h4>
+<h4>Use Cases</h4>
 <ul>
     <li>Sections where CogJS styling or interactivity is undesirable</li>
     <li>Third-party widgets or embedded apps</li>
@@ -35,19 +40,19 @@
     <li>Admin panels or developer tools</li>
 </ul>
 
-<h4 id="4.3.3">4.3.3 Default Behavior</h4>
+<h4>Default Behavior</h4>
 <p>
     By default, CogJS is globally active when <code>window.cogConfig.active = true</code>. Use <code>cog-active</code> to selectively override this behavior at the element level.
 </p>
 
-<h4 id="4.3.6">4.3.6 Accessibility Considerations</h4>
+<h4>Accessibility Considerations</h4>
 <ul>
     <li><strong>Respects Developer Intent:</strong> Gives precise control over where accessibility enhancements apply.</li>
     <li><strong>Avoids Conflict:</strong> Prevents CogJS from altering functionality in complex UI components.</li>
     <li><strong>Scoped Deactivation:</strong> Deactivation is inherited by all nested child elements.</li>
 </ul>
 
-<h4 id="4.3.7">4.3.7 Testing cog-active</h4>
+<h4>Testing cog-active</h4>
 <pre>
 <code class="language-html">// Test Checklist
 // - Add cog-active="false" to a test block

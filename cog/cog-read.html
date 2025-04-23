@@ -138,19 +138,12 @@
     <code>cog-read</code> is a declarative attribute that adds a speech synthesis button to read aloud the contents of a section or block of text. It supports users with dyslexia, ADHD, cognitive fatigue, and those who benefit from audio reinforcement.
 </p>
 
-<h4 id="4.4.1">4.4.1 What It Does</h4>
+<h4>What It Does</h4>
 <p>
     When applied to any element, CogJS injects an accessible "Read Aloud" button that uses the browser’s built-in speech synthesis (Text-to-Speech API) to vocalize the element’s text content. It enhances comprehension and reduces reading fatigue.
 </p>
 
-<pre>
-<code class="language-html">&lt;section cog-read&gt;
-  &lt;p&gt;This paragraph will be read aloud when the button is clicked.&lt;/p&gt;
-&lt;/section&gt;
-</code>
-</pre>
-
-<h4 id="4.4.2">4.4.2 Customising cog-read</h4>
+<h4>Customising cog-read</h4>
 <p>
     You can customize the button label, style, icon, and size via <code>window.cogReadConfig</code>. This allows you to align it with your design system.
 </p>
@@ -179,7 +172,7 @@
 </code>
 </pre>
 
-<h4 id="4.4.3">4.4.3 Enabling in HTML</h4>
+<h4>Enabling in HTML</h4>
 <p>
     Simply add <code>cog-read</code> to the element you want to be read aloud. The button is injected automatically when CogJS initializes.
 </p>
@@ -192,21 +185,21 @@
 </code>
 </pre>
 
-<h4 id="4.4.4">4.4.4 Technical Details</h4>
+<h4>Technical Details</h4>
 <ul>
     <li>Uses <code>SpeechSynthesisUtterance</code> for voice playback</li>
-    <li>Button is labelled with <code>aria-label</code> for assistive technology</li>
+    <li>Button is labelled with <code>aria-hidden="true"</code> for assistive technology</li>
     <li>Only reads visible text within the element</li>
 </ul>
 
-<h4 id="4.4.6">4.4.6 Accessibility Considerations</h4>
+<h4>Accessibility Considerations</h4>
 <ul>
     <li><strong>Enhances Multimodal Access:</strong> Ideal for users who prefer audio to visual reading.</li>
     <li><strong>Fully Keyboard Accessible:</strong> Injected buttons are focusable and operable via keyboard.</li>
-    <li><strong>Screen Reader Compatible:</strong> Button includes an ARIA label for clarity.</li>
+    <li><strong>Screen Reader Compatible:</strong> Button includes an ARIA hidden attribute to avoid screen reader conflict or confusion.</li>
 </ul>
 
-<h4 id="4.4.7">4.4.7 Testing cog-read</h4>
+<h4>Testing cog-read</h4>
 <pre>
 <code class="language-html">// Test Checklist
 // - Apply cog-read to a section with content

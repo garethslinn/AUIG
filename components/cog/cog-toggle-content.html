@@ -11,31 +11,29 @@
 <h3>cog-toggle-content</h3>
 
 <p>
-    <code>cog-toggle-content</code> is a declarative attribute that enables users to toggle between multiple versions of the same content—for example, simplified summaries, expanded explanations, or alternate formats. It improves comprehension and supports different levels of cognitive load.
+    CogJS is a production-ready JavaScript library that enhances web accessibility for
+    neurodiverse and cognitively diverse users. Designed for flexibility and minimal setup,
+    CogJS lets developers declaratively add support for cognitive needs using custom HTML
+    attributes-no complex tooling or frameworks required.
 </p>
 
-<h4 id="4.5.1">4.5.1 What It Does</h4>
+<p>
+    <code>cog-toggle-content</code> is a declarative attribute that enables users to toggle between multiple versions of the same content-for example, simplified summaries, expanded explanations, or alternate formats. It improves comprehension and supports different levels of cognitive load.
+</p>
+
+<h4>What It Does</h4>
 <p>
     When applied to an element, <code>cog-toggle-content</code> automatically renders toggle buttons that cycle through child content versions. Each child <code>&lt;div&gt;</code> within the container represents a distinct version.
 </p>
 
-<pre>
-<code class="language-html">&lt;div cog-toggle-content&gt;
-  &lt;div&gt;Simple summary.&lt;/div&gt;
-  &lt;div&gt;More detailed explanation of the topic.&lt;/div&gt;
-  &lt;div&gt;Full technical breakdown for advanced users.&lt;/div&gt;
-&lt;/div&gt;
-</code>
-</pre>
-
-<h4 id="4.5.2">4.5.2 How It Works</h4>
+<h4>How It Works</h4>
 <ul>
     <li>The first visible child is shown by default.</li>
     <li>A toggle button is injected automatically to cycle through content versions.</li>
     <li>Keyboard navigation and ARIA roles are added for accessibility.</li>
 </ul>
 
-<h4 id="4.5.3">4.5.3 Styling and Behavior</h4>
+<h4>Styling and Behavior</h4>
 <p>
     You can style the toggle UI using global CSS or inject scoped styles via your config. Buttons are keyboard accessible and labelled with appropriate ARIA attributes.
 </p>
@@ -52,7 +50,7 @@
 </code>
 </pre>
 
-<h4 id="4.5.4">4.5.4 Enabling in HTML</h4>
+<h4>Enabling in HTML</h4>
 <p>Just add <code>cog-toggle-content</code> to a container and include two or more child <code>&lt;div&gt;</code>s with alternative versions of the content.</p>
 
 <pre>
@@ -63,14 +61,14 @@
 </code>
 </pre>
 
-<h4 id="4.5.6">4.5.6 Accessibility Considerations</h4>
+<h4>Accessibility Considerations</h4>
 <ul>
     <li><strong>Reduces Overload:</strong> Users only see one version at a time, helping reduce information fatigue.</li>
     <li><strong>Supports Multiple Learning Styles:</strong> Enables access to both simplified and advanced versions.</li>
     <li><strong>Accessible Controls:</strong> Toggle buttons are fully keyboard operable and labelled.</li>
 </ul>
 
-<h4 id="4.5.7">4.5.7 Testing cog-toggle-content</h4>
+<h4>Testing cog-toggle-content</h4>
 <pre>
 <code class="language-html">// Test Checklist
 // - Verify toggle UI is injected

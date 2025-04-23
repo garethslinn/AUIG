@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Index - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Hint - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -140,37 +140,82 @@
             <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
-        <li aria-current="page">Cog</li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-hint</li>
     </ol>
 </nav>
 
-<h1>Accessible User Interface Guidelines</h1>
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h2>CogJS – Cognitive-Oriented Web Accessibility Toolkit</h2>
-
-<h3>Introducing CogJS</h3>
+<h3>cog-hint</h3>
 
 <p>
-    <strong>CogJS</strong> is a lightweight, production-ready JavaScript library designed to improve web accessibility for neurodivergent and cognitively diverse users. It enables developers to enhance user experience using simple, declarative HTML attributes-no frameworks, build tools, or heavy dependencies required.
+    <code>cog-hint</code> is a declarative attribute that adds contextual guidance or helper text to form fields and interactive elements. It’s ideal for reducing ambiguity, helping users stay on task, and lowering cognitive load during complex interactions.
 </p>
 
+<h4>What It Does</h4>
 <p>
-    Unlike traditional accessibility tools that primarily focus on screen readers or motor impairments, CogJS addresses the needs of users with ADHD, autism spectrum conditions, dyslexia, cognitive fatigue, and sensory sensitivities.
+    When added to a label or input container, <code>cog-hint="Your helper text here"</code> displays a non-intrusive tooltip-style hint on focus or idle. It’s especially helpful for neurodivergent users who benefit from extra clarity without overwhelming the interface.
 </p>
 
+<pre>
+<code class="language-html">&lt;label cog-hint="Your email before the @ symbol"&gt;
+  Username:
+  &lt;input type="text" name="username"&gt;
+&lt;/label&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>Hints are shown when the target element receives focus or when the user pauses</li>
+    <li>They disappear automatically on blur or after interaction resumes</li>
+    <li>Tooltips are rendered with accessible roles and positioning logic</li>
+</ul>
+
+<h4>Styling and Placement</h4>
 <p>
-    With CogJS, you can reduce cognitive load, increase clarity, and offer more user control-right from your markup.
+    CogJS includes default styles for positioning and appearance, but you can override them using <code>cogConfig</code> or your own CSS.
 </p>
 
-<p>
-    The full source code and documentation are available on <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank" rel="noopener">GitHub</a>.
-</p>
+<pre>
+<code class="language-css">.cog-hint-bubble {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+</code>
+</pre>
 
-<p>
-    Use the navigation menu to explore individual CogJS features, including accessible backgrounds, chunked forms, hints, reading assistance, and more.
-</p>
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Non-Intrusive:</strong> Does not interrupt task flow-only appears when needed</li>
+    <li><strong>Screen Reader Friendly:</strong> Rendered with <code>aria-describedby</code> where appropriate</li>
+    <li><strong>Visual Clarity:</strong> Contrasts well with backgrounds and remains readable</li>
+</ul>
 
+<h4>Testing cog-hint</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-hint to a form label or input container
+// - Tab to the input and confirm the hint appears
+// - Ensure the hint is readable and dismisses on blur
+// - Confirm it does not block form validation or input
+</code>
+</pre>
 
+<h4>Best Practices for cog-hint</h4>
+<ul>
+    <li><strong>Be Specific:</strong> Write hints that clarify the field’s expected format or purpose</li>
+    <li><strong>Use Plain Language:</strong> Avoid jargon or overly technical instructions</li>
+    <li><strong>Limit Length:</strong> Keep hints short and focused to reduce distraction</li>
+    <li><strong>Test With Users:</strong> Confirm that hints actually help with understanding, not clutter</li>
+    <li><strong>Combine With cog-chunk:</strong> Use hints in multi-step forms for smoother progression</li>
+</ul>
 
         </div>
     </main>

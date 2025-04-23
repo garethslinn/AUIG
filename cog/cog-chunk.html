@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Index - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Chunk - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -140,37 +140,81 @@
             <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
-        <li aria-current="page">Cog</li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-chunk</li>
     </ol>
 </nav>
 
-<h1>Accessible User Interface Guidelines</h1>
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h2>CogJS – Cognitive-Oriented Web Accessibility Toolkit</h2>
-
-<h3>Introducing CogJS</h3>
+<h3>cog-chunk</h3>
 
 <p>
-    <strong>CogJS</strong> is a lightweight, production-ready JavaScript library designed to improve web accessibility for neurodivergent and cognitively diverse users. It enables developers to enhance user experience using simple, declarative HTML attributes-no frameworks, build tools, or heavy dependencies required.
+    <code>cog-chunk</code> is a declarative attribute that breaks long forms or complex content into smaller, more manageable steps. It supports users who benefit from progressive disclosure, such as those with ADHD, cognitive fatigue, or executive functioning challenges.
 </p>
 
+<h4>What It Does</h4>
 <p>
-    Unlike traditional accessibility tools that primarily focus on screen readers or motor impairments, CogJS addresses the needs of users with ADHD, autism spectrum conditions, dyslexia, cognitive fatigue, and sensory sensitivities.
+    When applied to a container such as a <code>&lt;form&gt;</code> or <code>&lt;section&gt;</code>, <code>cog-chunk</code> automatically adds "Next" and "Previous" buttons to help users navigate step-by-step. Each child <code>&lt;fieldset&gt;</code> is treated as an individual step.
 </p>
 
-<p>
-    With CogJS, you can reduce cognitive load, increase clarity, and offer more user control-right from your markup.
-</p>
+<pre>
+<code class="language-html">&lt;form cog-chunk&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Step 1: Choose a plan&lt;/legend&gt;
+    &lt;label&gt;&lt;input type="radio" name="plan" value="basic"&gt; Basic&lt;/label&gt;
+    &lt;label&gt;&lt;input type="radio" name="plan" value="pro"&gt; Pro&lt;/label&gt;
+  &lt;/fieldset&gt;
 
-<p>
-    The full source code and documentation are available on <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank" rel="noopener">GitHub</a>.
-</p>
+  &lt;fieldset&gt;
+    &lt;legend&gt;Step 2: Your details&lt;/legend&gt;
+    &lt;label&gt;Name: &lt;input type="text" name="name"&gt;&lt;/label&gt;
+    &lt;label&gt;Email: &lt;input type="email" name="email"&gt;&lt;/label&gt;
+  &lt;/fieldset&gt;
 
-<p>
-    Use the navigation menu to explore individual CogJS features, including accessible backgrounds, chunked forms, hints, reading assistance, and more.
-</p>
+  &lt;fieldset&gt;
+    &lt;legend&gt;Step 3: Confirm&lt;/legend&gt;
+    &lt;p&gt;Please review your details before submitting.&lt;/p&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code>
+</pre>
 
+<h4>How It Works</h4>
+<ul>
+    <li>Each <code>&lt;fieldset&gt;</code> is shown one at a time</li>
+    <li>Navigation buttons are injected automatically</li>
+    <li>Users can use Tab/Shift+Tab or click buttons to progress</li>
+    <li>Focus is managed to improve keyboard accessibility</li>
+</ul>
 
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Reduces Overload:</strong> Breaks long processes into easier, bite-sized steps</li>
+    <li><strong>Focus Management:</strong> Moves focus to the next chunk for seamless keyboard navigation</li>
+    <li><strong>Form Preservation:</strong> Maintains native HTML structure for validation and accessibility</li>
+</ul>
+
+<h4>Testing cog-chunk</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Apply cog-chunk to a form or content section
+// - Verify only one fieldset is visible at a time
+// - Confirm navigation buttons are keyboard accessible
+// - Ensure focus moves correctly between steps
+// - Check form validation still works as expected
+</code>
+</pre>
+
+<h4>Best Practices for cog-chunk</h4>
+<ul>
+    <li><strong>Keep Steps Short:</strong> Each <code>&lt;fieldset&gt;</code> should focus on a single task or group of related inputs</li>
+    <li><strong>Use Clear Legends:</strong> Provide descriptive <code>&lt;legend&gt;</code> elements for each step</li>
+    <li><strong>Include Progress Indicators:</strong> Optionally show step numbers or a progress bar for better orientation</li>
+    <li><strong>Test for Keyboard Use:</strong> Make sure users can complete the process without a mouse</li>
+    <li><strong>Combine With cog-hint or cog-read:</strong> Add guidance or narration where steps might be complex</li>
+</ul>
 
         </div>
     </main>

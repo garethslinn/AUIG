@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Index - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Path - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -140,37 +140,71 @@
             <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
-        <li aria-current="page">Cog</li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-path</li>
     </ol>
 </nav>
 
-<h1>Accessible User Interface Guidelines</h1>
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h2>CogJS – Cognitive-Oriented Web Accessibility Toolkit</h2>
-
-<h3>Introducing CogJS</h3>
+<h3>cog-path</h3>
 
 <p>
-    <strong>CogJS</strong> is a lightweight, production-ready JavaScript library designed to improve web accessibility for neurodivergent and cognitively diverse users. It enables developers to enhance user experience using simple, declarative HTML attributes-no frameworks, build tools, or heavy dependencies required.
+    <code>cog-path</code> is a declarative attribute that renders a breadcrumb-style navigation trail based on the user’s page history. It provides better spatial awareness for users with memory, orientation, or executive functioning challenges.
 </p>
 
+<h4>What It Does</h4>
 <p>
-    Unlike traditional accessibility tools that primarily focus on screen readers or motor impairments, CogJS addresses the needs of users with ADHD, autism spectrum conditions, dyslexia, cognitive fatigue, and sensory sensitivities.
+    When placed on a <code>&lt;nav&gt;</code> or container element, <code>cog-path</code> dynamically builds a path from previously visited CogJS-enhanced pages or sections. The trail updates in-session and helps users retrace their steps in complex UIs.
 </p>
 
+<pre>
+<code class="language-html">&lt;nav cog-path aria-label="Breadcrumb"&gt;&lt;/nav&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>Paths are stored using <code>sessionStorage</code> for up to 2 hours</li>
+    <li>Each page visit adds a new step to the path, using the document <code>&lt;title&gt;</code> or an override</li>
+    <li>Breadcrumbs are rendered in-order and link to previously visited pages</li>
+</ul>
+
+<h4>Optional Overrides</h4>
 <p>
-    With CogJS, you can reduce cognitive load, increase clarity, and offer more user control-right from your markup.
+    You can manually set the path label for a page using:
 </p>
 
-<p>
-    The full source code and documentation are available on <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank" rel="noopener">GitHub</a>.
-</p>
+<pre>
+<code class="language-html">&lt;meta name="cog-path-label" content="My Custom Title"&gt;
+</code>
+</pre>
 
-<p>
-    Use the navigation menu to explore individual CogJS features, including accessible backgrounds, chunked forms, hints, reading assistance, and more.
-</p>
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Improves Orientation:</strong> Helps users keep track of where they are and how they got there</li>
+    <li><strong>Keyboard Navigable:</strong> Breadcrumbs are rendered as standard links for full keyboard support</li>
+    <li><strong>Screen Reader Compatible:</strong> Uses semantic markup with <code>aria-label</code> on the nav</li>
+</ul>
 
+<h4>Testing cog-path</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-path to a &lt;nav&gt; element
+// - Navigate through multiple CogJS pages
+// - Confirm path shows correct order and page names
+// - Verify accessibility for screen readers and keyboard users
+</code>
+</pre>
 
+<h4>Best Practices for cog-path</h4>
+<ul>
+    <li><strong>Place Near Top:</strong> Add <code>cog-path</code> early in the page layout, typically before <code>&lt;main&gt;</code></li>
+    <li><strong>Use Descriptive Titles:</strong> Page titles should be meaningful for the breadcrumb trail</li>
+    <li><strong>Keep It Short:</strong> Display only the last 3–5 steps to avoid clutter</li>
+    <li><strong>Combine With cog-chunk:</strong> Helps users retrace their journey through progressive content</li>
+    <li><strong>Respect Privacy:</strong> Breadcrumbs are session-scoped only-no permanent storage</li>
+</ul>
 
         </div>
     </main>

@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Cog Background - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/cog/">
+            <span><strong>Cog</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-background.html" aria-label="cog-background">
+            <span title="cog-background"><strong>cog-background</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-animation.html" aria-label="cog-animation">
+            <span title="cog-animation"><strong>cog-animation</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-active.html" aria-label="cog-active">
+            <span title="cog-active"><strong>cog-active</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-read.html" aria-label="cog-read">
+            <span title="cog-read"><strong>cog-read</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-toggle-content.html" aria-label="cog-toggle-content">
+            <span title="cog-toggle-content"><strong>cog-toggle-content</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-chunk.html" aria-label="cog-chunk">
+            <span title="cog-chunk"><strong>cog-chunk</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-hint.html" aria-label="cog-hint">
+            <span title="cog-hint"><strong>cog-hint</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-path.html" aria-label="cog-path">
+            <span title="cog-path"><strong>cog-path</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-background</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-background</h3>
+
+<p>
+    <code>cog-background</code> is a declarative attribute used to apply cognitive-friendly themes to elements on a page. It is part of <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank">CogJS</a>, a lightweight JavaScript library focused on cognitive and neurodivergent accessibility enhancements.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    The attribute enables accessible theming without additional CSS. Developers can use predefined or custom themes to reduce visual stress and enhance readability, especially for users with dyslexia, sensory sensitivity, or ADHD.
+</p>
+
+<h4>Theme Configuration</h4>
+<p>
+    Configure themes in <code>cog-theme.js</code> before loading the script. You can define custom background and foreground color combinations.
+</p>
+
+<pre>
+<code class="language-javascript">window.cogThemeConfig = {
+  defaultTheme: 'dyslexic-yellow',
+  themes: {
+    'dyslexic-yellow': {
+      background: '#fffce0',
+      foreground: '#000'
+    },
+    'dyslexic-blue': {
+      background: '#e6f0ff',
+      foreground: '#000'
+    },
+    'dark-mode': {
+      background: '#1e1e1e',
+      foreground: '#fff'
+    }
+  },
+  targets: {
+    background: ['body', 'section'],
+    foreground: ['p', 'h1', 'h2', 'li', 'a']
+  }
+};
+</code>
+</pre>
+
+<h4>Enabling in HTML</h4>
+<p>
+    To enable a theme, add <code>cog-background="theme-name"</code> to the root element or any section of your page.
+</p>
+
+<pre>
+<code class="language-html">&lt;section cog-background="dark-mode"&gt;
+  &lt;h2&gt;Dark Themed Section&lt;/h2&gt;
+  &lt;p&gt;This area uses a dark background with light foreground for improved contrast.&lt;/p&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Improves Readability:</strong> Helpful for users with dyslexia, Irlen Syndrome, or sensory fatigue.</li>
+    <li><strong>Reduces Visual Noise:</strong> Muted background themes reduce distraction.</li>
+    <li><strong>Declarative & Flexible:</strong> Works on any HTML element without additional CSS.</li>
+    <li><strong>Supports System Preferences:</strong> Can be configured to respect OS-level dark/light mode.</li>
+</ul>
+
+<h4>Testing cog-background</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Apply cog-background to a &lt;body&gt; or &lt;section&gt;
+// - Verify correct background and foreground colors appear
+// - Check legibility in different light environments
+// - Ensure user settings (if any) are respected
+</code>
+</pre>
+
+<h4>Best Practices for cog-background</h4>
+<ul>
+    <li><strong>Use Semantic Themes:</strong> Choose color combinations that are WCAG AA/AAA compliant where possible.</li>
+    <li><strong>Provide Options:</strong> Let users switch between themes if feasible.</li>
+    <li><strong>Apply Intelligently:</strong> Use per-section overrides only where appropriate.</li>
+    <li><strong>Combine Thoughtfully:</strong> Works well with <code>cog-read</code> and <code>cog-toggle-content</code> for layered support.</li>
+    <li><strong>Always Test:</strong> Manually inspect and use tools to validate theme contrast ratios.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

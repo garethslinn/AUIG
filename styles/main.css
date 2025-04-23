@@ -68,20 +68,23 @@ h2 {
     background-color: #000;
 }
 
-h3, h4, h5 {
+h3  {
     margin: 1rem 0;
+}
+
+h4, h5 {
+    margin: 0;
 }
 
 h3 {
     font-size: 1.75rem;
-    color: #000;
+    color: #fff;
     background: var(--title-h3);
     padding-left: 1rem;
 }
 
 h4 {
     font-size: 1.5rem;
-    padding: 0 1rem;
     color: var(--title-h4-fg);
     background: var(--title-h4);
 }

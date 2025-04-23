@@ -80,10 +80,12 @@
 ### Start the Development Server
 Run the following command (in the root) to start the server and watch for changes:
 ```bash
+npm run serve
+```
+In a different terminal run "watch"
+```bash
 npm run watch
 ```
-
-The project will be available at `http://localhost:3000`.
 
 ### Workflow
 

@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Cog Read - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/cog/">
+            <span><strong>Cog</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-background.html" aria-label="cog-background">
+            <span title="cog-background"><strong>cog-background</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-animation.html" aria-label="cog-animation">
+            <span title="cog-animation"><strong>cog-animation</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-active.html" aria-label="cog-active">
+            <span title="cog-active"><strong>cog-active</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-read.html" aria-label="cog-read">
+            <span title="cog-read"><strong>cog-read</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-toggle-content.html" aria-label="cog-toggle-content">
+            <span title="cog-toggle-content"><strong>cog-toggle-content</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-chunk.html" aria-label="cog-chunk">
+            <span title="cog-chunk"><strong>cog-chunk</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-hint.html" aria-label="cog-hint">
+            <span title="cog-hint"><strong>cog-hint</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-path.html" aria-label="cog-path">
+            <span title="cog-path"><strong>cog-path</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-read</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-read</h3>
+
+<p>
+    <code>cog-read</code> is a declarative attribute that adds a speech synthesis button to read aloud the contents of a section or block of text. It supports users with dyslexia, ADHD, cognitive fatigue, and those who benefit from audio reinforcement.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When applied to any element, CogJS injects an accessible "Read Aloud" button that uses the browser’s built-in speech synthesis (Text-to-Speech API) to vocalize the element’s text content. It enhances comprehension and reduces reading fatigue.
+</p>
+
+<h4>Customising cog-read</h4>
+<p>
+    You can customize the button label, style, icon, and size via <code>window.cogReadConfig</code>. This allows you to align it with your design system.
+</p>
+
+<pre>
+<code class="language-javascript">window.cogReadConfig = {
+  read: {
+    label: "Speak text",
+    iconSize: "1.25rem",
+    styles: `
+      .cog-read-button {
+        background-color: #007acc;
+        color: white;
+        border-radius: 4px;
+        padding: 0.25rem;
+      }
+      .cog-read-button:hover {
+        background-color: #005fa3;
+      }
+      .cog-read-button svg {
+        fill: white;
+      }
+    `
+  }
+};
+</code>
+</pre>
+
+<h4>Enabling in HTML</h4>
+<p>
+    Simply add <code>cog-read</code> to the element you want to be read aloud. The button is injected automatically when CogJS initializes.
+</p>
+
+<pre>
+<code class="language-html">&lt;article cog-read&gt;
+  &lt;h2&gt;Key Policy Update&lt;/h2&gt;
+  &lt;p&gt;We’ve revised our privacy terms effective May 1st.&lt;/p&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+<h4>Technical Details</h4>
+<ul>
+    <li>Uses <code>SpeechSynthesisUtterance</code> for voice playback</li>
+    <li>Button is labelled with <code>aria-hidden="true"</code> for assistive technology</li>
+    <li>Only reads visible text within the element</li>
+</ul>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Enhances Multimodal Access:</strong> Ideal for users who prefer audio to visual reading.</li>
+    <li><strong>Fully Keyboard Accessible:</strong> Injected buttons are focusable and operable via keyboard.</li>
+    <li><strong>Screen Reader Compatible:</strong> Button includes an ARIA hidden attribute to avoid screen reader conflict or confusion.</li>
+</ul>
+
+<h4>Testing cog-read</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Apply cog-read to a section with content
+// - Verify read button appears and reads aloud correctly
+// - Confirm keyboard accessibility and visible focus styles
+// - Check fallback if browser does not support speech synthesis
+</code>
+</pre>
+
+<h4>Best Practices for cog-read</h4>
+<ul>
+    <li><strong>Use for Important Content:</strong> Apply to summaries, policy updates, help instructions, or long articles.</li>
+    <li><strong>Keep It Short:</strong> Break long sections into smaller <code>cog-read</code> blocks to improve control.</li>
+    <li><strong>Style Accessibly:</strong> Ensure button contrast and focus styles are visible to all users.</li>
+    <li><strong>Test in Multiple Browsers:</strong> Speech support varies slightly across platforms-test for consistency.</li>
+    <li><strong>Pair with cog-background:</strong> Enhance both visual and auditory comprehension for diverse users.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

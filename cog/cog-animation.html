@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Cog Animation - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/cog/">
+            <span><strong>Cog</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-background.html" aria-label="cog-background">
+            <span title="cog-background"><strong>cog-background</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-animation.html" aria-label="cog-animation">
+            <span title="cog-animation"><strong>cog-animation</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-active.html" aria-label="cog-active">
+            <span title="cog-active"><strong>cog-active</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-read.html" aria-label="cog-read">
+            <span title="cog-read"><strong>cog-read</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-toggle-content.html" aria-label="cog-toggle-content">
+            <span title="cog-toggle-content"><strong>cog-toggle-content</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-chunk.html" aria-label="cog-chunk">
+            <span title="cog-chunk"><strong>cog-chunk</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-hint.html" aria-label="cog-hint">
+            <span title="cog-hint"><strong>cog-hint</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-path.html" aria-label="cog-path">
+            <span title="cog-path"><strong>cog-path</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-animation</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-animation</h3>
+
+<p><code>cog-animation</code> is a declarative attribute used to disable or reduce visual motion in specific sections of a webpage. It helps users who are sensitive to animation, particularly those with vestibular disorders, autism spectrum conditions, or attention-related challenges.</p>
+
+<h4>What It Does</h4>
+<p>
+    When applied, <code>cog-animation="false"</code> disables CSS animations, transitions, and scroll behavior for the target element and all its children. This creates a calmer, less distracting experience and reduces cognitive load for sensitive users.
+</p>
+
+<h4>Animation Configuration</h4>
+<p>Configure global animation settings in <code>cog-config.js</code> before initializing CogJS. These settings define the fallback styles used to neutralize motion.</p>
+
+<pre>
+<code class="language-javascript">window.cogConfig = {
+  active: true,
+  animation: {
+    default: true,
+    respectSystemPref: true,
+    styles: `
+      .cog-no-animation *,
+      .cog-no-animation {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    `
+  }
+};
+</code>
+</pre>
+
+<h4>Enabling in HTML</h4>
+<p>To disable animations, simply apply the attribute <code>cog-animation="false"</code> to any HTML element. This will automatically apply the no-animation class styling to that element and its descendants.</p>
+
+<pre>
+<code class="language-html">&lt;div cog-animation="false"&gt;
+  &lt;h2&gt;Calm Mode&lt;/h2&gt;
+  &lt;p&gt;All animations and transitions are disabled here.&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Reduces Cognitive Fatigue:</strong> Minimizes unnecessary motion for better focus and comfort.</li>
+    <li><strong>Supports Vestibular Needs:</strong> Prevents motion-triggered discomfort or nausea.</li>
+    <li><strong>Declarative & Flexible:</strong> Easy to apply on individual containers or full pages.</li>
+    <li><strong>System Aware:</strong> Can be configured to respect user system preferences for reduced motion.</li>
+</ul>
+
+<h4>Testing cog-animation</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Apply cog-animation="false" to a section with animations
+// - Confirm animations and transitions are suppressed
+// - Check support across different browsers and OSs
+// - Respect prefers-reduced-motion when configured to do so
+</code>
+</pre>
+
+<h4>Best Practices for cog-animation</h4>
+<ul>
+    <li><strong>Use Sparingly:</strong> Apply to sections that are likely to cause distraction or sensory overload.</li>
+    <li><strong>Support System Settings:</strong> Use <code>respectSystemPref: true</code> to auto-disable for users with reduced motion settings.</li>
+    <li><strong>Combine Strategically:</strong> Pair with <code>cog-background</code> or <code>cog-read</code> for multimodal accessibility support.</li>
+    <li><strong>Validate with Users:</strong> Where possible, test with actual neurodivergent users for feedback on motion comfort.</li>
+    <li><strong>Don’t Disable All Motion:</strong> Leave subtle, meaningful animations where they aid understanding-unless user preference suggests otherwise.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

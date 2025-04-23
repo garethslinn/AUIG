@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Cog Path - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/cog/">
+            <span><strong>Cog</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-background.html" aria-label="cog-background">
+            <span title="cog-background"><strong>cog-background</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-animation.html" aria-label="cog-animation">
+            <span title="cog-animation"><strong>cog-animation</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-active.html" aria-label="cog-active">
+            <span title="cog-active"><strong>cog-active</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-read.html" aria-label="cog-read">
+            <span title="cog-read"><strong>cog-read</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-toggle-content.html" aria-label="cog-toggle-content">
+            <span title="cog-toggle-content"><strong>cog-toggle-content</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-chunk.html" aria-label="cog-chunk">
+            <span title="cog-chunk"><strong>cog-chunk</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-hint.html" aria-label="cog-hint">
+            <span title="cog-hint"><strong>cog-hint</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-path.html" aria-label="cog-path">
+            <span title="cog-path"><strong>cog-path</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-path</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-path</h3>
+
+<p>
+    <code>cog-path</code> is a declarative attribute that renders a breadcrumb-style navigation trail based on the user’s page history. It provides better spatial awareness for users with memory, orientation, or executive functioning challenges.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When placed on a <code>&lt;nav&gt;</code> or container element, <code>cog-path</code> dynamically builds a path from previously visited CogJS-enhanced pages or sections. The trail updates in-session and helps users retrace their steps in complex UIs.
+</p>
+
+<pre>
+<code class="language-html">&lt;nav cog-path aria-label="Breadcrumb"&gt;&lt;/nav&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>Paths are stored using <code>sessionStorage</code> for up to 2 hours</li>
+    <li>Each page visit adds a new step to the path, using the document <code>&lt;title&gt;</code> or an override</li>
+    <li>Breadcrumbs are rendered in-order and link to previously visited pages</li>
+</ul>
+
+<h4>Optional Overrides</h4>
+<p>
+    You can manually set the path label for a page using:
+</p>
+
+<pre>
+<code class="language-html">&lt;meta name="cog-path-label" content="My Custom Title"&gt;
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Improves Orientation:</strong> Helps users keep track of where they are and how they got there</li>
+    <li><strong>Keyboard Navigable:</strong> Breadcrumbs are rendered as standard links for full keyboard support</li>
+    <li><strong>Screen Reader Compatible:</strong> Uses semantic markup with <code>aria-label</code> on the nav</li>
+</ul>
+
+<h4>Testing cog-path</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-path to a &lt;nav&gt; element
+// - Navigate through multiple CogJS pages
+// - Confirm path shows correct order and page names
+// - Verify accessibility for screen readers and keyboard users
+</code>
+</pre>
+
+<h4>Best Practices for cog-path</h4>
+<ul>
+    <li><strong>Place Near Top:</strong> Add <code>cog-path</code> early in the page layout, typically before <code>&lt;main&gt;</code></li>
+    <li><strong>Use Descriptive Titles:</strong> Page titles should be meaningful for the breadcrumb trail</li>
+    <li><strong>Keep It Short:</strong> Display only the last 3–5 steps to avoid clutter</li>
+    <li><strong>Combine With cog-chunk:</strong> Helps users retrace their journey through progressive content</li>
+    <li><strong>Respect Privacy:</strong> Breadcrumbs are session-scoped only-no permanent storage</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

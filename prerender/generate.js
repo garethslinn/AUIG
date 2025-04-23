@@ -5,8 +5,10 @@ const path = require('path');
 const componentsDir = '../components';
 const sectionsDir = path.join(componentsDir, 'sections');
 const articlesDir = path.join(componentsDir, 'articles');
+const cogDir = path.join(componentsDir, 'cog');
 const outputDir = '../pages';
 const articlesOutputDir = '../articles';
+const cogOutputDir = '../cog';
 const rootDir = '../';
 
 // Function to load reusable components
@@ -133,7 +135,8 @@ ${headContent}
     <main id="main-content">
         <nav class="main-nav">
             <nav-buttons url="/" title="Home"></nav-buttons>
-            <nav-buttons url=/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
         </nav>
         <div class="section-container">
             ${content}
@@ -171,6 +174,9 @@ assemblePages(sectionsDir, outputDir, 'nav.html');
 
 // Process articles with articles navigation
 assemblePages(articlesDir, articlesOutputDir, 'navArticles.html');
+
+// Process Cog pages with cog-specific navigation
+assemblePages(cogDir, cogOutputDir, 'navCog.html');
 
 // Copy index.html to the root directory
 const sourceFileIndex = path.join(outputDir, 'index.html');

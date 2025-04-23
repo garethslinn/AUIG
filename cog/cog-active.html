@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Cog Active - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/cog/">
+            <span><strong>Cog</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-background.html" aria-label="cog-background">
+            <span title="cog-background"><strong>cog-background</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-animation.html" aria-label="cog-animation">
+            <span title="cog-animation"><strong>cog-animation</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-active.html" aria-label="cog-active">
+            <span title="cog-active"><strong>cog-active</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-read.html" aria-label="cog-read">
+            <span title="cog-read"><strong>cog-read</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-toggle-content.html" aria-label="cog-toggle-content">
+            <span title="cog-toggle-content"><strong>cog-toggle-content</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-chunk.html" aria-label="cog-chunk">
+            <span title="cog-chunk"><strong>cog-chunk</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-hint.html" aria-label="cog-hint">
+            <span title="cog-hint"><strong>cog-hint</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="" href="/cog/cog-path.html" aria-label="cog-path">
+            <span title="cog-path"><strong>cog-path</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-active</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-active</h3>
+
+<p>
+    <code>cog-active</code> is a high-level control attribute that enables or disables all CogJS features on a specific element and its children. It is ideal for excluding interactive components, legacy sections, or third-party content from CogJS enhancements.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When set to <code>cog-active="false"</code>, all CogJS functionality (e.g., backgrounds, reading buttons, animation suppression) is disabled for the element and its descendants. This ensures those parts of the page remain unaffected by CogJS processing.
+</p>
+
+<h4>Enabling in HTML</h4>
+<p>
+    To enable a theme, add <code>cog-active="false"</code> to the root element or any section of your page.
+</p>
+
+<pre>
+<code class="language-html">&lt;section cog-active="false"&gt;
+  &lt;p&gt;This section is excluded from CogJS features.&lt;/p&gt;
+  &lt;button&gt;Custom feature not managed by CogJS&lt;/button&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4>Use Cases</h4>
+<ul>
+    <li>Sections where CogJS styling or interactivity is undesirable</li>
+    <li>Third-party widgets or embedded apps</li>
+    <li>Legacy code areas not compatible with CogJS</li>
+    <li>Admin panels or developer tools</li>
+</ul>
+
+<h4>Default Behavior</h4>
+<p>
+    By default, CogJS is globally active when <code>window.cogConfig.active = true</code>. Use <code>cog-active</code> to selectively override this behavior at the element level.
+</p>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Respects Developer Intent:</strong> Gives precise control over where accessibility enhancements apply.</li>
+    <li><strong>Avoids Conflict:</strong> Prevents CogJS from altering functionality in complex UI components.</li>
+    <li><strong>Scoped Deactivation:</strong> Deactivation is inherited by all nested child elements.</li>
+</ul>
+
+<h4>Testing cog-active</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-active="false" to a test block
+// - Verify no CogJS buttons, backgrounds, or effects apply within it
+// - Confirm that outside sections still behave as expected
+// - Test nested elements and mixed usage
+</code>
+</pre>
+
+<h4>Best Practices for cog-active</h4>
+<ul>
+    <li><strong>Use for Isolation:</strong> Wrap non-accessible components or third-party UIs in <code>cog-active="false"</code>.</li>
+    <li><strong>Document Exclusions:</strong> Note why a section is excluded to aid future audits and maintenance.</li>
+    <li><strong>Keep It Scoped:</strong> Don’t disable CogJS globally unless absolutely necessary.</li>
+    <li><strong>Re-test Frequently:</strong> Revisit exclusions when features evolve or accessibility audits are conducted.</li>
+</ul>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

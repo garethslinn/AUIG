@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Cog Animation - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Toggle Content - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -126,86 +126,91 @@
     <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/cog">Cog</a></li>
-        <li aria-current="page">cog-animation</li>
+        <li aria-current="page">cog-toggle-content</li>
     </ol>
 </nav>
 
 <h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h3>cog-animation</h3>
+<h3>cog-toggle-content</h3>
 
-<p><code>cog-animation</code> is a declarative attribute used to disable or reduce visual motion in specific sections of a webpage. It helps users who are sensitive to animation, particularly those with vestibular disorders, autism spectrum conditions, or attention-related challenges.</p>
-
-<h4 id="4.2.1">4.2.1 What It Does</h4>
 <p>
-    When applied, <code>cog-animation="false"</code> disables CSS animations, transitions, and scroll behavior for the target element and all its children. This creates a calmer, less distracting experience and reduces cognitive load for sensitive users.
+    <code>cog-toggle-content</code> is a declarative attribute that enables users to toggle between multiple versions of the same content—for example, simplified summaries, expanded explanations, or alternate formats. It improves comprehension and supports different levels of cognitive load.
+</p>
+
+<h4 id="4.5.1">4.5.1 What It Does</h4>
+<p>
+    When applied to an element, <code>cog-toggle-content</code> automatically renders toggle buttons that cycle through child content versions. Each child <code>&lt;div&gt;</code> within the container represents a distinct version.
 </p>
 
 <pre>
-<code class="language-html">&lt;section cog-animation="false"&gt;
-  &lt;p&gt;This section disables transitions and animations for a more stable visual experience.&lt;/p&gt;
-&lt;/section&gt;
-</code>
-</pre>
-
-<h4 id="4.2.2">4.2.2 Animation Configuration</h4>
-<p>Configure global animation settings in <code>cog-config.js</code> before initializing CogJS. These settings define the fallback styles used to neutralize motion.</p>
-
-<pre>
-<code class="language-javascript">window.cogConfig = {
-  active: true,
-  animation: {
-    default: true,
-    respectSystemPref: true,
-    styles: `
-      .cog-no-animation *,
-      .cog-no-animation {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    `
-  }
-};
-</code>
-</pre>
-
-<h4 id="4.2.3">4.2.3 Enabling in HTML</h4>
-<p>To disable animations, simply apply the attribute <code>cog-animation="false"</code> to any HTML element. This will automatically apply the no-animation class styling to that element and its descendants.</p>
-
-<pre>
-<code class="language-html">&lt;div cog-animation="false"&gt;
-  &lt;h2&gt;Calm Mode&lt;/h2&gt;
-  &lt;p&gt;All animations and transitions are disabled here.&lt;/p&gt;
+<code class="language-html">&lt;div cog-toggle-content&gt;
+  &lt;div&gt;Simple summary.&lt;/div&gt;
+  &lt;div&gt;More detailed explanation of the topic.&lt;/div&gt;
+  &lt;div&gt;Full technical breakdown for advanced users.&lt;/div&gt;
 &lt;/div&gt;
 </code>
 </pre>
 
-<h4 id="4.2.6">4.2.6 Accessibility Considerations</h4>
+<h4 id="4.5.2">4.5.2 How It Works</h4>
 <ul>
-    <li><strong>Reduces Cognitive Fatigue:</strong> Minimizes unnecessary motion for better focus and comfort.</li>
-    <li><strong>Supports Vestibular Needs:</strong> Prevents motion-triggered discomfort or nausea.</li>
-    <li><strong>Declarative & Flexible:</strong> Easy to apply on individual containers or full pages.</li>
-    <li><strong>System Aware:</strong> Can be configured to respect user system preferences for reduced motion.</li>
+    <li>The first visible child is shown by default.</li>
+    <li>A toggle button is injected automatically to cycle through content versions.</li>
+    <li>Keyboard navigation and ARIA roles are added for accessibility.</li>
 </ul>
 
-<h4 id="4.2.7">4.2.7 Testing cog-animation</h4>
+<h4 id="4.5.3">4.5.3 Styling and Behavior</h4>
+<p>
+    You can style the toggle UI using global CSS or inject scoped styles via your config. Buttons are keyboard accessible and labelled with appropriate ARIA attributes.
+</p>
+
 <pre>
-<code class="language-html">// Test Checklist
-// - Apply cog-animation="false" to a section with animations
-// - Confirm animations and transitions are suppressed
-// - Check support across different browsers and OSs
-// - Respect prefers-reduced-motion when configured to do so
+<code class="language-css">.cog-toggle-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
 </code>
 </pre>
 
-<h4>Best Practices for cog-animation</h4>
+<h4 id="4.5.4">4.5.4 Enabling in HTML</h4>
+<p>Just add <code>cog-toggle-content</code> to a container and include two or more child <code>&lt;div&gt;</code>s with alternative versions of the content.</p>
+
+<pre>
+<code class="language-html">&lt;section cog-toggle-content&gt;
+  &lt;div&gt;Short version: Step-by-step guide.&lt;/div&gt;
+  &lt;div&gt;Detailed version: Includes background, theory, and best practices.&lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4 id="4.5.6">4.5.6 Accessibility Considerations</h4>
 <ul>
-    <li><strong>Use Sparingly:</strong> Apply to sections that are likely to cause distraction or sensory overload.</li>
-    <li><strong>Support System Settings:</strong> Use <code>respectSystemPref: true</code> to auto-disable for users with reduced motion settings.</li>
-    <li><strong>Combine Strategically:</strong> Pair with <code>cog-background</code> or <code>cog-read</code> for multimodal accessibility support.</li>
-    <li><strong>Validate with Users:</strong> Where possible, test with actual neurodivergent users for feedback on motion comfort.</li>
-    <li><strong>Don’t Disable All Motion:</strong> Leave subtle, meaningful animations where they aid understanding-unless user preference suggests otherwise.</li>
+    <li><strong>Reduces Overload:</strong> Users only see one version at a time, helping reduce information fatigue.</li>
+    <li><strong>Supports Multiple Learning Styles:</strong> Enables access to both simplified and advanced versions.</li>
+    <li><strong>Accessible Controls:</strong> Toggle buttons are fully keyboard operable and labelled.</li>
+</ul>
+
+<h4 id="4.5.7">4.5.7 Testing cog-toggle-content</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify toggle UI is injected
+// - Cycle through all content versions
+// - Confirm accessibility: keyboard support, ARIA roles, focus state
+// - Ensure content remains readable in each mode
+</code>
+</pre>
+
+<h4>Best Practices for cog-toggle-content</h4>
+<ul>
+    <li><strong>Keep Variants Clear:</strong> Make sure each version has a distinct purpose (e.g. summary, full detail).</li>
+    <li><strong>Use Plain Text:</strong> Avoid placing interactive elements inside content versions.</li>
+    <li><strong>Keep It Compact:</strong> Ideal for tips, summaries, definitions, and educational content.</li>
+    <li><strong>Label Versions Internally:</strong> Use headings inside each version to guide users visually.</li>
+    <li><strong>Combine With Other Features:</strong> Works well alongside <code>cog-read</code> or <code>cog-background</code> for richer cognitive support.</li>
 </ul>
 
         </div>

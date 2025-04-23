@@ -1,0 +1,90 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-toggle-content</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-toggle-content</h3>
+
+<p>
+    <code>cog-toggle-content</code> is a declarative attribute that enables users to toggle between multiple versions of the same content—for example, simplified summaries, expanded explanations, or alternate formats. It improves comprehension and supports different levels of cognitive load.
+</p>
+
+<h4 id="4.5.1">4.5.1 What It Does</h4>
+<p>
+    When applied to an element, <code>cog-toggle-content</code> automatically renders toggle buttons that cycle through child content versions. Each child <code>&lt;div&gt;</code> within the container represents a distinct version.
+</p>
+
+<pre>
+<code class="language-html">&lt;div cog-toggle-content&gt;
+  &lt;div&gt;Simple summary.&lt;/div&gt;
+  &lt;div&gt;More detailed explanation of the topic.&lt;/div&gt;
+  &lt;div&gt;Full technical breakdown for advanced users.&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4 id="4.5.2">4.5.2 How It Works</h4>
+<ul>
+    <li>The first visible child is shown by default.</li>
+    <li>A toggle button is injected automatically to cycle through content versions.</li>
+    <li>Keyboard navigation and ARIA roles are added for accessibility.</li>
+</ul>
+
+<h4 id="4.5.3">4.5.3 Styling and Behavior</h4>
+<p>
+    You can style the toggle UI using global CSS or inject scoped styles via your config. Buttons are keyboard accessible and labelled with appropriate ARIA attributes.
+</p>
+
+<pre>
+<code class="language-css">.cog-toggle-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+</code>
+</pre>
+
+<h4 id="4.5.4">4.5.4 Enabling in HTML</h4>
+<p>Just add <code>cog-toggle-content</code> to a container and include two or more child <code>&lt;div&gt;</code>s with alternative versions of the content.</p>
+
+<pre>
+<code class="language-html">&lt;section cog-toggle-content&gt;
+  &lt;div&gt;Short version: Step-by-step guide.&lt;/div&gt;
+  &lt;div&gt;Detailed version: Includes background, theory, and best practices.&lt;/div&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+<h4 id="4.5.6">4.5.6 Accessibility Considerations</h4>
+<ul>
+    <li><strong>Reduces Overload:</strong> Users only see one version at a time, helping reduce information fatigue.</li>
+    <li><strong>Supports Multiple Learning Styles:</strong> Enables access to both simplified and advanced versions.</li>
+    <li><strong>Accessible Controls:</strong> Toggle buttons are fully keyboard operable and labelled.</li>
+</ul>
+
+<h4 id="4.5.7">4.5.7 Testing cog-toggle-content</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Verify toggle UI is injected
+// - Cycle through all content versions
+// - Confirm accessibility: keyboard support, ARIA roles, focus state
+// - Ensure content remains readable in each mode
+</code>
+</pre>
+
+<h4>Best Practices for cog-toggle-content</h4>
+<ul>
+    <li><strong>Keep Variants Clear:</strong> Make sure each version has a distinct purpose (e.g. summary, full detail).</li>
+    <li><strong>Use Plain Text:</strong> Avoid placing interactive elements inside content versions.</li>
+    <li><strong>Keep It Compact:</strong> Ideal for tips, summaries, definitions, and educational content.</li>
+    <li><strong>Label Versions Internally:</strong> Use headings inside each version to guide users visually.</li>
+    <li><strong>Combine With Other Features:</strong> Works well alongside <code>cog-read</code> or <code>cog-background</code> for richer cognitive support.</li>
+</ul>

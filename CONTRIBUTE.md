@@ -1,6 +1,6 @@
 ### **🌟 Join Me in Building Accessible User Interfaces! 🌟**
 
-Hello, I’m **Gareth Slinn**, and I’m passionate about transforming digital interfaces to make them accessible for individuals with diverse abilities, including those with neurological, cognitive, and psychological challenges. I’ve developed the **Accessible User Interface Guidelines (AUIG)**—a draft framework to help design, develop, and test inclusive user interfaces. **I need your help to bring this vision to life!**
+Hello, I’m **Gareth Slinn**, and I’m passionate about transforming digital interfaces to make them accessible for individuals with diverse abilities, including those with neurological, cognitive, and psychological challenges. I’ve developed the **Accessible User Interface Guidelines (AUIG)**-a draft framework to help design, develop, and test inclusive user interfaces. **I need your help to bring this vision to life!**
 
 ---
 

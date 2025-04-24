@@ -128,13 +128,11 @@
     <li>
         <a data-image="" href="/cog/cog-remind.html" aria-label="cog-remind">
             <span title="cog-remind"><strong>cog-remind</strong></span>
-
         </a>
     </li>
     <li>
         <a data-image="" href="/cog/cog-toc.html" aria-label="cog-toc">
             <span title="cog-toc"><strong>cog-toc</strong></span>
-
         </a>
     </li>
 </ul>
@@ -167,11 +165,11 @@
 
 <h4>What It Does</h4>
 <p>
-    When used on a <code>&lt;nav cog-toc&gt;</code> element, CogJS finds the next sibling element and scans for all <code>h1</code> through <code>h4</code> headings. It injects a list of internal anchor links into the TOC, overrides existing heading IDs, and optionally adds a <em>“Back to top”</em> link at the bottom of each section.
+    When used on a <code>&lt;nav cog-toc&gt;</code> element, CogJS finds the next sibling element and scans for all <code>h1</code> through <code>h4</code> headings. It injects a list of internal anchor links into the TOC, overrides existing heading IDs, and optionally adds a <em>“Back to top”</em> link at the bottom of each section if <code>cog-toc-back</code> is present.
 </p>
 
 <pre>
-<code class="language-html">&lt;nav cog-toc&gt;&lt;/nav&gt;
+<code class="language-html">&lt;nav id="toc" cog-toc cog-toc-back&gt;&lt;/nav&gt;
 
 &lt;article&gt;
   &lt;h2&gt;Introduction&lt;/h2&gt;
@@ -191,7 +189,7 @@
     <li>TOC is built from <code>h1</code> to <code>h4</code> elements inside the next sibling of the TOC container</li>
     <li>Existing <code>id</code> attributes on headings are overwritten with sanitized, predictable IDs</li>
     <li>Anchor links use internal <code>#ids</code> to enable smooth or instant scrolling</li>
-    <li>When <code>cog-toc="top"</code> is used, a “Back to top” link is added after each section</li>
+    <li>When <code>cog-toc-back</code> is used, a “Back to top” link is inserted after each section</li>
 </ul>
 
 <h4>Default Styling</h4>
@@ -240,9 +238,9 @@
 <pre>
 <code class="language-html">// Test Checklist
 // - Add <nav cog-toc></nav> before a content block
-// - Ensure TOC links navigate to corresponding headings
-// - Confirm “Back to top” appears if cog-toc="top" is used
-// - Verify accessibility with screen readers and keyboard nav
+// - Confirm TOC links navigate to the correct headings
+// - Ensure "Back to top" links work when cog-toc-back is used
+// - Test keyboard and screen reader interaction
 </code>
 </pre>
 

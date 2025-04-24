@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Cog Hint - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Toc - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -153,80 +153,105 @@
     <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/cog">Cog</a></li>
-        <li aria-current="page">cog-hint</li>
+        <li aria-current="page">cog-toc</li>
     </ol>
 </nav>
 
 <h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h3>cog-hint</h3>
+<h3>cog-toc</h3>
 
 <p>
-    <code>cog-hint</code> is a declarative attribute that adds contextual guidance or helper text to form fields and interactive elements. It’s ideal for reducing ambiguity, helping users stay on task, and lowering cognitive load during complex interactions.
+    <code>cog-toc</code> is a declarative attribute that automatically generates an accessible Table of Contents from the headings inside a target content block. It’s ideal for long documents, multi-section forms, or content-heavy pages that benefit from structure and easy navigation.
 </p>
 
 <h4>What It Does</h4>
 <p>
-    When added to a label or input container, <code>cog-hint="Your helper text here"</code> displays a non-intrusive tooltip-style hint on focus or idle. It’s especially helpful for neurodivergent users who benefit from extra clarity without overwhelming the interface.
+    When used on a <code>&lt;nav cog-toc&gt;</code> element, CogJS finds the next sibling element and scans for all <code>h1</code> through <code>h4</code> headings. It injects a list of internal anchor links into the TOC, overrides existing heading IDs, and optionally adds a <em>“Back to top”</em> link at the bottom of each section.
 </p>
 
 <pre>
-<code class="language-html">&lt;label cog-hint="Your email before the @ symbol"&gt;
-  Username:
-  &lt;input type="text" name="username"&gt;
-&lt;/label&gt;
+<code class="language-html">&lt;nav cog-toc&gt;&lt;/nav&gt;
+
+&lt;article&gt;
+  &lt;h2&gt;Introduction&lt;/h2&gt;
+  &lt;p&gt;Welcome to our guide.&lt;/p&gt;
+
+  &lt;h2&gt;Usage&lt;/h2&gt;
+  &lt;p&gt;How to implement the feature.&lt;/p&gt;
+
+  &lt;h2&gt;Advanced Settings&lt;/h2&gt;
+  &lt;p&gt;Customization options and behavior.&lt;/p&gt;
+&lt;/article&gt;
 </code>
 </pre>
 
 <h4>How It Works</h4>
 <ul>
-    <li>Hints are shown when the target element receives focus or when the user pauses</li>
-    <li>They disappear automatically on blur or after interaction resumes</li>
-    <li>Tooltips are rendered with accessible roles and positioning logic</li>
+    <li>TOC is built from <code>h1</code> to <code>h4</code> elements inside the next sibling of the TOC container</li>
+    <li>Existing <code>id</code> attributes on headings are overwritten with sanitized, predictable IDs</li>
+    <li>Anchor links use internal <code>#ids</code> to enable smooth or instant scrolling</li>
+    <li>When <code>cog-toc="top"</code> is used, a “Back to top” link is added after each section</li>
 </ul>
 
-<h4>Styling and Placement</h4>
+<h4>Default Styling</h4>
 <p>
-    CogJS includes default styles for positioning and appearance, but you can override them using <code>cogConfig</code> or your own CSS.
+    CogJS provides default visual styling for the TOC and section links. You can override them with your own CSS or use a custom theme via <code>cogConfig</code>.
 </p>
 
 <pre>
-<code class="language-css">.cog-hint-bubble {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  color: #333;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+<code class="language-css">.cog-toc {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  max-width: 300px;
+}
+
+.cog-toc a {
+  display: block;
+  color: #007acc;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.cog-toc a:hover {
+  text-decoration: underline;
+}
+
+.cog-toc-back {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #555;
 }
 </code>
 </pre>
 
 <h4>Accessibility Considerations</h4>
 <ul>
-    <li><strong>Non-Intrusive:</strong> Does not interrupt task flow-only appears when needed</li>
-    <li><strong>Screen Reader Friendly:</strong> Rendered with <code>aria-describedby</code> where appropriate</li>
-    <li><strong>Visual Clarity:</strong> Contrasts well with backgrounds and remains readable</li>
+    <li><strong>Semantic:</strong> Uses <code>&lt;nav&gt;</code> and <code>aria-label</code> for screen reader clarity</li>
+    <li><strong>Keyboard Friendly:</strong> All links are focusable and navigable via keyboard</li>
+    <li><strong>Visual Hierarchy:</strong> Indentation or nesting can be added for deeper levels</li>
 </ul>
 
-<h4>Testing cog-hint</h4>
+<h4>Testing cog-toc</h4>
 <pre>
 <code class="language-html">// Test Checklist
-// - Add cog-hint to a form label or input container
-// - Tab to the input and confirm the hint appears
-// - Ensure the hint is readable and dismisses on blur
-// - Confirm it does not block form validation or input
+// - Add <nav cog-toc></nav> before a content block
+// - Ensure TOC links navigate to corresponding headings
+// - Confirm “Back to top” appears if cog-toc="top" is used
+// - Verify accessibility with screen readers and keyboard nav
 </code>
 </pre>
 
-<h4>Best Practices for cog-hint</h4>
+<h4>Best Practices for cog-toc</h4>
 <ul>
-    <li><strong>Be Specific:</strong> Write hints that clarify the field’s expected format or purpose</li>
-    <li><strong>Use Plain Language:</strong> Avoid jargon or overly technical instructions</li>
-    <li><strong>Limit Length:</strong> Keep hints short and focused to reduce distraction</li>
-    <li><strong>Test With Users:</strong> Confirm that hints actually help with understanding, not clutter</li>
-    <li><strong>Combine With cog-chunk:</strong> Use hints in multi-step forms for smoother progression</li>
+    <li><strong>Limit to One TOC Per Page:</strong> Multiple TOCs can confuse screen reader users</li>
+    <li><strong>Structure Content Clearly:</strong> Use consistent heading levels (e.g. h2 → h3)</li>
+    <li><strong>Use cog-toc with Articles:</strong> Ideal for blog posts, guides, manuals, and wikis</li>
+    <li><strong>Combine With cog-outline:</strong> For nested navigation across page sections</li>
 </ul>
 
         </div>

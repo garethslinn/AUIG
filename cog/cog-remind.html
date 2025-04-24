@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Cog Background - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Remind - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -147,91 +147,80 @@
     <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/cog">Cog</a></li>
-        <li aria-current="page">cog-background</li>
+        <li aria-current="page">cog-remind</li>
     </ol>
 </nav>
 
 <h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h3>cog-background</h3>
+<h3>cog-remind</h3>
 
 <p>
-    <code>cog-background</code> is a declarative attribute used to apply cognitive-friendly themes to elements on a page. It is part of <a href="https://github.com/garethslinn/cog" aria-description="(Opens in a new tab)" target="_blank">CogJS</a>, a lightweight JavaScript library focused on cognitive and neurodivergent accessibility enhancements.
+    <code>cog-remind</code> is a declarative attribute that triggers timed nudges or reminders. It’s designed to help users stay on track during long-form tasks or timed activities - especially useful for users who benefit from periodic prompts or pacing support.
 </p>
 
 <h4>What It Does</h4>
 <p>
-    The attribute enables accessible theming without additional CSS. Developers can use predefined or custom themes to reduce visual stress and enhance readability, especially for users with dyslexia, sensory sensitivity, or ADHD.
-</p>
-
-<h4>Theme Configuration</h4>
-<p>
-    Configure themes in <code>cog-theme.js</code> before loading the script. You can define custom background and foreground color combinations.
+    When applied to an element, <code>cog-remind="10m:Don't forget to submit!"</code> will display a toast-style reminder after the specified time has passed. Reminders are delivered non-intrusively via accessible, visually distinct toast messages.
 </p>
 
 <pre>
-<code class="language-javascript">window.cogThemeConfig = {
-  defaultTheme: 'dyslexic-yellow',
-  themes: {
-    'dyslexic-yellow': {
-      background: '#fffce0',
-      foreground: '#000'
-    },
-    'dyslexic-blue': {
-      background: '#e6f0ff',
-      foreground: '#000'
-    },
-    'dark-mode': {
-      background: '#1e1e1e',
-      foreground: '#fff'
-    }
-  },
-  targets: {
-    background: ['body', 'section'],
-    foreground: ['p', 'h1', 'h2', 'li', 'a']
-  }
-};
+<code class="language-html">&lt;form cog-remind="10m:Don't forget to submit!"&gt;
+  &lt;!-- form content here --&gt;
+&lt;/form&gt;
 </code>
 </pre>
 
-<h4>Enabling in HTML</h4>
+<h4>How It Works</h4>
+<ul>
+    <li>Supports time values in seconds (<code>s</code>), minutes (<code>m</code>), or hours (<code>h</code>)</li>
+    <li>Once the timer expires, a toast message appears near the top-right corner of the screen</li>
+    <li>Reminders auto-dismiss after a few seconds, with optional styling via <code>cogConfig</code></li>
+</ul>
+
+<h4>Styling and Placement</h4>
 <p>
-    To enable a theme, add <code>cog-background="theme-name"</code> to the root element or any section of your page.
+    Toasts appear in a dedicated container at the top-right of the viewport and can be styled with custom CSS. CogJS injects default styles that you can override.
 </p>
 
 <pre>
-<code class="language-html">&lt;section cog-background="dark-mode"&gt;
-  &lt;h2&gt;Dark Themed Section&lt;/h2&gt;
-  &lt;p&gt;This area uses a dark background with light foreground for improved contrast.&lt;/p&gt;
-&lt;/section&gt;
+<code class="language-css">.cog-remind-toast {
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 </code>
 </pre>
 
 <h4>Accessibility Considerations</h4>
 <ul>
-    <li><strong>Improves Readability:</strong> Helpful for users with dyslexia, Irlen Syndrome, or sensory fatigue.</li>
-    <li><strong>Reduces Visual Noise:</strong> Muted background themes reduce distraction.</li>
-    <li><strong>Declarative & Flexible:</strong> Works on any HTML element without additional CSS.</li>
-    <li><strong>Supports System Preferences:</strong> Can be configured to respect OS-level dark/light mode.</li>
+    <li><strong>Polite Live Region:</strong> Toasts use <code>aria-live="polite"</code> to notify assistive tech without interrupting focus</li>
+    <li><strong>Non-Blocking:</strong> Does not steal focus or interrupt keyboard navigation</li>
+    <li><strong>Visual Distinction:</strong> Designed for high contrast and quick readability</li>
 </ul>
 
-<h4>Testing cog-background</h4>
+<h4>Testing cog-remind</h4>
 <pre>
 <code class="language-html">// Test Checklist
-// - Apply cog-background to a &lt;body&gt; or &lt;section&gt;
-// - Verify correct background and foreground colors appear
-// - Check legibility in different light environments
-// - Ensure user settings (if any) are respected
+// - Add cog-remind to a container element
+// - Confirm toast appears after the specified delay
+// - Confirm screen reader announces it politely (not immediately)
+// - Ensure it disappears after ~ns and does not interfere with input
 </code>
 </pre>
 
-<h4>Best Practices for cog-background</h4>
+<h4>Best Practices for cog-remind</h4>
 <ul>
-    <li><strong>Use Semantic Themes:</strong> Choose color combinations that are WCAG AA/AAA compliant where possible.</li>
-    <li><strong>Provide Options:</strong> Let users switch between themes if feasible.</li>
-    <li><strong>Apply Intelligently:</strong> Use per-section overrides only where appropriate.</li>
-    <li><strong>Combine Thoughtfully:</strong> Works well with <code>cog-read</code> and <code>cog-toggle-content</code> for layered support.</li>
-    <li><strong>Always Test:</strong> Manually inspect and use tools to validate theme contrast ratios.</li>
+    <li><strong>Use Sparingly:</strong> Reminders should support attention, not distract</li>
+    <li><strong>Be Encouraging:</strong> Use friendly, motivational copy in your messages</li>
+    <li><strong>Pair With Actions:</strong> Use in forms or learning modules to pace progress</li>
+    <li><strong>Adapt Timing:</strong> Match durations to task complexity (e.g. 5–15m for writing)</li>
+    <li><strong>Test On Devices:</strong> Check visibility and timing across screen sizes</li>
 </ul>
 
         </div>

@@ -4,7 +4,6 @@
     padding: 1rem;
     background-color: var(--nav-bg);
     color: var(--nav-text);
-    transition: background-color var(--transition-speed), color var(--transition-speed);
 
     overflow-y: auto;
     overflow-x: hidden;

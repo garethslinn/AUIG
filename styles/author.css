@@ -7,7 +7,6 @@
     border: 1px solid var(--breadcrumb-outline);
     border-radius: 5px;
     background-color: var(--breadcrumb-bg);
-    transition: background-color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .author-image img {
@@ -16,7 +15,6 @@
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    transition: border-color var(--transition-speed);
     top: 0.5rem;
     left: 0.3rem;
 }
@@ -37,7 +35,6 @@
     font-size: 1.2rem;
     color: var(--breadcrumb-text);
     text-decoration: none;
-    transition: color var(--transition-speed);
 }
 
 .author-name:hover {

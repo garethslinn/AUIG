@@ -16,7 +16,6 @@ nav[aria-label="Breadcrumb"] ol {
 .header {
     background-color: var(--header-bg);
     color: var(--header-text-color);
-    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* Source-Supporters Layout */

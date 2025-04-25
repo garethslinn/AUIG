@@ -33,7 +33,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* Accessible Focus */

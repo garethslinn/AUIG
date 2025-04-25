@@ -171,8 +171,6 @@
 
 /* Smooth Transition for Theme Change */
 * {
-    color var(--transition-speed),
-    border-color var(--transition-speed);
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;

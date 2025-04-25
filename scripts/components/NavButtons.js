@@ -39,7 +39,6 @@ class NavButtons extends HTMLElement {
                 padding: 0.5rem 1rem;
                 background-color: var(--button-bg);
                 color: var(--button-text);
-                transition: background-color var(--transition-speed), color var(--transition-speed);
             }
 
             a:hover,

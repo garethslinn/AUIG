@@ -8,7 +8,6 @@
     text-decoration: none;
     display: inline-block;
     position: relative;
-    transition: background-color var(--transition-speed);
 
     svg {
         position: absolute;

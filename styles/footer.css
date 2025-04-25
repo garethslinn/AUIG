@@ -11,7 +11,7 @@
     --footer-text-dark: #ffffff; /* Dark mode footer text */
 
     /* Transition for Theme Switching */
-    --transition-speed: 0.3s;
+    --transition-speed: 0s;
 }
 
 [data-theme="light"] {
@@ -29,13 +29,11 @@
     color: var(--footer-text-color);
     padding: 3rem 1rem;
     font-size: var(--font-size-base);
-    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .site-footer a {
     color: var(--footer-text-color);
     text-decoration: none;
-    transition: color var(--transition-speed);
 }
 
 .site-footer a:hover {

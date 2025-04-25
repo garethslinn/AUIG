@@ -1,0 +1,81 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-ghost</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-ghost</h3>
+
+<p>
+    <code>cog-ghost</code> is a declarative attribute that temporarily dims and blurs surrounding content when an element receives focus. It creates a spotlight-like effect that helps users visually isolate what they're working on, especially helpful for users who are easily distracted or visually overwhelmed.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When applied to an input, button, or focusable element, <code>cog-ghost</code> renders an overlay that blurs and darkens the rest of the screen. This overlay is removed automatically on blur or when focus is lost. It improves focus, reduces visual noise, and aids task flow without permanent UI changes.
+</p>
+
+<pre>
+<code class="language-html">&lt;input type="text" cog-ghost placeholder="Focus me to dim surroundings"&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>When the target element gains focus, a full-screen overlay is inserted</li>
+    <li>The overlay dims and blurs everything except the target</li>
+    <li>Focus and z-index are managed automatically to ensure keyboard accessibility</li>
+    <li>The overlay is removed on blur or when the user navigates away</li>
+</ul>
+
+<h4>Styling and Placement</h4>
+<p>
+    CogJS injects a reusable overlay and default styles for the dim effect. You can override these using custom CSS or update them via the <code>cogConfig</code> if needed.
+</p>
+
+<pre>
+<code class="language-css">.cog-ghost-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 9998;
+}
+
+.cog-ghost-target {
+  position: relative !important;
+  z-index: 9999 !important;
+}
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Focus Preserving:</strong> Overlay never traps or blocks keyboard focus</li>
+    <li><strong>Non-Modal:</strong> Does not interfere with dialogs or forms</li>
+    <li><strong>Auto-Reversible:</strong> Automatically resets on blur — no need to manage state manually</li>
+</ul>
+
+<h4>Testing cog-ghost</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-ghost to an input or button
+// - Focus the element and confirm the background dims
+// - Confirm you can continue typing or tabbing normally
+// - Ensure the overlay disappears on blur
+// - Check screen readers are not interrupted
+</code>
+</pre>
+
+<h4>Best Practices for cog-ghost</h4>
+<ul>
+    <li><strong>Use Sparingly:</strong> Apply only to elements where focus isolation genuinely helps</li>
+    <li><strong>Avoid Layout Shift:</strong> Don’t combine with elements that trigger modals or reflows</li>
+    <li><strong>Pair With Hints:</strong> Combine with <code>cog-hint</code> to offer guidance in context</li>
+    <li><strong>Theme-Aware:</strong> If using dark mode or custom backgrounds, test overlay contrast</li>
+</ul>

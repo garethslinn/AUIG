@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Cog Toggle Content - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Orient - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -167,89 +167,77 @@
     <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/cog">Cog</a></li>
-        <li aria-current="page">cog-toggle-content</li>
+        <li aria-current="page">cog-orient</li>
     </ol>
 </nav>
 
 <h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h3>cog-toggle-content</h3>
+<h3>cog-orient</h3>
 
 <p>
-    CogJS is a production-ready JavaScript library that enhances web accessibility for
-    neurodiverse and cognitively diverse users. Designed for flexibility and minimal setup,
-    CogJS lets developers declaratively add support for cognitive needs using custom HTML
-    attributes-no complex tooling or frameworks required.
-</p>
-
-<p>
-    <code>cog-toggle-content</code> is a declarative attribute that enables users to toggle between multiple versions of the same content-for example, simplified summaries, expanded explanations, or alternate formats. It improves comprehension and supports different levels of cognitive load.
+    <code>cog-orient</code> is a declarative attribute that highlights the section currently visible in the viewport. It helps users stay oriented as they scroll through long-form content, making it easier to focus, reference, or return to a particular point.
 </p>
 
 <h4>What It Does</h4>
 <p>
-    When applied to an element, <code>cog-toggle-content</code> automatically renders toggle buttons that cycle through child content versions. Each child <code>&lt;div&gt;</code> within the container represents a distinct version.
-</p>
-
-<h4>How It Works</h4>
-<ul>
-    <li>The first visible child is shown by default.</li>
-    <li>A toggle button is injected automatically to cycle through content versions.</li>
-    <li>Keyboard navigation and ARIA roles are added for accessibility.</li>
-</ul>
-
-<h4>Styling and Behavior</h4>
-<p>
-    You can style the toggle UI using global CSS or inject scoped styles via your config. Buttons are keyboard accessible and labelled with appropriate ARIA attributes.
+    When applied to a <code>&lt;section&gt;</code> or scroll-tracked element, <code>cog-orient="true"</code> monitors the element's visibility in the viewport. The topmost visible section automatically receives a highlight class while all others are cleared.
 </p>
 
 <pre>
-<code class="language-css">.cog-toggle-button {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
+<code class="language-html">&lt;section cog-orient="true"&gt;
+  &lt;h2&gt;Step 1: Personal Info&lt;/h2&gt;
+  &lt;p&gt;Start by entering your name and email.&lt;/p&gt;
+&lt;/section&gt;
 </code>
 </pre>
 
-<h4>Enabling in HTML</h4>
-<p>Just add <code>cog-toggle-content</code> to a container and include two or more child <code>&lt;div&gt;</code>s with alternative versions of the content.</p>
+<h4>How It Works</h4>
+<ul>
+    <li>Uses <code>IntersectionObserver</code> to track scroll position in real-time</li>
+    <li>Adds the <code>cog-orient-active</code> class to the topmost visible section</li>
+    <li>Automatically removes the highlight as you scroll past</li>
+    <li>Only one section is highlighted at a time</li>
+</ul>
+
+<h4>Styling and Placement</h4>
+<p>
+    The active section can be styled using the default class <code>.cog-orient-active</code>. You can override this in your own styles or theme config to suit your UI.
+</p>
 
 <pre>
-<code class="language-html">&lt;section cog-toggle-content&gt;
-  &lt;div&gt;Short version: Step-by-step guide.&lt;/div&gt;
-  &lt;div&gt;Detailed version: Includes background, theory, and best practices.&lt;/div&gt;
-&lt;/section&gt;
+<code class="language-css">.cog-orient-active {
+  outline: 2px solid #007acc;
+  background-color: rgba(0, 122, 204, 0.05);
+  scroll-margin-top: 2rem;
+}
 </code>
 </pre>
 
 <h4>Accessibility Considerations</h4>
 <ul>
-    <li><strong>Reduces Overload:</strong> Users only see one version at a time, helping reduce information fatigue.</li>
-    <li><strong>Supports Multiple Learning Styles:</strong> Enables access to both simplified and advanced versions.</li>
-    <li><strong>Accessible Controls:</strong> Toggle buttons are fully keyboard operable and labelled.</li>
+    <li><strong>Visual Orientation:</strong> Helps users track their position in large content blocks</li>
+    <li><strong>Low Distraction:</strong> Uses subtle styling to aid orientation without disruption</li>
+    <li><strong>Screen Reader Neutral:</strong> Does not interfere with reading order or ARIA landmarks</li>
 </ul>
 
-<h4>Testing cog-toggle-content</h4>
+<h4>Testing cog-orient</h4>
 <pre>
 <code class="language-html">// Test Checklist
-// - Verify toggle UI is injected
-// - Cycle through all content versions
-// - Confirm accessibility: keyboard support, ARIA roles, focus state
-// - Ensure content remains readable in each mode
+// - Add cog-orient to multiple sections in a long page
+// - Scroll slowly and observe which section is highlighted
+// - Confirm only one section is active at a time
+// - Test with reduced motion settings (prefers-reduced-motion)
+// - Ensure it doesn't interfere with navigation or tabbing
 </code>
 </pre>
 
-<h4>Best Practices for cog-toggle-content</h4>
+<h4>Best Practices for cog-orient</h4>
 <ul>
-    <li><strong>Keep Variants Clear:</strong> Make sure each version has a distinct purpose (e.g. summary, full detail).</li>
-    <li><strong>Use Plain Text:</strong> Avoid placing interactive elements inside content versions.</li>
-    <li><strong>Keep It Compact:</strong> Ideal for tips, summaries, definitions, and educational content.</li>
-    <li><strong>Label Versions Internally:</strong> Use headings inside each version to guide users visually.</li>
-    <li><strong>Combine With Other Features:</strong> Works well alongside <code>cog-read</code> or <code>cog-background</code> for richer cognitive support.</li>
+    <li><strong>Use on Major Headings:</strong> Apply to top-level <code>&lt;section&gt;</code> blocks, not minor elements</li>
+    <li><strong>Keep Visual Cues Subtle:</strong> Avoid large animations or overly bright highlights</li>
+    <li><strong>Combine With cog-toc:</strong> Pair with <code>cog-toc</code> to create a rich navigation experience</li>
+    <li><strong>Don't Use Everywhere:</strong> Avoid using on short or densely packed layouts</li>
 </ul>
 
         </div>

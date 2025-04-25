@@ -10,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Cog Toggle Content - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Cog Delay - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -167,89 +167,90 @@
     <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/cog">Cog</a></li>
-        <li aria-current="page">cog-toggle-content</li>
+        <li aria-current="page">cog-delay</li>
     </ol>
 </nav>
 
 <h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
 
-<h3>cog-toggle-content</h3>
+<h3>cog-delay</h3>
 
 <p>
-    CogJS is a production-ready JavaScript library that enhances web accessibility for
-    neurodiverse and cognitively diverse users. Designed for flexibility and minimal setup,
-    CogJS lets developers declaratively add support for cognitive needs using custom HTML
-    attributes-no complex tooling or frameworks required.
-</p>
-
-<p>
-    <code>cog-toggle-content</code> is a declarative attribute that enables users to toggle between multiple versions of the same content-for example, simplified summaries, expanded explanations, or alternate formats. It improves comprehension and supports different levels of cognitive load.
+    <code>cog-delay</code> is a declarative attribute that adds a short, cancelable countdown before a button’s action is triggered. It’s ideal for preventing accidental clicks, especially on destructive or irreversible actions like “Delete” or “Submit”.
 </p>
 
 <h4>What It Does</h4>
 <p>
-    When applied to an element, <code>cog-toggle-content</code> automatically renders toggle buttons that cycle through child content versions. Each child <code>&lt;div&gt;</code> within the container represents a distinct version.
-</p>
-
-<h4>How It Works</h4>
-<ul>
-    <li>The first visible child is shown by default.</li>
-    <li>A toggle button is injected automatically to cycle through content versions.</li>
-    <li>Keyboard navigation and ARIA roles are added for accessibility.</li>
-</ul>
-
-<h4>Styling and Behavior</h4>
-<p>
-    You can style the toggle UI using global CSS or inject scoped styles via your config. Buttons are keyboard accessible and labelled with appropriate ARIA attributes.
+    When added to a <code>&lt;button&gt;</code>, <code>cog-delay</code> intercepts the click and presents a short confirmation window with a visible countdown and cancel button. If not canceled, the action proceeds. This pattern slows down risky actions just enough to prevent mistakes, without disrupting flow.
 </p>
 
 <pre>
-<code class="language-css">.cog-toggle-button {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
+<code class="language-html">&lt;button cog-delay="5" cog-onclick="deleteItem"&gt;
+  Delete Account
+&lt;/button&gt;
+
+&lt;script&gt;
+  function deleteItem(btn) {
+    alert("Account deleted.");
+  }
+&lt;/script&gt;
 </code>
 </pre>
 
-<h4>Enabling in HTML</h4>
-<p>Just add <code>cog-toggle-content</code> to a container and include two or more child <code>&lt;div&gt;</code>s with alternative versions of the content.</p>
+<h4>How It Works</h4>
+<ul>
+    <li>On click, the button shows a static label and a countdown timer (e.g., “Confirm action (5)”)</li>
+    <li>A cancel button appears alongside for a limited time</li>
+    <li>If not canceled, the original action (via <code>cog-onclick</code> or native click) is triggered</li>
+    <li>If canceled, the button returns to its original state</li>
+</ul>
+
+<h4>Styling and Placement</h4>
+<p>
+    The delay mechanism uses a static label with a visually updated countdown. You can style the countdown and cancel button with CSS:
+</p>
 
 <pre>
-<code class="language-html">&lt;section cog-toggle-content&gt;
-  &lt;div&gt;Short version: Step-by-step guide.&lt;/div&gt;
-  &lt;div&gt;Detailed version: Includes background, theory, and best practices.&lt;/div&gt;
-&lt;/section&gt;
+<code class="language-css">.cog-delay-countdown {
+  margin-left: 0.5rem;
+  opacity: 0.75;
+}
+
+.cog-delay-cancel {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.75rem;
+}
 </code>
 </pre>
 
 <h4>Accessibility Considerations</h4>
 <ul>
-    <li><strong>Reduces Overload:</strong> Users only see one version at a time, helping reduce information fatigue.</li>
-    <li><strong>Supports Multiple Learning Styles:</strong> Enables access to both simplified and advanced versions.</li>
-    <li><strong>Accessible Controls:</strong> Toggle buttons are fully keyboard operable and labelled.</li>
+    <li><strong>Live Region Announcement:</strong> Announces “You have X seconds to cancel” once when activated</li>
+    <li><strong>Focus Safe:</strong> Keeps original button label static to avoid “selected” announcements</li>
+    <li><strong>Keyboard Accessible:</strong> Cancel button is tabbable and labeled for screen readers</li>
+    <li><strong>Describedby Support:</strong> Countdown is optionally linked via <code>aria-describedby</code></li>
 </ul>
 
-<h4>Testing cog-toggle-content</h4>
+<h4>Testing cog-delay</h4>
 <pre>
 <code class="language-html">// Test Checklist
-// - Verify toggle UI is injected
-// - Cycle through all content versions
-// - Confirm accessibility: keyboard support, ARIA roles, focus state
-// - Ensure content remains readable in each mode
+// - Add cog-delay to a button with cog-onclick handler
+// - Click the button and verify countdown starts
+// - Confirm the cancel button is visible and accessible
+// - Wait for countdown to trigger original action
+// - Confirm screen reader announces the countdown message once
+// - Cancel and verify button resets correctly
 </code>
 </pre>
 
-<h4>Best Practices for cog-toggle-content</h4>
+<h4>Best Practices for cog-delay</h4>
 <ul>
-    <li><strong>Keep Variants Clear:</strong> Make sure each version has a distinct purpose (e.g. summary, full detail).</li>
-    <li><strong>Use Plain Text:</strong> Avoid placing interactive elements inside content versions.</li>
-    <li><strong>Keep It Compact:</strong> Ideal for tips, summaries, definitions, and educational content.</li>
-    <li><strong>Label Versions Internally:</strong> Use headings inside each version to guide users visually.</li>
-    <li><strong>Combine With Other Features:</strong> Works well alongside <code>cog-read</code> or <code>cog-background</code> for richer cognitive support.</li>
+    <li><strong>Use on Destructive Actions:</strong> Great for delete, reset, or irreversible choices</li>
+    <li><strong>Keep it Short:</strong> 3-7 seconds is ideal — just enough to pause but not frustrate</li>
+    <li><strong>Don’t Overuse:</strong> Only use when the user benefit outweighs the delay</li>
+    <li><strong>Pair With cog-ghost:</strong> Combine with <code>cog-ghost</code> for a full-screen dimming effect during delay</li>
+    <li><strong>Write Clear Labels:</strong> Use labels like “Delete account” or “Reset all” to help users make informed decisions</li>
 </ul>
 
         </div>

@@ -18,7 +18,8 @@
 
 .controls button {
     background: none;
-    border: 2px solid var(--control-text);
+    border: 2px solid var(--control-text) !important;
+    width: 3rem;
     color: var(--control-text);
     padding: 0.5rem 0.75rem;
     border-radius: 5px;

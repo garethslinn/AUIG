@@ -1,0 +1,104 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-break</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-break</h3>
+
+<p>
+    <code>cog-break</code> is a declarative attribute that injects a "Take a Break" button into your page. When clicked, it opens a fully accessible modal for a timed break, including a countdown timer, custom title, message, and a cancel option. This feature encourages self-regulation and reduces cognitive fatigue during long tasks or reading sessions.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When attached to any element, <code>cog-break</code> adds a visible button. Clicking it opens a break modal with a live countdown. After the set duration (e.g., 20 minutes), the modal automatically closes. Users can cancel the break early if needed.
+</p>
+
+<pre>
+<code class="language-html">&lt;div cog-break="20"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+// Optional custom config
+window.cogBreakConfig = {
+  buttonText: 'Pause Now',
+  title: 'Break Time!',
+  message: 'Enjoy your well-deserved rest.',
+  cancelButton: 'End Break'
+};
+&lt;/script&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>On load, a "Take a Break" button is added inside the element</li>
+    <li>On click, a full-screen modal appears with a title, countdown, and cancel button</li>
+    <li>The countdown updates every minute (e.g., "You have 19 minutes left")</li>
+    <li>The user can either cancel manually or wait for the break time to expire</li>
+</ul>
+
+<h4>Styling and Placement</h4>
+<p>
+    The modal and buttons are styled automatically by CogJS. You can override styles via your own CSS targeting the following classes:
+</p>
+
+<pre>
+<code class="language-css">.cog-break-modal {
+  /* Modal overlay styles */
+}
+
+.cog-break-inner {
+  /* Inner modal box styles */
+}
+
+.cog-break-title {
+  /* Title inside modal */
+}
+
+.cog-break-message {
+  /* Countdown message */
+}
+
+.cog-break-cancel {
+  /* Cancel break button */
+}
+
+.cog-break-button {
+  /* "Take a Break" trigger button */
+}
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Full Modal Structure:</strong> Uses <code>role="dialog"</code> and <code>aria-modal="true"</code> for screen readers</li>
+    <li><strong>Focus Trap:</strong> Focus is moved to the modal and trapped until canceled or completed</li>
+    <li><strong>Escape Key Support:</strong> Pressing <kbd>Esc</kbd> cancels the break and closes the modal</li>
+    <li><strong>Timer Updates:</strong> Countdown messages are short and visually accessible without creating alert spam</li>
+</ul>
+
+<h4>Testing cog-break</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-break to a div
+// - Verify "Take a Break" button appears
+// - Click button: modal opens with title, message, cancel button
+// - Confirm countdown updates every minute
+// - Press Escape or click Cancel to close modal
+// - Let countdown expire and ensure modal closes automatically
+</code>
+</pre>
+
+<h4>Best Practices for cog-break</h4>
+<ul>
+    <li><strong>Use During Long Tasks:</strong> Ideal for forms, study materials, or interactive sessions over 10+ minutes</li>
+    <li><strong>Customise Messages:</strong> Friendly, supportive language improves user experience</li>
+    <li><strong>Default to Gentle:</strong> Avoid urgent or warning language - break time should feel positive</li>
+    <li><strong>Combine with cog-ghost:</strong> For extra focus, use <code>cog-ghost</code> to dim background when the break starts</li>
+    <li><strong>Keep Breaks Optional:</strong> Don't force breaks; offer them as support, not as an interruption</li>
+</ul>

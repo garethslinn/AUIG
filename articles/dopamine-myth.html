@@ -1,4 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Cache Control for Security and Performance -->
@@ -6,7 +10,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>Index - Accessible User Interface Guidelines (AUIG)</title>
+    <title>Dopamine Myth - Accessible User Interface Guidelines (AUIG)</title>
 
     <!-- Updated Meta Description to Reflect AUIG -->
     <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
@@ -17,9 +21,9 @@
     <link rel="stylesheet" href="../styles/main.css?v=1.7">
 
     <!-- PrismJS Light Theme -->
-    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet">
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
     <!-- PrismJS Dark Theme -->
-    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled="">
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
 
     <!-- Favicon -->
     <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
@@ -52,7 +56,7 @@
 
 <!-- Accessibility Controls -->
 <aside class="controls" aria-label="Accessibility controls">
-    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
     <span>
         <button id="decrease-font" aria-label="Decrease text size">A-</button>
         <button id="increase-font" aria-label="Increase text size">A+</button>
@@ -82,7 +86,7 @@
         </a>
     </li>
     <li>
-        <a data-image="puzzle.svg" href="/articles/we-dont-think-the-same.html" aria-label="We don't think the same">
+        <a data-image="puzzle.svg"  href="/articles/we-dont-think-the-same.html" aria-label="We don't think the same">
             <span title="We don't think the same"><strong>We don't think...</strong></span>
         </a>
     </li>
@@ -151,23 +155,60 @@
             <nav aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
-        <li aria-current="page">Articles</li>
+        <li><a href="/articles">Articles</a></li>
+        <li aria-current="page">ADHD and the Dopamine Myth Busted!</li>
     </ol>
 </nav>
 
-<h1>Accessible User Interface Guidelines</h1>
+<h1>ADHD and the Dopamine Myth Busted!</h1>
 
-<h2>Articles</h2>
+<h2>Article</h2>
 
-<h3>Welcome to Our Articles</h3>
+<div class="author-container">
+    <a href="/pages/bio.html" class="author-image">
+        <img src="../../images/users/gslinn.png" alt="Author's portrait" />
+    </a>
+    <div class="author-details">
+        <span>Author:
+            <a href="/pages/bio.html" class="author-name">Gareth Slinn</a>
+        </span>
+        <time datetime="2025-05-08">
+            Published: May 8, 2025
+        </time>
+        <share-buttons article-url="adhd-and-the-dopamine-myth.html"></share-buttons>
+    </div>
+</div>
+
+<title-image
+        alt="Simplified brain diagram with dopamine pathways highlighted in red and a large question mark over it"
+        src="adhd-dopamine-myth.svg"
+></title-image>
 
 <p>
-Here, you'll find a curated collection of articles focused on UX design and accessibility. These pieces are written
-by various authors, each sharing unique insights, practical tips, and thought-provoking ideas. Whether you're a designer,
-developer, or simply curious about creating inclusive experiences, these articles are here to inspire and inform. Dive in and explore the world of better user interfaces for everyone!
+    The idea that ADHD is just a “dopamine problem” is lazy science and it’s hurting people. It’s the kind of half-truth that spreads because it’s convenient, not because it’s correct. Yes, dopamine is involved. But boiling a deeply complex neurological condition down to a single brain chemical is worse than unhelpful, it’s dangerous.
 </p>
 
-        <section class="responsive-grid"><div class="grid-item"><a href="/articles/dopamine-myth.html"><img src="../images/articles/adhd-dopamine-myth.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">Dopamine myth?</p></div><div class="grid-item"><a href="/articles/what-the-hell-is-this.html"><img src="../images/articles/cogjs.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">What the hell is this?</p></div><div class="grid-item"><a href="/articles/neurodiversity-and-society.html"><img src="../images/articles/neurodiversity-society.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">Neurodiversity and Society’s Rigid View of Disability.</p></div><div class="grid-item"><a href="/articles/timed-coding-tests-are-bad.html"><img src="../images/articles/timed-assessments.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">Timed coding tests are bad</p></div><div class="grid-item"><a href="/articles/who-is-to-blame-when-accessibility-fails.html"><img src="../images/articles/blame.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">Who is to blame when accessibility fails?</p></div><div class="grid-item"><a href="/articles/the-power-of-hyper-focus.html"><img src="../images/articles/hyper-focus.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">The power of hyper focus</p></div><div class="grid-item"><a href="/articles/cognitive-load-and-accessibility.html"><img src="../images/articles/cognitive-load.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">Cognitive Load and Accessibility</p></div><div class="grid-item"><a href="/articles/the-anxiety-of-forms.html"><img src="../images/articles/anxiety-forms.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">The anxiety of forms</p></div><div class="grid-item"><a href="/articles/automated-vs-manual-testing.html"><img src="../images/articles/manual-vs-automated.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">Automated Accessibility vs. Manual Testing</p></div><div class="grid-item"><a href="/articles/dont-make-this-expenstive-mistake.html"><img src="../images/articles/mistake.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">Don't make this expensive mistake</p></div><div class="grid-item"><a href="/articles/we-dont-think-the-same.html"><img src="../images/articles/puzzle.svg" alt="" aria-hidden="true"></a><p aria-hidden="true">We don't think the same</p></div></section></div>
+<p>
+    Stimulants like Ritalin and Adderall <em>do</em> work for some people. They increase dopamine and norepinephrine, and that can improve attention. But acting like that’s the magic fix is like saying you fixed a broken computer by turning up the brightness. Sure, something changed but the system’s still full of deeper issues no one’s talking about.
+</p>
+
+<p>
+    ADHD isn’t just about dopamine. It’s about how our brains are wired to move, feel, focus, and react in a world that expects robotic uniformity. We’re talking about the <strong>prefrontal cortex</strong>, the <strong>default mode network</strong>, <strong>executive function</strong>, emotional regulation, memory, sleep, the whole damn operating system.
+</p>
+
+<p>
+    The DMN, the part of the brain responsible for internal thought doesn’t shut off the same way for us. That’s not “a dopamine thing.” That’s our brains refusing to run on the same rails everyone else thinks are normal. And instead of designing systems to meet us halfway, the world shoves pills into our mouths and tells us to keep up.
+</p>
+
+<p>
+    This obsession with dopamine leads to shallow assumptions and missed diagnoses. It ignores women and girls who mask. It overlooks the adults whose lives quietly unravel under the weight of invisible struggle. It enables gatekeeping by professionals who don’t see the full picture, and worse, don’t care to.
+</p>
+
+<p>
+    ADHD deserves better than this narrative. We are not broken dopaminergic machines. We are people navigating a hostile, inflexible world, one that would rather sedate us than change itself. If you want to help, stop parroting half-baked myths and start listening. Real support starts with understanding, not compliance.
+</p>
+
+        </div>
     </main>
 </div>
 
@@ -185,6 +226,6 @@ developer, or simply curious about creating inclusive experiences, these article
 <script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
 <script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
 <script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
-<script src="../scripts/main.js?v=1.6.1" defer=""></script>
-
-</body></html>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

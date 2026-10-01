@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Timed Coding Tests Are Bad - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/">
+            <span><strong>Articles</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="puzzle.svg"  href="/articles/we-dont-think-the-same.html" aria-label="We don't think the same">
+            <span title="We don't think the same"><strong>We don't think...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="mistake.svg" href="/articles/dont-make-this-expenstive-mistake.html" aria-label="Don't make this expensive mistake">
+            <span title="Don't make this expensive mistake"><strong>Don't make this...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="manual-vs-automated.svg" href="/articles/automated-vs-manual-testing.html" aria-label="Automated Accessibility vs. Manual Testing">
+            <span title="Automated Accessibility vs. Manual Testing"><strong>Automated Accessibility...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="anxiety-forms.svg" href="/articles/the-anxiety-of-forms.html" aria-label="The anxiety of forms">
+            <span><strong>The anxiety of forms</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="cognitive-load.svg" href="/articles/cognitive-load-and-accessibility.html" aria-label="Cognitive Load and Accessibility">
+            <span><strong>Cognitive Load...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="hyper-focus.svg" href="/articles/the-power-of-hyper-focus.html" aria-label="The power of hyper focus">
+            <span><strong>The power of hyper focus</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="blame.svg" href="/articles/who-is-to-blame-when-accessibility-fails.html" aria-label="Who is to blame when accessibility fails?">
+            <span><strong>Who is to blame...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="timed-assessments.svg" href="/articles/timed-coding-tests-are-bad.html" aria-label="Timed coding tests are bad">
+            <span><strong>Timed coding tests...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="neurodiversity-society.svg" href="/articles/neurodiversity-and-society.html" aria-label="Neurodiversity and Society’s Rigid View of Disability.">
+            <span><strong>Neurodiversity and Societies...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="cogjs.svg" href="/articles/what-the-hell-is-this.html" aria-label="What the hell is this?">
+            <span><strong>What the hell is this?</strong></span>
+        </a>
+    </li>
+<!--    <li>-->
+<!--        <a data-image="adhd-dopamine-myth.svg" href="/articles/dopamine-myth.html" aria-label="Dopamine myth?">-->
+<!--            <span><strong>ADHD and the Dopamine Myth Busted!</strong></span>-->
+<!--        </a>-->
+<!--    </li>-->
+    <li>
+        <a data-image="rsd.svg" href="/articles/rsd.html" aria-label="RSD and ADHD">
+            <span><strong>When Hyperfocus Turns Inward...</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li aria-current="page">Timed coding tests are bad</li>
+    </ol>
+</nav>
+
+<h1>Timed coding tests are bad</h1>
+
+<h2>Why Coderbyte and Similar Coding Assessments May Disadvantage Exceptional Candidates: A Psychological and Neurological Perspective</h2>
+
+<div class="author-container">
+    <a href="/pages/bio.html" class="author-image">
+        <img src="../../images/users/gslinn.png" alt="Author's portrait" />
+    </a>
+    <div class="author-details">
+        <span>Author:
+            <a href="/pages/bio.html" class="author-name">Gareth Slinn</a>
+        </span>
+        <time datetime="2025-01-16">
+            Published: January, 16th 2025
+        </time>
+        <share-buttons article-url="timed-coding-assessments-are-bad.html"></share-buttons>
+    </div>
+</div>
+
+<title-image
+        alt="illustration of a person showing signs of stress next to a looming clock"
+        src="timed-assessments.svg"
+></title-image>
+
+<p>
+    Modern coding assessments, such as those administered on platforms like Coderbyte, are intended to evaluate a candidate's technical skills in a controlled and standardized environment. While this seems fair in theory, the practical implementation of such tests can place otherwise exceptional candidates at a significant disadvantage. Below, we explore the psychological and neurological challenges that contribute to this inequity.
+</p>
+
+<h3>The Problem with Timed, One-Attempt Assessments</h3>
+
+<p>
+    Coderbyte assessments often feature a strict time limit and single-attempt links. While these constraints aim to simulate real-world pressure, they fail to account for varying neurological and psychological dispositions. For example:
+</p>
+
+<ul>
+    <li><strong>Stress and Anxiety:</strong> A time limit can induce significant stress, particularly for candidates with generalized anxiety disorder or social anxiety. This heightened arousal state can impair cognitive function, leading to difficulty recalling concepts or focusing on problem-solving. The inability to pause the timer can worsen this stress, especially if unexpected interruptions occur during the test.</li>
+    <li>
+        <strong>Neurological Conditions:</strong>
+        <ul>
+            <li><strong>ADHD:</strong> Candidates with ADHD may struggle to maintain sustained attention in high-pressure scenarios. The inability to step away or pause the test exacerbates focus-related challenges.</li>
+            <li><strong>Dyslexia:</strong> Reading and understanding detailed instructions quickly can be overwhelming for dyslexic individuals, especially when time constraints don't allow for thoughtful processing.</li>
+        </ul>
+    </li>
+    <li><strong>Performance Under Observation:</strong> Knowing that leaving the tab or deviating from expected behavior will be flagged as potential cheating can create a sense of surveillance that increases stress levels. This "pressure to perform" often results in suboptimal output, even from highly skilled individuals.</li>
+</ul>
+
+<h3>Unrealistic Expectations Around Real-World Problem Solving</h3>
+
+<ul>
+    <li><strong>Limited Use of Tools:</strong> While coding assessments permit limited Google searches (through an integrated box), they penalize tab switching. In real-world scenarios, developers frequently utilize multiple tabs, tools, and resources simultaneously. Restricting these habits forces candidates to work in an unnatural environment that doesn't reflect actual problem-solving workflows.</li>
+    <li><strong>Emphasis on Speed Over Depth:</strong> Timed assessments prioritize rapid completion over thoughtful solutions. Exceptional developers often excel not by solving problems quickly but by devising innovative, maintainable, and scalable solutions qualities these assessments rarely measure effectively.</li>
+    <li><strong>One-Shot, High-Stakes Format:</strong> The inability to revisit an assessment link amplifies pressure. For individuals who thrive in iterative environments, this rigidity prevents them from showcasing their true abilities.</li>
+</ul>
+
+<h3>Cognitive Load and Interface Challenges</h3>
+
+<ul>
+    <li><strong>Overloading the Working Memory:</strong> Instructions, test cases, and coding prompts are all presented in a single interface. For individuals with conditions such as autism spectrum disorder (ASD) or working memory deficits, juggling this information becomes an overwhelming task. Even neurotypical candidates can experience cognitive overload, leading to errors that don’t reflect their actual capabilities.</li>
+    <li><strong>Lack of Familiarity with the Environment:</strong> Candidates accustomed to coding in personalised setups with specific editors, shortcuts, and tools may find the imposed environment disorienting. This unfamiliarity reduces efficiency and confidence.</li>
+    <li><strong>Ambiguous or Overly Restrictive Instructions:</strong> Instructions such as "Do not copy and paste code" or "Do not modify the function call" can be intimidating, particularly for candidates who are already nervous. The fear of unintentionally violating these rules can detract from their focus on solving the problem itself.</li>
+</ul>
+
+<h3>Psychological Barriers to Success</h3>
+
+<ul>
+    <li><strong>Imposter Syndrome:</strong> High-stakes, competitive assessments often trigger imposter syndrome in candidates, particularly women, minorities, and individuals from non-traditional backgrounds. This self-doubt can lead to overthinking or second-guessing solutions, further reducing performance.</li>
+    <li><strong>Fatigue and Burnout:</strong> Many candidates are job-seeking while balancing other responsibilities, such as current employment, caregiving, or education. Being required to complete an assessment in one uninterrupted sitting fails to consider these realities, penalising highly capable candidates with external constraints.</li>
+</ul>
+
+<h3>Proposed Solutions for Fairer Assessments</h3>
+
+<ul>
+    <li><strong>Flexible Timing Options:</strong> Allow candidates to pause the assessment or provide extended time limits for individuals who request accommodations.</li>
+    <li><strong>Realistic Problem-Solving Environments:</strong> Permit candidates to use their preferred development environments or tools to reflect real-world practices more closely.</li>
+    <li><strong>Iterative and Open-Book Assessments:</strong> Replace one-shot assessments with open-book, iterative challenges that allow candidates to refine their solutions over time, mirroring actual workflows.</li>
+    <li><strong>Psychological Safety:</strong> Avoid penalising actions like tab-switching and clearly communicate that tools like Google are encouraged for specific purposes. This reduces the perception of being monitored and enhances focus.</li>
+    <li><strong>Diverse Assessment Metrics:</strong> Move beyond code correctness and speed to evaluate design decisions, problem decomposition, and code readability.</li>
+    <li><strong>Offer Alternative Formats:</strong> For candidates with documented conditions, provide alternatives such as take-home assessments.</li>
+</ul>
+
+<p>
+    Coding assessments like Coderbyte can be effective tools for evaluating technical skills, but their current structure is inherently biased against candidates with certain psychological and neurological profiles. By prioritising inclusivity and aligning tests more closely with real-world scenarios, organisations can ensure they attract and identify the best talent regardless of how they perform under artificial constraints. After all, great developers aren’t just fast they’re thoughtful, resourceful, and adaptive.
+</p>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

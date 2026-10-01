@@ -1,0 +1,78 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-animation</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-animation</h3>
+
+<p><code>cog-animation</code> is a declarative attribute used to disable or reduce visual motion in specific sections of a webpage. It helps users who are sensitive to animation, particularly those with vestibular disorders, autism spectrum conditions, or attention-related challenges.</p>
+
+<h4>What It Does</h4>
+<p>
+    When applied, <code>cog-animation="false"</code> disables CSS animations, transitions, and scroll behavior for the target element and all its children. This creates a calmer, less distracting experience and reduces cognitive load for sensitive users.
+</p>
+
+<h4>Animation Configuration</h4>
+<p>Configure global animation settings in <code>cog-config.js</code> before initializing CogJS. These settings define the fallback styles used to neutralize motion.</p>
+
+<pre>
+<code class="language-javascript">window.cogConfig = {
+  active: true,
+  animation: {
+    default: true,
+    respectSystemPref: true,
+    styles: `
+      .cog-no-animation *,
+      .cog-no-animation {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    `
+  }
+};
+</code>
+</pre>
+
+<h4>Enabling in HTML</h4>
+<p>To disable animations, simply apply the attribute <code>cog-animation="false"</code> to any HTML element. This will automatically apply the no-animation class styling to that element and its descendants.</p>
+
+<pre>
+<code class="language-html">&lt;div cog-animation="false"&gt;
+  &lt;h2&gt;Calm Mode&lt;/h2&gt;
+  &lt;p&gt;All animations and transitions are disabled here.&lt;/p&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Reduces Cognitive Fatigue:</strong> Minimizes unnecessary motion for better focus and comfort.</li>
+    <li><strong>Supports Vestibular Needs:</strong> Prevents motion-triggered discomfort or nausea.</li>
+    <li><strong>Declarative & Flexible:</strong> Easy to apply on individual containers or full pages.</li>
+    <li><strong>System Aware:</strong> Can be configured to respect user system preferences for reduced motion.</li>
+</ul>
+
+<h4>Testing cog-animation</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Apply cog-animation="false" to a section with animations
+// - Confirm animations and transitions are suppressed
+// - Check support across different browsers and OSs
+// - Respect prefers-reduced-motion when configured to do so
+</code>
+</pre>
+
+<h4>Best Practices for cog-animation</h4>
+<ul>
+    <li><strong>Use Sparingly:</strong> Apply to sections that are likely to cause distraction or sensory overload.</li>
+    <li><strong>Support System Settings:</strong> Use <code>respectSystemPref: true</code> to auto-disable for users with reduced motion settings.</li>
+    <li><strong>Combine Strategically:</strong> Pair with <code>cog-background</code> or <code>cog-read</code> for multimodal accessibility support.</li>
+    <li><strong>Validate with Users:</strong> Where possible, test with actual neurodivergent users for feedback on motion comfort.</li>
+    <li><strong>Don’t Disable All Motion:</strong> Leave subtle, meaningful animations where they aid understanding-unless user preference suggests otherwise.</li>
+</ul>

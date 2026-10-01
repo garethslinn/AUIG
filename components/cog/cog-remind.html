@@ -1,0 +1,79 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-remind</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-remind</h3>
+
+<p>
+    <code>cog-remind</code> is a declarative attribute that triggers timed nudges or reminders. It’s designed to help users stay on track during long-form tasks or timed activities - especially useful for users who benefit from periodic prompts or pacing support.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When applied to an element, <code>cog-remind="10m:Don't forget to submit!"</code> will display a toast-style reminder after the specified time has passed. Reminders are delivered non-intrusively via accessible, visually distinct toast messages.
+</p>
+
+<pre>
+<code class="language-html">&lt;form cog-remind="10m:Don't forget to submit!"&gt;
+  &lt;!-- form content here --&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>Supports time values in seconds (<code>s</code>), minutes (<code>m</code>), or hours (<code>h</code>)</li>
+    <li>Once the timer expires, a toast message appears near the top-right corner of the screen</li>
+    <li>Reminders auto-dismiss after a few seconds, with optional styling via <code>cogConfig</code></li>
+</ul>
+
+<h4>Styling and Placement</h4>
+<p>
+    Toasts appear in a dedicated container at the top-right of the viewport and can be styled with custom CSS. CogJS injects default styles that you can override.
+</p>
+
+<pre>
+<code class="language-css">.cog-remind-toast {
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Polite Live Region:</strong> Toasts use <code>aria-live="polite"</code> to notify assistive tech without interrupting focus</li>
+    <li><strong>Non-Blocking:</strong> Does not steal focus or interrupt keyboard navigation</li>
+    <li><strong>Visual Distinction:</strong> Designed for high contrast and quick readability</li>
+</ul>
+
+<h4>Testing cog-remind</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-remind to a container element
+// - Confirm toast appears after the specified delay
+// - Confirm screen reader announces it politely (not immediately)
+// - Ensure it disappears after ~ns and does not interfere with input
+</code>
+</pre>
+
+<h4>Best Practices for cog-remind</h4>
+<ul>
+    <li><strong>Use Sparingly:</strong> Reminders should support attention, not distract</li>
+    <li><strong>Be Encouraging:</strong> Use friendly, motivational copy in your messages</li>
+    <li><strong>Pair With Actions:</strong> Use in forms or learning modules to pace progress</li>
+    <li><strong>Adapt Timing:</strong> Match durations to task complexity (e.g. 5–15m for writing)</li>
+    <li><strong>Test On Devices:</strong> Check visibility and timing across screen sizes</li>
+</ul>

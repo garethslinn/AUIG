@@ -1,0 +1,104 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-toc</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-toc</h3>
+
+<p>
+    <code>cog-toc</code> is a declarative attribute that automatically generates an accessible Table of Contents from the headings inside a target content block. It’s ideal for long documents, multi-section forms, or content-heavy pages that benefit from structure and easy navigation.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When used on a <code>&lt;nav cog-toc&gt;</code> element, CogJS finds the next sibling element and scans for all <code>h1</code> through <code>h4</code> headings. It injects a list of internal anchor links into the TOC, overrides existing heading IDs, and optionally adds a <em>“Back to top”</em> link at the bottom of each section if <code>cog-toc-back</code> is present.
+</p>
+
+<pre>
+<code class="language-html">&lt;nav id="toc" cog-toc cog-toc-back&gt;&lt;/nav&gt;
+
+&lt;article&gt;
+  &lt;h2&gt;Introduction&lt;/h2&gt;
+  &lt;p&gt;Welcome to our guide.&lt;/p&gt;
+
+  &lt;h2&gt;Usage&lt;/h2&gt;
+  &lt;p&gt;How to implement the feature.&lt;/p&gt;
+
+  &lt;h2&gt;Advanced Settings&lt;/h2&gt;
+  &lt;p&gt;Customization options and behavior.&lt;/p&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>TOC is built from <code>h1</code> to <code>h4</code> elements inside the next sibling of the TOC container</li>
+    <li>Existing <code>id</code> attributes on headings are overwritten with sanitized, predictable IDs</li>
+    <li>Anchor links use internal <code>#ids</code> to enable smooth or instant scrolling</li>
+    <li>When <code>cog-toc-back</code> is used, a “Back to top” link is inserted after each section</li>
+</ul>
+
+<h4>Default Styling</h4>
+<p>
+    CogJS provides default visual styling for the TOC and section links. You can override them with your own CSS or use a custom theme via <code>cogConfig</code>.
+</p>
+
+<pre>
+<code class="language-css">.cog-toc {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  max-width: 300px;
+}
+
+.cog-toc a {
+  display: block;
+  color: #007acc;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.cog-toc a:hover {
+  text-decoration: underline;
+}
+
+.cog-toc-back {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Semantic:</strong> Uses <code>&lt;nav&gt;</code> and <code>aria-label</code> for screen reader clarity</li>
+    <li><strong>Keyboard Friendly:</strong> All links are focusable and navigable via keyboard</li>
+    <li><strong>Visual Hierarchy:</strong> Indentation or nesting can be added for deeper levels</li>
+</ul>
+
+<h4>Testing cog-toc</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add <nav cog-toc></nav> before a content block
+// - Confirm TOC links navigate to the correct headings
+// - Ensure "Back to top" links work when cog-toc-back is used
+// - Test keyboard and screen reader interaction
+</code>
+</pre>
+
+<h4>Best Practices for cog-toc</h4>
+<ul>
+    <li><strong>Limit to One TOC Per Page:</strong> Multiple TOCs can confuse screen reader users</li>
+    <li><strong>Structure Content Clearly:</strong> Use consistent heading levels (e.g. h2 → h3)</li>
+    <li><strong>Use cog-toc with Articles:</strong> Ideal for blog posts, guides, manuals, and wikis</li>
+    <li><strong>Combine With cog-outline:</strong> For nested navigation across page sections</li>
+</ul>

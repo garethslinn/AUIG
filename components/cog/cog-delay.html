@@ -1,0 +1,89 @@
+<nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cog">Cog</a></li>
+        <li aria-current="page">cog-delay</li>
+    </ol>
+</nav>
+
+<h2>CogJS - Cognitive-Oriented Web Accessibility Toolkit</h2>
+
+<h3>cog-delay</h3>
+
+<p>
+    <code>cog-delay</code> is a declarative attribute that adds a short, cancelable countdown before a button’s action is triggered. It’s ideal for preventing accidental clicks, especially on destructive or irreversible actions like “Delete” or “Submit”.
+</p>
+
+<h4>What It Does</h4>
+<p>
+    When added to a <code>&lt;button&gt;</code>, <code>cog-delay</code> intercepts the click and presents a short confirmation window with a visible countdown and cancel button. If not canceled, the action proceeds. This pattern slows down risky actions just enough to prevent mistakes, without disrupting flow.
+</p>
+
+<pre>
+<code class="language-html">&lt;button cog-delay="5" cog-onclick="deleteItem"&gt;
+  Delete Account
+&lt;/button&gt;
+
+&lt;script&gt;
+  function deleteItem(btn) {
+    alert("Account deleted.");
+  }
+&lt;/script&gt;
+</code>
+</pre>
+
+<h4>How It Works</h4>
+<ul>
+    <li>On click, the button shows a static label and a countdown timer (e.g., “Confirm action (5)”)</li>
+    <li>A cancel button appears alongside for a limited time</li>
+    <li>If not canceled, the original action (via <code>cog-onclick</code> or native click) is triggered</li>
+    <li>If canceled, the button returns to its original state</li>
+</ul>
+
+<h4>Styling and Placement</h4>
+<p>
+    The delay mechanism uses a static label with a visually updated countdown. You can style the countdown and cancel button with CSS:
+</p>
+
+<pre>
+<code class="language-css">.cog-delay-countdown {
+  margin-left: 0.5rem;
+  opacity: 0.75;
+}
+
+.cog-delay-cancel {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.75rem;
+}
+</code>
+</pre>
+
+<h4>Accessibility Considerations</h4>
+<ul>
+    <li><strong>Live Region Announcement:</strong> Announces “You have X seconds to cancel” once when activated</li>
+    <li><strong>Focus Safe:</strong> Keeps original button label static to avoid “selected” announcements</li>
+    <li><strong>Keyboard Accessible:</strong> Cancel button is tabbable and labeled for screen readers</li>
+    <li><strong>Describedby Support:</strong> Countdown is optionally linked via <code>aria-describedby</code></li>
+</ul>
+
+<h4>Testing cog-delay</h4>
+<pre>
+<code class="language-html">// Test Checklist
+// - Add cog-delay to a button with cog-onclick handler
+// - Click the button and verify countdown starts
+// - Confirm the cancel button is visible and accessible
+// - Wait for countdown to trigger original action
+// - Confirm screen reader announces the countdown message once
+// - Cancel and verify button resets correctly
+</code>
+</pre>
+
+<h4>Best Practices for cog-delay</h4>
+<ul>
+    <li><strong>Use on Destructive Actions:</strong> Great for delete, reset, or irreversible choices</li>
+    <li><strong>Keep it Short:</strong> 3-7 seconds is ideal — just enough to pause but not frustrate</li>
+    <li><strong>Don’t Overuse:</strong> Only use when the user benefit outweighs the delay</li>
+    <li><strong>Pair With cog-ghost:</strong> Combine with <code>cog-ghost</code> for a full-screen dimming effect during delay</li>
+    <li><strong>Write Clear Labels:</strong> Use labels like “Delete account” or “Reset all” to help users make informed decisions</li>
+</ul>

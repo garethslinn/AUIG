@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>What The Hell Is This - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/">
+            <span><strong>Articles</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="puzzle.svg"  href="/articles/we-dont-think-the-same.html" aria-label="We don't think the same">
+            <span title="We don't think the same"><strong>We don't think...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="mistake.svg" href="/articles/dont-make-this-expenstive-mistake.html" aria-label="Don't make this expensive mistake">
+            <span title="Don't make this expensive mistake"><strong>Don't make this...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="manual-vs-automated.svg" href="/articles/automated-vs-manual-testing.html" aria-label="Automated Accessibility vs. Manual Testing">
+            <span title="Automated Accessibility vs. Manual Testing"><strong>Automated Accessibility...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="anxiety-forms.svg" href="/articles/the-anxiety-of-forms.html" aria-label="The anxiety of forms">
+            <span><strong>The anxiety of forms</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="cognitive-load.svg" href="/articles/cognitive-load-and-accessibility.html" aria-label="Cognitive Load and Accessibility">
+            <span><strong>Cognitive Load...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="hyper-focus.svg" href="/articles/the-power-of-hyper-focus.html" aria-label="The power of hyper focus">
+            <span><strong>The power of hyper focus</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="blame.svg" href="/articles/who-is-to-blame-when-accessibility-fails.html" aria-label="Who is to blame when accessibility fails?">
+            <span><strong>Who is to blame...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="timed-assessments.svg" href="/articles/timed-coding-tests-are-bad.html" aria-label="Timed coding tests are bad">
+            <span><strong>Timed coding tests...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="neurodiversity-society.svg" href="/articles/neurodiversity-and-society.html" aria-label="Neurodiversity and Society’s Rigid View of Disability.">
+            <span><strong>Neurodiversity and Societies...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="cogjs.svg" href="/articles/what-the-hell-is-this.html" aria-label="What the hell is this?">
+            <span><strong>What the hell is this?</strong></span>
+        </a>
+    </li>
+<!--    <li>-->
+<!--        <a data-image="adhd-dopamine-myth.svg" href="/articles/dopamine-myth.html" aria-label="Dopamine myth?">-->
+<!--            <span><strong>ADHD and the Dopamine Myth Busted!</strong></span>-->
+<!--        </a>-->
+<!--    </li>-->
+    <li>
+        <a data-image="rsd.svg" href="/articles/rsd.html" aria-label="RSD and ADHD">
+            <span><strong>When Hyperfocus Turns Inward...</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li aria-current="page">What the Hell Is This?</li>
+    </ol>
+</nav>
+
+<h1>What the Hell Is This?</h1>
+
+<h2>Article</h2>
+
+<div class="author-container">
+    <a href="/pages/bio.html" class="author-image">
+        <img src="../../images/users/gslinn.png" alt="Author's portrait" />
+    </a>
+    <div class="author-details">
+        <span>Author:
+            <a href="/pages/bio.html" class="author-name">Gareth Slinn</a>
+        </span>
+        <time datetime="2025-04-24">
+            Published: April, 24th 2025
+        </time>
+        <share-buttons article-url="what-the-hell-is-this.html"></share-buttons>
+    </div>
+</div>
+
+<title-image
+        alt="A sketch of a pair of eyes looking at an abstract cog"
+        src="cogjs.svg"
+></title-image>
+
+<p>Back in the late ’90s, when the internet was still in its dial-up awkward phase, I was hooked. The vastness of information was thrilling. But there was a problem. I found it overwhelming, chaotic, noisy, and hard to follow. I loved it, but I struggled to stay with it.</p>
+
+<p>When text-to-speech tools emerged, I found some relief. But for most people, there was no problem to solve so nothing changed. That tension between effort and accessibility has stuck with me ever since.</p>
+
+<p>Fast-forward to today, and I’ve built something I wish existed back then: a simple tool to make websites easier to use for people who think a little differently.</p>
+
+<h3>Introducing CogJS</h3>
+
+<p><strong>CogJS</strong> is a small, free tool for making websites easier to use for people with ADHD, autism, dyslexia, sensory sensitivity, anxiety, or just a different way of processing the world.</p>
+
+<p>It’s not flashy. It’s not technical magic. But it <strong>is</strong> useful. It quietly adds helpful features to websites, like:</p>
+
+<ul>
+    <li>Letting users switch to calmer colors that reduce visual strain</li>
+    <li>Turning off flashy animations that cause sensory overload</li>
+    <li>Breaking long pages into small steps that are easier to process</li>
+    <li>Letting users choose between simplified or detailed content</li>
+    <li>Reading text aloud at the click of a button</li>
+    <li>Showing little reminders or helpful nudges when it matters</li>
+</ul>
+
+<p>Most people won’t even notice it. But for those who need it, it can be the difference between staying engaged and giving up.</p>
+
+<h3>Why It Matters</h3>
+
+<p>We often design websites with one type of user in mind: someone who reads quickly, focuses easily, navigates confidently, and never misses a step. But that’s not all of us.</p>
+
+<p>Consider this:</p>
+
+<ul>
+    <li><strong>1 in 7 people</strong> is neurodivergent, according to the UK government.</li>
+    <li><strong>10% of people</strong> have dyslexia, which can make reading and comprehension difficult.</li>
+    <li><strong>Up to 20%</strong> live with sensory differences, where clutter, noise, and motion can become overwhelming.</li>
+    <li><strong>96.3% of websites</strong> fail basic accessibility checks. Cognitive accessibility is rarely considered at all.</li>
+</ul>
+
+<p>That means millions of users are left out but not by intention, by default.</p>
+
+<h3>Built for the Real Web</h3>
+
+<p>CogJS was built to be as easy to adopt as possible. Not everyone runs a tech company with a dedicated accessibility team. Many sites are run by individuals, small teams, charities, or people doing their best with limited time and tools.</p>
+
+<p>So CogJS works with any website, no frameworks, no rebuilds, no steep learning curve. Whether it’s a local blog, a university portal, or a complex application, CogJS is flexible enough to slot in and make a difference.</p>
+
+<h3>And This Is Just the Start</h3>
+
+<p>CogJS already supports a wide range of features and more are on the way. Features that help users manage memory load, reduce distractions, and navigate more intuitively are all in development. The goal is to keep building, not just features, but a movement.</p>
+
+<h3>Why I Made It</h3>
+
+<p>This tool is deeply personal. I’ve navigated my life and career with ADHD and dyslexia. I know what it’s like to feel left behind by systems that weren’t made with you in mind. That’s why I built CogJS. To offer something better. Something kinder.</p>
+
+<h3>Want to Try It?</h3>
+
+<p>If you build websites or manage digital content, take a look. Even one small change could help someone stay focused, find their place, or feel seen.</p>
+
+<ul>
+    <li><a href="https://auig.org/cog/">Documentation courtesy of AUIG</a></li>
+    <li><a href="https://www.npmjs.com/package/cogjs?activeTab=readme">View CogJS source code</a></li>
+</ul>
+
+<p>Let’s build a web that works for more people. Not just most people.</p>
+
+<p>Thanks for reading.</p>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>

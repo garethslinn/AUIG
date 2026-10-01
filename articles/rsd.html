@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cache Control for Security and Performance -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Rsd - Accessible User Interface Guidelines (AUIG)</title>
+
+    <!-- Updated Meta Description to Reflect AUIG -->
+    <meta name="description" content="AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces. Ensure your digital platforms are accessible, user-friendly, and compliant with current accessibility standards.">
+
+    <meta name="keywords" content="accessible UI, accessibility guidelines, inclusive design, accessible user interfaces, UI accessibility, AUIG, accessible web design, inclusive user experience">
+
+    <!-- Link to Main Stylesheet with Versioning for Cache Busting -->
+    <link rel="stylesheet" href="../styles/main.css?v=1.7">
+
+    <!-- PrismJS Light Theme -->
+    <link id="prism-light-theme" href="../styles/external/prism-light-theme.css" rel="stylesheet" />
+    <!-- PrismJS Dark Theme -->
+    <link id="prism-dark-theme" href="../styles/external/prism-dark-theme.css" rel="stylesheet" disabled />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favi_1.ico" type="image/x-icon">
+    
+    <link rel="canonical" href="https://auig.org/">
+
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Accessible User Interface Guidelines (AUIG)",
+            "url": "https://www.auig.org",
+            "logo": "https://www.auig.org/images/auig_light.svg",
+            "description": "AUIG provides comprehensive accessibility guidelines for designing and developing inclusive user interfaces, ensuring digital platforms are accessible, user-friendly, and compliant with current accessibility standards.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "",
+                "contactType": "Customer Service",
+                "areaServed": "UK",
+                "availableLanguage": ["English"]
+            }
+        }
+    </script>
+</head>
+<body data-theme="light">
+
+<!-- Skip to main content link -->
+<a href="#main-content" class="sr-only">Skip to main content</a>
+
+<!-- Accessibility Controls -->
+<aside class="controls" aria-label="Accessibility controls">
+    <img class="logo" width="auto" height="40" src="/images/auig_light.svg" alt="AUIG logo" />
+    <span>
+        <button id="decrease-font" aria-label="Decrease text size">A-</button>
+        <button id="increase-font" aria-label="Increase text size">A+</button>
+        <button id="toggle-theme" aria-label="Toggle dark and light mode">🌙</button>
+    </span>
+</aside>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside id="toc" class="nav" aria-label="Table of Contents">
+        <nav id="nav" class="navlist" aria-label="Main Navigation">
+            <button id="toggleButton" class="toggle-button">
+                <div class="icon icon-hamburger"><span>Menu</span></div>
+                <div class="icon icon-close"><span>Close</span></div>
+            </button>
+            <!-- Sidebar -->
+<h3 class="sr-only" itemprop="name">Table of Contents</h3>
+<ul>
+    <li>
+        <a href="/pages/index.html">
+            <span><strong>Home</strong></span>
+        </a>
+    </li>
+    <li>
+        <a href="/articles/">
+            <span><strong>Articles</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="puzzle.svg"  href="/articles/we-dont-think-the-same.html" aria-label="We don't think the same">
+            <span title="We don't think the same"><strong>We don't think...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="mistake.svg" href="/articles/dont-make-this-expenstive-mistake.html" aria-label="Don't make this expensive mistake">
+            <span title="Don't make this expensive mistake"><strong>Don't make this...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="manual-vs-automated.svg" href="/articles/automated-vs-manual-testing.html" aria-label="Automated Accessibility vs. Manual Testing">
+            <span title="Automated Accessibility vs. Manual Testing"><strong>Automated Accessibility...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="anxiety-forms.svg" href="/articles/the-anxiety-of-forms.html" aria-label="The anxiety of forms">
+            <span><strong>The anxiety of forms</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="cognitive-load.svg" href="/articles/cognitive-load-and-accessibility.html" aria-label="Cognitive Load and Accessibility">
+            <span><strong>Cognitive Load...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="hyper-focus.svg" href="/articles/the-power-of-hyper-focus.html" aria-label="The power of hyper focus">
+            <span><strong>The power of hyper focus</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="blame.svg" href="/articles/who-is-to-blame-when-accessibility-fails.html" aria-label="Who is to blame when accessibility fails?">
+            <span><strong>Who is to blame...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="timed-assessments.svg" href="/articles/timed-coding-tests-are-bad.html" aria-label="Timed coding tests are bad">
+            <span><strong>Timed coding tests...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="neurodiversity-society.svg" href="/articles/neurodiversity-and-society.html" aria-label="Neurodiversity and Society’s Rigid View of Disability.">
+            <span><strong>Neurodiversity and Societies...</strong></span>
+        </a>
+    </li>
+    <li>
+        <a data-image="cogjs.svg" href="/articles/what-the-hell-is-this.html" aria-label="What the hell is this?">
+            <span><strong>What the hell is this?</strong></span>
+        </a>
+    </li>
+<!--    <li>-->
+<!--        <a data-image="adhd-dopamine-myth.svg" href="/articles/dopamine-myth.html" aria-label="Dopamine myth?">-->
+<!--            <span><strong>ADHD and the Dopamine Myth Busted!</strong></span>-->
+<!--        </a>-->
+<!--    </li>-->
+    <li>
+        <a data-image="rsd.svg" href="/articles/rsd.html" aria-label="RSD and ADHD">
+            <span><strong>When Hyperfocus Turns Inward...</strong></span>
+        </a>
+    </li>
+</ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <nav class="main-nav">
+            <nav-buttons url="/" title="Home"></nav-buttons>
+            <nav-buttons url="/articles" title="Articles"></nav-buttons>
+            <nav-buttons url="/cog" title="Cog"></nav-buttons>
+        </nav>
+        <div class="section-container">
+            <nav aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li aria-current="page">When Hyperfocus Turns Inward: A New Way to Understand RSD in ADHD</li>
+    </ol>
+</nav>
+
+<h1>When Hyperfocus Turns Inward: A New Way to Understand RSD in ADHD</h1>
+
+<h2>Article</h2>
+
+<div class="author-container">
+    <a href="/pages/bio.html" class="author-image">
+        <img src="../../images/users/gslinn.png" alt="Author's portrait" />
+    </a>
+    <div class="author-details">
+        <span>Author:
+            <a href="/pages/bio.html" class="author-name">Gareth Slinn</a>
+        </span>
+        <time datetime="2025-07-07">
+            Published: July 7, 2025
+        </time>
+        <share-buttons article-url="hyperfocus-and-rsd.html"></share-buttons>
+    </div>
+</div>
+
+<title-image
+        alt="Illustration of a thunder cloud on a red background with the words ASD and ADHD either side."
+        src="rsd.svg"
+></title-image>
+
+
+<p>
+    If you’ve ever found yourself obsessing after a neutral message, an unanswered email, or a vague 
+    facial expression then welcome to the club. It’s that sinking feeling that you’ve said too much,
+    come on too strong, or ruined something without knowing why. It can feel overwhelmingly painful, 
+    triggering feelings of dread, deep concern, and even shame.
+</p>
+
+<p>
+    That experience is often labelled <strong>Rejection Sensitive Dysphoria</strong> (RSD). For people
+    with ADHD, it can feel like being emotionally crushed by something as simple as silence. It’s intense. And relentless.
+</p>
+
+<p>
+    But here’s a theory I’ve been working on: What if RSD isn’t just about emotional hypersensitivity? What if it’s
+    a by-product of one of our greatest strengths  <strong>hyperfocus</strong>  being turned against us?
+</p>
+
+<h3>ADHD, Hyperfocus, and the Need for Resolve</h3>
+
+<p>
+    Hyperfocus is one of those weird ADHD traits that’s both a blessing and a curse. When we care about
+    something, we can zero in with laser intensity. We lose track of time, space  everything. We love it
+    when it’s directed at a creative project or a problem we can actually solve.
+</p>
+
+<p>
+    When that focus is locked onto something rewarding, our brains are flooded with <strong>dopamine</strong>
+    the neurotransmitter that drives motivation and pleasure. It’s what gives us that addictive,
+    immersive quality when we’re building, designing, coding, researching, or even just hyperfixating on a topic we love.
+</p>
+
+<p>
+    But when that same intensity turns inward toward a <em>perceived social threat</em>  like a confusing
+    silence or ambiguous facial expression where there’s no dopamine. Instead, our brain releases <strong>cortisol</strong>
+    (the stress hormone) and sometimes <strong>adrenaline</strong>. These chemicals prep us for danger, not productivity.
+</p>
+
+<p>
+    So what starts as a desire to resolve uncertainty becomes a stress-fueled loop with no real exit. We're no
+    longer solving a problem  we're simulating scenarios that can't be answered with the information we have.
+</p>
+
+<p>
+    This isn’t just overthinking. It’s our problem-solving engine locking onto a threat it can’t see clearly
+    and running simulations non-stop.
+</p>
+
+<h3>RSD as Inward-Facing Hyperfocus</h3>
+
+<p>
+    My theory is simple: RSD might not be a flaw in our emotional system. It could be <strong>cognitive hyperfocus with
+    no external anchor</strong>.
+</p>
+
+<p>
+    When we don’t get clarity or feedback, our brains treat that as unfinished business. We turn inward,
+    running loops: “Did I say something wrong?” “Did I ruin it?” “Should I follow up? Or just disappear forever?”
+</p>
+
+<p>
+    It’s not that we’ve been rejected  it’s that we’re caught in a loop without closure. The emotional
+    pain is real, but it might be caused by our strongest trait, the ability to focus deeply turning
+    in the wrong direction.
+</p>
+
+<h3>How This Reframe Can Help</h3>
+
+<p>
+    Understanding RSD this way opens up new strategies for managing it. Here are a few I’ve found helpful:
+</p>
+
+<ul>
+    <li><strong>Interrupt the loop</strong>  Use movement, music, a cold drink  anything sensory that snaps you out of your head.</li>
+    <li><strong>Label it</strong>  “This isn’t rejection. This is me trying to solve an invisible problem.”</li>
+    <li><strong>Delay the verdict</strong> If you’re unsure what someone meant, park it. You can
+        revisit it when your brain’s not spinning.</li>
+    <li><strong>Ground yourself in evidence</strong>  Ask: “Do I <em>know</em> they’re upset, or am I guessing?”</li>
+</ul>
+
+<p>
+    We can’t stop our brains from needing closure but we can learn when to hit pause and let the loop die a natural death.
+</p>
+
+<h3>Final Thoughts</h3>
+
+<p>
+    Maybe RSD isn’t about weakness. Maybe it’s about <strong>how deeply we care</strong>  and how hard our minds
+    try to make sense of silence.
+</p>
+
+<p>
+    For people with ADHD, it’s not that we feel <em>too much</em>. It’s that our thoughts go places others never
+    even notice. We’re not broken. We just need different tools  and a bit more self-compassion  to steer the
+    engine in the right direction.
+</p>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer (removed to aid scrolling) -->
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="hide" aria-label="Back to Top">Back to top</button>
+
+<!-- PrismJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js"></script>
+
+<script src="../scripts/loader.js?v=1.6.1"></script>
+<script src="../scripts/components/iconDetail.js?v=1.6.1"></script>
+<script src="../scripts/components/EaseSwitcher.js?v=1.6.1"></script>
+<script src="../scripts/components/ShareButtons.js?v=1.6.1"></script>
+<script src="../scripts/components/TitleImage.js?v=1.6.1"></script>
+<script src="../scripts/components/NavButtons.js?v=1.6.1"></script>
+<script src="../scripts/main.js?v=1.6.1" defer></script>
+</body>
+</html>
